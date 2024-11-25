@@ -15,6 +15,11 @@ map("n", "<leader>gt", builtin.git_status, { desc = "telescope git status" })
 
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", { desc = "telescope find all files" })
 
+
+map('n', '<leader>ft', '<cmd>Telescope telescope-tabs list_tabs<CR>', {
+	desc = "Search on tabs"
+})
+
 map('n', '<leader>fr', function()
 	require('telescope.builtin').lsp_references()
 end, { desc = "LSP References" })

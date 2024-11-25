@@ -9,11 +9,12 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.nvim-tree"
 		elseif data.data == "telescope.nvim" then
 			require "mappings.telescope"
-		elseif data.data == "plenary.nvim" then
 		elseif data.data == "nvim-spectre" then
 			require "mappings.spectre"
 		elseif data.data == "lazygit.nvim" then
 			require "mappings.lazygit"
+		elseif data.data == "telescope-tabs" then
+		elseif data.data == "plenary.nvim" then
 		elseif data.data == "diffview.nvim" then
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "nvim-treesitter" then
