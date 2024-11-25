@@ -15,6 +15,15 @@ return {
 	},
 
 	{
+		"nvim-pack/nvim-spectre",
+		lazy = true,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"folke/trouble.nvim"
+		},
+	},
+
+	{
 		"nvim-treesitter/nvim-treesitter",
 		lazy = true,
 		event = { "BufReadPost", "BufNewFile" },
@@ -45,6 +54,25 @@ return {
 	},
 
 	{
+		"sindrets/diffview.nvim",
+		lazy = true,
+	},
+
+	{
+		"kdheepak/lazygit.nvim",
+		lazy = false,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		-- setting the keybinding for LazyGit with 'keys' is recommended in
+		-- order to load the plugin when the command is run for the first time
+		keys = {
+			-- { "<leader>gl", "<cmd>LazyGit<cr>", desc = "LazyGit" }
+		}
+	},
+
+
+	{
 		"stevearc/conform.nvim",
 		lazy = true,
 		opts = {
@@ -70,4 +98,8 @@ return {
 		end,
 	},
 
+	{
+		"RRethy/vim-illuminate",
+		lazy = true,
+	},
 }
