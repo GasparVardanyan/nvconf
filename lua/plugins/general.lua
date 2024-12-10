@@ -64,7 +64,7 @@ return {
 
 	{
 		"kdheepak/lazygit.nvim",
-		lazy = false,
+		lazy = true,
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 		},
@@ -77,12 +77,12 @@ return {
 
 	{
 		"majutsushi/tagbar",
-		lazy = false,
+		lazy = true,
 	},
 
     {
         "mbbill/undotree",
-        lazy = false,
+        lazy = true,
 
         config = function()
 			vim.cmd [[

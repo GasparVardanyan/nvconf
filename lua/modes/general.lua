@@ -1,16 +1,29 @@
 vim.api.nvim_create_autocmd({"User"}, {
 	pattern = "LazyDone",
-	callback = function()
-		require ("telescope").setup ()
-		require ("nvim-tree").setup ()
-		require ("spectre").setup ()
-		require ("nvim-treesitter").setup ()
-		require ("gitsigns").setup ()
-		require ("diffview").setup ()
 
+	callback = function()
 		vim.cmd [[
 			colorscheme NeoSolarized
 		]]
+
+		require ("lazy").load ({
+			plugins = {
+				  "telescope.nvim"
+				, "nvim-tree.lua"
+				, "nvim-spectre"
+				, "nvim-treesitter"
+				, "gitsigns.nvim"
+				, "diffview.nvim"
+				, "lazygit.nvim"
+				, "tagbar"
+				, "undotree"
+			}
+		})
+
+-- 		require ("nvim-lspconfig").setup ()
+-- 		require ("mason").setup ()
+-- 		require ("vim-illuminate").setup ()
+
 	end
 })
 
