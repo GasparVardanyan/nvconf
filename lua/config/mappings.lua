@@ -18,6 +18,11 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "diffview.nvim" then
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "nvim-treesitter" then
+		elseif data.data == "undotree" then
+		elseif data.data == "tagbar" then
+		elseif data.data == "mason.nvim" then
+		elseif data.data == "nvim-lspconfig" then
+		elseif data.data == "vim-illuminate" then
 		elseif data.data == "nvim-web-devicons" then
 		elseif data.data == "NeoSolarized.nvim" then
 		elseif data.data == "solarized.nvim" then
