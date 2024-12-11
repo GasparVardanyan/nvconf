@@ -1,4 +1,5 @@
 return {
+
 	spec = {
 		{ import = "plugins.colors" },
 		{ import = "plugins.general" },
@@ -9,4 +10,5 @@ return {
 
 	-- automatically check for plugin updates
 	checker = { enabled = false },
+
 }
