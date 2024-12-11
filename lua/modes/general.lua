@@ -20,12 +20,12 @@ vim.api.nvim_create_autocmd({"User"}, {
 			}
 		})
 
-		require ("lazy").load ({
-			plugins = {
-				  "mason.nvim"
-				, "nvim-lspconfig"
-				, "vim-illuminate"
-			}
-		})
+--		require ("lazy").load ({
+--			plugins = {
+--				  "mason.nvim"
+--				, "nvim-lspconfig"
+--				, "vim-illuminate"
+--			}
+--		})
 	end
 })
