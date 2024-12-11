@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "nvim-treesitter" then
 		elseif data.data == "undotree" then
+			require "mappings.undotree"
 		elseif data.data == "tagbar" then
 		elseif data.data == "mason.nvim" then
 		elseif data.data == "nvim-lspconfig" then

@@ -18,6 +18,9 @@ vim.opt.smartcase = false
 
 vim.opt.showtabline = 0
 
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
 vim.cmd [[
 	autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 	highlight ExtraWhitespace ctermbg=cyan guibg=cyan

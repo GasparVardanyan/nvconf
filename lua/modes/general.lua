@@ -29,9 +29,3 @@ vim.api.nvim_create_autocmd({"User"}, {
 		})
 	end
 })
-
--- require ("lazygit").setup ()
--- require ("tagbar").setup ()
--- require ("undotree").setup ()
-
--- conform, mason, nvim-lspconfig, nvim-illuminate
