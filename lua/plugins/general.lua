@@ -1,6 +1,13 @@
 return {
 
 	{
+		"nvim-neorg/neorg",
+		lazy = true,
+		version = "*", -- Pin Neorg to the latest stable release
+		config = true,
+	},
+
+	{
 		"nvim-telescope/telescope.nvim",
 		lazy = true,
 		dependencies = { "nvim-lua/plenary.nvim", "LukasPietzschmann/telescope-tabs" },

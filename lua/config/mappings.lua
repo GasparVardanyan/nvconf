@@ -13,23 +13,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.spectre"
 		elseif data.data == "lazygit.nvim" then
 			require "mappings.lazygit"
-		elseif data.data == "telescope-tabs" then
-		elseif data.data == "plenary.nvim" then
-		elseif data.data == "diffview.nvim" then
-		elseif data.data == "trouble.nvim" then
-		elseif data.data == "nvim-treesitter" then
 		elseif data.data == "undotree" then
 			require "mappings.undotree"
-		elseif data.data == "tagbar" then
-		elseif data.data == "mason.nvim" then
-		elseif data.data == "nvim-lspconfig" then
-		elseif data.data == "vim-illuminate" then
-		elseif data.data == "nvim-web-devicons" then
-		elseif data.data == "NeoSolarized.nvim" then
-		elseif data.data == "solarized.nvim" then
-		elseif data.data == "solarized-osaka.nvim" then
-		else
-			print (data.data)
 		end
 	end
 })
