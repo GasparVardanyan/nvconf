@@ -1,6 +1,10 @@
 local map = vim.keymap.set
 
+-- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/mappings.lua
+
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+
 map("i", "<c-h>", "<Left>")
 map("i", "<c-j>", "<Down>")
 map("i", "<c-k>", "<Up>")

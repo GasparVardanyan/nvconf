@@ -12,12 +12,15 @@ map("n", "<leader>fz", builtin.current_buffer_fuzzy_find, { desc = "telescope fi
 map("n", "<leader>cm", builtin.git_commits, { desc = "telescope git commits" })
 map("n", "<leader>gt", builtin.git_status, { desc = "telescope git status" })
 --map("n", "<leader>pt", builtin.terms, { desc = "telescope pick hidden term" })
+map('n', '<leader>fm', function()
+	require('telescope.builtin').marks()
+end, { desc = "telescope marks" })
 
 map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hidden=true<CR>", { desc = "telescope find all files" })
 
 
 map('n', '<leader>ft', '<cmd>Telescope telescope-tabs list_tabs<CR>', {
-	desc = "Search on tabs"
+	desc = "Search tabs"
 })
 
 map('n', '<leader>fr', function()
@@ -44,4 +47,3 @@ end, { desc = "LSP Incoming Calls" })
 map('n', '<leader>fO', function()
 	require('telescope.builtin').lsp_outgoing_calls()
 end, { desc = "LSP Outgoing Calls" })
-
