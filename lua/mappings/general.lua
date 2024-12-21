@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
-kap("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
+map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
 map("i", "<c-h>", "<Left>", { desc = "move left" })
 map("i", "<c-j>", "<Down>", { desc = "move down" })
