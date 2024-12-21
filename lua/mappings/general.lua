@@ -1,22 +1,19 @@
 local map = vim.keymap.set
 
--- https://github.com/NvChad/NvChad/blob/v2.5/lua/nvchad/mappings.lua
+kap("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
 
--- map("n", ";", ":", { desc = "CMD enter command mode" })
-map("n", "<Esc>", "<cmd>noh<CR>", { desc = "general clear highlights" })
-
-map("i", "<c-h>", "<Left>")
-map("i", "<c-j>", "<Down>")
-map("i", "<c-k>", "<Up>")
-map("i", "<c-l>", "<Right>")
+map("i", "<c-h>", "<Left>", { desc = "move left" })
+map("i", "<c-j>", "<Down>", { desc = "move down" })
+map("i", "<c-k>", "<Up>", { desc = "move up" })
+map("i", "<c-l>", "<Right>", { desc = "move right" })
 map("i", "<sc-l>", "<Del>")
 map("i", "<sc-h>", "<BS>")
 
-map("n", "<C-i>", "<C-i>")
+map("n", "<c-h>", "<c-w>h", { desc = "switch window left" })
+map("n", "<c-j>", "<c-w>j", { desc = "switch window down" })
+map("n", "<c-k>", "<c-w>k", { desc = "switch window up" })
+map("n", "<c-l>", "<c-w>l", { desc = "switch window right" })
 
 map("n", "<leader>V", "`[v`]")
 
-map("n", "<C-j>", "<C-w><C-j>")
-map("n", "<C-k>", "<C-w><C-k>")
-map("n", "<C-l>", "<C-w><C-l>")
-map("n", "<C-h>", "<C-w><C-h>")
+-- map("n", "<C-i>", "<C-i>")

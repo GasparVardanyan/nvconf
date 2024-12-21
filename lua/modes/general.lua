@@ -34,6 +34,6 @@ vim.api.nvim_create_autocmd({"User"}, {
 require "modules.uimodule"
 require "modules.basicmodule"
 require "modules.gitmodule"
-require "modules.lspmodule"
-require "modules.orgmodule"
+-- require "modules.lspmodule"
+-- require "modules.orgmodule"
 
