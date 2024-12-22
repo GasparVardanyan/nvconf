@@ -14,6 +14,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "lazygit.nvim" then
 
 		elseif data.data == "mason.nvim" then
+		elseif data.data == "mason-lspconfig.nvim" then
 		elseif data.data == "nvim-lspconfig" then
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "vim-illuminate" then
@@ -40,6 +41,10 @@ vim.api.nvim_create_autocmd({"User"}, {
 require "modules.uimodule"
 require "modules.basicmodule"
 require "modules.gitmodule"
--- require "modules.lspmodule"
+require "modules.lspmodule"
+
+
+require "modes.clangmode"
+
 -- require "modules.orgmodule"
 

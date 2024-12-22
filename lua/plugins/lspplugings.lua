@@ -2,19 +2,27 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
-		-- cmd = { "Mason", "MasonInstall", "MasonInstallAll", "MasonUpdate" },
-		opts = function()
-			-- return require "nvchad.configs.mason"
+	},
+
+	{
+		"williamboman/mason-lspconfig.nvim",
+		lazy = true,
+		config = function()
+--			require ("mason-lspconfig").setup ({
+--				ensure_installed = { "lua_ls", "clangd" }
+--			})
 		end,
+
+		dependencies = {
+			"williamboman/mason.nvim",
+			"neovim/nvim-lspconfig",
+		}
 	},
 
 	{
 		"neovim/nvim-lspconfig",
 		lazy = true,
 		event = "User FilePost",
-		config = function()
-			-- require("nvchad.configs.lspconfig").defaults()
-		end,
 	},
 
 	{
