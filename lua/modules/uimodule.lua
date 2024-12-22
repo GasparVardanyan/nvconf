@@ -5,11 +5,5 @@ vim.api.nvim_create_autocmd({"User"}, {
 		vim.cmd [[
 			colorscheme NeoSolarized
 		]]
-
-		require ("lazy").load ({
-			plugins = {
-				"nvim-treesitter"
-			}
-		})
 	end
 })

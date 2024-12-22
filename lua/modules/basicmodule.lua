@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				, "nvim-spectre"
 --				, "tagbar"
 				, "undotree"
+				, "nvim-treesitter"
 			}
 		})
 	end
