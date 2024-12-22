@@ -1,5 +1,4 @@
 return {
-
 	{
 		"craftzdog/solarized-osaka.nvim",
 		lazy = false,
@@ -27,6 +26,5 @@ return {
 		config = function ()
 			vim.g.solarized_disable_background = false
 		end
-	},
-
+	}
 }
