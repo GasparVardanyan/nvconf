@@ -15,6 +15,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.lazygit"
 		elseif data.data == "undotree" then
 			require "mappings.undotree"
+		elseif data.data == "tagbar" then
+			require "mappings.tagbar"
 		end
 	end
 })

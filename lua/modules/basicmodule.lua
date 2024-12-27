@@ -7,7 +7,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				  "telescope.nvim"
 				, "nvim-tree.lua"
 				, "nvim-spectre"
---				, "tagbar"
+				, "tagbar"
 				, "undotree"
 				, "nvim-treesitter"
 			}

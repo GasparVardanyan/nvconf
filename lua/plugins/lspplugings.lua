@@ -8,15 +8,10 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = true,
 		config = function()
---			require ("mason-lspconfig").setup ({
---				ensure_installed = { "lua_ls", "clangd" }
---			})
+			require ("mason-lspconfig").setup ({
+				ensure_installed = { "lua_ls", "clangd" }
+			})
 		end,
-
-		dependencies = {
-			"williamboman/mason.nvim",
-			"neovim/nvim-lspconfig",
-		}
 	},
 
 	{
@@ -75,5 +70,10 @@ return {
 		opts = {
 			formatters_by_ft = { lua = { "stylua" } },
 		},
+	},
+
+	{
+		"https://github.com/p00f/clangd_extensions.nvim",
+		lazy = true
 	}
 }
