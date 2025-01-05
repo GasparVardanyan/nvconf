@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				, "nvim-lspconfig"
 				, "trouble.nvim"
 				, "vim-illuminate"
+				, "outline.nvim"
 			}
 		})
 	end

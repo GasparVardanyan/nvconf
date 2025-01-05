@@ -80,6 +80,12 @@ return {
 	},
 
 	{
+		"hedyhli/outline.nvim",
+		lazy = true,
+		config = true,
+	},
+
+	{
 		"https://github.com/p00f/clangd_extensions.nvim",
 		lazy = true
 	}

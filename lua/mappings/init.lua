@@ -40,6 +40,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.tagbar"
 		elseif data.data == "nvim-lspconfig" then
 			require "mappings.lspconfig"
+		elseif data.data == "outline.nvim" then
+			require "mappings.outline"
 		end
 	end
 })

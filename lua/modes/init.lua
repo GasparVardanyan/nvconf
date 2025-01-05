@@ -18,6 +18,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "nvim-lspconfig" then
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "vim-illuminate" then
+		elseif data.data == "outline.nvim" then
 		elseif data.data == "clangd_extensions.nvim" then
 
 		elseif data.data == "neorg" then
