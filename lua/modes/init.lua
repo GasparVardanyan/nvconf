@@ -39,7 +39,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 	end
 })
 
-require "modes.general"
+require "modules.uimodule"
+require "modules.basicmodule"
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "hlsplaylist",
@@ -51,5 +52,5 @@ vim.api.nvim_create_autocmd("FileType", {
 -- TODO: conditional inclusion of all modules except ui and basic
 require "modules.gitmodule"
 require "modules.orgmodule"
-require "modules.lspmodule"
-require "modes.clangmode"
+-- require "modules.lspmodule"
+-- require "modes.clangmode"
