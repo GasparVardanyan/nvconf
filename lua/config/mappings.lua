@@ -17,6 +17,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.undotree"
 		elseif data.data == "tagbar" then
 			require "mappings.tagbar"
+		elseif data.data == "nvim-lspconfig" then
+			require "mappings.lspconfig"
 		end
 	end
 })

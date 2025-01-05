@@ -2,22 +2,28 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
+		config = true,
 	},
 
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = { "williamboman/mason.nvim" },
 		lazy = true,
-		config = function()
-			require ("mason-lspconfig").setup ({
-				ensure_installed = { "lua_ls", "clangd" }
-			})
-		end,
+		config = true,
+		opts = {
+			ensure_installed = { "lua_ls", "clangd" }
+		},
 	},
 
 	{
 		"neovim/nvim-lspconfig",
 		lazy = true,
 		event = "User FilePost",
+		config = function()
+			local lspconfig = require ("lspconfig")
+			lspconfig.lua_ls.setup ({})
+			lspconfig.clangd.setup ({})
+		end,
 	},
 
 	{
@@ -70,6 +76,7 @@ return {
 		opts = {
 			formatters_by_ft = { lua = { "stylua" } },
 		},
+		config = true,
 	},
 
 	{
