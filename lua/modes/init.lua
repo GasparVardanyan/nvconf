@@ -1,6 +1,7 @@
 vim.api.nvim_create_autocmd({"User"}, {
 	pattern = "LazyLoad",
 	callback = function(data)
+		-- basic
 		if data.data == "telescope.nvim" then
 		elseif data.data == "telescope-tabs" then
 		elseif data.data == "nvim-tree.lua" then
@@ -9,24 +10,30 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "undotree" then
 		elseif data.data == "nvim-treesitter" then
 
+		-- git
 		elseif data.data == "gitsigns.nvim" then
 		elseif data.data == "diffview.nvim" then
 		elseif data.data == "lazygit.nvim" then
 
+		-- lsp
 		elseif data.data == "mason.nvim" then
 		elseif data.data == "mason-lspconfig.nvim" then
 		elseif data.data == "nvim-lspconfig" then
+		elseif data.data == "nvim-lint" then
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "vim-illuminate" then
 		elseif data.data == "outline.nvim" then
 		elseif data.data == "clangd_extensions.nvim" then
 
+		-- org
 		elseif data.data == "neorg" then
 
+		-- ui
 		elseif data.data == "NeoSolarized.nvim" then
 		elseif data.data == "solarized.nvim" then
 		elseif data.data == "solarized-osaka.nvim" then
 
+		-- dependencies
 		elseif data.data == "plenary.nvim" then
 		elseif data.data == "nvim-web-devicons" then
 		elseif data.data == "nui.nvim" then
