@@ -15,9 +15,10 @@ map("n", "<c-k>", "<c-w>k", { desc = "switch window up" })
 map("n", "<c-l>", "<c-w>l", { desc = "switch window right" })
 
 map("n", "<leader>V", "`[v`]")
-map("n", "<leader>bd", "<cmd>bdelete<cr>")
-map("n", "<leader>tc", "<cmd>tabclose<cr>")
-map("n", "<leader>tn", "<cmd>tabnew<cr>")
+map("n", "<leader>D", "<cmd>bdelete<cr>")
+map("n", "<leader>N", "<cmd>tabnew<cr>")
+map("n", "<leader>C", "<cmd>tabclose<cr>")
+map("n", "<leader>G", "<cmd>DiffviewFileHistory %<cr>") -- TODO: move to mappings/diffview.lua
 
 -- map("n", "<C-i>", "<C-i>")
 

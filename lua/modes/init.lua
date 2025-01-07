@@ -25,6 +25,11 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "outline.nvim" then
 		elseif data.data == "clangd_extensions.nvim" then
 
+		-- dap
+		elseif data.data == "nvim-dap" then
+		elseif data.data == "mason-nvim-dap.nvim" then
+		elseif data.data == "nvim-dap-ui" then
+
 		-- org
 		elseif data.data == "neorg" then
 
@@ -40,6 +45,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "pathlib.nvim" then
 		elseif data.data == "nvim-nio" then
 		elseif data.data == "lua-utils.nvim" then
+		elseif data.data == "nvim-dap-virtual-text" then
 
 		else
 			print ("new plugin: " .. data.data)
