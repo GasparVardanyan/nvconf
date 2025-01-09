@@ -5,5 +5,6 @@ return {
 	opts = {
 		transparent = false,
 		terminal_colors = false,
-	}
+	},
+	config = true,
 }

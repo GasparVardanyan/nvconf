@@ -5,4 +5,5 @@ return {
 		"nvim-lua/plenary.nvim",
 		"folke/trouble.nvim"
 	},
+	config = true,
 }

@@ -3,6 +3,7 @@ return {
 	lazy = true,
 	opts = {}, -- for default options, refer to the configuration section for custom setup.
 	cmd = "Trouble",
+	config = true,
 --		keys = {
 --			{
 --				"<leader>xx",
