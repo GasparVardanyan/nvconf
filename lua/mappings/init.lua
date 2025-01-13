@@ -6,8 +6,8 @@ map("i", "<c-h>", "<Left>", { desc = "move left" })
 map("i", "<c-j>", "<Down>", { desc = "move down" })
 map("i", "<c-k>", "<Up>", { desc = "move up" })
 map("i", "<c-l>", "<Right>", { desc = "move right" })
-map("i", "<sc-l>", "<Del>")
-map("i", "<sc-h>", "<BS>")
+map("i", "<m-l>", "<Del>")
+map("i", "<m-h>", "<BS>")
 
 map("n", "<c-h>", "<c-w>h", { desc = "switch window left" })
 map("n", "<c-j>", "<c-w>j", { desc = "switch window down" })
@@ -18,7 +18,8 @@ map("n", "<leader>V", "`[v`]")
 map("n", "<leader>bd", "<cmd>bdelete<cr>")
 map("n", "<leader>tn", "<cmd>tabnew<cr>")
 map("n", "<leader>tc", "<cmd>tabclose<cr>")
-map("n", "<leader>G", "<cmd>DiffviewFileHistory %<cr>") -- TODO: move to mappings/diffview.lua
+map("n", "<leader>o", "<cmd>only<cr>")
+map("n", "<leader>n", "<cmd>set nu! rnu!<cr>")
 
 -- map("n", "<C-i>", "<C-i>")
 
@@ -27,6 +28,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 	callback = function(data)
 		if data.data == "gitsigns.nvim" then
 			require "mappings.gitsigns"
+		elseif data.data == "diffview.nvim" then
+			require "mappings.diffview"
 		elseif data.data == "nvim-tree.lua" then
 			require "mappings.nvim-tree"
 		elseif data.data == "telescope.nvim" then
