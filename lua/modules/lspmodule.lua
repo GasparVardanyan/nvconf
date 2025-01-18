@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				, "trouble.nvim"
 				, "vim-illuminate"
 				, "outline.nvim"
+				, "nvim-treesitter-textobjects"
 			}
 		})
 	end

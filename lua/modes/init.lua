@@ -23,12 +23,16 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "trouble.nvim" then
 		elseif data.data == "vim-illuminate" then
 		elseif data.data == "outline.nvim" then
-		elseif data.data == "clangd_extensions.nvim" then
+		elseif data.data == "nvim-treesitter-textobjects" then
 
 		-- dap
 		elseif data.data == "nvim-dap" then
 		elseif data.data == "mason-nvim-dap.nvim" then
 		elseif data.data == "nvim-dap-ui" then
+
+		-- clang
+		elseif data.data == "clangd_extensions.nvim" then
+		elseif data.data == "cppman.nvim" then
 
 		-- org
 		elseif data.data == "neorg" then
