@@ -43,6 +43,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "solarized.nvim" then
 		elseif data.data == "solarized-osaka.nvim" then
 		elseif data.data == "lualine.nvim" then
+		elseif data.data == "noice.nvim" then
 
 		-- none-ls
 		elseif data.data == "none-ls.nvim" then
@@ -55,6 +56,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "nvim-nio" then
 		elseif data.data == "lua-utils.nvim" then
 		elseif data.data == "nvim-dap-virtual-text" then
+		elseif data.data == "nvim-notify" then
 
 		else
 			print ("new plugin: " .. data.data)
@@ -75,6 +77,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- TODO: conditional inclusion of all modules except ui and basic
 require "modules.gitmodule"
 require "modules.orgmodule"
-require "modules.lspmodule"
-require "modes.clangmode"
-require "modules.nonelsmodule"
+-- require "modules.lspmodule"
+-- require "modes.clangmode"
+-- require "modules.nonelsmodule"

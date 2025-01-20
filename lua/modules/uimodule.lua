@@ -4,7 +4,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 	callback = function()
 		require ("lazy").load ({
 			plugins = {
-				  "lualine.nvim"
+				  "lualine.nvim",
+				  "noice.nvim",
 			}
 		})
 		vim.cmd [[
