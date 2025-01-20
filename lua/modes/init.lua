@@ -42,6 +42,10 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "NeoSolarized.nvim" then
 		elseif data.data == "solarized.nvim" then
 		elseif data.data == "solarized-osaka.nvim" then
+		elseif data.data == "lualine.nvim" then
+
+		-- none-ls
+		elseif data.data == "none-ls.nvim" then
 
 		-- dependencies
 		elseif data.data == "plenary.nvim" then
@@ -72,4 +76,5 @@ vim.api.nvim_create_autocmd("FileType", {
 require "modules.gitmodule"
 require "modules.orgmodule"
 require "modules.lspmodule"
--- require "modes.clangmode"
+require "modes.clangmode"
+require "modules.nonelsmodule"

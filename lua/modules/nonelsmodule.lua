@@ -4,8 +4,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 	callback = function()
 		require ("lazy").load ({
 			plugins = {
-				"clangd_extensions.nvim",
-				"cppman.nvim"
+				"none-ls.nvim"
 			}
 		})
 	end
