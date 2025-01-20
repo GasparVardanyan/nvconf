@@ -3,6 +3,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		local map = vim.keymap.set
 		local telescope_builtin = require("telescope.builtin")
 
+		-- telescope lsp mappings
 		map('n', '<leader>fr', function()
 			telescope_builtin.lsp_references()
 		end, { desc = "LSP References" })
@@ -28,8 +29,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			telescope_builtin.lsp_outgoing_calls()
 		end, { desc = "LSP Outgoing Calls" })
 
-		map('n', '<leader>q', vim.cmd.ClangdSwitchSourceHeader)
-
 		local function opts(desc)
 			return { buffer = bufnr, desc = "LSP " .. desc }
 		end
@@ -40,6 +39,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Show signature help")
 		map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
 		map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
+		map('n', '<leader>q', vim.cmd.ClangdSwitchSourceHeader)
 
 		map("n", "<leader>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))

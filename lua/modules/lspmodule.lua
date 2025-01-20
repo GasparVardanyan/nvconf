@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				, "nvim-lspconfig"
 				, "nvim-lint"
 				, "trouble.nvim"
-				, "vim-illuminate"
+--				, "vim-illuminate"
 				, "outline.nvim"
 				, "nvim-treesitter-textobjects"
 			}

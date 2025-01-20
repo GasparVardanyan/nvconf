@@ -4,6 +4,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		-- basic
 		if data.data == "telescope.nvim" then
 		elseif data.data == "telescope-tabs" then
+		elseif data.data == "telescope-ui-select.nvim" then
 		elseif data.data == "nvim-tree.lua" then
 		elseif data.data == "nvim-spectre" then
 		elseif data.data == "tagbar" then
@@ -70,5 +71,5 @@ vim.api.nvim_create_autocmd("FileType", {
 -- TODO: conditional inclusion of all modules except ui and basic
 require "modules.gitmodule"
 require "modules.orgmodule"
--- require "modules.lspmodule"
+require "modules.lspmodule"
 -- require "modes.clangmode"
