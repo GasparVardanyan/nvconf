@@ -35,6 +35,9 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "clangd_extensions.nvim" then
 		elseif data.data == "cppman.nvim" then
 
+		-- cmake
+		elseif data.data == "cmake-tools.nvim" then
+
 		-- org
 		elseif data.data == "neorg" then
 
