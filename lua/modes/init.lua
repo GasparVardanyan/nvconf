@@ -48,6 +48,11 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "lualine.nvim" then
 		elseif data.data == "noice.nvim" then
 
+		-- tmux
+		elseif data.data == "vim-tmux-navigator" then
+		elseif data.data == "vimux" then
+
+
 		-- none-ls
 		elseif data.data == "none-ls.nvim" then
 
