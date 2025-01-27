@@ -46,6 +46,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.lspconfig"
 		elseif data.data == "outline.nvim" then
 			require "mappings.outline"
+		elseif data.data == "nvim-cmp" then
+			require "mappings.nvim-cmp"
 		end
 	end
 })

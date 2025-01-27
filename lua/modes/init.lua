@@ -2,7 +2,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 	pattern = "LazyLoad",
 	callback = function(data)
 		-- basic
-		if data.data == "telescope.nvim" then
+			if data.data == "telescope.nvim" then
 		elseif data.data == "telescope-tabs" then
 		elseif data.data == "telescope-ui-select.nvim" then
 		elseif data.data == "nvim-tree.lua" then
@@ -25,6 +25,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "vim-illuminate" then
 		elseif data.data == "outline.nvim" then
 		elseif data.data == "nvim-treesitter-textobjects" then
+		elseif data.data == "nvim-cmp" then
 
 		-- dap
 		elseif data.data == "nvim-dap" then
@@ -65,6 +66,12 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "lua-utils.nvim" then
 		elseif data.data == "nvim-dap-virtual-text" then
 		elseif data.data == "nvim-notify" then
+		elseif data.data == "cmp_luasnip" then
+		elseif data.data == "LuaSnip" then
+		elseif data.data == "cmp-cmdline" then
+		elseif data.data == "cmp-path" then
+		elseif data.data == "cmp-buffer" then
+		elseif data.data == "cmp-nvim-lsp" then
 
 		else
 			print ("new plugin: " .. data.data)
@@ -85,6 +92,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- TODO: conditional inclusion of all modules except ui and basic
 require "modules.gitmodule"
 require "modules.orgmodule"
--- require "modules.lspmodule"
+require "modules.lspmodule"
 -- require "modes.clangmode"
 -- require "modules.nonelsmodule"
