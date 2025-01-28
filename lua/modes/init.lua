@@ -72,6 +72,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "cmp-path" then
 		elseif data.data == "cmp-buffer" then
 		elseif data.data == "cmp-nvim-lsp" then
+		elseif data.data == "image.nvim" then
+		elseif data.data == "tree-sitter-norg" then
 
 		else
 			print ("new plugin: " .. data.data)

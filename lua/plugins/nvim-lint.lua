@@ -3,7 +3,7 @@ return {
 	lazy = true,
 	config = function()
 		require('lint').linters_by_ft = {
-			cpp = {'cppcheck', 'clangtidy'},
+			cpp = {'clangtidy', 'cppcheck'},
 		}
 	end,
 }

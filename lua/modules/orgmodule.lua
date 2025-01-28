@@ -4,7 +4,9 @@ vim.api.nvim_create_autocmd({"User"}, {
 	callback = function()
 		require ("lazy").load ({
 			plugins = {
-				"neorg"
+				"neorg",
+				"image.nvim",
+				"tree-sitter-norg"
 			}
 		})
 	end
