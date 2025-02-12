@@ -1,5 +1,6 @@
 return {
-	'madskjeldgaard/cppman.nvim',
+	-- 'madskjeldgaard/cppman.nvim',
+	dir = '/desktop/nvim/lua/plugins/custom/cppman.nvim',
 	dependencies = {
 		'MunifTanjim/nui.nvim'
 	},

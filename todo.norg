@@ -6,5 +6,6 @@
   - (=) cmake integration
   - (=) clang integration
   - (=) compiler.nvim integration
+  - (=) separate plugin configs
 
   ---
