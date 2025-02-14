@@ -31,6 +31,8 @@ vim.cmd [[
 	match ExtraWhitespace /\s\+$\| \+\ze\t/
 	autocmd BufWritePre * :%s/\s\+$//e
 
+	autocmd BufWritePre * :%s/\(^\(    \)*\)\@<=    /\t/e
+
 	augroup line_return
 		au!
 		au BufReadPost *
