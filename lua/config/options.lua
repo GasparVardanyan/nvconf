@@ -31,7 +31,7 @@ vim.cmd [[
 	match ExtraWhitespace /\s\+$\| \+\ze\t/
 	autocmd BufWritePre * :%s/\s\+$//e
 
-	autocmd BufWritePre * :%s/\(^\(    \)*\)\@<=    /\t/e
+	autocmd BufWritePre * :%s/\(^\t*\(    \)*\)\@<=    /\t/ge
 
 	augroup line_return
 		au!
