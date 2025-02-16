@@ -54,6 +54,10 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.outline"
 		elseif data.data == "nvim-cmp" then
 			require "mappings.nvim-cmp"
+		elseif data.data == "lspsaga.nvim" then
+			require "mappings.lspsaga"
+		elseif data.data == "dropbar.nvim" then
+			require "mappings.dropbar"
 		end
 	end
 })

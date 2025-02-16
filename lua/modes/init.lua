@@ -26,6 +26,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "outline.nvim" then
 		elseif data.data == "nvim-treesitter-textobjects" then
 		elseif data.data == "nvim-cmp" then
+		elseif data.data == "lspsaga.nvim" then
+		elseif data.data == "dropbar.nvim" then
 
 		-- dap
 		elseif data.data == "nvim-dap" then
@@ -74,6 +76,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "cmp-nvim-lsp" then
 		elseif data.data == "image.nvim" then
 		elseif data.data == "tree-sitter-norg" then
+		elseif data.data == "telescope-fzf-native.nvim" then
 
 		else
 			print ("new plugin: " .. data.data)
@@ -94,6 +97,6 @@ vim.api.nvim_create_autocmd("FileType", {
 -- TODO: conditional inclusion of all modules except ui and basic
 require "modules.gitmodule"
 require "modules.orgmodule"
--- require "modules.lspmodule"
+require "modules.lspmodule"
 -- require "modes.clangmode"
 -- require "modules.nonelsmodule"
