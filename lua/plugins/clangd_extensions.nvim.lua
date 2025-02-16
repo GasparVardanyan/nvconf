@@ -1,5 +1,5 @@
 return {
-	"https://github.com/p00f/clangd_extensions.nvim",
+	"https://git.sr.ht/~p00f/clangd_extensions.nvim",
 	lazy = true,
 	config = true,
 }

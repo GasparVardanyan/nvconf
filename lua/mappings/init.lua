@@ -21,6 +21,12 @@ map("n", "<leader>tc", "<cmd>tabclose<cr>")
 map("n", "<leader>o", "<cmd>only<cr>")
 map("n", "<leader>n", "<cmd>set nu! rnu!<cr>")
 
+vim.cmd [[
+	noremap <F1> :mksession! .vim.session
+	noremap <F2> :source .vim.session
+	noremap <F3> :! rm .vim.session
+]]
+
 -- map("n", "<C-i>", "<C-i>")
 
 vim.api.nvim_create_autocmd({"User"}, {
