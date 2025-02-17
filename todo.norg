@@ -1,7 +1,7 @@
 * Todo List
 
   - (=) nvim-cmp.lua - move mappings to *mappings* module
-  - (!) nvim-cmp.lua - move lsp setups to *nvim-lspconfig.lua*
+  - (x) nvim-cmp.lua - move lsp setups to *nvim-lspconfig.lua*
   - (=) dap integration
   - (=) cmake integration
   - (=) clang integration

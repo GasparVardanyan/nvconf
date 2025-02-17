@@ -2,7 +2,6 @@ return {
 	"hrsh7th/nvim-cmp",
 	lazy = true,
 	dependencies = {
-		'neovim/nvim-lspconfig',
 		'hrsh7th/cmp-nvim-lsp',
 		'hrsh7th/cmp-buffer',
 		'hrsh7th/cmp-path',
@@ -58,13 +57,5 @@ return {
 				}),
 			matching = { disallow_symbol_nonprefix_matching = false }
 		})
-
-		local capabilities = require('cmp_nvim_lsp').default_capabilities()
-		require('lspconfig')['clangd'].setup {
-			capabilities = capabilities
-		}
-		require('lspconfig')['lua_ls'].setup {
-			capabilities = capabilities
-		}
 	end,
 };
