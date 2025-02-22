@@ -28,6 +28,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "nvim-cmp" then
 		elseif data.data == "lspsaga.nvim" then
 		elseif data.data == "dropbar.nvim" then
+		elseif data.data == "blink.cmp" then
 
 		-- dap
 		elseif data.data == "nvim-dap" then
@@ -77,6 +78,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "image.nvim" then
 		elseif data.data == "tree-sitter-norg" then
 		elseif data.data == "telescope-fzf-native.nvim" then
+		elseif data.data == "friendly-snippets" then
 
 		else
 			print ("new plugin: " .. data.data)
