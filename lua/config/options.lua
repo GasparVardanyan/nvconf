@@ -24,25 +24,35 @@ vim.opt.showtabline = 0
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.api.nvim_create_autocmd ("BufReadPost", {
+	callback = function ()
+		local last_line = vim.fn.line ("'\"")
+		if last_line > 0 and last_line <= vim.fn.line ("$") then
+			vim.cmd [[normal! g`"zvzz]]
+		end
+	end,
+})
+
+vim.api.nvim_create_autocmd ("BufWritePre", {
+	callback = function ()
+		vim.cmd [[%s/\v(^\t*(    )*)@<=    /\t/ge]]
+		vim.cmd [[%s/\s\+$//e]]
+	end,
+})
+
+vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
+	pattern = {
+		  "*.xdefaults"
+		, "*.palette"
+		, vim.fn.expand ("~") .. "/.local/etc/theme*"
+		, vim.fn.expand ("~") .. "/.urxvt/config"
+	},
+	callback = function ()
+		vim.cmd [[set syntax=xdefaults]]
+	end,
+})
+
 vim.cmd [[
-	autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-	highlight ExtraWhitespace ctermbg=cyan guibg=cyan
-	autocmd InsertLeave * redraw!
-	match ExtraWhitespace /\s\+$\| \+\ze\t/
-	autocmd BufWritePre * :%s/\s\+$//e
-
-	autocmd BufWritePre * :%s/\v(^\t*(    )*)@<=    /\t/ge
-
-	augroup line_return
-		au!
-		au BufReadPost *
-			\ if line("'\"") > 0 && line("'\"") <= line("$") |
-			\     execute 'normal! g`"zvzz' |
-			\ endif
-	augroup END
-
-	au BufNewFile,BufRead *.xdefaults,*.palette,~/.local/etc/theme*,~/.urxvt/config set syntax=xdefaults
-
 	command -range=% Encrypt execute "'<,'>!gcrypt -S -e \"$(pass show pdata)\" | base64"
 	command -range=% Decrypt execute "'<,'>!base64 -d | gcrypt -S -d \"$(pass show pdata)\""
 
