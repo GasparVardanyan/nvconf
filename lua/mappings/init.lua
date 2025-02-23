@@ -40,6 +40,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			require "mappings.nvim-tree"
 		elseif data.data == "telescope.nvim" then
 			require "mappings.telescope"
+		elseif data.data == "grug-far.nvim" then
+			require "mappings.grug-far"
 		elseif data.data == "nvim-spectre" then
 			require "mappings.spectre"
 		elseif data.data == "lazygit.nvim" then

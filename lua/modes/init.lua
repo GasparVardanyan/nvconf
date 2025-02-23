@@ -7,6 +7,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "telescope-ui-select.nvim" then
 		elseif data.data == "nvim-tree.lua" then
 		elseif data.data == "nvim-spectre" then
+		elseif data.data == "grug-far.nvim" then
 		elseif data.data == "tagbar" then
 		elseif data.data == "undotree" then
 		elseif data.data == "nvim-treesitter" then

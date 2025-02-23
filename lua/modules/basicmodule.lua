@@ -6,7 +6,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 			plugins = {
 				  "telescope.nvim"
 				, "nvim-tree.lua"
-				, "nvim-spectre"
+				, "grug-far.nvim"
 				, "tagbar"
 				, "undotree"
 				, "nvim-treesitter"
