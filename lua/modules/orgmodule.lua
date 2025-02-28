@@ -6,7 +6,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 			plugins = {
 				"neorg",
 				"image.nvim",
-				"tree-sitter-norg"
+				"tree-sitter-norg",
+				"orgmode"
 			}
 		})
 	end

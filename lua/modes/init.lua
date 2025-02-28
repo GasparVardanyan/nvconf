@@ -45,6 +45,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 
 		-- org
 		elseif data.data == "neorg" then
+		elseif data.data == "orgmode" then
 
 		-- ui
 		elseif data.data == "NeoSolarized.nvim" then
@@ -80,6 +81,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "tree-sitter-norg" then
 		elseif data.data == "telescope-fzf-native.nvim" then
 		elseif data.data == "friendly-snippets" then
+		elseif data.data == "org-bullets.nvim" then
+		elseif data.data == "headlines.nvim" then
 
 		else
 			print ("new plugin: " .. data.data)
