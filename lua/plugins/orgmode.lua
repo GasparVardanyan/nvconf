@@ -1,32 +1,24 @@
 return {
-	{
+	'nvim-orgmode/orgmode',
+	dependencies = {
+		"nvim-orgmode/org-bullets.nvim",
 		"lukas-reineke/headlines.nvim",
-		dependencies = "nvim-treesitter/nvim-treesitter",
-		lazy = true,
-		config = true, -- or `opts = {}`
+		"nvim-treesitter/nvim-treesitter",
 	},
-	{
-		'nvim-orgmode/orgmode',
-		dependencies = {
-			"nvim-orgmode/org-bullets.nvim",
-			"lukas-reineke/headlines.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		lazy = true,
-		ft = { 'org' },
-		config = function()
-			-- Setup orgmode
-			require('orgmode').setup({
-				org_agenda_files = '~/orgfiles/**/*',
-				org_default_notes_file = '~/orgfiles/refile.org',
-			})
+	lazy = true,
+	ft = { 'org' },
+	config = function()
+		-- Setup orgmode
+		require('orgmode').setup({
+			org_agenda_files = '~/.orgfiles/**/*',
+			org_default_notes_file = '~/.orgfiles/refile.org',
+		})
 
-			-- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
-			-- add ~org~ to ignore_install
-			-- require('nvim-treesitter.configs').setup({
-			--   ensure_installed = 'all',
-			--   ignore_install = { 'org' },
-			-- })
-		end,
-	},
+		-- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
+		-- add ~org~ to ignore_install
+		-- require('nvim-treesitter.configs').setup({
+		--   ensure_installed = 'all',
+		--   ignore_install = { 'org' },
+		-- })
+	end,
 }
