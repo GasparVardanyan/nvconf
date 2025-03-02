@@ -11,10 +11,19 @@ return {
 	version = "*", -- Pin Neorg to the latest stable release
 
 	config = function()
+		vim.opt.conceallevel = 2
 		require("neorg").setup {
 			load = {
 				["core.defaults"] = {}, -- Loads default behaviour
-				["core.concealer"] = {}, -- Adds pretty icons to your documents
+				["core.concealer"] = {
+					config = {
+						icons = {
+							code_block = {
+								conceal = true
+							}
+						}
+					},
+				}, -- Adds pretty icons to your documents
 				["core.dirman"] = { -- Manages Neorg workspaces
 					config = {
 						workspaces = {
