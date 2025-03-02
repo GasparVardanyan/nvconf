@@ -14,7 +14,7 @@ return {
 		vim.opt.conceallevel = 2
 		require("neorg").setup {
 			load = {
-				["core.defaults"] = {}, -- Loads default behaviour
+				["core.defaults"] = {},
 				["core.concealer"] = {
 					config = {
 						icons = {
@@ -23,12 +23,19 @@ return {
 							}
 						}
 					},
-				}, -- Adds pretty icons to your documents
-				["core.dirman"] = { -- Manages Neorg workspaces
+				},
+				["core.dirman"] = {
 					config = {
 						workspaces = {
 							notes = "~/.notes",
 						},
+					},
+				},
+				["core.latex.renderer"] = {},
+				["core.export"] = {},
+				["core.completion"] = {
+					config = {
+						engine = "nvim-cmp",
 					},
 				},
 			},
