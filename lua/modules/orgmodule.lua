@@ -8,5 +8,12 @@ vim.api.nvim_create_autocmd({"User"}, {
 				"orgmode"
 			}
 		})
+
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "org", "norg" },
+			callback = function(args)
+				vim.cmd [[ set nonu nornu ]]
+			end
+		})
 	end
 })
