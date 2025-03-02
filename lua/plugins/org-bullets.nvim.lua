@@ -1,5 +1,5 @@
 return {
-	"lukas-reineke/headlines.nvim",
+	"nvim-orgmode/org-bullets.nvim",
 	lazy = true,
 	config = true,
 }
