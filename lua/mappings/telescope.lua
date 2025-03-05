@@ -23,6 +23,10 @@ map('n', '<leader>ft', '<cmd>Telescope telescope-tabs list_tabs<CR>', {
 	desc = "Search tabs"
 })
 
-map("n", "<leader>fu", function ()
+map("n", "<leader>fuu", function ()
 	require("telescope").extensions.undo.undo()
+end)
+
+map("n", "<leader>fus", function ()
+	require("telescope").extensions.undo.undo({ saved_only = true })
 end)

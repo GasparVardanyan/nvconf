@@ -12,7 +12,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		vim.api.nvim_create_autocmd("FileType", {
 			pattern = { "org", "norg" },
 			callback = function(args)
-				vim.cmd [[ set nonu nornu ]]
+				-- vim.cmd [[ set nonu nornu ]]
 				vim.cmd [[ set conceallevel=2 ]]
 			end
 		})
