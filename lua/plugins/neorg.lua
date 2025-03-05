@@ -4,14 +4,14 @@ return {
 	dependencies = {
 		"image.nvim",
 		"tree-sitter-norg",
-		"nvim-orgmode/org-bullets.nvim",
+		-- "nvim-orgmode/org-bullets.nvim",
 		"lukas-reineke/headlines.nvim",
 		"nvim-lua/plenary.nvim",
+		"dhruvasagar/vim-table-mode",
 	},
 	version = "*", -- Pin Neorg to the latest stable release
 
 	config = function()
-		vim.opt.conceallevel = 2
 		require("neorg").setup {
 			load = {
 				["core.defaults"] = {},

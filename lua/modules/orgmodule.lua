@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 			pattern = { "org", "norg" },
 			callback = function(args)
 				vim.cmd [[ set nonu nornu ]]
+				vim.cmd [[ set conceallevel=2 ]]
 			end
 		})
 	end

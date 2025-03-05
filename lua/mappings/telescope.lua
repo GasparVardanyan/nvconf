@@ -22,3 +22,7 @@ map("n", "<leader>fa", "<cmd>Telescope find_files follow=true no_ignore=true hid
 map('n', '<leader>ft', '<cmd>Telescope telescope-tabs list_tabs<CR>', {
 	desc = "Search tabs"
 })
+
+map("n", "<leader>fu", function ()
+	require("telescope").extensions.undo.undo()
+end)
