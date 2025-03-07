@@ -9,8 +9,9 @@ unix {
 	run.commands = ./$$DESTDIR/$$TARGET
 	run.depends = $$DESTDIR/$$TARGET
 
-	Qmake.target = Qmake
-	Qmake.commands = compiledb -n make
+	nmake.target = nmake
+	nmake.commands = "compiledb -n make && sed -i 's/\"-mno-direct-extern-access\",//' compile_commands.json"
+	nmake.depends = qmake
 
-	QMAKE_EXTRA_TARGETS += run Qmake
+	QMAKE_EXTRA_TARGETS += run nmake
 }
