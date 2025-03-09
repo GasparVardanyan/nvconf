@@ -21,7 +21,7 @@ vim.opt.smartcase = false
 
 vim.opt.showtabline = 0
 
-vim.opt.conceallevel = 2
+-- vim.opt.conceallevel = 2
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -51,6 +51,16 @@ vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 	},
 	callback = function ()
 		vim.cmd [[set syntax=xdefaults]]
+	end,
+})
+
+vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
+	pattern = {
+		  "*.norg"
+		, "*.org"
+	},
+	callback = function ()
+		vim.cmd [[setlocal nonu nornu conceallevel=2]]
 	end,
 })
 

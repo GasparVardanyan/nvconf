@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "tagbar" then
 		elseif data.data == "undotree" then
 		elseif data.data == "nvim-treesitter" then
+		elseif data.data == "todo-comments.nvim" then
 
 		-- git
 		elseif data.data == "gitsigns.nvim" then

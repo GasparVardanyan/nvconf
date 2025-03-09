@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"image.nvim",
 		"tree-sitter-norg",
-		-- "nvim-orgmode/org-bullets.nvim",
+		"nvim-orgmode/org-bullets.nvim",
 		"lukas-reineke/headlines.nvim",
 		"nvim-lua/plenary.nvim",
 		"dhruvasagar/vim-table-mode",
@@ -14,9 +14,14 @@ return {
 	config = function()
 		require("neorg").setup {
 			load = {
-				["core.defaults"] = {},
+				["core.completion"] = {
+					config = {
+						engine = "nvim-cmp",
+					},
+				},
 				["core.concealer"] = {
 					config = {
+						icon_preset = "basic",
 						icons = {
 							code_block = {
 								conceal = true
@@ -24,20 +29,20 @@ return {
 						}
 					},
 				},
+				["core.defaults"] = {},
 				["core.dirman"] = {
 					config = {
 						workspaces = {
 							notes = "~/.notes",
+							todos = "~/.todos",
 						},
+						default_workspace = "notes",
 					},
 				},
-				["core.latex.renderer"] = {},
 				["core.export"] = {},
-				["core.completion"] = {
-					config = {
-						engine = "nvim-cmp",
-					},
-				},
+				["core.latex.renderer"] = {},
+				["core.summary"] = {},
+				["core.text-objects"] = {},
 			},
 		}
 	end

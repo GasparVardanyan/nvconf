@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 --			}
 --		})
 		vim.cmd [[
+			set background=light
 			colorscheme NeoSolarized
 		]]
 	end

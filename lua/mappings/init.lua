@@ -21,6 +21,8 @@ map("n", "<leader>tc", "<cmd>tabclose<cr>")
 map("n", "<leader>o", "<cmd>only<cr>")
 map("n", "<leader>n", "<cmd>set nu! rnu!<cr>")
 
+map("n", "<leader>N", "<cmd>Neorg<cr>")
+
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "terminal escape terminal mode" })
 
