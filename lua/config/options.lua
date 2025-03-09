@@ -61,6 +61,7 @@ vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 	},
 	callback = function ()
 		vim.cmd [[setlocal nonu nornu conceallevel=2]]
+		vim.cmd [[IlluminateToggleBuf]]
 	end,
 })
 

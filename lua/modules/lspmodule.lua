@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				-- , "lspsaga.nvim"
 				, "dropbar.nvim"
 				, "trouble.nvim"
-				-- , "vim-illuminate"
+				, "vim-illuminate"
 				, "outline.nvim"
 				, "nvim-treesitter-textobjects"
 				, "nvim-cmp"
