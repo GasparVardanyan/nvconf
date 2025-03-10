@@ -4,7 +4,7 @@ return {
 	dependencies = {
 		"image.nvim",
 		"tree-sitter-norg",
-		"nvim-orgmode/org-bullets.nvim",
+		-- "nvim-orgmode/org-bullets.nvim",
 		"lukas-reineke/headlines.nvim",
 		"nvim-lua/plenary.nvim",
 		"dhruvasagar/vim-table-mode",

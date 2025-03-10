@@ -54,17 +54,6 @@ vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 	end,
 })
 
-vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
-	pattern = {
-		  "*.norg"
-		, "*.org"
-	},
-	callback = function ()
-		vim.cmd [[setlocal nonu nornu conceallevel=2]]
-		vim.cmd [[IlluminateToggleBuf]]
-	end,
-})
-
 vim.cmd [[
 	command -range=% Encrypt execute "'<,'>!gcrypt -S -e \"$(pass show pdata)\" | base64"
 	command -range=% Decrypt execute "'<,'>!base64 -d | gcrypt -S -d \"$(pass show pdata)\""

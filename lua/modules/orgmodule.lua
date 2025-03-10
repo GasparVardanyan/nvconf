@@ -5,16 +5,29 @@ vim.api.nvim_create_autocmd({"User"}, {
 		require ("lazy").load ({
 			plugins = {
 				"neorg",
-				"orgmode"
+				-- "orgmode"
 			}
 		})
 
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "org", "norg" },
-			callback = function(args)
-				-- vim.cmd [[ set nonu nornu ]]
-				-- vim.cmd [[ set conceallevel=2 ]]
-			end
+		vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
+			pattern = {
+				"*.norg"
+				, "*.org"
+			},
+			callback = function ()
+				vim.cmd [[setlocal nonu nornu conceallevel=3 foldlevel=3 concealcursor=nv]]
+				vim.cmd [[IlluminateToggleBuf]]
+			end,
 		})
+
+--		vim.api.nvim_create_autocmd ({"BufWritePre"}, {
+--			pattern = {
+--				"*.norg"
+--				, "*.org"
+--			},
+--			callback = function ()
+--				vim.cmd [[norm gg=G]]
+--			end,
+--		})
 	end
 })
