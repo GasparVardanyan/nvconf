@@ -18,7 +18,7 @@ map("n", "<leader>V", "`[v`]")
 map("n", "<leader>bd", "<cmd>bdelete<cr>")
 map("n", "<leader>tn", "<cmd>tabnew<cr>")
 map("n", "<leader>tc", "<cmd>tabclose<cr>")
-map("n", "<leader>o", "<cmd>only<cr>")
+map("n", "<leader>O", "<cmd>only<cr>")
 map("n", "<leader>n", "<cmd>set nu! rnu!<cr>")
 
 map("n", "<leader>N", "<cmd>Neorg<cr>")
@@ -38,33 +38,33 @@ vim.api.nvim_create_autocmd({"User"}, {
 	pattern = "LazyLoad",
 	callback = function(data)
 		if data.data == "gitsigns.nvim" then
-			require "mappings.gitsigns"
+			require "oldmappings.gitsigns"
 		elseif data.data == "diffview.nvim" then
-			require "mappings.diffview"
+			require "oldmappings.diffview"
 		elseif data.data == "nvim-tree.lua" then
-			require "mappings.nvim-tree"
+			require "oldmappings.nvim-tree"
 		elseif data.data == "telescope.nvim" then
-			require "mappings.telescope"
+			require "oldmappings.telescope"
 		elseif data.data == "grug-far.nvim" then
-			require "mappings.grug-far"
+			require "oldmappings.grug-far"
 		elseif data.data == "nvim-spectre" then
-			require "mappings.spectre"
+			require "oldmappings.spectre"
 		elseif data.data == "lazygit.nvim" then
-			require "mappings.lazygit"
+			require "oldmappings.lazygit"
 		elseif data.data == "undotree" then
-			require "mappings.undotree"
+			require "oldmappings.undotree"
 		elseif data.data == "tagbar" then
-			require "mappings.tagbar"
+			require "oldmappings.tagbar"
 		elseif data.data == "nvim-lspconfig" then
-			require "mappings.lspconfig"
+			require "oldmappings.lspconfig"
 		elseif data.data == "outline.nvim" then
-			require "mappings.outline"
+			require "oldmappings.outline"
 		elseif data.data == "nvim-cmp" then
-			require "mappings.nvim-cmp"
+			require "oldmappings.nvim-cmp"
 		elseif data.data == "lspsaga.nvim" then
-			require "mappings.lspsaga"
+			require "oldmappings.lspsaga"
 		elseif data.data == "dropbar.nvim" then
-			require "mappings.dropbar"
+			require "oldmappings.dropbar"
 		end
 	end
 })

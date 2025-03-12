@@ -15,7 +15,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 				, "*.org"
 			},
 			callback = function ()
-				vim.cmd [[setlocal nonu nornu conceallevel=3 foldlevel=3 concealcursor=nv]]
+				vim.cmd [[setlocal nonu nornu conceallevel=3 concealcursor=nv]]
 				vim.cmd [[IlluminateToggleBuf]]
 			end,
 		})

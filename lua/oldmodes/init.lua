@@ -94,8 +94,8 @@ vim.api.nvim_create_autocmd({"User"}, {
 	end
 })
 
-require "modules.uimodule"
-require "modules.basicmodule"
+require "oldmodules.uimodule"
+require "oldmodules.basicmodule"
 
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "hlsplaylist",
@@ -105,8 +105,8 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- TODO: conditional inclusion of all modules except ui and basic
-require "modules.gitmodule"
-require "modules.orgmodule"
-require "modules.lspmodule"
+require "oldmodules.gitmodule"
+require "oldmodules.orgmodule"
+require "oldmodules.lspmodule"
 -- require "modes.clangmode"
 -- require "modules.nonelsmodule"

@@ -26,6 +26,18 @@ vim.opt.showtabline = 0
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.opt.cursorline = true
+vim.api.nvim_create_autocmd ("InsertLeave", {
+	callback = function ()
+		vim.cmd [[set cursorline]]
+	end,
+})
+vim.api.nvim_create_autocmd ("InsertEnter", {
+	callback = function ()
+		vim.cmd [[set nocursorline]]
+	end,
+})
+
 vim.api.nvim_create_autocmd ("BufReadPost", {
 	callback = function ()
 		local last_line = vim.fn.line ("'\"")
