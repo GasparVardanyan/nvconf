@@ -50,6 +50,7 @@ end
 function Module:check_ready ()
 	for _, spec in ipairs (self.plugins) do
 		if not self.loaded_plugins [spec [1]] then
+		end
 	end
 end
 

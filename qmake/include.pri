@@ -1,3 +1,5 @@
+CONFIG += DEBUG
+
 unix {
 	DESTDIR = build
 	OBJECTS_DIR = build/.obj

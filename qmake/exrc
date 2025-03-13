@@ -1,0 +1,21 @@
+nnoremap <leader>co :CompilerOpen<CR>
+nnoremap <leader>ct :CompilerToggleResults<CR>
+
+set foldmethod=manual
+set mouse=a
+
+" TODO: use treesitter
+function FoldAllFunctions()
+	norm zE
+	%g/\v^(\) )?\{/ norm $va{:fold
+	norm 
+endfunction
+command FoldAllFunctions call FoldAllFunctions()
+nnoremap <F4> FoldAllFunctions
+
+au BufReadPost *.cpp FoldAllFunctions
+nnoremap <leader>Q :FoldAllFunctions<CR>
+
+au BufWritePre *.h,*.cpp %s/\v^\s*#\s*include\s*"(opencv2\/[^"]+)"\s*$/# include <\1>/e | %s/\v^\s*#include/# include/e
+
+" vim:ft=vim

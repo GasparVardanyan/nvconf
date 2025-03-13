@@ -7,6 +7,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			return { buffer = bufnr, desc = "LSP " .. desc }
 		end
 
+		-- TODO: CLEAN UP THIS MESS
+		-- TODO: Use Trouble's Diagnostics window too
+
 		map("n", "<leader>r", vim.lsp.buf.rename, opts "LSP Rename")
 		map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Show signature help")
 		map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
