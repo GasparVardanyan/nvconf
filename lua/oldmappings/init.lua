@@ -19,7 +19,7 @@ map("n", "<leader>bd", "<cmd>bdelete<cr>")
 map("n", "<leader>tn", "<cmd>tabnew<cr>")
 map("n", "<leader>tc", "<cmd>tabclose<cr>")
 map("n", "<leader>O", "<cmd>only<cr>")
-map("n", "<leader>n", "<cmd>set nu! rnu!<cr>")
+map("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>")
 
 map("n", "<leader>N", "<cmd>Neorg<cr>")
 

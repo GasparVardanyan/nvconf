@@ -7,7 +7,6 @@ return {
 		-- "nvim-orgmode/org-bullets.nvim",
 		"lukas-reineke/headlines.nvim",
 		"nvim-lua/plenary.nvim",
-		"dhruvasagar/vim-table-mode",
 	},
 	version = "*", -- Pin Neorg to the latest stable release
 

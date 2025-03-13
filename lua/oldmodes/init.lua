@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd({"User"}, {
 		elseif data.data == "gitsigns.nvim" then
 		elseif data.data == "diffview.nvim" then
 		elseif data.data == "lazygit.nvim" then
+		elseif data.data == "vim-fugitive" then
 
 		-- lsp
 		elseif data.data == "mason.nvim" then
