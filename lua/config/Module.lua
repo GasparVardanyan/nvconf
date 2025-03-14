@@ -3,25 +3,25 @@ Module.__index = Module
 
 function Module:new (name, plugins)
 	-- TODO: Make plugin.priority as parameter and set to all plugins
-	local self = setmetatable ({}, Module)
-	self.name = name
-	self.plugins = plugins or {}
-	self.loaded_plugins = {}
-	self.ready_autocmd_pattern = "Module" .. name .. "Ready"
+	local obj = setmetatable ({}, Module)
+	obj.name = name
+	obj.plugins = plugins or {}
+	obj.loaded_plugins = {}
+	obj.ready_autocmd_pattern = "Module" .. name .. "Ready"
 
 	for _, repo in ipairs(plugins) do
 		local plugin_name = repo [1]:match (".*/(.*)")
-		self.loaded_plugins [plugin_name] = false
+		obj.loaded_plugins [plugin_name] = false
 	end
 
-	self.lazy_load_handler = vim.api.nvim_create_autocmd ({"User"}, {
+	obj.lazy_load_handler = vim.api.nvim_create_autocmd ({"User"}, {
 		pattern = "LazyLoad",
 		callback = function (data)
-			self:mark_plugin_loaded (data.data)
+			obj:mark_plugin_loaded (data.data)
 		end,
 	})
 
-	return self
+	return obj
 end
 
 function Module:mark_plugin_loaded (plugin)
