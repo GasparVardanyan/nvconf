@@ -3,7 +3,7 @@ Module.__index = Module
 
 function Module:new (name, plugins)
 	local obj = setmetatable ({}, self)
-	-- obj.name = name
+	obj.name = name
 	obj.plugins = plugins or {}
 	obj.loaded_plugins = {}
 	obj.ready_autocmd_pattern = "Module" .. name .. "Ready"

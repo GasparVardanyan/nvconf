@@ -3,7 +3,8 @@ if true then
 	require ("oldconfig")
 else
 	local modules = {
-		require ("config.UIModule")
+		require ("config.UIModule"),
+		require ("config.BasicModule"),
 	}
 	local all_plugins = {}
 
