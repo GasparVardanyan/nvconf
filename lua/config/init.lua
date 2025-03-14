@@ -7,6 +7,7 @@ else
 		require ("config.GitModule"),
 		require ("config.OrgModule"),
 	}
+
 	local all_plugins = {}
 
 	for _, module in ipairs (modules) do

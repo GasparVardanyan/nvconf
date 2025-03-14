@@ -10,8 +10,8 @@ local BasicModule = Module:new ("Basic", {
 			"debugloop/telescope-undo.nvim",
 		},
 		config = function()
-			require('telescope-tabs').setup ()
-			require('telescope').setup ({
+			require("telescope-tabs").setup ()
+			require("telescope").setup ({
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown {
@@ -29,9 +29,9 @@ local BasicModule = Module:new ("Basic", {
 	},
 
 	{
-		'MagicDuck/grug-far.nvim',
+		"MagicDuck/grug-far.nvim",
 		config = function()
-			require('grug-far').setup({
+			require("grug-far").setup({
 				engine = "ripgrep"
 			});
 		end
