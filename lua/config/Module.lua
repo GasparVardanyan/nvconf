@@ -2,6 +2,7 @@ local Module = {}
 Module.__index = Module
 
 function Module:new (name, plugins)
+	-- TODO: Make plugin.priority as parameter and set to all plugins
 	local obj = setmetatable ({}, self)
 	obj.name = name
 	obj.plugins = plugins or {}
@@ -27,6 +28,7 @@ function Module:mark_plugin_loaded (plugin)
 	for p, _ in pairs (self.loaded_plugins) do
 		if p == plugin then
 			self.loaded_plugins [plugin] = true
+			print (self.ready_autocmd_pattern .. " - " .. plugin)
 			self:check_ready ()
 			break
 		end

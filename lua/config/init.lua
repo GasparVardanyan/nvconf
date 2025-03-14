@@ -5,11 +5,20 @@ else
 	local modules = {
 		require ("config.UIModule"),
 		require ("config.BasicModule"),
+		require ("config.GitModule"),
 	}
 	local all_plugins = {}
 
 	for _, module in ipairs (modules) do
 		vim.list_extend(all_plugins, module.plugins)
+
+		print ("Listening For: " .. module.ready_autocmd_pattern)
+		vim.api.nvim_create_autocmd ("User", {
+			pattern = module.ready_autocmd_pattern,
+			callback = function ()
+				print (module.ready_autocmd_pattern .. " - Module Loaded")
+			end,
+		})
 	end
 
 	vim.api.nvim_create_autocmd ("User", {
