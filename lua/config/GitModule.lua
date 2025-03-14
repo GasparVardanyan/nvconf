@@ -4,7 +4,7 @@ local GitModule = Module:new ("Git", {
 	{
 		"lewis6991/gitsigns.nvim",
 		config = function ()
-			require('gitsigns').setup {
+			require("gitsigns").setup {
 				signcolumn = false,  -- Toggle with `:Gitsigns toggle_signs`
 				numhl      = true, -- Toggle with `:Gitsigns toggle_numhl`
 				linehl     = false, -- Toggle with `:Gitsigns toggle_linehl`

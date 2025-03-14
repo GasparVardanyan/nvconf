@@ -1,6 +1,6 @@
-CONFIG += DEBUG
-
 unix {
+	CONFIG += DEBUG
+
 	DESTDIR = build
 	OBJECTS_DIR = build/.obj
 	MOC_DIR = build/.moc
@@ -17,3 +17,6 @@ unix {
 
 	QMAKE_EXTRA_TARGETS += run nmake
 }
+
+# ft of qmake .pro is idlang idk why..
+# vim:ft=idlang
