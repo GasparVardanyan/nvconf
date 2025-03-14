@@ -1,7 +1,7 @@
 local Module = require ("config.Module")
 
 local BasicModule = Module:new ("Basic", {
-	{ -- VERIFIED
+	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -28,7 +28,7 @@ local BasicModule = Module:new ("Basic", {
 		end,
 	},
 
-	{ -- VERIFIED
+	{
 		'MagicDuck/grug-far.nvim',
 		config = function()
 			require('grug-far').setup({
@@ -37,11 +37,11 @@ local BasicModule = Module:new ("Basic", {
 		end
 	},
 
-	{ -- VERIFIED
+	{
 		"majutsushi/tagbar",
 	},
 
-	{ -- VERIFIED
+	{
 		"mbbill/undotree",
 
 		config = function()

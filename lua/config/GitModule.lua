@@ -1,7 +1,7 @@
 local Module = require ("config.Module")
 
 local GitModule = Module:new ("Git", {
-	{ -- VERIFIED
+	{
 		"lewis6991/gitsigns.nvim",
 		config = function ()
 			require('gitsigns').setup {
@@ -13,7 +13,7 @@ local GitModule = Module:new ("Git", {
 		end,
 	},
 
-	{ -- VERIFIED
+	{
 		"sindrets/diffview.nvim",
 		config = true,
 	},
@@ -34,7 +34,7 @@ local GitModule = Module:new ("Git", {
 		},
 	},
 
-	{ -- VERIFIED
+	{
 		"tpope/vim-fugitive",
 	},
 })

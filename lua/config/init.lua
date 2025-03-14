@@ -6,6 +6,7 @@ else
 		require ("config.UIModule"),
 		require ("config.BasicModule"),
 		require ("config.GitModule"),
+		require ("config.OrgModule"),
 	}
 	local all_plugins = {}
 

@@ -1,7 +1,7 @@
 local Module = require ("config.Module")
 
 local UIModule = Module:new ("UI", {
-	{ -- VERIFIED
+	{
 		"Tsuzat/NeoSolarized.nvim",
 		lazy = false,
 		priority = 1000,
@@ -12,7 +12,7 @@ local UIModule = Module:new ("UI", {
 		config = true,
 	},
 
-	{ -- VERIFIED
+	{
 		"shaunsingh/solarized.nvim",
 		lazy = false,
 		priority = 1000,
@@ -21,7 +21,7 @@ local UIModule = Module:new ("UI", {
 		end
 	},
 
-	{ -- VERIFIED
+	{
 		"craftzdog/solarized-osaka.nvim",
 		lazy = false,
 		priority = 1000,
