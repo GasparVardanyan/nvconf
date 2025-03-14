@@ -101,7 +101,7 @@ require "oldmodules.basicmodule"
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "hlsplaylist",
 	callback = function(args)
-		require "modes.hlsmode"
+		require "oldmodes.hlsmode"
 	end
 })
 
