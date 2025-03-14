@@ -1,5 +1,4 @@
 if true then
-	print ("OLD")
 	require ("oldconfig")
 else
 	local modules = {
@@ -13,7 +12,6 @@ else
 	for _, module in ipairs (modules) do
 		vim.list_extend(all_plugins, module.plugins)
 
-		print ("Listening For: " .. module.ready_autocmd_pattern)
 		vim.api.nvim_create_autocmd ("User", {
 			pattern = module.ready_autocmd_pattern,
 			callback = function ()

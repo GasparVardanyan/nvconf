@@ -18,9 +18,9 @@ local GitModule = Module:new ("Git", {
 		config = true,
 	},
 
-	{ -- VERIFIED TODO: Test
+	{
 		"kdheepak/lazygit.nvim",
-		lazy = true,
+		lazy = false,
 		cmd = {
 			"LazyGit",
 			"LazyGitConfig",
