@@ -1,23 +1,26 @@
 local Module = {}
 Module.__index = Module
 
-function Module:new (name, plugins)
+function Module:new (opts)
 	-- TODO: Make plugin.priority as parameter and set to all plugins
 	-- TODO: Take single argument: a table with name, plugins, autocmds, etc..
 	-- TODO: Make module dependencies so one module can wait other to be loaded
 
 	local obj = setmetatable ({}, Module)
-	obj.name = name
-	obj.plugins = plugins or {}
+	obj.name = opts.name
+	obj.plugins = opts.plugins or {}
 	obj.loaded_plugins = {}
-	obj.ready_autocmd_pattern = "Module" .. name .. "Ready"
+	obj.ready_autocmd_pattern = "Module" .. opts.name .. "Ready"
+	obj.priority = opts.priority or 50 -- lazy's default value
 
-	for _, repo in ipairs(plugins) do
-		local plugin_name = repo [1]:match (".*/(.*)")
+	for _, spec in ipairs(obj.plugins) do
+		spec.priority = spec.priority or obj.priority
+		local plugin_name = spec [1]:match (".*/(.*)")
+		print ("Priority: " .. spec.priority .. ", name: " .. plugin_name .. "\n")
 		obj.loaded_plugins [plugin_name] = false
 	end
 
-	obj.lazy_load_handler = vim.api.nvim_create_autocmd ({"User"}, {
+	obj.lazy_load_handler = vim.api.nvim_create_autocmd ("User", {
 		pattern = "LazyLoad",
 		callback = function (data)
 			obj:mark_plugin_loaded (data.data)
