@@ -11,9 +11,11 @@
 
 * Todo List (v2)
   ~ ( ) *Module* core
-  ~~ ( ) Make plugin.priority as parameter and set to all plugins
-  ~~ ( ) Take single argument: a table with name, plugins, autocmds, etc..
+  ~~ (x) Make plugin.priority as parameter and set to all plugins
+  ~~ (x) Take single argument: a table with name, plugins, autocmds, etc..
   ~~ ( ) Make module dependencies so one module can wait other to be loaded
+  ~~ ( ) Module specific autocommands
+  ~~ ( ) Separate plugin specs from modules
   ~ ( ) *Modules*
   ~~ ( ) LSPModule
   ~~ ( ) DAPModule

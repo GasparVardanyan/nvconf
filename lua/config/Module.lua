@@ -2,10 +2,6 @@ local Module = {}
 Module.__index = Module
 
 function Module:new (opts)
-	-- TODO: Make plugin.priority as parameter and set to all plugins
-	-- TODO: Take single argument: a table with name, plugins, autocmds, etc..
-	-- TODO: Make module dependencies so one module can wait other to be loaded
-
 	local obj = setmetatable ({}, Module)
 	obj.name = opts.name
 	obj.plugins = opts.plugins or {}
