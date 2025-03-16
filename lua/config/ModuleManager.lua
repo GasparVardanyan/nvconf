@@ -13,7 +13,7 @@ function ModuleManager:new ()
 
 	local all_plugins = {}
 
-	for module, _ in ipairs (obj.modules) do
+	for _, module in pairs (obj.modules) do
 		vim.list_extend(all_plugins, module.plugins)
 
 		vim.api.nvim_create_autocmd ("User", {

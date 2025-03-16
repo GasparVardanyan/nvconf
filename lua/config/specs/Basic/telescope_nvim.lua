@@ -1,0 +1,26 @@
+return {
+	"nvim-telescope/telescope.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"LukasPietzschmann/telescope-tabs",
+		"nvim-telescope/telescope-ui-select.nvim",
+		"debugloop/telescope-undo.nvim",
+	},
+	config = function()
+		require("telescope-tabs").setup ()
+		require("telescope").setup ({
+			extensions = {
+				["ui-select"] = {
+					require("telescope.themes").get_dropdown {
+						-- even more opts
+					}
+				},
+				["tabs"] = {},
+				["undo"] = {},
+			}
+		})
+		require("telescope").load_extension("telescope-tabs")
+		require("telescope").load_extension("ui-select")
+		require("telescope").load_extension("undo")
+	end,
+}
