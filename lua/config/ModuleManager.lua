@@ -9,6 +9,7 @@ function ModuleManager:new ()
 		basic_module = require ("config.BasicModule"),
 		git_module = require ("config.GitModule"),
 		org_module = require ("config.OrgModule"),
+		compiler_module = require ("config.CompilerModule"),
 		temporary_module = require ("config.TemporaryModule"),
 	}
 
