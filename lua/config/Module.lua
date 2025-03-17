@@ -49,7 +49,8 @@ function Module:check_ready ()
 		vim.api.nvim_del_autocmd (self.lazy_load_handler)
 		self.lazy_load_handler = nil
 		vim.api.nvim_exec_autocmds ("User", {
-			pattern = self.ready_autocmd_pattern
+			pattern = self.ready_autocmd_pattern,
+			data = self.name
 		})
 	end
 end
