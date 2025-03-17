@@ -26,3 +26,6 @@
   ~ ( ) MappingManager
   ~ ( ) Options
   ~ ( ) Autocmds
+
+** ChatGPT
+   - ( ) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.

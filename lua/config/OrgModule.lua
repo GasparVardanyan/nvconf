@@ -23,7 +23,7 @@ local Module = require ("config.Module")
 local OrgModule = Module:new ({
 	name = "Org",
 	plugins = {
-		require ("config.specs.Org.image_nvim"),
+		require ("config.specs.misc.image_nvim"),
 		require ("config.specs.Org.neorg"),
 		require ("config.specs.Org.orgmode"),
 	}
