@@ -49,7 +49,6 @@ function Module:check_ready ()
 	for i = #self.__post_plugin_load_actions, 1, -1 do
 		local loaded = true
 		for _, p in ipairs (self.__post_plugin_load_actions [i].plugins) do
-			print ("PPPP: " .. p .. "\n")
 			if not self.__loaded_plugins [p] then
 				loaded = false
 				break
