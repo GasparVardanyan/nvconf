@@ -1,4 +1,5 @@
 local Module = require ("config.Module")
+local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 
 local UIModule = Module:new ({
 	name = "UI",
@@ -7,7 +8,18 @@ local UIModule = Module:new ({
 		require ("config.specs.UI.NeoSolarized_nvim"),
 		require ("config.specs.UI.solarized_nvim"),
 		require ("config.specs.UI.solarized-osaka_nvim"),
-	}
+	},
+	post_plugin_load_actions = {
+		PostPluginLoadAction:new ({
+			plugins = "NeoSolarized.nvim",
+			action = function ()
+				vim.cmd [[
+					set background=dark
+					color NeoSolarized
+				]]
+			end
+		})
+	},
 })
 
 return UIModule

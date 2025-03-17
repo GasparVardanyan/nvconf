@@ -5,12 +5,12 @@ function ModuleManager:new ()
 	local obj = setmetatable ({}, ModuleManager)
 
 	obj.modules = {
-		ui_module = require ("config.UIModule"),
-		basic_module = require ("config.BasicModule"),
-		git_module = require ("config.GitModule"),
-		org_module = require ("config.OrgModule"),
-		compiler_module = require ("config.CompilerModule"),
-		temporary_module = require ("config.TemporaryModule"),
+		ui_module = require ("config.modules.UIModule"),
+		basic_module = require ("config.modules.BasicModule"),
+		git_module = require ("config.modules.GitModule"),
+		org_module = require ("config.modules.OrgModule"),
+		compiler_module = require ("config.modules.CompilerModule"),
+		temporary_module = require ("config.modules.TemporaryModule"),
 	}
 
 	local all_plugins = {}
@@ -27,15 +27,15 @@ function ModuleManager:new ()
 		end,
 	})
 
-	vim.api.nvim_create_autocmd ("User", {
-		pattern = "ModuleReady",
-		callback = function (data)
-			if obj.modules.ui_module.name == data.data then
-				vim.cmd [[ set background=dark ]]
-				vim.cmd [[ color NeoSolarized ]]
-			end
-		end,
-	})
+--	vim.api.nvim_create_autocmd ("User", {
+--		pattern = "ModuleReady",
+--		callback = function (data)
+--			if obj.modules.ui_module.name == data.data then
+--				vim.cmd [[ set background=dark ]]
+--				vim.cmd [[ color NeoSolarized ]]
+--			end
+--		end,
+--	})
 
 	require("lazy").setup(all_plugins)
 

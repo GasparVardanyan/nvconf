@@ -5,14 +5,16 @@ function Module:new (opts)
 	local obj = setmetatable ({}, Module)
 	obj.name = opts.name
 	obj.plugins = opts.plugins or {}
-	obj.loaded_plugins = {}
-	obj.priority = opts.priority or 50 -- lazy's default value
+	obj.priority = opts.priority or 50 -- lazy.nvim's default value
 
-	for _, spec in ipairs(obj.plugins) do
+	obj.__post_plugin_load_actions = opts.post_plugin_load_actions or {}
+	obj.__loaded_plugins = {}
+
+	for _, spec in ipairs (obj.plugins) do
 		spec.priority = spec.priority or obj.priority
 		local plugin_name = spec [1]:match (".*/(.*)")
 		print ("Priority: " .. spec.priority .. ", name: " .. plugin_name .. "\n")
-		obj.loaded_plugins [plugin_name] = false
+		obj.__loaded_plugins [plugin_name] = false
 	end
 
 	obj.lazy_load_handler = vim.api.nvim_create_autocmd ("User", {
@@ -26,9 +28,9 @@ function Module:new (opts)
 end
 
 function Module:mark_plugin_loaded (plugin)
-	for p, _ in pairs (self.loaded_plugins) do
+	for p, _ in pairs (self.__loaded_plugins) do
 		if p == plugin then
-			self.loaded_plugins [plugin] = true
+			self.__loaded_plugins [plugin] = true
 			self:check_ready ()
 			break
 		end
@@ -37,14 +39,30 @@ end
 
 function Module:check_ready ()
 	local ready = true
-	for p, _ in pairs (self.loaded_plugins) do
-		if not self.loaded_plugins [p] then
+	for p, _ in pairs (self.__loaded_plugins) do
+		if not self.__loaded_plugins [p] then
 			ready = false
 			break
 		end
 	end
 
+	for i = #self.__post_plugin_load_actions, 1, -1 do
+		local loaded = true
+		for _, p in ipairs (self.__post_plugin_load_actions [i].plugins) do
+			print ("PPPP: " .. p .. "\n")
+			if not self.__loaded_plugins [p] then
+				loaded = false
+				break
+			end
+		end
+		if true == loaded then
+			self.__post_plugin_load_actions [i].action ()
+			table.remove (self.__post_plugin_load_actions, i)
+		end
+	end
+
 	if true == ready then
+		self.__loaded_plugins = nil
 		vim.api.nvim_del_autocmd (self.lazy_load_handler)
 		self.lazy_load_handler = nil
 		vim.api.nvim_exec_autocmds ("User", {
