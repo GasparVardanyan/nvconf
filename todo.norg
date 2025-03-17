@@ -17,12 +17,12 @@
   ~~ ( ) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
   ~ ( ) *Modules*
+  ~~ ( ) Separate base logic
   ~~ ( ) LSPModule
   ~~ ( ) DAPModule
   ~~ ( ) ClangModule
-  ~~ ( ) CMakeModule
   ~~ ( ) NoneLSModule
-  ~ ( ) ModuleManager
+  ~ (x) ModuleManager
   ~ ( ) MappingManager
   ~ ( ) Options
   ~ ( ) Autocmds

@@ -6,7 +6,6 @@ function Module:new (opts)
 	obj.name = opts.name
 	obj.plugins = opts.plugins or {}
 	obj.loaded_plugins = {}
-	obj.ready_autocmd_pattern = "Module" .. opts.name .. "Ready"
 	obj.priority = opts.priority or 50 -- lazy's default value
 
 	for _, spec in ipairs(obj.plugins) do
@@ -49,8 +48,8 @@ function Module:check_ready ()
 		vim.api.nvim_del_autocmd (self.lazy_load_handler)
 		self.lazy_load_handler = nil
 		vim.api.nvim_exec_autocmds ("User", {
-			pattern = self.ready_autocmd_pattern,
-			data = self.name
+			pattern = "ModuleReady",
+			data = self.name,
 		})
 	end
 end

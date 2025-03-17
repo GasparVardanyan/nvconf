@@ -15,22 +15,25 @@ function ModuleManager:new ()
 
 	local all_plugins = {}
 
+	-- TODO: handle the same plugin appearance in multiple modules
 	for _, module in pairs (obj.modules) do
 		vim.list_extend (all_plugins, module.plugins)
-
-		vim.api.nvim_create_autocmd ("User", {
-			pattern = module.ready_autocmd_pattern,
-			callback = function ()
-				print (module.ready_autocmd_pattern .. " - Module Loaded\n")
-			end,
-		})
 	end
 
 	vim.api.nvim_create_autocmd ("User", {
-		pattern = "ModuleUIReady",
-		callback = function()
-			vim.cmd [[ set background=dark ]]
-			vim.cmd [[ color NeoSolarized ]]
+		pattern = "ModuleReady",
+		callback = function (data)
+			print (data.data .. " - Module Loaded\n")
+		end,
+	})
+
+	vim.api.nvim_create_autocmd ("User", {
+		pattern = "ModuleReady",
+		callback = function (data)
+			if obj.modules.ui_module.name == data.data then
+				vim.cmd [[ set background=dark ]]
+				vim.cmd [[ color NeoSolarized ]]
+			end
 		end,
 	})
 
