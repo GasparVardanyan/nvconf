@@ -10,22 +10,23 @@
   - ( ) overseer lualine
 
 * Todo List (v2)
-  ~ ( ) *Module* core
+  ~ *Module* core
   ~~ (x) Make plugin.priority as parameter and set to all plugins
   ~~ (x) Take single argument: a table with name, plugins, autocmds, etc..
-  ~~ ( ) Make module dependencies so one module can wait other to be loaded
-  ~~ ( ) Module specific autocommands and mappings
+  ~~ (=) Make module dependencies so one module can wait other to be loaded
+  ~~ (x) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
-  ~ ( ) *Modules*
-  ~~ ( ) Separate base logic
+  ~ *Modules*
+  ~~ (=) Separate base logic
   ~~ ( ) LSPModule
   ~~ ( ) DAPModule
   ~~ ( ) ClangModule
   ~~ ( ) NoneLSModule
   ~ (x) ModuleManager
-  ~ ( ) MappingManager
-  ~ ( ) Options
-  ~ ( ) Autocmds
+  ~ (_) MappingManager
+  ~ ( ) Migrate Options
+  ~ ( ) Migrate Autocmds
+  ~ ( ) Replace nvim-tree with neo-tree
 
 ** ChatGPT
    - ( ) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.

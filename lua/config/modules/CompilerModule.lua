@@ -4,9 +4,9 @@ local Module = require ("config.Module")
 local CompilerModule = Module:new ({
 	name = "Compiler",
 	plugins = {
+		require ("config.specs.Compiler.cmake-tools_nvim"),
 		require ("config.specs.Compiler.compiler_nvim"),
 		require ("config.specs.misc.overseer_nvim"),
-		require ("config.specs.Compiler.cmake-tools_nvim"),
 	}
 })
 

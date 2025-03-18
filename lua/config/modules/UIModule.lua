@@ -6,8 +6,8 @@ local UIModule = Module:new ({
 	priority = 1000,
 	plugins = {
 		require ("config.specs.UI.NeoSolarized_nvim"),
-		require ("config.specs.UI.solarized_nvim"),
 		require ("config.specs.UI.solarized-osaka_nvim"),
+		require ("config.specs.UI.solarized_nvim"),
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
