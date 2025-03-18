@@ -34,8 +34,8 @@ local BasicModule = Module:new ({
 			action = function ()
 				require ("config.mappings.Basic.undotree")
 			end
-		}),
-	},
+		})
+	}
 })
 
 return BasicModule

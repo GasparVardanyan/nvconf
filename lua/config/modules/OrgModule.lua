@@ -15,7 +15,7 @@ local OrgModule = Module:new ({
 				require ("config.autocmds.Org.neorg")
 			end
 		})
-	},
+	}
 })
 
 return OrgModule

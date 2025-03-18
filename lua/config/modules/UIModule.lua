@@ -19,7 +19,7 @@ local UIModule = Module:new ({
 				]]
 			end
 		})
-	},
+	}
 })
 
 return UIModule
