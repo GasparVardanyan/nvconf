@@ -5,6 +5,7 @@ local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
 		require ("config.specs.Basic.grug-far_nvim"),
+		require ("config.specs.Basic.neo-tree_nvim"),
 		require ("config.specs.Basic.nvim-treesitter"),
 		require ("config.specs.Basic.tagbar"),
 		require ("config.specs.Basic.telescope_nvim"),
@@ -15,6 +16,12 @@ local BasicModule = Module:new ({
 			plugins = "grug-far.nvim",
 			action = function ()
 				require ("config.mappings.Basic.grug-far_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "neo-tree.nvim",
+			action = function ()
+				require ("config.mappings.Basic.neo-tree_nvim")
 			end
 		}),
 		PostPluginLoadAction:new ({
