@@ -51,15 +51,6 @@ local TemporaryModule = Module:new ({
 		},
 
 		{
-			'Bekaboo/dropbar.nvim',
-			-- optional, but required for fuzzy finder support
-			dependencies = {
-				'nvim-telescope/telescope-fzf-native.nvim',
-				build = 'make'
-			},
-		},
-
-		{
 			"folke/trouble.nvim",
 			opts = {}, -- for default options, refer to the configuration section for custom setup.
 			cmd = "Trouble",
@@ -186,12 +177,6 @@ local TemporaryModule = Module:new ({
 				require ("config.mappings.lspconfig")
 			end
 		}),
-		PostPluginLoadAction:new ({
-			plugins = "dropbar.nvim",
-			action = function ()
-				require ("config.mappings.dropbar")
-			end
-		})
 	}
 })
 

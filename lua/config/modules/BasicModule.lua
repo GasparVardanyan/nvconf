@@ -4,6 +4,7 @@ local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
+		require ("config.specs.Basic.dropbar_nvim"),
 		require ("config.specs.Basic.grug-far_nvim"),
 		require ("config.specs.Basic.neo-tree_nvim"),
 		require ("config.specs.Basic.nvim-treesitter"),
@@ -12,6 +13,12 @@ local BasicModule = Module:new ({
 		require ("config.specs.Basic.undotree"),
 	},
 	post_plugin_load_actions = {
+		PostPluginLoadAction:new ({
+			plugins = "dropbar.nvim",
+			action = function ()
+				require ("config.mappings.Basic.dropbar_nvim")
+			end
+		}),
 		PostPluginLoadAction:new ({
 			plugins = "grug-far.nvim",
 			action = function ()
