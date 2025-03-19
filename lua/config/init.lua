@@ -1,6 +1,7 @@
-if true then
+if nil then
 	require ("oldconfig")
 else
+	require ("config.options")
 	require ("config.lazy")
 	require ("config.autocmds.generic")
 	require ("config.mappings.generic")

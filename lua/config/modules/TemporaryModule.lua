@@ -1,4 +1,5 @@
 local Module = require ("config.Module")
+local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 
 -- TODO: refactor these specs and move to the appropriate location
 local TemporaryModule = Module:new ({
@@ -6,14 +7,12 @@ local TemporaryModule = Module:new ({
 	plugins = {
 		{
 			"williamboman/mason.nvim",
-			lazy = true,
 			config = true,
 		},
 
 		{
 			"williamboman/mason-lspconfig.nvim",
 			dependencies = { "williamboman/mason.nvim" },
-			lazy = true,
 			config = function()
 				require ('mason-lspconfig').setup ({
 					ensure_installed = { "lua_ls", "clangd" }
@@ -27,7 +26,6 @@ local TemporaryModule = Module:new ({
 				"hrsh7th/nvim-cmp"
 				-- 'saghen/blink.cmp'
 			},
-			lazy = true,
 			event = "User FilePost",
 			config = function()
 				local lspconfig = require ("lspconfig")
@@ -45,7 +43,6 @@ local TemporaryModule = Module:new ({
 
 		{
 			"mfussenegger/nvim-lint",
-			lazy = true,
 			config = function()
 				require('lint').linters_by_ft = {
 					cpp = {'clangtidy', 'cppcheck'},
@@ -64,7 +61,6 @@ local TemporaryModule = Module:new ({
 
 		{
 			"folke/trouble.nvim",
-			lazy = true,
 			opts = {}, -- for default options, refer to the configuration section for custom setup.
 			cmd = "Trouble",
 			config = true,
@@ -104,12 +100,10 @@ local TemporaryModule = Module:new ({
 
 		{
 			"RRethy/vim-illuminate",
-			lazy = true,
 		},
 
 		{
 			"hedyhli/outline.nvim",
-			lazy = true,
 			config = true,
 		},
 
@@ -120,7 +114,6 @@ local TemporaryModule = Module:new ({
 
 		{
 			"hrsh7th/nvim-cmp",
-			lazy = true,
 			dependencies = {
 				'hrsh7th/cmp-nvim-lsp',
 				'hrsh7th/cmp-buffer',
@@ -179,6 +172,26 @@ local TemporaryModule = Module:new ({
 				})
 			end,
 		},
+	},
+	post_plugin_load_actions = {
+		PostPluginLoadAction:new ({
+			plugins = "outline.nvim",
+			action = function ()
+				require ("config.mappings.outline")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "nvim-lspconfig",
+			action = function ()
+				require ("config.mappings.lspconfig")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "dropbar.nvim",
+			action = function ()
+				require ("config.mappings.dropbar")
+			end
+		})
 	}
 })
 

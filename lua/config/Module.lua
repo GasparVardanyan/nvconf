@@ -13,7 +13,7 @@ function Module:new (opts)
 	for _, spec in ipairs (obj.plugins) do
 		spec.priority = spec.priority or obj.priority
 		local plugin_name = spec [1]:match (".*/(.*)")
-		print ("Priority: " .. spec.priority .. ", name: " .. plugin_name .. "\n")
+		-- print ("Priority: " .. spec.priority .. ", name: " .. plugin_name .. "\n")
 		obj.__loaded_plugins [plugin_name] = false
 	end
 

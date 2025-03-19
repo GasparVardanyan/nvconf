@@ -1,5 +1,5 @@
-nnoremap <leader>co :CompilerOpen<CR>
-nnoremap <leader>ct :CompilerToggleResults<CR>
+" nnoremap <leader>co :CompilerOpen<CR>
+" nnoremap <leader>ct :CompilerToggleResults<CR>
 
 set foldmethod=manual
 set mouse=a
