@@ -24,9 +24,10 @@
   ~~ ( ) NoneLSModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
-  ~ ( ) Migrate Options
-  ~ ( ) Migrate Autocmds
-  ~ ( ) Replace nvim-tree with neo-tree
+  ~ (x) Migrate Options
+  ~ (x) Migrate Autocmds
+  ~ (x) Replace nvim-tree with neo-tree
+  ~ ( ) Commenting /nerdcommenter/
 
 ** ChatGPT
    - ( ) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.
