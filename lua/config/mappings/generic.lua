@@ -24,6 +24,18 @@ map("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>")
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "terminal escape terminal mode" })
 
+-- Todo: conform these:
+-- Moudle/Plugin leaders:
+-- <leader>s - Basic - grug-far
+-- <leader>f - Basic - telescope
+-- <leader>t - Basic - toggleterm
+-- <leader>c - Compiler
+-- <leader>d - Dap
+-- <leader>g - Git
+-- <leader>D - Db
+-- <leader>l - Lint
+-- <leader>T - Test
+
 vim.cmd [[
 	noremap <F1> :mksession! .vim.session
 	noremap <F2> :source .vim.session

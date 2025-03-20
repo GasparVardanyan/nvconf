@@ -23,4 +23,3 @@ map("n", "<leader>fuu", require("telescope").extensions.undo.undo)
 map("n", "<leader>fv", builtin.vim_options)
 map("n", "<leader>fw", builtin.live_grep)
 map("n", "<leader>fz", builtin.current_buffer_fuzzy_find)
-

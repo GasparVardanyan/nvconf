@@ -4,6 +4,7 @@ local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
+		require ("config.specs.Basic.dashboard-nvim"),
 		require ("config.specs.Basic.dropbar_nvim"),
 		require ("config.specs.Basic.grug-far_nvim"),
 		require ("config.specs.Basic.neo-tree_nvim"),
@@ -11,6 +12,7 @@ local BasicModule = Module:new ({
 		require ("config.specs.Basic.oil_nvim"),
 		require ("config.specs.Basic.tagbar"),
 		require ("config.specs.Basic.telescope_nvim"),
+		require ("config.specs.Basic.todo-comments_nvim"),
 		require ("config.specs.Basic.toggleterm_nvim"),
 		require ("config.specs.Basic.undotree"),
 	},
@@ -43,6 +45,12 @@ local BasicModule = Module:new ({
 			plugins = "telescope.nvim",
 			action = function ()
 				require ("config.mappings.Basic.telescope_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = { "telescope.nvim", "todo-comments.nvim" },
+			action = function ()
+				require ("config.mappings.Basic.todo-comments_nvim-telescope_nvim")
 			end
 		}),
 		PostPluginLoadAction:new ({
