@@ -7,6 +7,7 @@ local OrgModule = Module:new ({
 		require ("config.specs.Org.neorg"),
 		require ("config.specs.Org.orgmode"),
 		require ("config.specs.misc.image_nvim"),
+		require ("config.specs.misc.headlines_nvim"),
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
@@ -14,6 +15,12 @@ local OrgModule = Module:new ({
 			action = function ()
 				require ("config.autocmds.Org.neorg")
 				require ("config.mappings.Org.neorg")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = { "neorg", "vim-illuminate" },
+			action = function ()
+				require ("config.autocmds.Org.neorg_noilluminate")
 			end
 		})
 	}
