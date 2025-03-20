@@ -7,9 +7,8 @@ return {
 		"mfussenegger/nvim-dap",
 	},
 	opts = {
-		handlers = {},
-		-- ensure_installed = {
-		--     "codelldb",
-		-- },
+		ensure_installed = {
+			"codelldb",
+		},
 	},
 }

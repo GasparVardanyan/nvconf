@@ -17,14 +17,21 @@
   ~~ (x) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
   ~ *Modules*
-  ~~ (=) Separate base logic
-  ~~ ( ) LSPModule
-  ~~ (-) DAPModule
+  ~~ (-) Separate base logic
+  ~~ (-) BasicModule
   ~~ ( ) ClangModule
+  ~~ (-) CompilerModule
+  ~~ (-) DapModule
+  ~~ (=) DbModule
+  ~~ (-) GitModule
+  ~~ (=) LintModule
+  ~~ (=) LspModule
+  ~~ ( ) NoneLSModule
+  ~~ (x) OrgModule
+  ~~ ( ) TestModule
+  ~~ (-) UIModule
   ~~ ( ) TestModule
   ~~ (x) DBModule
-  ~~ ( ) LintModule
-  ~~ ( ) NoneLSModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
   ~ (x) Migrate Options
@@ -34,9 +41,11 @@
   ~ *ModuleManager*
   ~~ ( ) Handle duplicate specs
   ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
-		  depend on plugins from other modules
+		 depend on plugins from other modules /make a function which registers/
+		 /and loads the spec/
   ~ ( ) Dashboard
   ~ ( ) Module leaders
+  ~ ( ) Worksspace Manager
 
 ** ChatGPT
    - (x) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.
