@@ -18,20 +18,21 @@
   ~~ (x) Separate plugin specs from modules
   ~ *Modules*
   ~~ (-) Separate base logic
+  ~~ ( ) AiModule
   ~~ (-) BasicModule
   ~~ ( ) ClangModule
   ~~ (-) CompilerModule
-  ~~ (-) DapModule
+  ~~ (!) DapModule
   ~~ (=) DbModule
   ~~ (-) GitModule
   ~~ (=) LintModule
-  ~~ (=) LspModule
+  ~~ (!) LspModule
   ~~ ( ) NoneLSModule
   ~~ (x) OrgModule
   ~~ ( ) TestModule
   ~~ (-) UIModule
   ~~ ( ) TestModule
-  ~~ (x) DBModule
+  ~~ (-) DBModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
   ~ (x) Migrate Options
@@ -43,9 +44,10 @@
   ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
 		 depend on plugins from other modules /make a function which registers/
 		 /and loads the spec/
-  ~ ( ) Dashboard
+  ~ (x) Dashboard
   ~ ( ) Module leaders
   ~ ( ) Worksspace Manager
+  ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
 
 ** ChatGPT
    - (x) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.

@@ -3,8 +3,6 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.background = "light"
 
-vim.opt.backup = true
-
 vim.opt.foldmethod = "manual"
 vim.opt.colorcolumn = "81"
 vim.opt.number = true
@@ -30,23 +28,13 @@ vim.opt.showtabline = 0
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.opt.backup = true
+vim.opt.undodir = vim.fn.stdpath("state") .. "/undo/"
+vim.opt.backupdir = vim.fn.stdpath("state") .. "/backup/"
+vim.opt.directory = vim.fn.stdpath("state") .. "/swap/"
+
 -- TODO: translate to lua and use the instance folder, don't default to nvim
 vim.cmd [[
 	command -range=% Encrypt execute "'<,'>!gcrypt -S -e \"$(pass show pdata)\" | base64"
 	command -range=% Decrypt execute "'<,'>!base64 -d | gcrypt -S -d \"$(pass show pdata)\""
-
-	set backup
-	set undodir=~/.config/nvim/tmp/undo//
-	set backupdir=~/.config/nvim/tmp/backup//
-	set directory=~/.config/nvim/tmp/swap//
-
-	if !isdirectory(expand(&undodir))
-		call mkdir(expand(&undodir), "p")
-	endif
-	if !isdirectory(expand(&backupdir))
-		call mkdir(expand(&backupdir), "p")
-	endif
-	if !isdirectory(expand(&directory))
-		call mkdir(expand(&directory), "p")
-	endif
 ]]

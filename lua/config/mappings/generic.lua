@@ -26,6 +26,7 @@ map("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "terminal escape terminal mode" })
 
 -- Todo: conform these:
 -- Moudle/Plugin leaders:
+-- <leader>a - Ai - avante
 -- <leader>s - Basic - grug-far
 -- <leader>f - Basic - telescope
 -- <leader>t - Basic - toggleterm
