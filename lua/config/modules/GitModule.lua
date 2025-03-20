@@ -7,7 +7,8 @@ local GitModule = Module:new ({
 		require ("config.specs.Git.diffview_nvim"),
 		require ("config.specs.Git.gitsigns_nvim"),
 		require ("config.specs.Git.lazygit_nvim"),
-		require ("config.specs.Git.vim-fugitive"),
+		require ("config.specs.Git.neogit"),
+		-- require ("config.specs.Git.vim-fugitive"),
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({

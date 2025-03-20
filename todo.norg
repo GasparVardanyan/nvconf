@@ -28,6 +28,10 @@
   ~ (x) Migrate Autocmds
   ~ (x) Replace nvim-tree with neo-tree
   ~ ( ) Commenting /nerdcommenter/
+  ~ *ModuleManager*
+  ~~ ( ) Handle duplicate specs
+  ~~ ( ) Handle loaded plugin registration here not in *Module*, so modules can
+		  depend on plugins from other modules
 
 ** ChatGPT
    - ( ) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.

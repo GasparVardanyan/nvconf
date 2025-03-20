@@ -8,8 +8,10 @@ local BasicModule = Module:new ({
 		require ("config.specs.Basic.grug-far_nvim"),
 		require ("config.specs.Basic.neo-tree_nvim"),
 		require ("config.specs.Basic.nvim-treesitter"),
+		require ("config.specs.Basic.oil_nvim"),
 		require ("config.specs.Basic.tagbar"),
 		require ("config.specs.Basic.telescope_nvim"),
+		require ("config.specs.Basic.toggleterm_nvim"),
 		require ("config.specs.Basic.undotree"),
 	},
 	post_plugin_load_actions = {
