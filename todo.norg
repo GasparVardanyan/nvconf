@@ -30,7 +30,7 @@
   ~ ( ) Commenting /nerdcommenter/
   ~ *ModuleManager*
   ~~ ( ) Handle duplicate specs
-  ~~ ( ) Handle loaded plugin registration here not in *Module*, so modules can
+  ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
 		  depend on plugins from other modules
 
 ** ChatGPT
