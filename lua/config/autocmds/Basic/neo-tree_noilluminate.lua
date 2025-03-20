@@ -1,5 +1,5 @@
 vim.api.nvim_create_autocmd ("FileType", {
-	pattern = { "norg" },
+	pattern = { "neo-tree" },
 	callback = function (args)
 		local bufnr = args.buf
 

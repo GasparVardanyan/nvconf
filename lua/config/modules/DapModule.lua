@@ -6,6 +6,7 @@ local DapModule = Module:new ({
 	plugins = {
 		require ("config.specs.misc.mason_nvim"),
 		require ("config.specs.Dap.nvim-dap"),
+		require ("config.specs.Dap.mason-nvim-dap"),
 		require ("config.specs.Dap.nvim-dap-ui"),
 	},
 	post_plugin_load_actions = {

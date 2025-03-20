@@ -36,6 +36,12 @@ local BasicModule = Module:new ({
 			end
 		}),
 		PostPluginLoadAction:new ({
+			plugins = { "neo-tree.nvim", "vim-illuminate" },
+			action = function ()
+				require ("config.autocmds.Basic.neo-tree_noilluminate")
+			end
+		}),
+		PostPluginLoadAction:new ({
 			plugins = "tagbar",
 			action = function ()
 				require ("config.mappings.Basic.tagbar")
@@ -51,6 +57,12 @@ local BasicModule = Module:new ({
 			plugins = { "telescope.nvim", "todo-comments.nvim" },
 			action = function ()
 				require ("config.mappings.Basic.todo-comments_nvim-telescope_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "toggleterm.nvim",
+			action = function ()
+				require ("config.mappings.Basic.toggleterm_nvim")
 			end
 		}),
 		PostPluginLoadAction:new ({
