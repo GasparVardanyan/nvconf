@@ -172,9 +172,9 @@ local TemporaryModule = Module:new ({
 			end
 		}),
 		PostPluginLoadAction:new ({
-			plugins = "nvim-lspconfig",
+			plugins = { "nvim-lspconfig", "telescope.nvim" },
 			action = function ()
-				require ("config.mappings.lspconfig")
+				require ("config.mappings.Lsp.nvim_lspconfig_telescope_nvim")
 			end
 		}),
 	}

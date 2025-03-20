@@ -24,17 +24,3 @@ map("n", "<leader>fv", builtin.vim_options)
 map("n", "<leader>fw", builtin.live_grep)
 map("n", "<leader>fz", builtin.current_buffer_fuzzy_find)
 
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(args)
-		local map = vim.keymap.set
-		local builtin = require("telescope.builtin")
-
-		map("n", "<leader>fI", builtin.lsp_incoming_calls)
-		map("n", "<leader>fO", builtin.lsp_outgoing_calls)
-		map("n", "<leader>fS", builtin.lsp_dynamic_workspace_symbols)
-		map("n", "<leader>fd", builtin.lsp_definitions)
-		map("n", "<leader>fi", builtin.lsp_implementations)
-		map("n", "<leader>fr", builtin.lsp_references)
-		map("n", "<leader>fs", builtin.lsp_document_symbols)
-	end,
-})
