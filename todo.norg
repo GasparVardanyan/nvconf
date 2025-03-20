@@ -5,8 +5,8 @@
   - (=) dap integration
   - (=) cmake integration
   - (=) clang integration
-  - (=) compiler.nvim integration
-  - (=) separate plugin configs
+  - (x) compiler.nvim integration
+  - (x) separate plugin configs
   - ( ) overseer lualine
 
 * Todo List (v2)
@@ -19,10 +19,10 @@
   ~ *Modules*
   ~~ (=) Separate base logic
   ~~ ( ) LSPModule
-  ~~ ( ) DAPModule
+  ~~ (-) DAPModule
   ~~ ( ) ClangModule
   ~~ ( ) TestModule
-  ~~ ( ) DBModule
+  ~~ (x) DBModule
   ~~ ( ) NoneLSModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
@@ -36,4 +36,4 @@
 		  depend on plugins from other modules
 
 ** ChatGPT
-   - ( ) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.
+   - (x) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.

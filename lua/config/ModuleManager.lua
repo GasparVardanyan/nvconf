@@ -14,6 +14,7 @@ function ModuleManager:new ()
 		org_module = require ("config.modules.OrgModule"),
 		compiler_module = require ("config.modules.CompilerModule"),
 		dap_module = require ("config.modules.DapModule"),
+		db_module = require ("config.modules.DbModule"),
 		temporary_module1 = require ("config.modules.TemporaryModule1"),
 	}
 
