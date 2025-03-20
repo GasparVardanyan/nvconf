@@ -13,7 +13,8 @@ function ModuleManager:new ()
 		git_module = require ("config.modules.GitModule"),
 		org_module = require ("config.modules.OrgModule"),
 		compiler_module = require ("config.modules.CompilerModule"),
-		temporary_module = require ("config.modules.TemporaryModule"),
+		dap_module = require ("config.modules.DapModule"),
+		temporary_module1 = require ("config.modules.TemporaryModule1"),
 	}
 
 	local all_plugins = {}

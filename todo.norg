@@ -21,6 +21,8 @@
   ~~ ( ) LSPModule
   ~~ ( ) DAPModule
   ~~ ( ) ClangModule
+  ~~ ( ) TestModule
+  ~~ ( ) DBModule
   ~~ ( ) NoneLSModule
   ~ (x) ModuleManager
   ~ (_) MappingManager

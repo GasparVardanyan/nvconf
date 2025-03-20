@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<leader>ot", "<cmd>Outline<CR>",
+vim.keymap.set("n", "<leader>ot", vim.cmd.Outline,
   { desc = "Toggle Outline" })
-vim.keymap.set("n", "<leader>of", "<cmd>OutlineFocus<CR>",
+vim.keymap.set("n", "<leader>of", vim.cmd.OutlineFocus,
   { desc = "Toggle Outline" })

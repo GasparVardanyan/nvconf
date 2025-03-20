@@ -2,13 +2,10 @@ local Module = require ("config.Module")
 local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 
 -- TODO: refactor these specs and move to the appropriate location
-local TemporaryModule = Module:new ({
-	name = "Temporary",
+local TemporaryModule1 = Module:new ({
+	name = "Temporary1",
 	plugins = {
-		{
-			"williamboman/mason.nvim",
-			config = true,
-		},
+		require ("config.specs.misc.mason_nvim"),
 
 		{
 			"williamboman/mason-lspconfig.nvim",
@@ -172,6 +169,12 @@ local TemporaryModule = Module:new ({
 			end
 		}),
 		PostPluginLoadAction:new ({
+			plugins = "nvim-lspconfig",
+			action = function ()
+				require ("config.mappings.lspconfig")
+			end
+		}),
+		PostPluginLoadAction:new ({
 			plugins = { "nvim-lspconfig", "telescope.nvim" },
 			action = function ()
 				require ("config.mappings.Lsp.nvim_lspconfig_telescope_nvim")
@@ -180,4 +183,4 @@ local TemporaryModule = Module:new ({
 	}
 })
 
-return TemporaryModule
+return TemporaryModule1
