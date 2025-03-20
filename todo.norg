@@ -23,6 +23,7 @@
   ~~ ( ) ClangModule
   ~~ ( ) TestModule
   ~~ (x) DBModule
+  ~~ ( ) LintModule
   ~~ ( ) NoneLSModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
