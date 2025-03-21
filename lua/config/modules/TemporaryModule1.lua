@@ -182,13 +182,13 @@ local TemporaryModule1 = Module:new ({
 		PostPluginLoadAction:new ({
 			plugins = "outline.nvim",
 			action = function ()
-				require ("config.mappings.outline")
+				require ("config.mappings.temporary.outline")
 			end
 		}),
 		PostPluginLoadAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
-				require ("config.mappings.lspconfig")
+				require ("config.mappings.temporary.lspconfig")
 			end
 		}),
 		PostPluginLoadAction:new ({

@@ -17,7 +17,7 @@
   ~~ (x) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
   ~ *Modules*
-  ~~ (-) Separate base logic
+  ~~ (x) Separate base logic
   ~~ ( ) AiModule
   ~~ (-) BasicModule
   ~~ ( ) ClangModule
@@ -33,7 +33,6 @@
   ~~ ( ) TestModule
   ~~ (-) UIModule
   ~~ ( ) TestModule
-  ~~ (-) DBModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
   ~ (x) Migrate Options
