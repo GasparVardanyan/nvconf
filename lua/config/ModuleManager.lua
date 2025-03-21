@@ -43,13 +43,6 @@ function ModuleManager:new ()
 		end,
 	})
 
-	vim.api.nvim_create_autocmd ("User", {
-		pattern = "ModuleReady",
-		callback = function (data)
-			print (data.data .. " - Module Loaded\n")
-		end,
-	})
-
 	require("lazy").setup(all_plugins)
 
 	return obj

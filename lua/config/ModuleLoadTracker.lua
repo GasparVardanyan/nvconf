@@ -32,6 +32,7 @@ function ModuleLoadTracker:mark_plugin_loaded (plugin)
 					self.__module_loaded_plugins [module.name] [plugin] = true
 
 					module.ready = true
+---@diagnostic disable-next-line: redefined-local
 					for p, _ in pairs (self.__module_loaded_plugins [module.name]) do
 						if not self.__module_loaded_plugins [module.name] [p] then
 							module.ready = false

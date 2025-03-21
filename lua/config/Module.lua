@@ -6,7 +6,7 @@ function Module:new (opts)
 	obj.name = opts.name
 	obj.plugins = opts.plugins or {}
 	obj.priority = opts.priority or 50 -- lazy.nvim's default value
-	obj.ready = false
+	obj.ready = false -- NOTE: can be used for generic stuff
 	obj.post_plugin_load_actions = opts.post_plugin_load_actions or {}
 
 	return obj
