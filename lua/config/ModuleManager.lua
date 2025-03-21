@@ -55,27 +55,35 @@ function ModuleManager:new ()
 end
 
 function ModuleManager:mark_plugin_loaded (plugin)
-	for p, _ in pairs (self.__loaded_plugins) do
-		if p == plugin then
-			self.__loaded_plugins [plugin] = true
+	-- for p, _ in pairs (self.__loaded_plugins) do
+	-- if p == plugin then
 
-			for i = #self.post_plugin_load_actions, 1, -1 do
-				local loaded = true
-				for _, pname in ipairs (self.post_plugin_load_actions [i].plugins) do
-					if not self.__loaded_plugins [pname] then
-						loaded = false
-						break
-					end
-				end
-				if true == loaded then
-					self.post_plugin_load_actions [i].action ()
-					table.remove (self.post_plugin_load_actions, i)
+	-- NOTE: we assume the only place we load plugins is here...
+	if false == self.__loaded_plugins [plugin] then
+		self.__loaded_plugins [plugin] = true
+
+		for i = #self.post_plugin_load_actions, 1, -1 do
+			local loaded = true
+			for _, pname in ipairs (self.post_plugin_load_actions [i].plugins) do
+				if not self.__loaded_plugins [pname] then
+					loaded = false
+					break
 				end
 			end
-
-			break
+			if true == loaded then
+				self.post_plugin_load_actions [i].action ()
+				table.remove (self.post_plugin_load_actions, i)
+			end
 		end
+	else
+		return
 	end
+
+		--			break
+		--		end
+		--	end
+
+	do return end;
 
 	for _, module in pairs (self.modules) do
 		if false == module.ready then
