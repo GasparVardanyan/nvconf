@@ -6,6 +6,7 @@ function ModuleManager:new ()
 
 	obj.post_plugin_load_actions = {}
 	obj.__loaded_plugins = {}
+	obj.__module_loaded_plugins = {}
 
 	obj.modules = {
 		ui_module = require ("config.modules.UIModule"),
@@ -24,11 +25,13 @@ function ModuleManager:new ()
 	for _, module in pairs (obj.modules) do
 		vim.list_extend (all_plugins, module.plugins)
 		vim.list_extend (obj.post_plugin_load_actions, module.post_plugin_load_actions)
+		obj.__module_loaded_plugins [module.name] = {}
 
 		for _, spec in ipairs (module.plugins) do
 			spec.priority = spec.priority or module.priority
 			local plugin_name = spec [1]:match (".*/(.*)")
 			obj.__loaded_plugins [plugin_name] = false
+			obj.__module_loaded_plugins [module.name] [plugin_name] = false
 		end
 	end
 
@@ -76,7 +79,29 @@ function ModuleManager:mark_plugin_loaded (plugin)
 
 	for _, module in pairs (self.modules) do
 		if false == module.ready then
-			module:mark_plugin_loaded (plugin)
+			for p, v in pairs (self.__module_loaded_plugins [module.name]) do
+				if false == v and p == plugin then
+					self.__module_loaded_plugins [module.name] [plugin] = true
+
+					module.ready = true
+					for p, _ in pairs (self.__module_loaded_plugins [module.name]) do
+						if not self.__module_loaded_plugins [module.name] [p] then
+							module.ready = false
+							break
+						end
+					end
+
+					if true == module.ready then
+						self.__module_loaded_plugins [module.name] = nil
+						vim.api.nvim_exec_autocmds ("User", {
+							pattern = "ModuleReady",
+							data = module.name,
+						})
+					end
+
+					break
+				end
+			end
 		end
 	end
 end
