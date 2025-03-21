@@ -9,10 +9,10 @@ else
 	local ModuleManager = require ("config.ModuleManager")
 	local mm = ModuleManager:new ()
 
-	vim.api.nvim_create_autocmd ("User", {
-		pattern = "ModuleReady",
-		callback = function (data)
-			print (data.data .. " - Module Loaded\n")
-		end,
-	})
+--	vim.api.nvim_create_autocmd ("User", {
+--		pattern = "ModuleReady",
+--		callback = function (data)
+--			print (data.data .. " - Module Loaded\n")
+--		end,
+--	})
 end

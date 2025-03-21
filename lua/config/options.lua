@@ -1,7 +1,7 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.background = "light"
+vim.opt.background = "dark"
 
 vim.opt.foldmethod = "manual"
 vim.opt.colorcolumn = "81"

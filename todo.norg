@@ -46,7 +46,7 @@
 		 /and loads the spec/
   ~ (x) Dashboard
   ~ ( ) Module leaders
-  ~ ( ) Worksspace Manager
+  ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
 
 ** ChatGPT
