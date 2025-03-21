@@ -22,9 +22,9 @@
   ~~ (-) BasicModule
   ~~ ( ) ClangModule
   ~~ (-) CompilerModule
-  ~~ (!) DapModule
+  ~~ (x) DapModule
   ~~ (=) DbModule
-  ~~ (-) GitModule
+  ~~ (x) GitModule
   ~~ ( ) HlsModule
   ~~ (=) LintModule
   ~~ (!) LspModule

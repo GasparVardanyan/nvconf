@@ -8,4 +8,5 @@ return {
 			default_detail = 1
 		},
 	},
+	config = true,
 }
