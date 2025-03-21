@@ -25,6 +25,7 @@
   ~~ (!) DapModule
   ~~ (=) DbModule
   ~~ (-) GitModule
+  ~~ ( ) HlsModule
   ~~ (=) LintModule
   ~~ (!) LspModule
   ~~ ( ) NoneLSModule
