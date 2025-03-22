@@ -28,6 +28,7 @@
   ~~ ( ) HlsModule
   ~~ (=) LintModule
   ~~ (!) LspModule
+  ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~ ( ) NoneLSModule
   ~~ (x) OrgModule
   ~~ ( ) TestModule

@@ -13,6 +13,7 @@ function ModuleManager:new ()
 		ui_module = require ("config.modules.UIModule"),
 		basic_module = require ("config.modules.BasicModule"),
 		git_module = require ("config.modules.GitModule"),
+		nvim_module = require ("config.modules.NvimModule"),
 		org_module = require ("config.modules.OrgModule"),
 		compiler_module = require ("config.modules.CompilerModule"),
 		dap_module = require ("config.modules.DapModule"),
