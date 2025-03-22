@@ -19,7 +19,7 @@ function ModuleManager:new ()
 		dap_module = require ("config.modules.DapModule"),
 		db_module = require ("config.modules.DbModule"),
 		temporary_module1 = require ("config.modules.TemporaryModule1"),
-		-- lspsaga_module = require ("config.modules.LspModule")
+		lsp_module = require ("config.modules.LspModule")
 	}
 
 	obj.module_load_tracker = ModuleLoadTracker:new (obj)

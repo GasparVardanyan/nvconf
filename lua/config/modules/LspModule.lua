@@ -5,20 +5,7 @@ local LspModule = Module:new ({
 	name = "Lsp",
 	ft = "cpp",
 	plugins = {
-		{
-			'nvimdev/lspsaga.nvim',
-			config = function()
-				require('lspsaga').setup({
-					lightbulb = {
-						sign = false
-					}
-				})
-			end,
-			dependencies = {
-				'nvim-treesitter/nvim-treesitter', -- optional
-				'nvim-tree/nvim-web-devicons',     -- optional
-			}
-		}
+		require ("config.specs.Lsp.lspsaga_nvim")
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
