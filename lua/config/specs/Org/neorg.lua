@@ -2,7 +2,7 @@ return {
 	"nvim-neorg/neorg",
 	dependencies = {
 		"image.nvim",
-		"tree-sitter-norg",
+		"nvim-neorg/tree-sitter-norg",
 		"nvim-orgmode/org-bullets.nvim",
 		"lukas-reineke/headlines.nvim",
 		"nvim-lua/plenary.nvim",
@@ -38,7 +38,7 @@ return {
 					},
 				},
 				["core.export"] = {},
-				["core.latex.renderer"] = {},
+				-- ["core.latex.renderer"] = {},
 				["core.summary"] = {},
 				["core.text-objects"] = {},
 			},

@@ -3,7 +3,6 @@ local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 
 local LspModule = Module:new ({
 	name = "Lsp",
-	ft = "cpp",
 	plugins = {
 		require ("config.specs.Lsp.lspsaga_nvim")
 	},

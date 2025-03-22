@@ -29,7 +29,7 @@
   ~~ (-) UIModule
   ~~ (=) DbModule
   ~~ (=) LintModule
-  ~~ (x) DapModule
+  ~~ (-) DapModule
   ~~ (x) GitModule
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~ (x) OrgModule
