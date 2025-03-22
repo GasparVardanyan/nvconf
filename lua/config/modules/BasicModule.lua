@@ -4,6 +4,7 @@ local PostPluginLoadAction = require ("config.PostPluginLoadAction")
 local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
+		require ("config.specs.Basic.Comment_nvim"),
 		require ("config.specs.Basic.dashboard-nvim"),
 		require ("config.specs.Basic.dropbar_nvim"),
 		require ("config.specs.Basic.grug-far_nvim"),
@@ -14,6 +15,7 @@ local BasicModule = Module:new ({
 		require ("config.specs.Basic.telescope_nvim"),
 		require ("config.specs.Basic.todo-comments_nvim"),
 		require ("config.specs.Basic.toggleterm_nvim"),
+		require ("config.specs.Basic.ts-comments_nvim"),
 		require ("config.specs.Basic.undotree"),
 	},
 	post_plugin_load_actions = {

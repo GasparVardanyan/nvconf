@@ -19,27 +19,26 @@
   ~ *Modules*
   ~~ (x) Separate base logic
   ~~ ( ) AiModule
-  ~~ (-) BasicModule
   ~~ ( ) ClangModule
-  ~~ (-) CompilerModule
-  ~~ (x) DapModule
-  ~~ (=) DbModule
-  ~~ (x) GitModule
   ~~ ( ) HlsModule
-  ~~ (=) LintModule
-  ~~ (!) LspModule
-  ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~ ( ) NoneLSModule
-  ~~ (x) OrgModule
   ~~ ( ) TestModule
+  ~~ (!) LspModule
+  ~~ (-) BasicModule
+  ~~ (-) CompilerModule
   ~~ (-) UIModule
-  ~~ ( ) TestModule
+  ~~ (=) DbModule
+  ~~ (=) LintModule
+  ~~ (x) DapModule
+  ~~ (x) GitModule
+  ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
+  ~~ (x) OrgModule
   ~ (x) ModuleManager
   ~ (_) MappingManager
   ~ (x) Migrate Options
   ~ (x) Migrate Autocmds
   ~ (x) Replace nvim-tree with neo-tree
-  ~ ( ) Commenting /nerdcommenter/
+  ~ (x) Commenting /nerdcommenter/
   ~ *ModuleManager*
   ~~ ( ) Handle duplicate specs
   ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
