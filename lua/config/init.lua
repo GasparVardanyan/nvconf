@@ -7,12 +7,13 @@ else
 	require ("config.mappings.generic")
 
 	local ModuleManager = require ("config.ModuleManager")
+---@diagnostic disable-next-line: unused-local
 	local mm = ModuleManager:new ()
 
---	vim.api.nvim_create_autocmd ("User", {
---		pattern = "ModuleReady",
---		callback = function (data)
---			print (data.data .. " - Module Loaded\n")
---		end,
---	})
+	vim.api.nvim_create_autocmd ("User", {
+		pattern = "ModuleReady",
+		callback = function (data)
+			print (data.data .. " - Module Loaded\n")
+		end,
+	})
 end
