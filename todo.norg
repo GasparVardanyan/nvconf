@@ -24,6 +24,9 @@
   ~~ ( ) NoneLSModule
   ~~ ( ) TestModule
   ~~ (!) LspModule
+  ~~~ (-) refactor nvim-lspconfig spec
+  ~~~ (-) refactor nvim-cmp spec
+  ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~ (-) CompilerModule
   ~~ (-) UIModule
