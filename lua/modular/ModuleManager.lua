@@ -3,27 +3,17 @@ local ModuleLoadTracker = require ("modular.ModuleLoadTracker")
 local ModuleManager = {}
 ModuleManager.__index = ModuleManager
 
-function ModuleManager:new ()
+function ModuleManager:new (opts)
 	local obj = setmetatable ({}, ModuleManager)
 
 	obj.post_plugin_load_actions = {}
 	obj.__loaded_plugins = {}
 
-	obj.modules = {
-		ui_module = require ("modular.modules.UIModule"),
-		basic_module = require ("modular.modules.BasicModule"),
-		git_module = require ("modular.modules.GitModule"),
-		nvim_module = require ("modular.modules.NvimModule"),
-		org_module = require ("modular.modules.OrgModule"),
-		compiler_module = require ("modular.modules.CompilerModule"),
-		dap_module = require ("modular.modules.DapModule"),
-		db_module = require ("modular.modules.DbModule"),
-		temporary_module1 = require ("modular.modules.TemporaryModule1"),
-		temporary_module2 = require ("modular.modules.TemporaryModule2"),
-		lsp_module = require ("modular.modules.LspModule")
-	}
+	obj.modules = opts.modules or {}
 
-	obj.module_load_tracker = ModuleLoadTracker:new (obj)
+	if true == opts.load_tracker then
+		obj.module_load_tracker = ModuleLoadTracker:new (obj)
+	end
 
 	local all_plugins = {}
 
