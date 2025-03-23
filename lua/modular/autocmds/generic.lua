@@ -39,3 +39,10 @@ vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 		vim.api.nvim_buf_set_option (bufnr, 'syntax', 'xdefaults')
 	end,
 })
+
+vim.api.nvim_create_autocmd ("TextYankPost", {
+  callback = function ()
+	vim.highlight.on_yank ()
+  end,
+})
+

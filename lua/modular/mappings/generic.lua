@@ -25,6 +25,11 @@ map("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>")
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "terminal escape terminal mode" })
 map("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "terminal escape terminal mode" })
 
+map ("n", "<left>", "<cmd>echo \"Use h to move!!\"<CR>")
+map ("n", "<right>", "<cmd>echo \"Use l to move!!\"<CR>")
+map ("n", "<up>", "<cmd>echo \"Use k to move!!\"<CR>")
+map ("n", "<down>", "<cmd>echo \"Use j to move!!\"<CR>")
+
 -- Todo: conform these:
 -- Moudle/Plugin leaders:
 -- <leader>a - Ai - avante

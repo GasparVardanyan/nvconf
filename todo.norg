@@ -49,8 +49,8 @@
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
   ~ ( ) Restructure
-  ~~ ( ) Move included Modules outside the *ModuleManager*
-  ~~ ( ) New directory structure to have multiple module groups
+  ~~ (x) Move included Modules outside the *ModuleManager*
+  ~~ (x) New directory structure to have multiple module groups
   ~~ ( ) Add *kickstart-modular* as a separate *Module*\/*Modules*
 
 ** ChatGPT

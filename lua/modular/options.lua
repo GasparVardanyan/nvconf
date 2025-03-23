@@ -3,6 +3,10 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.opt.background = "dark"
 
+vim.opt.breakindent = true
+vim.opt.inccommand = 'split'
+vim.opt.confirm = true
+
 vim.opt.foldmethod = "manual"
 vim.opt.colorcolumn = "81"
 vim.opt.number = true
