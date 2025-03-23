@@ -10,17 +10,17 @@
   - ( ) overseer lualine
 
 * Todo List (v2)
-  ~ *Module* core
+  ~ ( ) *Module* core
   ~~ (x) Make plugin.priority as parameter and set to all plugins
   ~~ (x) Take single argument: a table with name, plugins, autocmds, etc..
   ~~ (=) Make module dependencies so one module can wait other to be loaded
   ~~ (x) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
-  ~ *Modules*
+  ~ ( ) *Modules*
   ~~ (x) Separate base logic
   ~~ ( ) AiModule
   ~~ ( ) ClangModule
-  ~~ ( ) HlsModule
+  ~~ (x) HlsModule
   ~~ ( ) NoneLSModule
   ~~ ( ) TestModule
   ~~ (!) LspModule
@@ -48,13 +48,13 @@
 		 depend on plugins from other modules /make a function which registers/
 		 /and loads the spec/
   ~ (x) Dashboard
-  ~ ( ) Module leaders
+  ~ ( ) Module leaders /whichkey?/
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
   ~ ( ) Restructure
   ~~ (x) Move included Modules outside the *ModuleManager*
   ~~ (x) New directory structure to have multiple module groups
-  ~~ ( ) Add *kickstart-modular* as a separate *Module*\/*Modules*
+  ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
 
 ** ChatGPT
    - (x) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.
