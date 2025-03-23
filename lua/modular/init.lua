@@ -6,6 +6,8 @@ require ("modular.lazy")
 require ("modular.autocmds.generic")
 require ("modular.mappings.generic")
 
+require ("modular.extras.autocmds.hls_commands")
+
 local ModuleManager = require ("modular.ModuleManager")
 
 ---@diagnostic disable-next-line: unused-local
