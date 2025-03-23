@@ -6,6 +6,7 @@ vim.opt.background = "dark"
 vim.opt.breakindent = true
 vim.opt.inccommand = 'split'
 vim.opt.confirm = true
+-- vim.opt.updatetime = 250
 
 vim.opt.foldmethod = "manual"
 vim.opt.colorcolumn = "81"

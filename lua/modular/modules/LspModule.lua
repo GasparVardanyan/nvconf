@@ -14,7 +14,7 @@ local LspModule = Module:new ({
 		require ("modular.specs.Lsp.vim-illuminate"),
 		require ("modular.specs.Lsp.trouble_nvim"),
 		-- require ("modular.specs.Lsp.nvim-treesitter-textobjects"),
-		require ("modular.specs.Lsp.lspsaga_nvim"),
+		-- require ("modular.specs.Lsp.lspsaga_nvim"), -- NOTE: this thing replaces dropbar, idk ho to disable it ((
 		-- require ("modular.modules.TemporaryModule2")
 	},
 	post_plugin_load_actions = {

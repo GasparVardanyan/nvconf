@@ -13,10 +13,8 @@ local UIModule = Module:new ({
 		PostPluginLoadAction:new ({
 			plugins = "NeoSolarized.nvim",
 			action = function ()
-				vim.cmd [[
-					set background=dark
-					color NeoSolarized
-				]]
+				vim.opt.background = "dark"
+				vim.cmd.colorscheme "NeoSolarized"
 			end
 		})
 	}

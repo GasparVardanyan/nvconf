@@ -38,67 +38,12 @@ local TemporaryModule1 = Module:new ({
 			end,
 		},
 
-		{
-			"mfussenegger/nvim-lint",
-			config = function()
-				require('lint').linters_by_ft = {
-					cpp = {'clangtidy', 'cppcheck'},
-				}
-			end,
-		},
-
-		{
-			"folke/trouble.nvim",
-			opts = {}, -- for default options, refer to the configuration section for custom setup.
-			cmd = "Trouble",
-			config = true,
-		--		keys = {
-		--			{
-		--				"<leader>xx",
-		--				"<cmd>Trouble diagnostics toggle<cr>",
-		--				desc = "Diagnostics (Trouble)",
-		--			},
-		--			{
-		--				"<leader>xX",
-		--				"<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-		--				desc = "Buffer Diagnostics (Trouble)",
-		--			},
-		--			{
-		--				"<leader>cs",
-		--				"<cmd>Trouble symbols toggle focus=false<cr>",
-		--				desc = "Symbols (Trouble)",
-		--			},
-		--			{
-		--				"<leader>cl",
-		--				"<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
-		--				desc = "LSP Definitions / references / ... (Trouble)",
-		--			},
-		--			{
-		--				"<leader>xL",
-		--				"<cmd>Trouble loclist toggle<cr>",
-		--				desc = "Location List (Trouble)",
-		--			},
-		--			{
-		--				"<leader>xQ",
-		--				"<cmd>Trouble qflist toggle<cr>",
-		--				desc = "Quickfix List (Trouble)",
-		--			},
-		--		},
-		},
-
-		{
-			"RRethy/vim-illuminate",
-		},
-
-		{
-			"hedyhli/outline.nvim",
-			config = true,
-		},
-
-		{
-			"nvim-treesitter/nvim-treesitter-textobjects",
-			lazy = false,
-		},
+		require ("modular.specs.Lsp.trouble_nvim"),
+		require ("modular.specs.Lsp.vim-illuminate"),
+		require ("modular.specs.Lsp.outline_nvim"),
+		require ("modular.specs.Lsp.nvim-autopairs"),
+		require ("modular.specs.Lsp.indent-blankline_nvim"),
+		require ("modular.specs.Lsp.lspsaga_nvim"),
 
 		{
 			"hrsh7th/nvim-cmp",
@@ -163,41 +108,36 @@ local TemporaryModule1 = Module:new ({
 				})
 			end,
 		},
-		{
-			"windwp/nvim-autopairs",
-			dependencies = {
-				"hrsh7th/nvim-cmp",
-			},
-			opts = {
-				fast_wrap = {},
-				disable_filetype = { "TelescopePrompt", "vim" },
-			},
-			config = function(_, opts)
-				require("nvim-autopairs").setup(opts)
-
-				-- setup cmp for autopairs
-				local cmp_autopairs = require "nvim-autopairs.completion.cmp"
-				require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
-			end,
-		},
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
-			plugins = "outline.nvim",
-			action = function ()
-				require ("modular.mappings.temporary.outline")
-			end
-		}),
-		PostPluginLoadAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
-				require ("modular.mappings.temporary.lspconfig")
+				require ("modular.mappings.Lsp.lspconfig")
 			end
 		}),
 		PostPluginLoadAction:new ({
 			plugins = { "nvim-lspconfig", "telescope.nvim" },
 			action = function ()
-				require ("modular.mappings.Lsp.nvim_lspconfig_telescope_nvim")
+				require ("modular.mappings.Lsp.nvim-lspconfig_telescope_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "outline.nvim",
+			action = function ()
+				require ("modular.mappings.Lsp.outline")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "trouble.nvim",
+			action = function ()
+				require ("modular.mappings.Lsp.toruble_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "lspsaga.nvim",
+			action = function ()
+				require ("modular.mappings.Lsp.lspsaga_nvim")
 			end
 		}),
 	}

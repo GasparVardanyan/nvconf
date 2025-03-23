@@ -66,16 +66,38 @@ return { -- Autocompletion
 				--
 				-- <c-l> will move you to the right of each of the expansion locations.
 				-- <c-h> is similar, except moving you backwards.
-				['<C-l>'] = cmp.mapping(function()
-					if luasnip.expand_or_locally_jumpable() then
-						luasnip.expand_or_jump()
+
+				-- ['<C-l>'] = cmp.mapping(function()
+				-- 	if luasnip.expand_or_locally_jumpable() then
+				-- 		luasnip.expand_or_jump()
+				-- 	end
+				-- end, { 'i', 's' }),
+				-- ['<C-h>'] = cmp.mapping(function()
+				-- 	if luasnip.locally_jumpable(-1) then
+				-- 		luasnip.jump(-1)
+				-- 	end
+				-- end, { 'i', 's' }),
+
+				-- https://github.com/NvChad/NvChad/blob/6f25b2739684389ca69ea8229386c098c566c408/lua/nvchad/configs/cmp.lua#L27
+				["<C-l>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_next_item()
+					elseif require("luasnip").expand_or_jumpable() then
+						require("luasnip").expand_or_jump()
+					else
+						fallback()
 					end
-				end, { 'i', 's' }),
-				['<C-h>'] = cmp.mapping(function()
-					if luasnip.locally_jumpable(-1) then
-						luasnip.jump(-1)
+				end, { "i", "s" }),
+
+				["<C-h>"] = cmp.mapping(function(fallback)
+					if cmp.visible() then
+						cmp.select_prev_item()
+					elseif require("luasnip").jumpable(-1) then
+						require("luasnip").jump(-1)
+					else
+						fallback()
 					end
-				end, { 'i', 's' }),
+				end, { "i", "s" }),
 
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
