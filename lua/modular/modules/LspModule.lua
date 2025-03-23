@@ -32,7 +32,7 @@ local LspModule = Module:new ({
 		PostPluginLoadAction:new ({
 			plugins = "outline.nvim",
 			action = function ()
-				require ("modular.mappings.Lsp.outline")
+				require ("modular.mappings.Lsp.outline_nvim")
 			end
 		}),
 		PostPluginLoadAction:new ({

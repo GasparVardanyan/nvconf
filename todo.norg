@@ -34,6 +34,7 @@
   ~~~ ( ) https://github.com/yetone/avante.nvim
   ~~ (=) ClangModule
   ~~~ ( ) https://sr.ht/~p00f/clangd_extensions.nvim
+  ~~~ ( ) https://github.com/madskjeldgaard/cppman.nvim
   ~~ (=) NoneLSModule
   ~~~ ( ) https://github.com/nvimtools/none-ls.nvim
   ~~ (=) TestModule
