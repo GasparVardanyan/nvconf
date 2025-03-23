@@ -6,7 +6,7 @@ require ("modular.lazy")
 require ("modular.autocmds.generic")
 require ("modular.mappings.generic")
 
-require ("modular.extras.autocmds.hls_commands")
+require ("modular.extras")
 
 local ModuleManager = require ("modular.ModuleManager")
 

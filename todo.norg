@@ -18,24 +18,32 @@
   ~~ (x) Separate plugin specs from modules
   ~ ( ) *Modules*
   ~~ (x) Separate base logic
-  ~~ ( ) AiModule
-  ~~ ( ) ClangModule
   ~~ (x) HlsModule
-  ~~ ( ) NoneLSModule
-  ~~ ( ) TestModule
   ~~ (!) LspModule
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~ (-) CompilerModule
-  ~~ (-) UIModule
+  ~~ (-) DapModule
+  ~~ (x) UIModule
   ~~ (=) DbModule
   ~~ (=) LintModule
-  ~~ (-) DapModule
+  ~~~ ( ) https://github.com/mfussenegger/nvim-lint
+  ~~ (=) AiModule
+  ~~~ ( ) https://github.com/yetone/avante.nvim
+  ~~ (=) ClangModule
+  ~~~ ( ) https://sr.ht/~p00f/clangd_extensions.nvim
+  ~~ (=) NoneLSModule
+  ~~~ ( ) https://github.com/nvimtools/none-ls.nvim
+  ~~ (=) TestModule
+  ~~~ ( ) https://github.com/nvim-neotest/neotest
+  ~~~ ( ) https://github.com/alfaix/neotest-gtest
   ~~ (x) GitModule
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~ (x) OrgModule
+  ~~ (=) MarkdownModule
+  ~~ ( ) Move qmake utils to *modular.extras*
   ~ (x) ModuleManager
   ~ (_) MappingManager
   ~ (x) Migrate Options

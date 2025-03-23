@@ -1,5 +1,4 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 
 -- TODO: refactor these specs and move to the appropriate location
 local TemporaryModule2 = Module:new ({
@@ -18,9 +17,6 @@ local TemporaryModule2 = Module:new ({
 			---@type render.md.UserConfig
 			opts = {},
 		}
-
-	},
-	post_plugin_load_actions = {
 	}
 })
 

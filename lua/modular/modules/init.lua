@@ -8,6 +8,6 @@ return {
 	dap_module = require ("modular.modules.DapModule"),
 	db_module = require ("modular.modules.DbModule"),
 	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
-	-- temporary_module2 = require ("modular.modules.TemporaryModule2"),
+	temporary_module2 = require ("modular.modules.TemporaryModule2"),
 	lsp_module = require ("modular.modules.LspModule")
 }
