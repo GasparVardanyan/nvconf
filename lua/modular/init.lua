@@ -1,12 +1,12 @@
 if nil then
 	require ("oldconfig")
 else
-	require ("config.options")
-	require ("config.lazy")
-	require ("config.autocmds.generic")
-	require ("config.mappings.generic")
+	require ("modular.options")
+	require ("modular.lazy")
+	require ("modular.autocmds.generic")
+	require ("modular.mappings.generic")
 
-	local ModuleManager = require ("config.ModuleManager")
+	local ModuleManager = require ("modular.ModuleManager")
 ---@diagnostic disable-next-line: unused-local
 	local mm = ModuleManager:new ()
 

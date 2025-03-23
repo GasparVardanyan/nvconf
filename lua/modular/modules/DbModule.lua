@@ -1,4 +1,4 @@
-local Module = require ("config.Module")
+local Module = require ("modular.Module")
 
 local DbModule = Module:new ({
 	name = "Db",

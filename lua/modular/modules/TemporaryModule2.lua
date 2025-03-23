@@ -1,5 +1,5 @@
-local Module = require ("config.Module")
-local PostPluginLoadAction = require ("config.PostPluginLoadAction")
+local Module = require ("modular.Module")
+local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 
 -- TODO: refactor these specs and move to the appropriate location
 local TemporaryModule2 = Module:new ({

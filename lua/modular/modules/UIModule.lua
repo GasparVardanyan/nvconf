@@ -1,13 +1,13 @@
-local Module = require ("config.Module")
-local PostPluginLoadAction = require ("config.PostPluginLoadAction")
+local Module = require ("modular.Module")
+local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 
 local UIModule = Module:new ({
 	name = "UI",
 	priority = 1000,
 	plugins = {
-		require ("config.specs.UI.NeoSolarized_nvim"),
-		require ("config.specs.UI.solarized-osaka_nvim"),
-		require ("config.specs.UI.solarized_nvim"),
+		require ("modular.specs.UI.NeoSolarized_nvim"),
+		require ("modular.specs.UI.solarized-osaka_nvim"),
+		require ("modular.specs.UI.solarized_nvim"),
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({

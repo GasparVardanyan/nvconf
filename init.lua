@@ -1,4 +1,4 @@
-require ("config")
+require ("modular")
 
 -- RULES:
 -- no module calls another one
