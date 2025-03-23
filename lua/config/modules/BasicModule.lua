@@ -5,7 +5,7 @@ local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
 		require ("config.specs.Basic.Comment_nvim"),
-		require ("config.specs.Basic.dashboard-nvim"),
+		-- require ("config.specs.Basic.dashboard-nvim"),
 		require ("config.specs.Basic.dropbar_nvim"),
 		require ("config.specs.Basic.grug-far_nvim"),
 		require ("config.specs.Basic.neo-tree_nvim"),

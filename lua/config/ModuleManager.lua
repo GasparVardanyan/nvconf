@@ -19,6 +19,7 @@ function ModuleManager:new ()
 		dap_module = require ("config.modules.DapModule"),
 		db_module = require ("config.modules.DbModule"),
 		temporary_module1 = require ("config.modules.TemporaryModule1"),
+		temporary_module2 = require ("config.modules.TemporaryModule2"),
 		lsp_module = require ("config.modules.LspModule")
 	}
 
