@@ -19,6 +19,10 @@ map("n", "<leader>vC", vim.cmd.tabclose)
 map("n", "<leader>vN", vim.cmd.tabnew)
 map("n", "<leader>vd", vim.cmd.bdelete)
 map("n", "<leader>vo", vim.cmd.only)
+map("n", "<leader>M", function ()
+	vim.cmd.tabnew "%"
+	vim.cmd.norm "zz"
+end)
 
 map("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>")
 

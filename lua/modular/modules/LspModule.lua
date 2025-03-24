@@ -20,7 +20,7 @@ local LspModule = Module:new ({
 		PostPluginLoadAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
-				require ("modular.mappings.Lsp.lspconfig")
+				require ("modular.mappings.Lsp.nvim-lspconfig")
 			end
 		}),
 		PostPluginLoadAction:new ({
