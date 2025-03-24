@@ -25,8 +25,8 @@
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~ (-) CompilerModule
-  ~~ (-) DapModule
-  ~~~ ( ) https://github.com/nvim-telescope/telescope-dap.nvim
+  ~~ (x) DapModule
+  ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~ (x) UIModule
   ~~ (x) DbModule
   ~~ (=) LintModule
