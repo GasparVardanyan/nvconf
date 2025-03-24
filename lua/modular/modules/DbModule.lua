@@ -1,25 +1,21 @@
 local Module = require ("modular.Module")
+local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 
 local DbModule = Module:new ({
 	name = "Db",
 	plugins = {
-		{
-			'kristijanhusak/vim-dadbod-ui',
-			dependencies = {
-				{ 'tpope/vim-dadbod', lazy = true },
-				{ 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true }, -- Optional
-			},
-			cmd = {
-				'DBUI',
-				'DBUIToggle',
-				'DBUIAddConnection',
-				'DBUIFindBuffer',
-			},
-			init = function()
-				vim.g.db_ui_use_nerd_fonts = 1
-			end,
-		}
+		require ("modular.specs.Db.vim-dadbod"),
+		require ("modular.specs.Db.vim-dadbod-completion"),
+		require ("modular.specs.Db.vim-dadbod-ui"),
 	},
+	post_plugin_load_actions = {
+		PostPluginLoadAction:new ({
+			plugins = "vim-dadbod-ui",
+			action = function ()
+				require ("modular.mappings.Db.vim-dadbod-ui")
+			end
+		}),
+	}
 })
 
 return DbModule

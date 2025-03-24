@@ -44,6 +44,7 @@ map ("n", "<down>", "<cmd>echo \"Use j to move!!\"<CR>")
 -- <leader>d - Dap
 -- <leader>l - LspSaga
 -- <leader>g - Git
+-- <leader>x - Lsp - trouble
 -- <leader>D - Db
 -- <leader>l - Lint
 -- <leader>T - Test

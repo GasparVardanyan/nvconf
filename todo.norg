@@ -25,9 +25,9 @@
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~ (-) CompilerModule
-  ~~ (-) DapModule
+  ~~ (x) DapModule
   ~~ (x) UIModule
-  ~~ (=) DbModule
+  ~~ (x) DbModule
   ~~ (=) LintModule
   ~~~ ( ) https://github.com/mfussenegger/nvim-lint
   ~~ (=) AiModule

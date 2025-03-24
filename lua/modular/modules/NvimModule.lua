@@ -4,6 +4,7 @@ local NvimModule = Module:new ({
 	name = "Nvim",
 	plugins = {
 		require ("modular.specs.Nvim.nvim-nio"),
+		require ("modular.specs.Nvim.plenary_nvim"),
 		require ("modular.specs.Nvim.lazydev_nvim"),
 	},
 })
