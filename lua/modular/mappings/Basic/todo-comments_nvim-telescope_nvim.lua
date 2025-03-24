@@ -1,3 +1,3 @@
 local map = vim.keymap.set
 
-map('n', '<leader>fT', vim.cmd.TodoTelescope)
+map ("n", "<leader><space>", vim.cmd.TodoTelescope)

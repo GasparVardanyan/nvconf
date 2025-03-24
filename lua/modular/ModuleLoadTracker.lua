@@ -25,7 +25,6 @@ function ModuleLoadTracker:new (module_manager)
 end
 
 function ModuleLoadTracker:mark_plugin_loaded (plugin)
-	print (plugin)
 	for _, module in pairs (self.module_manager.modules) do
 		if false == module.ready then
 			for p, v in pairs (self.__module_loaded_plugins [module.name]) do
