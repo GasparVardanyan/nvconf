@@ -25,7 +25,8 @@
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~ (-) CompilerModule
-  ~~ (x) DapModule
+  ~~ (-) DapModule
+  ~~~ ( ) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~ (x) UIModule
   ~~ (x) DbModule
   ~~ (=) LintModule
@@ -43,7 +44,7 @@
   ~~ (x) GitModule
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~ (x) OrgModule
-  ~~ (=) MarkdownModule
+  ~~ (=) MdModule
   ~~ ( ) Move qmake utils to *modular.extras*
   ~ (x) ModuleManager
   ~ (_) MappingManager
