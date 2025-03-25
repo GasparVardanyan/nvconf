@@ -2,10 +2,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(event)
 		local map = vim.keymap.set
 
-		local bufnr = event.buf
-
 		local function opts(desc)
-			return { buffer = bufnr, desc = "LSP " .. desc }
+			-- NOTE: mappings become buffer local
+			return { buffer = event.buf, desc = "LSP " .. desc }
 		end
 
 		-- TODO: CLEAN UP THIS MESS
@@ -43,15 +42,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			end
 		end
 
+		-- The following two autocommands are used to highlight references of the
+		-- word under your cursor when your cursor rests there for a little while.
+		--    See `:help CursorHold` for information about when this is executed
+		--
+		-- When you move your cursor, the highlights will be cleared (the second autocommand).
+		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if nil then -- vim-illuminate does this
 			-- TODO: if enabled, move to the appropriate autocmds file
-
-			-- The following two autocommands are used to highlight references of the
-			-- word under your cursor when your cursor rests there for a little while.
-			--    See `:help CursorHold` for information about when this is executed
-			--
-			-- When you move your cursor, the highlights will be cleared (the second autocommand).
-			local client = vim.lsp.get_client_by_id(event.data.client_id)
 			if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
 				local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
 				vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
@@ -80,11 +78,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- code, if the language server you are using supports them
 		--
 		-- This may be unwanted, since they displace some of your code
-		-- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			map("n", '<leader>th', function()
+		if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+			map("n", 'gh', function()
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+			end, opts '[T]oggle Inlay [H]ints')
+
+			map("n", 'gH', function()
 				-- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			end, opts '[T]oggle Inlay [H]ints')
-		-- end
+		end
 	end,
 })

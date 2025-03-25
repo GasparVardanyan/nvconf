@@ -25,6 +25,7 @@
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
+  ~~~ (=) https://github.com/ThePrimeagen/harpoon
   ~~ (-) CompilerModule
   ~~ (x) DapModule
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
@@ -46,6 +47,7 @@
   ~~ (x) GitModule
   ~~~ (-) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
+  ~~~ ( ) https://github.com/jbyuki/one-small-step-for-vimkind
   ~~ (x) OrgModule
   ~~ (=) Move qmake utils to *modular.extras*
   ~~ (-) Get rid of the temporarily saved stuff
