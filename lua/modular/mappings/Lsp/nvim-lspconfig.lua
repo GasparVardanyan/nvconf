@@ -1,7 +1,8 @@
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(event)
 		local map = vim.keymap.set
-		local telescope_builtin = require("telescope.builtin")
+
+		local bufnr = event.buf
 
 		local function opts(desc)
 			return { buffer = bufnr, desc = "LSP " .. desc }
@@ -20,7 +21,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		map('n', '<leader>q', vim.cmd.ClangdSwitchSourceHeader)
 
 		map("n", "<leader>wl", function()
-			-- print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, opts "List workspace folders")
 
 		map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
@@ -79,10 +80,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		-- code, if the language server you are using supports them
 		--
 		-- This may be unwanted, since they displace some of your code
-		if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			map('<leader>th', function()
-				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-			end, '[T]oggle Inlay [H]ints')
-		end
+		-- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+			map("n", '<leader>th', function()
+				-- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
+				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+			end, opts '[T]oggle Inlay [H]ints')
+		-- end
 	end,
 })
