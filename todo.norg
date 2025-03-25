@@ -2,12 +2,12 @@
 
   - (=) nvim-cmp.lua - move mappings to *mappings* module
   - (x) nvim-cmp.lua - move lsp setups to *nvim-lspconfig.lua*
-  - (=) dap integration
+  - (x) dap integration
   - (=) cmake integration
   - (=) clang integration
   - (x) compiler.nvim integration
   - (x) separate plugin configs
-  - ( ) overseer lualine
+  - (_) overseer lualine
 
 * Todo List (v2)
   ~ ( ) *Module* core
@@ -20,6 +20,7 @@
   ~~ (x) Separate base logic
   ~~ (x) HlsModule
   ~~ (!) LspModule
+  ~~~ (-) clean up lsp mappings' mess
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
@@ -29,23 +30,25 @@
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~ (x) UIModule
   ~~ (x) DbModule
+  ~~ (=) MdModule
+  ~~ (=) ClangModule
+  ~~~ ( ) https://sr.ht/~p00f/clangd_extensions.nvim
+  ~~~ ( ) https://github.com/madskjeldgaard/cppman.nvim
   ~~ (=) LintModule
   ~~~ ( ) https://github.com/mfussenegger/nvim-lint
   ~~ (=) AiModule
   ~~~ ( ) https://github.com/yetone/avante.nvim
-  ~~ (=) ClangModule
-  ~~~ ( ) https://sr.ht/~p00f/clangd_extensions.nvim
-  ~~~ ( ) https://github.com/madskjeldgaard/cppman.nvim
   ~~ (=) NoneLSModule
   ~~~ ( ) https://github.com/nvimtools/none-ls.nvim
   ~~ (=) TestModule
   ~~~ ( ) https://github.com/nvim-neotest/neotest
   ~~~ ( ) https://github.com/alfaix/neotest-gtest
   ~~ (x) GitModule
+  ~~~ (-) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~ (x) OrgModule
-  ~~ (=) MdModule
-  ~~ ( ) Move qmake utils to *modular.extras*
+  ~~ (=) Move qmake utils to *modular.extras*
+  ~~ (-) Get rid of the temporarily saved stuff
   ~ (x) ModuleManager
   ~ (_) MappingManager
   ~ (x) Migrate Options
