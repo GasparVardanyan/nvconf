@@ -11,21 +11,20 @@ end
 
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(event)
-		map("n", "gD", vim.lsp.buf.declaration, { buffer = event.buf })
-		map("n", "gd", vim.lsp.buf.definition, { buffer = event.buf })
-		map("n", "gi", vim.lsp.buf.implementation, { buffer = event.buf })
-		map("n", "gr", vim.lsp.buf.references, { buffer = event.buf })
-
-		map("n", "<leader>D", vim.lsp.buf.type_definition, { buffer = event.buf })
-		map("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = event.buf })
-		map("n", "<leader>q", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf })
-		map("n", "<leader>r", vim.lsp.buf.rename, { buffer = event.buf })
-		map("n", "<leader>sh", vim.lsp.buf.signature_help, { buffer = event.buf })
-		map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
-		map("n", "<leader>wl", function()
+		map("n", "<leader>la", vim.lsp.buf.code_action, { buffer = event.buf })
+		map("n", "<leader>lgD", vim.lsp.buf.declaration, { buffer = event.buf })
+		map("n", "<leader>lgd", vim.lsp.buf.definition, { buffer = event.buf })
+		map("n", "<leader>lgi", vim.lsp.buf.implementation, { buffer = event.buf })
+		map("n", "<leader>lgr", vim.lsp.buf.references, { buffer = event.buf })
+		map("n", "<leader>lgt", vim.lsp.buf.type_definition, { buffer = event.buf })
+		map("n", "<leader>lr", vim.lsp.buf.rename, { buffer = event.buf })
+		map("n", "<leader>ls", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf })
+		map("n", "<leader>ls", vim.lsp.buf.signature_help, { buffer = event.buf })
+		map("n", "<leader>lwa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
+		map("n", "<leader>lwl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, { buffer = event.buf })
-		map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
+		map("n", "<leader>lwr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 
@@ -56,11 +55,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
 		end
 
 		if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			map("n", "<leader>gh", function()
+			map("n", "<leader>lh", function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
 			end, { buffer = event.buf })
 
-			map("n", "<leader>gH", function()
+			map("n", "<leader>lH", function()
 				-- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			end, { buffer = event.buf })
@@ -70,19 +69,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.api.nvim_create_autocmd('LspDetach', {
 	callback = function(event)
-		unmap("n", "gD", { buffer = event.buf })
-		unmap("n", "gd", { buffer = event.buf })
-		unmap("n", "gi", { buffer = event.buf })
-		unmap("n", "gr", { buffer = event.buf })
-
-		unmap("n", "<leader>D", { buffer = event.buf })
-		unmap("n", "<leader>ca", { buffer = event.buf })
-		unmap("n", "<leader>q", { buffer = event.buf })
-		unmap("n", "<leader>r", { buffer = event.buf })
-		unmap("n", "<leader>sh", { buffer = event.buf })
-		unmap("n", "<leader>wa", { buffer = event.buf })
-		unmap("n", "<leader>wl", { buffer = event.buf })
-		unmap("n", "<leader>wr", { buffer = event.buf })
+		unmap("n", "<leader>la", { buffer = event.buf })
+		unmap("n", "<leader>lgD", { buffer = event.buf })
+		unmap("n", "<leader>lgd", { buffer = event.buf })
+		unmap("n", "<leader>lgi", { buffer = event.buf })
+		unmap("n", "<leader>lgr", { buffer = event.buf })
+		unmap("n", "<leader>lgt", { buffer = event.buf })
+		unmap("n", "<leader>lr", { buffer = event.buf })
+		unmap("n", "<leader>ls", { buffer = event.buf })
+		unmap("n", "<leader>ls", { buffer = event.buf })
+		unmap("n", "<leader>lwa", { buffer = event.buf })
+		unmap("n", "<leader>lwl", { buffer = event.buf })
+		unmap("n", "<leader>lwr", { buffer = event.buf })
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 

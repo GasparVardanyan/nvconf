@@ -20,7 +20,7 @@
   ~~ (x) Separate base logic
   ~~ (x) HlsModule
   ~~ (!) LspModule
-  ~~~ (-) clean up lsp mappings' mess
+  ~~~ (x) clean up lsp mappings' mess
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
