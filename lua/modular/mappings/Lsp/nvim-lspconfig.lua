@@ -1,53 +1,34 @@
+local map = vim.keymap.set
+local unmap = vim.keymap.del
+
+local function client_supports_method(client, method, bufnr)
+	if vim.fn.has 'nvim-0.11' == 1 then
+		return client:supports_method(method, bufnr)
+	else
+		return client.supports_method(method, { bufnr = bufnr })
+	end
+end
+
 vim.api.nvim_create_autocmd('LspAttach', {
 	callback = function(event)
-		local map = vim.keymap.set
+		map("n", "gD", vim.lsp.buf.declaration, { buffer = event.buf })
+		map("n", "gd", vim.lsp.buf.definition, { buffer = event.buf })
+		map("n", "gi", vim.lsp.buf.implementation, { buffer = event.buf })
+		map("n", "gr", vim.lsp.buf.references, { buffer = event.buf })
 
-		local function opts(desc)
-			-- NOTE: mappings become buffer local
-			return { buffer = event.buf, desc = "LSP " .. desc }
-		end
-
-		-- TODO: CLEAN UP THIS MESS
-		-- TODO: Use Trouble's Diagnostics window too
-
-		map("n", "<leader>r", vim.lsp.buf.rename, opts "LSP Rename")
-		map("n", "<leader>sh", vim.lsp.buf.signature_help, opts "Show signature help")
-		map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, opts "Add workspace folder")
-		map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, opts "Remove workspace folder")
-		map("n", "gD", vim.lsp.buf.declaration, opts "Go to declaration")
-		map("n", "gd", vim.lsp.buf.definition, opts "Go to definition")
-		map("n", "gi", vim.lsp.buf.implementation, opts "Go to implementation")
-		map('n', '<leader>q', vim.cmd.ClangdSwitchSourceHeader)
-
+		map("n", "<leader>D", vim.lsp.buf.type_definition, { buffer = event.buf })
+		map("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = event.buf })
+		map("n", "<leader>q", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf })
+		map("n", "<leader>r", vim.lsp.buf.rename, { buffer = event.buf })
+		map("n", "<leader>sh", vim.lsp.buf.signature_help, { buffer = event.buf })
+		map("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
 		map("n", "<leader>wl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-		end, opts "List workspace folders")
+		end, { buffer = event.buf })
+		map("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
 
-		map("n", "<leader>D", vim.lsp.buf.type_definition, opts "Go to type definition")
-		-- map("n", "<leader>ra", require "nvchad.lsp.renamer", opts "NvRenamer")
-
-		map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, opts "Code action")
-		map("n", "gr", vim.lsp.buf.references, opts "Show references")
-
-		-- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
-		---@param client vim.lsp.Client
-		---@param method vim.lsp.protocol.Method
-		---@param bufnr? integer some lsp support methods only in specific files
-		---@return boolean
-		local function client_supports_method(client, method, bufnr)
-			if vim.fn.has 'nvim-0.11' == 1 then
-				return client:supports_method(method, bufnr)
-			else
-				return client.supports_method(method, { bufnr = bufnr })
-			end
-		end
-
-		-- The following two autocommands are used to highlight references of the
-		-- word under your cursor when your cursor rests there for a little while.
-		--    See `:help CursorHold` for information about when this is executed
-		--
-		-- When you move your cursor, the highlights will be cleared (the second autocommand).
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
+
 		if nil then -- vim-illuminate does this
 			-- TODO: if enabled, move to the appropriate autocmds file
 			if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
@@ -74,19 +55,40 @@ vim.api.nvim_create_autocmd('LspAttach', {
 			end
 		end
 
-		-- The following code creates a keymap to toggle inlay hints in your
-		-- code, if the language server you are using supports them
-		--
-		-- This may be unwanted, since they displace some of your code
 		if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			map("n", 'gh', function()
+			map("n", "<leader>gh", function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-			end, opts '[T]oggle Inlay [H]ints')
+			end, { buffer = event.buf })
 
-			map("n", 'gH', function()
+			map("n", "<leader>gH", function()
 				-- vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-			end, opts '[T]oggle Inlay [H]ints')
+			end, { buffer = event.buf })
+		end
+	end,
+})
+
+vim.api.nvim_create_autocmd('LspDetach', {
+	callback = function(event)
+		unmap("n", "gD", { buffer = event.buf })
+		unmap("n", "gd", { buffer = event.buf })
+		unmap("n", "gi", { buffer = event.buf })
+		unmap("n", "gr", { buffer = event.buf })
+
+		unmap("n", "<leader>D", { buffer = event.buf })
+		unmap("n", "<leader>ca", { buffer = event.buf })
+		unmap("n", "<leader>q", { buffer = event.buf })
+		unmap("n", "<leader>r", { buffer = event.buf })
+		unmap("n", "<leader>sh", { buffer = event.buf })
+		unmap("n", "<leader>wa", { buffer = event.buf })
+		unmap("n", "<leader>wl", { buffer = event.buf })
+		unmap("n", "<leader>wr", { buffer = event.buf })
+
+		local client = vim.lsp.get_client_by_id(event.data.client_id)
+
+		if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
+			unmap("n", "<leader>gh", { buffer = event.buf })
+			unmap("n", "<leader>gH", { buffer = event.buf })
 		end
 	end,
 })

@@ -7,7 +7,7 @@ return {
 	compiler_module = require ("modular.modules.CompilerModule"),
 	dap_module = require ("modular.modules.DapModule"),
 	db_module = require ("modular.modules.DbModule"),
-	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
-	temporary_module2 = require ("modular.modules.MdModule"),
+	md_module = require ("modular.modules.MdModule"),
 	lsp_module = require ("modular.modules.LspModule")
+	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
 }
