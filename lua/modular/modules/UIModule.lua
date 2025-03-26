@@ -6,6 +6,7 @@ local UIModule = Module:new ({
 	priority = 1000,
 	plugins = {
 		require ("modular.specs.UI.NeoSolarized_nvim"),
+		-- require ("modular.specs.UI.selenized_nvim"),
 		require ("modular.specs.UI.solarized-osaka_nvim"),
 		require ("modular.specs.UI.solarized_nvim"),
 	},

@@ -6,6 +6,7 @@ local NvimModule = Module:new ({
 		require ("modular.specs.Nvim.nvim-nio"),
 		require ("modular.specs.Nvim.plenary_nvim"),
 		require ("modular.specs.Nvim.lazydev_nvim"),
+		require ("modular.specs.Nvim.nui_nvim"),
 	},
 })
 

@@ -70,6 +70,42 @@
   ~~ (x) Move included Modules outside the *ModuleManager*
   ~~ (x) New directory structure to have multiple module groups
   ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
+  ~ ( ) Try these plugins:
+  ~~ ( ) https://github.com/akinsho/git-conflict.nvim
+  ~~ ( ) https://github.com/andythigpen/nvim-coverage
+  ~~ ( ) https://github.com/anuvyklack/pretty-fold.nvim
+  ~~ ( ) https://github.com/calind/selenized.nvim
+  ~~ ( ) https://github.com/chentoast/marks.nvim
+  ~~ ( ) https://github.com/chipsenkbeil/distant.nvim
+  ~~ ( ) https://github.com/CRAG666/code_runner.nvim
+  ~~ ( ) https://github.com/ErichDonGubler/lsp_lines.nvim
+  ~~ ( ) https://github.com/GnikDroy/projections.nvim
+  ~~ ( ) https://github.com/hat0uma/csvview.nvim
+  ~~ ( ) https://github.com/igorlfs/nvim-dap-view
+  ~~ ( ) https://github.com/isak102/telescope-git-file-history.nvim
+  ~~ ( ) https://github.com/Julian/lean.nvim
+  ~~ ( ) https://github.com/lewis6991/hover.nvim
+  ~~ ( ) https://github.com/LintaoAmons/cd-project.nvim
+  ~~ ( ) https://github.com/MeanderingProgrammer/render-markdown.nvim
+  ~~ ( ) https://github.com/michaelb/sniprun
+  ~~ ( ) https://github.com/MunifTanjim/nui.nvim
+  ~~ ( ) https://github.com/neolooong/whichpy.nvim
+  ~~ ( ) https://github.com/niuiic/dap-utils.nvim
+  ~~ ( ) https://github.com/NormalNvim/NormalNvim
+  ~~ ( ) https://github.com/nvim-java/nvim-java
+  ~~ ( ) https://github.com/otavioschwanck/arrow.nvim
+  ~~ ( ) https://github.com/pocco81/auto-save.nvim
+  ~~ ( ) https://github.com/rafcamlet/nvim-luapad
+  ~~ ( ) https://github.com/rockerBOO/awesome-neovim
+  ~~ ( ) https://github.com/RRethy/nvim-treesitter-textsubjects
+  ~~ ( ) https://github.com/sakhnik/nvim-gdb
+  ~~ ( ) https://github.com/smzm/hydrovim
+  ~~ ( ) https://github.com/tsakirist/telescope-lazy.nvim
+  ~~ ( ) https://github.com/t-troebst/perfanno.nvim
+  ~~ ( ) https://github.com/Willem-J-an/visidata.nvim
+  ~~ ( ) https://github.com/wsdjeg/rooter.nvim
+  ~~ ( ) https://git.sr.ht/~whynothugo/lsp_lines.nvim
+
 
 ** ChatGPT
    - (x) Instead of one autocmd per module, consider a single User ModuleReady event with a data field to indicate which module is ready.
