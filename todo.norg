@@ -31,7 +31,7 @@
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~ (x) UIModule
   ~~ (x) DbModule
-  ~~ (=) MdModule
+  ~~ (-) MdModule
   ~~ (=) ClangModule
   ~~~ ( ) https://sr.ht/~p00f/clangd_extensions.nvim
   ~~~ ( ) https://github.com/madskjeldgaard/cppman.nvim
