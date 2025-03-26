@@ -8,6 +8,7 @@ return {
 	dap_module = require ("modular.modules.DapModule"),
 	db_module = require ("modular.modules.DbModule"),
 	md_module = require ("modular.modules.MdModule"),
-	lsp_module = require ("modular.modules.LspModule")
+	lsp_module = require ("modular.modules.LspModule"),
+	lsp_extra_mappings_module = require ("modular.extras.modules.LspExtraMappings"),
 	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
 }

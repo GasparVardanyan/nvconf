@@ -21,6 +21,7 @@
   ~~ (x) HlsModule
   ~~ (!) LspModule
   ~~~ (x) clean up lsp mappings' mess
+  ~~~ (-) LspExtraMappingsModule
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
