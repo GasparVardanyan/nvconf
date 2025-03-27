@@ -1,23 +1,28 @@
-vim.api.nvim_create_autocmd('LspAttach', {
-	callback = function(args)
-		local map = vim.keymap.set
-		local builtin = require("telescope.builtin")
+local groups = require ("modular.autogroups")
+local telescope = require("telescope.builtin")
+local groups = require ("modular.autogroups")
 
-		map("n", "<leader>lfI", builtin.lsp_incoming_calls, { buffer = args.buf })
-		map("n", "<leader>lfO", builtin.lsp_outgoing_calls, { buffer = args.buf })
-		map("n", "<leader>lfS", builtin.lsp_dynamic_workspace_symbols, { buffer = args.buf })
-		map("n", "<leader>lfT", builtin.lsp_type_definitions, {buffer = args.buf})
-		map("n", "<leader>lfd", builtin.lsp_definitions, { buffer = args.buf })
-		map("n", "<leader>lfi", builtin.lsp_implementations, { buffer = args.buf })
-		map("n", "<leader>lfr", builtin.lsp_references, { buffer = args.buf })
-		map("n", "<leader>lfs", builtin.lsp_document_symbols, { buffer = args.buf })
+local map = vim.keymap.set
+local unmap = vim.keymap.del
+
+vim.api.nvim_create_autocmd('LspAttach', {
+	group = vim.api.nvim_create_augroup (groups.LspAttachTelescopeMappings, { clear = true }),
+	callback = function(args)
+
+		map("n", "<leader>lfI", telescope.lsp_incoming_calls, { buffer = args.buf })
+		map("n", "<leader>lfO", telescope.lsp_outgoing_calls, { buffer = args.buf })
+		map("n", "<leader>lfS", telescope.lsp_dynamic_workspace_symbols, { buffer = args.buf })
+		map("n", "<leader>lfT", telescope.lsp_type_definitions, {buffer = args.buf})
+		map("n", "<leader>lfd", telescope.lsp_definitions, { buffer = args.buf })
+		map("n", "<leader>lfi", telescope.lsp_implementations, { buffer = args.buf })
+		map("n", "<leader>lfr", telescope.lsp_references, { buffer = args.buf })
+		map("n", "<leader>lfs", telescope.lsp_document_symbols, { buffer = args.buf })
 	end,
 })
 
 vim.api.nvim_create_autocmd('LspDetach', {
+	group = vim.api.nvim_create_augroup (groups.LspDetachTelescopeMappings, { clear = true }),
 	callback = function(args)
-		local unmap = vim.keymap.del
-
 		unmap("n", "<leader>lfI", { buffer = args.buf })
 		unmap("n", "<leader>lfO", { buffer = args.buf })
 		unmap("n", "<leader>lfS", { buffer = args.buf })

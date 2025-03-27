@@ -10,5 +10,6 @@ return {
 	md_module = require ("modular.modules.MdModule"),
 	lsp_module = require ("modular.modules.LspModule"),
 	lsp_extra_mappings_module = require ("modular.extras.modules.LspExtraMappings"),
+	lean_module = require ("modular.extras.modules.LeanModule"),
 	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
 }

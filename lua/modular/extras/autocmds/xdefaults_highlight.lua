@@ -11,6 +11,7 @@ vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 	callback = function (args)
 		local bufnr = args.buf
 
+		-- TODO: replace these deprecated functions
 		vim.api.nvim_buf_set_option (bufnr, 'syntax', 'xdefaults')
 	end,
 })

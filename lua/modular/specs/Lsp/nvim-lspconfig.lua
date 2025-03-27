@@ -116,6 +116,11 @@ return {
 				end,
 			},
 		}
+
+		local lspconfig = require ("lspconfig")
+		lspconfig ['leanls'].setup {
+			capabilities = capabilities
+		}
 	end,
 }
 

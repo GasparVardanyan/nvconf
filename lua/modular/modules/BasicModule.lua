@@ -4,6 +4,7 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
+		-- require ("modular.specs.Basic.cd-project_nvim"),
 		require ("modular.specs.Basic.Comment_nvim"),
 		-- require ("modular.specs.Basic.dashboard-nvim"),
 		require ("modular.specs.Basic.dropbar_nvim"),
@@ -25,6 +26,12 @@ local BasicModule = Module:new ({
 			plugins = "dropbar.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.dropbar_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "cd-project.nvim",
+			action = function ()
+				require ("modular.autocmds.Basic.cd-project_nvim_VimEnter")
 			end
 		}),
 		PostPluginLoadAction:new ({

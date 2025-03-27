@@ -7,6 +7,8 @@ return {
 
 	LspAttachMappings = "Modular_LspAttachMappings",
 	LspDetachMappings = "Modular_LspDetachMappings",
+	LspAttachTelescopeMappings = "Modular_LspAttachTelescopeMappings",
+	LspDetachTelescopeMappings = "Modular_LspDetachTelescopeMappings",
 	LspAttachAutocmds = "Modular_LspAttachAutocmds",
 	LspDetachAutocmds = "Modular_LspDetachAutocmds",
 

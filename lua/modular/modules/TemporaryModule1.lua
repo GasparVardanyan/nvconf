@@ -35,6 +35,9 @@ local TemporaryModule1 = Module:new ({
 				lspconfig ['lua_ls'].setup {
 					capabilities = capabilities
 				}
+				lspconfig ['leanls'].setup {
+					capabilities = capabilities
+				}
 			end,
 		},
 
@@ -113,7 +116,7 @@ local TemporaryModule1 = Module:new ({
 		PostPluginLoadAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
-				require ("modular.mappings.Lsp.lspconfig")
+				require ("modular.mappings.Lsp.nvim-lspconfig")
 			end
 		}),
 		PostPluginLoadAction:new ({
@@ -125,7 +128,7 @@ local TemporaryModule1 = Module:new ({
 		PostPluginLoadAction:new ({
 			plugins = "outline.nvim",
 			action = function ()
-				require ("modular.mappings.Lsp.outline")
+				require ("modular.mappings.Lsp.outline_nvim")
 			end
 		}),
 		PostPluginLoadAction:new ({

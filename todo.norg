@@ -88,9 +88,10 @@
   ~~ ( ) https://github.com/hat0uma/csvview.nvim
   ~~ ( ) https://github.com/igorlfs/nvim-dap-view
   ~~ ( ) https://github.com/isak102/telescope-git-file-history.nvim
-  ~~ ( ) https://github.com/Julian/lean.nvim
+  ~~ (-) https://github.com/Julian/lean.nvim
+  ~~ (-) https://github.com/rmagatti/goto-preview
   ~~ ( ) https://github.com/lewis6991/hover.nvim
-  ~~ ( ) https://github.com/LintaoAmons/cd-project.nvim
+  ~~ (x) https://github.com/LintaoAmons/cd-project.nvim
   ~~ ( ) https://github.com/MeanderingProgrammer/render-markdown.nvim
   ~~ ( ) https://github.com/michaelb/sniprun
   ~~ ( ) https://github.com/MunifTanjim/nui.nvim
