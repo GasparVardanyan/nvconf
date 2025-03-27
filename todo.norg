@@ -21,13 +21,15 @@
   ~~ (x) HlsModule
   ~~ (!) LspModule
   ~~~ (x) clean up lsp mappings' mess
-  ~~~ (-) LspExtraMappingsModule
+  ~~~ (x) LspExtraMappingsModule
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~~ (=) https://github.com/ThePrimeagen/harpoon
+  ~~~ (-) oil.nvim mappings
   ~~ (-) CompilerModule
+  ~~ (=) cmake-tools.nvim
   ~~ (x) DapModule
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~ (x) UIModule
@@ -64,6 +66,7 @@
 		 depend on plugins from other modules /make a function which registers/
 		 /and loads the spec/
   ~ (x) Dashboard
+  ~~ (-) Conflicts with indent-blankline.nvim
   ~ ( ) Module leaders /whichkey?/
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
@@ -71,7 +74,7 @@
   ~~ (x) Move included Modules outside the *ModuleManager*
   ~~ (x) New directory structure to have multiple module groups
   ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
-  ~ ( ) Try these plugins:
+  ~ ( ) Check these interesting resourcecs:
   ~~ ( ) https://github.com/rockerBOO/awesome-neovim
   ~~ ( ) https://github.com/akinsho/git-conflict.nvim
   ~~ ( ) https://github.com/andythigpen/nvim-coverage
