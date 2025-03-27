@@ -1,4 +1,7 @@
+local groups = require ("modular.autogroups")
+
 vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
+	group = vim.api.nvim_create_augroup (groups.NeorgOptions, { clear = true }),
 	pattern = { "*.norg" },
 	callback = function (args)
 		local bufnr = args.buf

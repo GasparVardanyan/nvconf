@@ -1,4 +1,7 @@
+local groups = require ("modular.extras.autogroups")
+
 vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
+	group = vim.api.nvim_create_augroup (groups.ExtraXdefaultsFiles, { clear = true }),
 	pattern = {
 		  "*.xdefaults"
 		, "*.palette"
