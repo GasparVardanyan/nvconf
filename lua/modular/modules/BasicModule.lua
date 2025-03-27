@@ -35,6 +35,12 @@ local BasicModule = Module:new ({
 		-- 	end
 		-- }),
 		PostPluginLoadAction:new ({
+			plugins = "cd-project.nvim",
+			action = function ()
+				require ("modular.mappings.Basic.cd-project_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
 			plugins = "grug-far.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.grug-far_nvim")
