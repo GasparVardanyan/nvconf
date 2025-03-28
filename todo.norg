@@ -22,6 +22,7 @@
   ~~ (!) LspModule
   ~~~ (x) clean up lsp mappings' mess
   ~~~ (x) LspExtraMappingsModule
+  ~~~ (-) Move to native 0.11 autocompletion
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec

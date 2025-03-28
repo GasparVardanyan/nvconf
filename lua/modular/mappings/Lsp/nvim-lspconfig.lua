@@ -22,28 +22,28 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 			map ("n", "grr", vim.lsp.buf.references, { buffer = event.buf })
 			map ("n", "gri", vim.lsp.buf.implementation, { buffer = event.buf })
 			map ("n", "gO", vim.lsp.buf.document_symbol, { buffer = event.buf })
-			map ("n", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf })
 		end
+			map ({"n", "i"}, "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf })
 
-		map("n", "grD", vim.lsp.buf.definition, { buffer = event.buf })
-		map("n", "grd", vim.lsp.buf.declaration, { buffer = event.buf })
-		map("n", "grt", vim.lsp.buf.type_definition, { buffer = event.buf })
-		map("n", "grs", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf })
-		map("n", "grwa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
-		map("n", "grwl", function()
+		map ("n", "grD", vim.lsp.buf.declaration, { buffer = event.buf })
+		map ("n", "grd", vim.lsp.buf.definition, { buffer = event.buf })
+		map ("n", "grt", vim.lsp.buf.type_definition, { buffer = event.buf })
+		map ("n", "grs", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf })
+		map ("n", "grwa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
+		map ("n", "grwl", function()
 			print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 		end, { buffer = event.buf })
-		map("n", "grwr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
+		map ("n", "grwr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
 
-		local client = vim.lsp.get_client_by_id(event.data.client_id)
+		local client = vim.lsp.get_client_by_id (event.data.client_id)
+
+		-- if client and client:supports_method ('textDocument/completion') then
+		-- 	vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
+		-- end
 
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			map("n", "grh", function()
+			map ("n", "grh", function()
 				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
-			end, { buffer = event.buf })
-
-			map("n", "grH", function()
-				vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 			end, { buffer = event.buf })
 		end
 	end,
@@ -58,22 +58,21 @@ vim.api.nvim_create_autocmd("LspDetach", {
 			unmap ("n", "grr", { buffer = event.buf })
 			unmap ("n", "gri", { buffer = event.buf })
 			unmap ("n", "gO", { buffer = event.buf })
-			unmap ("n", "<c-s>", { buffer = event.buf })
 		end
+			unmap ({"n", "i"}, "<c-s>", { buffer = event.buf })
 
-		unmap("n", "grD", { buffer = event.buf })
-		unmap("n", "grd", { buffer = event.buf })
-		unmap("n", "grt", { buffer = event.buf })
-		unmap("n", "grs", { buffer = event.buf })
-		unmap("n", "grwa", { buffer = event.buf })
-		unmap("n", "grwl", { buffer = event.buf })
-		unmap("n", "grwr", { buffer = event.buf })
+		unmap ("n", "grD", { buffer = event.buf })
+		unmap ("n", "grd", { buffer = event.buf })
+		unmap ("n", "grt", { buffer = event.buf })
+		unmap ("n", "grs", { buffer = event.buf })
+		unmap ("n", "grwa", { buffer = event.buf })
+		unmap ("n", "grwl", { buffer = event.buf })
+		unmap ("n", "grwr", { buffer = event.buf })
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			unmap("n", "grh", { buffer = event.buf })
-			unmap("n", "glH", { buffer = event.buf })
+			unmap ("n", "grh", { buffer = event.buf })
 		end
 	end,
 })

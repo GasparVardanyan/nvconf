@@ -11,20 +11,20 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.solarized_nvim"),
 	},
 	post_plugin_load_actions = {
-		-- PostPluginLoadAction:new ({
-		-- 	plugins = "NeoSolarized.nvim",
-		-- 	action = function ()
-		-- 		vim.opt.background = "dark"
-		-- 		vim.cmd.colorscheme "NeoSolarized"
-		-- 	end
-		-- }),
 		PostPluginLoadAction:new ({
-			plugins = "solarized-osaka.nvim",
+			plugins = "NeoSolarized.nvim",
 			action = function ()
 				vim.opt.background = "dark"
-				vim.cmd.colorscheme "solarized-osaka"
+				vim.cmd.colorscheme "NeoSolarized"
 			end
 		}),
+		-- PostPluginLoadAction:new ({
+		-- 	plugins = "solarized-osaka.nvim",
+		-- 	action = function ()
+		-- 		vim.opt.background = "dark"
+		-- 		vim.cmd.colorscheme "solarized-osaka"
+		-- 	end
+		-- }),
 	}
 })
 
