@@ -1,3 +1,3 @@
 local map = vim.keymap.set
 
-map("n", "<leader>C", vim.cmd.CdProject)
+map("n", "<leader>G", vim.cmd.CdProject)
