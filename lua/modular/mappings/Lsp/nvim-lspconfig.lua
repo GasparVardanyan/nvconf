@@ -22,8 +22,10 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 			map ("n", "grr", vim.lsp.buf.references, { buffer = event.buf })
 			map ("n", "gri", vim.lsp.buf.implementation, { buffer = event.buf })
 			map ("n", "gO", vim.lsp.buf.document_symbol, { buffer = event.buf })
+			map ("i", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf })
 		end
-			map ({"n", "i"}, "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf })
+
+		map ("n", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf })
 
 		map ("n", "grD", vim.lsp.buf.declaration, { buffer = event.buf })
 		map ("n", "grd", vim.lsp.buf.definition, { buffer = event.buf })
@@ -57,9 +59,10 @@ vim.api.nvim_create_autocmd("LspDetach", {
 			unmap ("n", "gra", { buffer = event.buf })
 			unmap ("n", "grr", { buffer = event.buf })
 			unmap ("n", "gri", { buffer = event.buf })
-			unmap ("n", "gO", { buffer = event.buf })
+			unmap ("i", "<c-s>", { buffer = event.buf })
 		end
-			unmap ({"n", "i"}, "<c-s>", { buffer = event.buf })
+
+		unmap ("n", "<c-s>", { buffer = event.buf })
 
 		unmap ("n", "grD", { buffer = event.buf })
 		unmap ("n", "grd", { buffer = event.buf })
