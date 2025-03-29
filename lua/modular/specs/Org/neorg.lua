@@ -39,7 +39,7 @@ return {
 					},
 				},
 				["core.export"] = {},
-				-- ["core.latex.renderer"] = {},
+				["core.latex.renderer"] = {},
 				["core.summary"] = {},
 				["core.text-objects"] = {},
 				["core.integrations.telescope"] = {},

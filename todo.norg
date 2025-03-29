@@ -61,6 +61,7 @@
   ~ (x) Migrate Autocmds
   ~ (x) Replace nvim-tree with neo-tree
   ~ (x) Commenting /nerdcommenter/
+  ~ (-) organize generic mappings
   ~ *ModuleManager*
   ~~ ( ) Handle duplicate specs
   ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
