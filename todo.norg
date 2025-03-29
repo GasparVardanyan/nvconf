@@ -28,7 +28,7 @@
   ~~~ (-) refactor LuaSnip spec
   ~~ (-) BasicModule
   ~~~ (=) https://github.com/ThePrimeagen/harpoon
-  ~~~ (-) oil.nvim mappings
+  ~~~ (x) oil.nvim mappings
   ~~ (-) CompilerModule
   ~~ (=) cmake-tools.nvim
   ~~ (x) DapModule
@@ -90,8 +90,8 @@
   ~~ ( ) https://github.com/hat0uma/csvview.nvim
   ~~ ( ) https://github.com/igorlfs/nvim-dap-view
   ~~ ( ) https://github.com/isak102/telescope-git-file-history.nvim
-  ~~ (-) https://github.com/Julian/lean.nvim
-  ~~ (-) https://github.com/rmagatti/goto-preview
+  ~~ (x) https://github.com/Julian/lean.nvim
+  ~~ (x) https://github.com/rmagatti/goto-preview
   ~~ ( ) https://github.com/pwntester/octo.nvim
   ~~ ( ) https://github.com/lewis6991/hover.nvim
   ~~ (x) https://github.com/LintaoAmons/cd-project.nvim
