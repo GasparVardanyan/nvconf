@@ -13,6 +13,7 @@ local LspModule = Module:new ({
 		require ("modular.specs.Lsp.outline_nvim"),
 		require ("modular.specs.Lsp.vim-illuminate"),
 		require ("modular.specs.Lsp.trouble_nvim"),
+		require ("modular.specs.Lsp.goto-preview"),
 		-- require ("modular.specs.Lsp.nvim-treesitter-textobjects"),
 		-- require ("modular.specs.Lsp.lspsaga_nvim"), -- NOTE: this thing replaces dropbar, idk ho to disable it ((
 	},
@@ -39,6 +40,12 @@ local LspModule = Module:new ({
 			plugins = "trouble.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.trouble_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "goto-preview",
+			action = function ()
+				require ("modular.mappings.Lsp.goto-preview")
 			end
 		}),
 		PostPluginLoadAction:new ({

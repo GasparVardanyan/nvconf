@@ -9,8 +9,12 @@ return {
 	LspDetachMappings = "Modular_LspDetachMappings",
 	LspAttachTelescopeMappings = "Modular_LspAttachTelescopeMappings",
 	LspDetachTelescopeMappings = "Modular_LspDetachTelescopeMappings",
+	LspAttachGotoPreviewMappings = "Modular_LspAttachGotoPreviewMappings",
+	LspDetachGotoPreviewMappings = "Modular_LspDetachGotoPreviewMappings",
+	LspAttachSagaMappings = "Modular_LspAttachSagaMappings",
+	LspDetachSagaMappings = "Modular_LspDetachSagaMappings",
 	LspAttachAutocmds = "Modular_LspAttachAutocmds",
-	LspDetachAutocmds = "Modular_LspDetachAutocmds",
+	-- LspDetachAutocmds = "Modular_LspDetachAutocmds",
 
 	NeoTreeNoIlluminate = "Modular_NeoTreeNoIlluminate",
 

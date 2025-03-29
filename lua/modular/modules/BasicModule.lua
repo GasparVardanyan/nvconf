@@ -59,6 +59,12 @@ local BasicModule = Module:new ({
 			end
 		}),
 		PostPluginLoadAction:new ({
+			plugins = { "oil.nvim" },
+			action = function ()
+				require ("modular.mappings.Basic.oil_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
 			plugins = "tagbar",
 			action = function ()
 				require ("modular.mappings.Basic.tagbar")
