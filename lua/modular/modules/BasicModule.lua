@@ -4,6 +4,7 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local BasicModule = Module:new ({
 	name = "Basic",
 	plugins = {
+		require ("modular.specs.Basic.arrow_nvim"),
 		require ("modular.specs.Basic.cd-project_nvim"),
 		require ("modular.specs.Basic.Comment_nvim"),
 		-- require ("modular.specs.Basic.dashboard-nvim"),
