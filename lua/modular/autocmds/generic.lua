@@ -1,6 +1,6 @@
 local groups = require ("modular.autogroups")
 
-local cursor_line_highlight_autogroup = vim.api.nvim_create_augroup (
+vim.api.nvim_create_augroup (
 	groups.NvimCursorLineHighlight,
 	{ clear = true }
 )
@@ -33,9 +33,9 @@ vim.api.nvim_create_autocmd ("BufWritePre", {
 	group = vim.api.nvim_create_augroup (groups.NvimBufWritePreFormatting, { clear = true }),
 	callback = function ()
 		-- replace all 4 space indentations to tabs
-		vim.cmd [[%s/\v(^\t*(    )*)@<=    /\t/ge]]
+		vim.cmd [[%s/\v(^\t*( {4})*)@<= {4}/\t/ge]]
 		-- clear whitespaces at the ends of lines
-		vim.cmd [[%s/\s\+$//e]]
+		vim.cmd [[%s/\v\s+$//e]]
 	end,
 })
 

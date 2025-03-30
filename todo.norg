@@ -22,6 +22,7 @@
   ~~ (!) LspModule
   ~~~ (x) clean up lsp mappings' mess
   ~~~ (x) LspExtraMappingsModule
+  ~~~ ( ) Move LspSaga to extras
   ~~~ (-) Move to native 0.11 autocompletion
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
@@ -30,10 +31,12 @@
   ~~~ (=) https://github.com/ThePrimeagen/harpoon
   ~~~ (x) oil.nvim mappings
   ~~ (-) CompilerModule
-  ~~ (=) cmake-tools.nvim
+  ~~~ (=) cmake-tools.nvim
   ~~ (x) DapModule
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
-  ~~ (x) UIModule
+  ~~~ (=) https://github.com/niuiic/dap-utils.nvim
+  ~~ (+) UIModule
+  ~~~ (=) https://github.com/NvChad/base46
   ~~ (x) DbModule
   ~~ (-) MdModule
   ~~ (=) ClangModule
@@ -51,7 +54,7 @@
   ~~ (x) GitModule
   ~~~ (-) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
-  ~~~ ( ) https://github.com/jbyuki/one-small-step-for-vimkind
+  ~~~ (=) https://github.com/jbyuki/one-small-step-for-vimkind
   ~~ (x) OrgModule
   ~~ (=) Move qmake utils to *modular.extras*
   ~~ (-) Get rid of the temporarily saved stuff
