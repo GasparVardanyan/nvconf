@@ -31,6 +31,9 @@ return {
 							if filereadable(".exrc")
 								source .exrc
 							endif
+							if filereadable(".vim.session")
+								source .vim.session
+							endif
 						]]
 					end,
 				},
