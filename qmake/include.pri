@@ -1,6 +1,15 @@
 unix {
 	CONFIG += DEBUG
 
+	PROJECT_PATH = $$_PRO_FILE_
+
+	contains(PROJECT_PATH, "^/src/work/.*") {
+		DEFINES += \"DATA_DIR=\\\"/src/work/data/$$TARGET/\\\"\"
+	}
+	else {
+		DEFINES += \"DATA_DIR=\\\"$$OUT_PWD/\\\"\"
+	}
+
 	DESTDIR = build
 	OBJECTS_DIR = build/.obj
 	MOC_DIR = build/.moc
