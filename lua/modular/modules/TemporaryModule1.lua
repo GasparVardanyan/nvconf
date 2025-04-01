@@ -113,6 +113,7 @@ local TemporaryModule1 = Module:new ({
 				})
 			end,
 		},
+		{ 'j-hui/fidget.nvim', opts = {} },
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
