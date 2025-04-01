@@ -5,17 +5,15 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local TemporaryModule1 = Module:new ({
 	name = "Temporary1",
 	plugins = {
-		require ("modular.specs.misc.mason_nvim"),
-
-		{
-			"williamboman/mason-lspconfig.nvim",
-			dependencies = { "williamboman/mason.nvim" },
-			config = function()
-				require ('mason-lspconfig').setup ({
-					ensure_installed = { "lua_ls", "clangd" }
-				})
-			end,
-		},
+		-- {
+		-- 	"williamboman/mason-lspconfig.nvim",
+		-- 	dependencies = { "williamboman/mason.nvim" },
+		-- 	config = function()
+		-- 		require ('mason-lspconfig').setup ({
+		-- 			ensure_installed = { "lua_ls", "clangd" }
+		-- 		})
+		-- 	end,
+		-- },
 
 		{
 			"neovim/nvim-lspconfig",
@@ -41,12 +39,16 @@ local TemporaryModule1 = Module:new ({
 			end,
 		},
 
-		require ("modular.specs.Lsp.trouble_nvim"),
-		require ("modular.specs.Lsp.vim-illuminate"),
-		require ("modular.specs.Lsp.outline_nvim"),
+		require ("modular.specs.misc.mason_nvim"),
+		-- require ("modular.specs.Lsp.nvim-lspconfig"),
+		-- require ("modular.specs.Lsp.LuaSnip"),
+		-- require ("modular.specs.Lsp.nvim-cmp"),
 		require ("modular.specs.Lsp.nvim-autopairs"),
 		require ("modular.specs.Lsp.indent-blankline_nvim"),
-		require ("modular.specs.Lsp.lspsaga_nvim"),
+		require ("modular.specs.Lsp.outline_nvim"),
+		require ("modular.specs.Lsp.vim-illuminate"),
+		require ("modular.specs.Lsp.trouble_nvim"),
+		require ("modular.specs.Lsp.goto-preview"),
 
 		{
 			"hrsh7th/nvim-cmp",
@@ -135,6 +137,12 @@ local TemporaryModule1 = Module:new ({
 			plugins = "trouble.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.trouble_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "goto-preview",
+			action = function ()
+				require ("modular.mappings.Lsp.goto-preview")
 			end
 		}),
 		PostPluginLoadAction:new ({
