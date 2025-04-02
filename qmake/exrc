@@ -7,7 +7,7 @@ set mouse=a
 " TODO: use treesitter
 function FoldAllFunctions()
 	norm zE
-	%g/\v^(\) )?\{/ norm $va{:fold
+	silent %g/\v^(\) )?\{/ norm $va{:fold
 	norm 
 endfunction
 command FoldAllFunctions call FoldAllFunctions()

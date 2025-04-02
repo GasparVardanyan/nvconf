@@ -28,11 +28,11 @@ return {
 					trigger_point = "AFTER_CD",
 					callback = function(_)
 						vim.cmd [[
-							if filereadable(".exrc")
-								source .exrc
-							endif
 							if filereadable(".vim.session")
 								source .vim.session
+							endif
+							if filereadable(".exrc")
+								source .exrc
 							endif
 						]]
 					end,
