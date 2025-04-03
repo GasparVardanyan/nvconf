@@ -56,6 +56,10 @@ vim.api.nvim_create_user_command (
 vim.api.nvim_create_autocmd ("VimLeavePre", {
 	group = vim.api.nvim_create_augroup (groups.NvimVimLeavePreSessionSave, { clear = true }),
 	callback = function ()
-		vim.cmd [[silent mksession! .vim.session]]
+		vim.cmd [[
+			if filereadable(".vim.session")
+				silent mksession! .vim.session
+			endif
+		]]
 	end,
 })
