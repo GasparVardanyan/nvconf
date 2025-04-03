@@ -26,7 +26,7 @@ vim.opt.exrc = true
 vim.opt.ignorecase = false
 vim.opt.smartcase = false
 
-vim.opt.showtabline = 0
+-- vim.opt.showtabline = 0
 
 -- vim.opt.conceallevel = 2
 

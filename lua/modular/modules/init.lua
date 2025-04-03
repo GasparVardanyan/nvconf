@@ -11,5 +11,6 @@ return {
 	lsp_module = require ("modular.modules.LspModule"),
 	lean_module = require ("modular.extras.modules.LeanModule"),
 	menu_module = require ("modular.extras.modules.MenuModule"),
+	ai_module = require ("modular.modules.AiModule")
 	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
 }

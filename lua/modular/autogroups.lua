@@ -3,6 +3,7 @@ return {
 	NvimBufReadReturnToLastPos = "Modular_NvimBufReadReturnToLastPos",
 	NvimBufWritePreFormatting = "Modular_NvimBufWritePreFormatting",
 	NvimTextYankPostHighlight = "Modular_NvimTextYankPostHighlight",
+	NvimVimLeavePreSessionSave = "Modular_NvimVimLeavePreSessionSave",
 	-- NvimUserCommands = "Modular_NvimUserCommands",
 
 	LspAttachMappings = "Modular_LspAttachMappings",

@@ -11,5 +11,8 @@ return {
 	},
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
-	opts = {},
+	opts = {
+		file_types = { "markdown", "Avante" },
+	},
+	ft = { "markdown", "Avante" },
 }

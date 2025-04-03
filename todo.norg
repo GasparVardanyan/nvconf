@@ -45,7 +45,7 @@
   ~~ (=) LintModule
   ~~~ ( ) https://github.com/mfussenegger/nvim-lint
   ~~ (=) AiModule
-  ~~~ ( ) https://github.com/yetone/avante.nvim
+  ~~~ (-) https://github.com/yetone/avante.nvim
   ~~ (=) NoneLSModule
   ~~~ ( ) https://github.com/nvimtools/none-ls.nvim
   ~~ (=) TestModule
@@ -79,6 +79,7 @@
   ~~ (x) Move included Modules outside the *ModuleManager*
   ~~ (x) New directory structure to have multiple module groups
   ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
+  ~ (-) Global *EditorConfig* setup
   ~ ( ) Check these interesting resourcecs:
   ~~ ( ) https://github.com/rockerBOO/awesome-neovim
   ~~ ( ) https://github.com/akinsho/git-conflict.nvim
@@ -103,7 +104,7 @@
   ~~ (x) https://github.com/MunifTanjim/nui.nvim
   ~~ ( ) https://github.com/neolooong/whichpy.nvim
   ~~ ( ) https://github.com/nvim-java/nvim-java
-  ~~ (-) https://github.com/otavioschwanck/arrow.nvim
+  ~~ (x) https://github.com/otavioschwanck/arrow.nvim
   ~~ ( ) https://github.com/pocco81/auto-save.nvim
   ~~ ( ) https://github.com/rafcamlet/nvim-luapad
   ~~ ( ) https://github.com/RRethy/nvim-treesitter-textsubjects
