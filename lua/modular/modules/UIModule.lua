@@ -11,6 +11,7 @@ local UIModule = Module:new ({
 		-- require ("modular.specs.UI.solarized_nvim1"),
 		require ("modular.specs.UI.solarized_nvim2"),
 		require ("modular.specs.UI.kanagawa_nvim"),
+		require ("modular.specs.UI.kanagawa-paper_nvim"),
 	},
 	post_plugin_load_actions = {
 		-- PostPluginLoadAction:new ({

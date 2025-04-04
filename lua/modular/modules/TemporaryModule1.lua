@@ -5,15 +5,15 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local TemporaryModule1 = Module:new ({
 	name = "Temporary1",
 	plugins = {
-		-- {
-		-- 	"williamboman/mason-lspconfig.nvim",
-		-- 	dependencies = { "williamboman/mason.nvim" },
-		-- 	config = function()
-		-- 		require ('mason-lspconfig').setup ({
-		-- 			ensure_installed = { "lua_ls", "clangd" }
-		-- 		})
-		-- 	end,
-		-- },
+		{
+			"williamboman/mason-lspconfig.nvim",
+			dependencies = { "williamboman/mason.nvim" },
+			config = function()
+				require ('mason-lspconfig').setup ({
+					ensure_installed = { "lua_ls", "clangd" }
+				})
+			end,
+		},
 
 		{
 			"neovim/nvim-lspconfig",

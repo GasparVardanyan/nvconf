@@ -24,7 +24,8 @@ local AiModule = Module:new ({
 			event = "VeryLazy",
 			version = false, -- Never set this value to "*"! Never!
 			opts = {
-				provider = "aihubmix",
+				provider = "gemini",
+				-- provider = "aihubmix",
 				aihubmix = {
 					model = "DeepSeek-V3",
 				},
