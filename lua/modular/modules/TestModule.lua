@@ -1,10 +1,19 @@
 local Module = require ("modular.Module")
+local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 
 local TestModule = Module:new ({
 	name = "Test",
 	plugins = {
 		require ("modular.specs.Test.neotest")
 	},
+	post_plugin_load_actions = {
+		PostPluginLoadAction:new ({
+			plugins = "neotest",
+			action = function ()
+				require ("modular.mappings.Test.neotest")
+			end
+		}),
+	}
 })
 
 return TestModule
