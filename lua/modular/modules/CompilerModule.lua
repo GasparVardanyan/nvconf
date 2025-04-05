@@ -15,6 +15,12 @@ local CompilerModule = Module:new ({
 				require ("modular.mappings.Compiler.compiler_nvim")
 			end
 		}),
+		PostPluginLoadAction:new ({
+			plugins = "cmake-tools.nvim",
+			action = function ()
+				require ("modular.mappings.Compiler.cmake-tools_nvim")
+			end
+		}),
 	}
 })
 
