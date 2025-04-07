@@ -7,19 +7,19 @@ local unmap = vim.keymap.del
 vim.api.nvim_create_autocmd ("LspAttach", {
 	group = vim.api.nvim_create_augroup (groups.LspAttachGotoPreviewMappings, { clear = true }),
 	callback = function(event)
-		map ("n", "grpd", function () require('goto-preview').goto_preview_definition() end, { buffer = event.buf })
-		map ("n", "grpt", function () require('goto-preview').goto_preview_type_definition() end, { buffer = event.buf })
-		map ("n", "grpi", function () require('goto-preview').goto_preview_implementation() end, { buffer = event.buf })
-		map ("n", "grpD", function () require('goto-preview').goto_preview_declaration() end, { buffer = event.buf })
-		map ("n", "grP", function () require('goto-preview').close_all_win() end, { buffer = event.buf })
-		map ("n", "grpr", function () require('goto-preview').goto_preview_references() end, { buffer = event.buf })
+		map ("n", "grpd", function () require('goto-preview').goto_preview_definition() end, { buffer = event.buf, desc = "lsp preview definition" })
+		map ("n", "grpt", function () require('goto-preview').goto_preview_type_definition() end, { buffer = event.buf, desc = "lsp preview type definition" })
+		map ("n", "grpi", function () require('goto-preview').goto_preview_implementation() end, { buffer = event.buf, desc = "lsp preview implementation" })
+		map ("n", "grpD", function () require('goto-preview').goto_preview_declaration() end, { buffer = event.buf, desc = "lsp preview declaration" })
+		map ("n", "grP", function () require('goto-preview').close_all_win() end, { buffer = event.buf, desc = "lsp close preview windows" })
+		map ("n", "grpr", function () require('goto-preview').goto_preview_references() end, { buffer = event.buf, desc = "lsp preview references" })
 
-		map ("n", "<leader>lpd", function () require('goto-preview').goto_preview_definition() end, { buffer = event.buf })
-		map ("n", "<leader>lpt", function () require('goto-preview').goto_preview_type_definition() end, { buffer = event.buf })
-		map ("n", "<leader>lpi", function () require('goto-preview').goto_preview_implementation() end, { buffer = event.buf })
-		map ("n", "<leader>lpD", function () require('goto-preview').goto_preview_declaration() end, { buffer = event.buf })
-		map ("n", "<leader>lP", function () require('goto-preview').close_all_win() end, { buffer = event.buf })
-		map ("n", "<leader>lpr", function () require('goto-preview').goto_preview_references() end, { buffer = event.buf })
+		map ("n", "<leader>lpd", function () require('goto-preview').goto_preview_definition() end, { buffer = event.buf, desc = "lsp preview definition" })
+		map ("n", "<leader>lpt", function () require('goto-preview').goto_preview_type_definition() end, { buffer = event.buf, desc = "lsp preview type definition" })
+		map ("n", "<leader>lpi", function () require('goto-preview').goto_preview_implementation() end, { buffer = event.buf, desc = "lsp preview implementation" })
+		map ("n", "<leader>lpD", function () require('goto-preview').goto_preview_declaration() end, { buffer = event.buf, desc = "lsp preview declaration" })
+		map ("n", "<leader>lP", function () require('goto-preview').close_all_win() end, { buffer = event.buf, desc = "lsp close preview windows" })
+		map ("n", "<leader>lpr", function () require('goto-preview').goto_preview_references() end, { buffer = event.buf, desc = "lsp preview references" })
 	end,
 })
 

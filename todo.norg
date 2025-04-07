@@ -72,7 +72,7 @@
 		 /and loads the spec/
   ~ (x) Dashboard
   ~~ (-) Conflicts with indent-blankline.nvim
-  ~ ( ) Module leaders /whichkey?/
+  ~ (x) Module leaders /whichkey?/
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
   ~ ( ) Restructure

@@ -1,3 +1,5 @@
 local map = vim.keymap.set
 
-map ("n", "<leader>O", vim.cmd.Oil)
+map ("n", "<leader>O", vim.cmd.Oil, {
+	desc = "oil"
+})

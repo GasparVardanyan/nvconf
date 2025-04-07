@@ -21,6 +21,7 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.undotree"),
 		require ("modular.specs.misc.nvim-window-picker"),
 		require ("modular.specs.misc.image_nvim"),
+		require ("modular.specs.Basic.which-key_nvim"),
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
@@ -66,12 +67,6 @@ local BasicModule = Module:new ({
 			end
 		}),
 		PostPluginLoadAction:new ({
-			plugins = "tagbar",
-			action = function ()
-				require ("modular.mappings.Basic.tagbar")
-			end
-		}),
-		PostPluginLoadAction:new ({
 			plugins = "telescope.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.telescope_nvim")
@@ -93,6 +88,12 @@ local BasicModule = Module:new ({
 			plugins = "undotree",
 			action = function ()
 				require ("modular.mappings.Basic.undotree")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "which-key.nvim",
+			action = function ()
+				require ("modular.autocmds.Basic.which-key_nvim")
 			end
 		})
 	}
