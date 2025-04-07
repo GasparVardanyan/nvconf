@@ -31,6 +31,9 @@ return {
 							if filereadable(".vim.session")
 								source .vim.session
 							endif
+							if filereadable("CMakeLists.txt")
+								CMakeSelectCwd .
+							endif
 							if filereadable(".exrc")
 								source .exrc
 							endif
