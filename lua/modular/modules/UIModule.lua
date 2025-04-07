@@ -38,4 +38,18 @@ local UIModule = Module:new ({
 	}
 })
 
+-- https://github.com/Tsuzat/NeoSolarized.nvim
+-- https://github.com/altercation/vim-colors-solarized
+-- https://github.com/calind/selenized.nvim
+-- https://github.com/craftzdog/solarized-osaka.nvim
+-- https://github.com/ishan9299/nvim-solarized-lua
+-- https://github.com/jan-warchol/selenized
+-- https://github.com/lifepillar/vim-solarized8
+-- https://github.com/loganswartz/selenized.nvim
+-- https://github.com/maxmx03/solarized.nvim
+-- https://github.com/overcache/NeoSolarized
+-- https://github.com/romainl/flattened
+-- https://github.com/shaunsingh/solarized.nvim
+-- https://github.com/svrana/neosolarized.nvim
+
 return UIModule

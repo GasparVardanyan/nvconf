@@ -81,6 +81,7 @@
   ~~ (x) Add *kickstart-modular* as a separate *Module*\/*Modules*
   ~ (-) Global *EditorConfig* setup
   ~ ( ) Check these interesting resourcecs:
+  ~~ ( ) https://github.com/stevearc/conform.nvim
   ~~ ( ) https://github.com/rockerBOO/awesome-neovim
   ~~ ( ) https://github.com/akinsho/git-conflict.nvim
   ~~ ( ) https://github.com/andythigpen/nvim-coverage

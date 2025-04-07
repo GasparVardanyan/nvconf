@@ -1,6 +1,3 @@
--- require ("oldconfig")
--- do return end
-
 require ("modular.options")
 require ("modular.lazy")
 require ("modular.autocmds.generic")
