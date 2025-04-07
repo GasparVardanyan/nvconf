@@ -33,6 +33,7 @@ return {
 							endif
 							if filereadable("CMakeLists.txt")
 								CMakeSelectCwd .
+								CMakeStopExecutor
 								CMakeSelectBuildDir out
 							endif
 							if filereadable(".exrc")
