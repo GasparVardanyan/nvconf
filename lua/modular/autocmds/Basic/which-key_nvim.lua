@@ -1,26 +1,49 @@
 local wk = require("which-key")
 wk.add({
-	{ "<leader>D", group = "dadbod" },
-	{ "<leader>a", group = "avante" },
-	{ "<leader>c", group = "compiler" },
-	{ "<leader>d", group = "dap" },
-	{ "<leader>df", group = "dap telescope" },
-	{ "<leader>ds", group = "dap step" },
+	-- Basic:
 	{ "<leader>f", group = "telescope" },
-	{ "<leader>fu", group = "telescope undo" },
-	{ "<leader>g", group = "git" },
-	{ "<leader>gr", group = "lsp" },
-	{ "<leader>grp", group = "lsp preview" },
-	{ "<leader>l", group = "lsp" },
-	{ "<leader>lfu", group = "lsp telescope undo" },
-	{ "<leader>lf", group = "lsp telescope" },
-	{ "<leader>lo", group = "lsp outline" },
-	{ "<leader>lp", group = "lsp preview" },
-	{ "<leader>lx", group = "lsp trouble" },
-	{ "<leader>o", group = "orgmode" },
+	{ "<leader>fu", group = "undo" },
 	{ "<leader>s", group = "grug" },
-	{ "<leader>t", group = "neotest" },
 	{ "<leader>u", group = "undotree" },
+
+	-- Compiler:
+	{ "<leader>c", group = "compiler" },
+
+	-- Dap:
+	{ "<leader>d", group = "dap" },
+	{ "<leader>ds", group = "step" },
+	{ "<leader>df", group = "telescope" },
+
+	-- Db:
+	{ "<leader>D", group = "dadbod" },
+
+	-- Git:
+	{ "<leader>g", group = "git" },
+
+	-- Lsp:
+	{ "gr", group = "lsp" },
+	{ "grf", group = "telescope" },
+	{ "gro", group = "outline" },
+	{ "grp", group = "preview" },
+	{ "grw", group = "workspace" },
+	{ "grx", group = "trouble" },
+	{ "<leader>l", group = "lsp" },
+	{ "<leader>lf", group = "telescope" },
+	{ "<leader>lo", group = "outline" },
+	{ "<leader>lp", group = "preview" },
+	{ "<leader>lw", group = "workspace" },
+	{ "<leader>lx", group = "trouble" },
+
+	-- Test:
+	{ "<leader>t", group = "neotest" },
+
+	-- Ai:
+	{ "<leader>a", group = "avante" },
+
+	-- Org:
+	{ "<leader>o", group = "orgmode" },
+
+	-- Generic:
 	{ "<leader>v", group = "vim" },
 
 	-- { "<leader>f", group = "file" }, -- group

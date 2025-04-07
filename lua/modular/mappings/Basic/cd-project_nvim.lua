@@ -1,5 +1,3 @@
 local map = vim.keymap.set
 
-map ("n", "<localleader>\\", vim.cmd.CdProject, {
-	desc = "CdProject"
-})
+map ("n", "<localleader>\\", vim.cmd.CdProject, { desc = "cd project" })

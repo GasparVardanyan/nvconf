@@ -14,31 +14,19 @@ map ("n", "<c-j>", "<c-w>j", { desc = "switch window down" })
 map ("n", "<c-k>", "<c-w>k", { desc = "switch window up" })
 map ("n", "<c-l>", "<c-w>l", { desc = "switch window right" })
 
-map ("n", "<leader>V", "`[v`]", {
-	desc = "vim `[v`]"
-})
-map ("n", "<leader>vc", vim.cmd.tabclose, {
-	desc = "vim tabclose"
-})
-map ("n", "<leader>vn", vim.cmd.tabnew, {
-	desc = "vim tabnew"
-})
-map ("n", "<leader>vd", vim.cmd.bdelete, {
-	desc = "vim bdelete"
-})
-map ("n", "<leader>vo", vim.cmd.only, {
-	desc = "vim only"
-})
+map ("n", "<leader>V", "`[v`]", { desc = "vim `[v`]" })
+map ("n", "<leader>vc", vim.cmd.tabclose, { desc = "tabclose" })
+map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
+map ("n", "<leader>vd", vim.cmd.bdelete, { desc = "bdelete" })
+map ("n", "<leader>vo", vim.cmd.only, { desc = "only" })
 map ("n", "<leader>vm", function ()
 	vim.cmd.tabnew "%"
 	vim.cmd.norm "zz" -- TODO: proper encoding without binary symbols
 end, {
-	desc = "open current buffer in new tab"
+	desc = "tabnew %"
 })
 
-map ("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>", {
-	desc = "toggle line numbers"
-})
+map ("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>", { desc = "toggle line numbers" })
 
 map ("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
 map ("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "close terminal" })
