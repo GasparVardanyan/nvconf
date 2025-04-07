@@ -3,7 +3,7 @@
   - (=) nvim-cmp.lua - move mappings to *mappings* module
   - (x) nvim-cmp.lua - move lsp setups to *nvim-lspconfig.lua*
   - (x) dap integration
-  - (=) cmake integration
+  - (x) cmake integration
   - (=) clang integration
   - (x) compiler.nvim integration
   - (x) separate plugin configs
@@ -22,7 +22,7 @@
   ~~ (!) LspModule
   ~~~ (x) clean up lsp mappings' mess
   ~~~ (x) LspExtraMappingsModule
-  ~~~ ( ) Move LspSaga to extras
+  ~~~ (x) Move LspSaga to extras
   ~~~ (-) Move to native 0.11 autocompletion
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
@@ -30,8 +30,8 @@
   ~~ (-) BasicModule
   ~~~ (=) https://github.com/ThePrimeagen/harpoon
   ~~~ (x) oil.nvim mappings
-  ~~ (-) CompilerModule
-  ~~~ (=) cmake-tools.nvim
+  ~~ (x) CompilerModule
+  ~~~ (x) cmake-tools.nvim
   ~~ (x) DapModule
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~~ (=) https://github.com/niuiic/dap-utils.nvim
@@ -44,8 +44,8 @@
   ~~~ ( ) https://github.com/madskjeldgaard/cppman.nvim
   ~~ (=) LintModule
   ~~~ ( ) https://github.com/mfussenegger/nvim-lint
-  ~~ (-) AiModule
-  ~~~ (-) https://github.com/yetone/avante.nvim
+  ~~ (x) AiModule
+  ~~~ (x) https://github.com/yetone/avante.nvim
   ~~ (=) NoneLSModule
   ~~~ ( ) https://github.com/nvimtools/none-ls.nvim
   ~~ (x) TestModule
@@ -53,8 +53,8 @@
   ~~~ (x) https://github.com/alfaix/neotest-gtest
   ~~ (-) GitModule
   ~~~ (-) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
-  ~~ (-) NvimModule (/lazydev.nvim/, /nvim-nio/)
-  ~~~ (-) https://github.com/jbyuki/one-small-step-for-vimkind
+  ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
+  ~~~ (x) https://github.com/jbyuki/one-small-step-for-vimkind
   ~~ (x) OrgModule
   ~~ (=) Move qmake utils to *modular.extras*
   ~~ (-) Get rid of the temporarily saved stuff
@@ -64,21 +64,21 @@
   ~ (x) Migrate Autocmds
   ~ (x) Replace nvim-tree with neo-tree
   ~ (x) Commenting /nerdcommenter/
-  ~ (-) organize generic mappings
+  ~ (x) organize generic mappings
   ~ *ModuleManager*
   ~~ ( ) Handle duplicate specs
   ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
 		 depend on plugins from other modules /make a function which registers/
 		 /and loads the spec/
-  ~ (x) Dashboard
-  ~~ (-) Conflicts with indent-blankline.nvim
+  ~ (_) Dashboard
+  ~~ (_) Conflicts with indent-blankline.nvim
   ~ (x) Module leaders /whichkey?/
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
-  ~ ( ) Restructure
+  ~ (x) Restructure
   ~~ (x) Move included Modules outside the *ModuleManager*
   ~~ (x) New directory structure to have multiple module groups
-  ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
+  ~~ (x) Add *kickstart-modular* as a separate *Module*\/*Modules*
   ~ (-) Global *EditorConfig* setup
   ~ ( ) Check these interesting resourcecs:
   ~~ ( ) https://github.com/rockerBOO/awesome-neovim

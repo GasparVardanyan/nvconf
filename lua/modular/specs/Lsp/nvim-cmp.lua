@@ -112,9 +112,11 @@ return { -- Autocompletion
 				},
 				{ name = 'vim-dadbod-completion' },
 				{ name = 'nvim_lsp' },
+				{ name = 'nvim_lsp_signature_help' },
 				{ name = 'luasnip' },
 				{ name = 'path' },
-				{ name = 'nvim_lsp_signature_help' },
+				{ name = 'nvim_lua' },
+				{ name = 'buffer' },
 			},
 			window = {
 				completion = cmp.config.window.bordered(),

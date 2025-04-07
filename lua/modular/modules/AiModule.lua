@@ -7,8 +7,8 @@ local AiModule = Module:new ({
 	plugins = {
 		require ("modular.specs.misc.img-clip_nvim"),
 		require ("modular.specs.Ai.avante_nvim"),
-		-- require ("modular.specs.Ai.mcphub_nvim"),
-		-- require ("modular.specs.Ai.VectorCode"),
+		require ("modular.specs.Ai.mcphub_nvim"),
+		require ("modular.specs.Ai.VectorCode"),
 	},
 	post_plugin_load_actions = {
 	}

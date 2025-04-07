@@ -14,5 +14,6 @@ return {
 	ai_module = require ("modular.modules.AiModule"),
 	test_module = require ("modular.modules.TestModule"),
 	rest_module = require ("modular.modules.RestModule"),
+	-- lspsaga_module = require ("modular.extras.modules.LspSagaModule"),
 	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
 }

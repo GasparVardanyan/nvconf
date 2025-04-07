@@ -49,12 +49,6 @@ local LspModule = Module:new ({
 				require ("modular.mappings.Lsp.goto-preview")
 			end
 		}),
-		PostPluginLoadAction:new ({
-			plugins = "lspsaga.nvim",
-			action = function ()
-				require ("modular.mappings.Lsp.lspsaga_nvim")
-			end
-		}),
 	}
 })
 
