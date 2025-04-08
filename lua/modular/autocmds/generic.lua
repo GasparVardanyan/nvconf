@@ -18,6 +18,18 @@ vim.api.nvim_create_autocmd ("InsertEnter", {
 		vim.opt.cursorline = false
 	end,
 })
+vim.api.nvim_create_autocmd ("WinEnter", {
+	group = groups.NvimCursorLineHighlight,
+	callback = function ()
+		vim.opt.cursorline = true
+	end,
+})
+vim.api.nvim_create_autocmd ("WinLeave", {
+	group = groups.NvimCursorLineHighlight,
+	callback = function ()
+		vim.opt.cursorline = false
+	end,
+})
 
 vim.api.nvim_create_autocmd ("BufReadPost", {
 	group = vim.api.nvim_create_augroup (groups.NvimBufReadReturnToLastPos, { clear = true }),
@@ -69,16 +81,16 @@ vim.api.nvim_create_autocmd ("FileType", {
 	pattern = "qf",
 	callback = function (args)
 		-- TODO: FileType isn't the right place for this !!
-		do return end
+		-- do return end
 
 		local bufnr = args.buf
 
-		vim.api.nvim_buf_set_option (bufnr, "modifiable", true)
+		vim.api.nvim_set_option_value ("modifiable", true, {})
 		vim.cmd[[
 			%g#^\v/usr/share/nvim/runtime/doc/[^|]+\|\d+\|# norm 0d2f|
 		]]
-		vim.api.nvim_buf_set_option (bufnr, "modifiable", false)
-		vim.api.nvim_buf_set_option (bufnr, "number", false)
-		vim.api.nvim_buf_set_option (bufnr, "relativenumber", false)
+		vim.api.nvim_set_option_value ("modifiable", false, {})
+		vim.api.nvim_set_option_value ("number", false, {})
+		vim.api.nvim_set_option_value ("relativenumber", false, {})
 	end,
 })

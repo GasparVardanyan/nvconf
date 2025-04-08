@@ -5,14 +5,9 @@ vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 	pattern = {
 		  "*.xdefaults"
 		, "*.palette"
-		, vim.fn.expand ("~") .. "/.local/etc/theme*"
-		, vim.fn.expand ("~") .. "/.urxvt/config"
 	},
-	callback = function (args)
-		local bufnr = args.buf
-
-		-- TODO: replace these deprecated functions
-		vim.api.nvim_buf_set_option (bufnr, 'syntax', 'xdefaults')
+	callback = function ()
+		vim.api.nvim_set_option_value ("syntax", "xdefaults", {})
 	end,
 })
 
