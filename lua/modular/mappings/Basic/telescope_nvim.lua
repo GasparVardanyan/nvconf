@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 local builtin = require("telescope.builtin")
 
-map ("n", "<leader>F", builtin.resume, { desc = "resume" })
+map ("n", "<leader>F", builtin.resume, { desc = "telescope resume" })
 -- map ("n", "<leader>f", builtin.planets)
 map ("n", "<leader>f/", builtin.search_history, { desc = "search history" })
 map ("n", "<leader>f:", builtin.command_history, { desc = "command history" })

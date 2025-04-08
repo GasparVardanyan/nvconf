@@ -16,6 +16,7 @@ map ("n", "<c-l>", "<c-w>l", { desc = "switch window right" })
 
 map ("n", "<leader>V", "`[v`]", { desc = "vim `[v`]" })
 map ("n", "<leader>vc", vim.cmd.tabclose, { desc = "tabclose" })
+map ("n", "<leader>vC", function () vim.cmd.bdelete (); vim.cmd.tabclose () end, { desc = "bdelete; tabclose" })
 map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
 map ("n", "<leader>vd", vim.cmd.bdelete, { desc = "bdelete" })
 map ("n", "<leader>vo", vim.cmd.only, { desc = "only" })
