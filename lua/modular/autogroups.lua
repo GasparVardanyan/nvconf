@@ -4,6 +4,7 @@ return {
 	NvimBufWritePreFormatting = "Modular_NvimBufWritePreFormatting",
 	NvimTextYankPostHighlight = "Modular_NvimTextYankPostHighlight",
 	NvimVimLeavePreSessionSave = "Modular_NvimVimLeavePreSessionSave",
+	NvimFormatHelpContents = "Modular_NvimFormatHelpContents",
 	-- NvimUserCommands = "Modular_NvimUserCommands",
 
 	LspAttachMappings = "Modular_LspAttachMappings",

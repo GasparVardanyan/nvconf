@@ -63,3 +63,22 @@ vim.api.nvim_create_autocmd ("VimLeavePre", {
 		]]
 	end,
 })
+
+vim.api.nvim_create_autocmd ("FileType", {
+	group = vim.api.nvim_create_augroup (groups.NvimFormatHelpContents, { clear = true }),
+	pattern = "qf",
+	callback = function (args)
+		-- TODO: FileType isn't the right place for this !!
+		do return end
+
+		local bufnr = args.buf
+
+		vim.api.nvim_buf_set_option (bufnr, "modifiable", true)
+		vim.cmd[[
+			%g#^\v/usr/share/nvim/runtime/doc/[^|]+\|\d+\|# norm 0d2f|
+		]]
+		vim.api.nvim_buf_set_option (bufnr, "modifiable", false)
+		vim.api.nvim_buf_set_option (bufnr, "number", false)
+		vim.api.nvim_buf_set_option (bufnr, "relativenumber", false)
+	end,
+})
