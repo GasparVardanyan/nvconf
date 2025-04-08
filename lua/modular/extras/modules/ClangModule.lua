@@ -39,7 +39,18 @@ local ClangModule = Module:new ({
 			end
 		}),
 		PostPluginLoadAction:new ({
-			plugins = { "cppman.nvim", "which-key.nvim" },
+			plugins = "clangd_extensions.nvim",
+			action = function ()
+				local map = vim.keymap.set
+
+				map ("n", "<leader>Ca", vim.cmd.ClangdAST, { desc = "ast" })
+				map ("n", "<leader>CM", vim.cmd.ClangdMemoryUsage, { desc = "memory usage" })
+				map ("n", "<leader>Ci", vim.cmd.ClangdSymbolInfo, { desc = "symbol info" })
+				map ("n", "<leader>Ct", vim.cmd.ClangdTypeHierarchy, { desc = "type hierarchy" })
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = { "cppman.nvim", "which-key.nvim" }, -- TODO: make this plugin independent
 			action = function ()
 				local wk = require("which-key")
 				wk.add({

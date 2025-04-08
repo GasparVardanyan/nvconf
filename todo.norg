@@ -27,8 +27,8 @@
   ~~~ (-) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
-  ~~ (-) BasicModule
-  ~~~ (=) https://github.com/ThePrimeagen/harpoon
+  ~~ (x) BasicModule
+  ~~~ (_) https://github.com/ThePrimeagen/harpoon
   ~~~ (x) oil.nvim mappings
   ~~ (x) CompilerModule
   ~~~ (x) cmake-tools.nvim
@@ -39,11 +39,11 @@
   ~~~ (=) https://github.com/NvChad/base46
   ~~ (x) DbModule
   ~~ (-) MdModule
-  ~~ (=) ClangModule
-  ~~~ ( ) https://sr.ht/~p00f/clangd_extensions.nvim
-  ~~~ ( ) https://github.com/madskjeldgaard/cppman.nvim
-  ~~ (=) LintModule
-  ~~~ ( ) https://github.com/mfussenegger/nvim-lint
+  ~~ (-) ClangModule
+  ~~~ (-) https://sr.ht/~p00f/clangd_extensions.nvim
+  ~~~ (-) https://github.com/madskjeldgaard/cppman.nvim
+  ~~ (-) LintModule
+  ~~~ (-) https://github.com/mfussenegger/nvim-lint
   ~~ (x) AiModule
   ~~~ (x) https://github.com/yetone/avante.nvim
   ~~ (=) NoneLSModule
