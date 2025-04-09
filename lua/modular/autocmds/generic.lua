@@ -6,18 +6,18 @@ vim.api.nvim_create_augroup (
 )
 
 vim.opt.cursorline = true
-vim.api.nvim_create_autocmd ("InsertLeave", {
-	group = groups.NvimCursorLineHighlight,
-	callback = function ()
-		vim.opt.cursorline = true
-	end,
-})
-vim.api.nvim_create_autocmd ("InsertEnter", {
-	group = groups.NvimCursorLineHighlight,
-	callback = function ()
-		vim.opt.cursorline = false
-	end,
-})
+-- vim.api.nvim_create_autocmd ("InsertLeave", {
+-- 	group = groups.NvimCursorLineHighlight,
+-- 	callback = function ()
+-- 		vim.opt.cursorline = true
+-- 	end,
+-- })
+-- vim.api.nvim_create_autocmd ("InsertEnter", {
+-- 	group = groups.NvimCursorLineHighlight,
+-- 	callback = function ()
+-- 		vim.opt.cursorline = false
+-- 	end,
+-- })
 vim.api.nvim_create_autocmd ("WinEnter", {
 	group = groups.NvimCursorLineHighlight,
 	callback = function ()
