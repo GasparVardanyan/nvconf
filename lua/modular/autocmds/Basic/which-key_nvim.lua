@@ -3,6 +3,7 @@ wk.add({
 	-- Basic:
 	{ "<leader>f", group = "telescope" },
 	{ "<leader>fu", group = "undo" },
+	{ "<leader>p", group = "project" },
 	{ "<leader>s", group = "grug" },
 	{ "<leader>u", group = "undotree" },
 

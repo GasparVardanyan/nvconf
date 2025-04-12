@@ -79,7 +79,7 @@ return { -- Autocompletion
 				-- end, { 'i', 's' }),
 
 				-- https://github.com/NvChad/NvChad/blob/6f25b2739684389ca69ea8229386c098c566c408/lua/nvchad/configs/cmp.lua#L27
-				["<C-l>"] = cmp.mapping(function(fallback)
+				["<C-i>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item()
 					elseif require("luasnip").expand_or_jumpable() then
@@ -89,7 +89,7 @@ return { -- Autocompletion
 					end
 				end, { "i", "s" }),
 
-				["<C-h>"] = cmp.mapping(function(fallback)
+				["<C-S-i>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item()
 					elseif require("luasnip").jumpable(-1) then

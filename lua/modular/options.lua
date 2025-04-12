@@ -26,6 +26,9 @@ vim.opt.exrc = true
 vim.opt.ignorecase = false
 vim.opt.smartcase = false
 
+vim.g.have_nerd_font = true
+vim.opt.completeopt = "menuone,noinsert,popup,fuzzy"
+
 -- vim.opt.showtabline = 0
 
 -- vim.opt.conceallevel = 2
