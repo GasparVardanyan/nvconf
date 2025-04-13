@@ -92,7 +92,7 @@
   ~~ ( ) https://github.com/CRAG666/code_runner.nvim
   ~~ (_) https://github.com/ErichDonGubler/lsp_lines.nvim
   ~~ ( ) https://github.com/GnikDroy/projections.nvim
-  ~~ ( ) https://github.com/hat0uma/csvview.nvim
+  ~~ (-) https://github.com/hat0uma/csvview.nvim
   ~~ ( ) https://github.com/igorlfs/nvim-dap-view
   ~~ ( ) https://github.com/isak102/telescope-git-file-history.nvim
   ~~ (x) https://github.com/Julian/lean.nvim
