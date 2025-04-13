@@ -28,6 +28,7 @@ vim.opt.smartcase = false
 
 vim.g.have_nerd_font = true
 vim.opt.completeopt = "menuone,noinsert,popup,fuzzy"
+vim.o.winborder = "rounded"
 
 -- vim.opt.showtabline = 0
 
@@ -40,5 +41,3 @@ vim.opt.backup = true
 vim.opt.undodir = vim.fn.stdpath("state") .. "/undo/"
 vim.opt.backupdir = vim.fn.stdpath("state") .. "/backup/"
 vim.opt.directory = vim.fn.stdpath("state") .. "/swap/"
-
-vim.o.winborder = "rounded"

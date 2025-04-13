@@ -28,11 +28,6 @@ map ("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>", { desc = "toggle line numbe
 map ("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
 map ("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "close terminal" })
 
-map ("n", "<left>", "<cmd>echo \"Use h to move!!\"<CR>")
-map ("n", "<right>", "<cmd>echo \"Use l to move!!\"<CR>")
-map ("n", "<up>", "<cmd>echo \"Use k to move!!\"<CR>")
-map ("n", "<down>", "<cmd>echo \"Use j to move!!\"<CR>")
-
 -- TODO: conform these leaders:
 --
 -- <leader>v - native vim

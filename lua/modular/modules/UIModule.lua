@@ -21,20 +21,20 @@ local UIModule = Module:new ({
 		-- 		vim.cmd.colorscheme "NeoSolarized"
 		-- 	end
 		-- }),
-		-- PostPluginLoadAction:new ({
-		-- 	plugins = "solarized-osaka.nvim",
-		-- 	action = function ()
-		-- 		vim.opt.background = "dark"
-		-- 		vim.cmd.colorscheme "solarized-osaka"
-		-- 	end
-		-- }),
 		PostPluginLoadAction:new ({
-			plugins = "kanagawa.nvim",
+			plugins = "solarized-osaka.nvim",
 			action = function ()
 				vim.opt.background = "dark"
-				vim.cmd.colorscheme "kanagawa-wave"
+				vim.cmd.colorscheme "solarized-osaka"
 			end
 		}),
+		-- PostPluginLoadAction:new ({
+		-- 	plugins = "kanagawa.nvim",
+		-- 	action = function ()
+		-- 		vim.opt.background = "dark"
+		-- 		vim.cmd.colorscheme "kanagawa-wave"
+		-- 	end
+		-- }),
 	}
 })
 
