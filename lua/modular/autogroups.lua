@@ -22,4 +22,6 @@ return {
 
 	NeorgOptions = "Modular_NeorgOptions",
 	NeorgNoIlluminate = "Modular_NeorgNoIlluminate",
+
+	LintBufWritePostReadPost = "Modular_LintBufWritePostReadPost",
 }

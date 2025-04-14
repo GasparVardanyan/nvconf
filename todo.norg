@@ -36,14 +36,14 @@
   ~~~ (x) https://github.com/nvim-telescope/telescope-dap.nvim
   ~~~ (=) https://github.com/niuiic/dap-utils.nvim
   ~~ (+) UIModule
-  ~~~ (=) https://github.com/NvChad/base46
+  ~~~ (_) https://github.com/NvChad/base46
   ~~ (x) DbModule
   ~~ (-) MdModule
-  ~~ (-) ClangModule
-  ~~~ (-) https://sr.ht/~p00f/clangd_extensions.nvim
-  ~~~ (-) https://github.com/madskjeldgaard/cppman.nvim
-  ~~ (-) LintModule
-  ~~~ (-) https://github.com/mfussenegger/nvim-lint
+  ~~ (x) ClangModule
+  ~~~ (x) https://sr.ht/~p00f/clangd_extensions.nvim
+  ~~~ (x) https://github.com/madskjeldgaard/cppman.nvim
+  ~~ (x) LintModule
+  ~~~ (x) https://github.com/mfussenegger/nvim-lint
   ~~ (x) AiModule
   ~~~ (x) https://github.com/yetone/avante.nvim
   ~~ (=) NoneLSModule

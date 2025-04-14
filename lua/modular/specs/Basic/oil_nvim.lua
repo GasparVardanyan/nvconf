@@ -5,7 +5,7 @@ return {
 	opts = {
 		columns = {
 			"icon",
-			"permissions",
+			-- "permissions",
 			-- "size",
 			-- "mtime",
 		},
