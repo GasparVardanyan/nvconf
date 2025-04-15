@@ -2,7 +2,7 @@
 return {
 	"LintaoAmons/cd-project.nvim",
 	-- Don't need call the setup function if you think you are good with the default configuration
-	tag = "v0.6.1", -- Optional, You can also use tag to pin the plugin version for stability
+	-- tag = "v0.6.1", -- Optional, You can also use tag to pin the plugin version for stability
 	init = function() -- use init if you want enable auto_register_project, otherwise config is good
 		require("cd-project").setup({
 			-- this json file is acting like a database to update and read the projects in real time.
@@ -20,20 +20,21 @@ return {
 					trigger_point = "BEFORE_CD",
 					callback = function(_)
 						-- require("bookmarks").api.mark({name = "before cd project"})
-						-- vim.cmd [[
-						-- 	if filereadable(".vim.session")
-						-- 		mksession! .vim.session
-						-- 	endif
-						-- ]]
+						vim.print ("BEFORE: " .. vim.fn.getcwd())
 						vim.cmd [[
+							if filereadable(".vim.session")
+								mksession! .vim.session
+							endif
 							%bd
 						]]
+						vim.print ("BEFORE: " .. vim.fn.getcwd())
 					end,
 				},
 				-- Run after cd to project, find and open a file in the target project by smart-open
 				{
 					trigger_point = "AFTER_CD",
 					callback = function(_)
+						vim.print ("AFTER: " .. vim.fn.getcwd())
 						vim.cmd [[
 							if filereadable("CMakeLists.txt")
 								CMakeSelectCwd .
@@ -47,6 +48,7 @@ return {
 								source .exrc
 							endif
 						]]
+						vim.print ("AFTER: " .. vim.fn.getcwd())
 					end,
 				},
 			}
