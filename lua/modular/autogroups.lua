@@ -17,6 +17,8 @@ return {
 	LspDetachSagaMappings = "Modular_LspDetachSagaMappings",
 	LspAttachAutocmds = "Modular_LspAttachAutocmds",
 	LspDetachAutocmds = "Modular_LspDetachAutocmds",
+	-- LspAttachHighlight = "Modular_LspAttachHighlight",
+	-- LspDetachHighlight = "Modular_LspDetachHighlight",
 
 	NeoTreeNoIlluminate = "Modular_NeoTreeNoIlluminate",
 
