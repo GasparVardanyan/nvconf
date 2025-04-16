@@ -77,6 +77,7 @@ local TemporaryModule1 = Module:new ({
 		require ("modular.specs.Lsp.vim-illuminate"),
 		require ("modular.specs.Lsp.trouble_nvim"),
 		require ("modular.specs.Lsp.goto-preview"),
+		require ("modular.specs.Lsp.dropbar_nvim"),
 
 		{
 			"hrsh7th/nvim-cmp",
@@ -178,6 +179,12 @@ local TemporaryModule1 = Module:new ({
 			plugins = "lspsaga.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.lspsaga_nvim")
+			end
+		}),
+		PostPluginLoadAction:new ({
+			plugins = "dropbar.nvim",
+			action = function ()
+				require ("modular.mappings.Lsp.dropbar_nvim")
 			end
 		}),
 	}
