@@ -8,6 +8,7 @@ local LintModule = Module:new ({
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
+			plugins = "nvim-lint",
 			action = function ()
 				require ("modular.autocmds.Lint.nvim-lint")
 			end
