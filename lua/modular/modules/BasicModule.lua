@@ -8,7 +8,6 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.cd-project_nvim"),
 		require ("modular.specs.Basic.Comment_nvim"),
 		-- require ("modular.specs.Basic.dashboard-nvim"),
-		require ("modular.specs.Basic.dropbar_nvim"),
 		require ("modular.specs.Basic.grug-far_nvim"),
 		-- require ("modular.specs.Basic.neo-tree_nvim"),
 		require ("modular.specs.Basic.nvim-treesitter"),
@@ -24,12 +23,6 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.which-key_nvim"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
-			plugins = "dropbar.nvim",
-			action = function ()
-				require ("modular.mappings.Basic.dropbar_nvim")
-			end
-		}),
 		-- PostPluginLoadAction:new ({
 		-- 	plugins = "cd-project.nvim",
 		-- 	action = function ()

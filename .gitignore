@@ -1,3 +1,4 @@
 tmp/**
 lazy-lock.json
 lua/plugins/custom/**
+.vim.session
