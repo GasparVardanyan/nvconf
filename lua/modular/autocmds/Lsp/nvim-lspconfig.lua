@@ -11,10 +11,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 				vim.lsp.inlay_hint.enable (true)
 			end
 
-			if utils.client_supports_method(client, vim.lsp.protocol.Methods.textDocument_completion, event.buf) then
-				vim.lsp.completion.enable (true, client.id, event.buf, { autotrigger = true })
-			end
-
 			do return end -- NOTE: currently illiminate provides jumps to next instance
 
 			if utils.client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
@@ -47,10 +43,6 @@ vim.api.nvim_create_autocmd("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachAutocmds, { clear = true }),
 	callback = function(event)
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
-
-		-- if client and client:supports_method ('textDocument/completion') then
-		-- 	vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
-		-- end
 
 		-- TODO: why?
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then

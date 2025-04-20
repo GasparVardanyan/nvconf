@@ -60,7 +60,8 @@
   ~~ (x) OrgModule
   ~~ (-) FormatModoule
   ~~~ (-) https://github.com/stevearc/conform.nvim
-  ~~ (=) Move qmake utils to *modular.extras*
+  ~~ ( ) GdbModule
+  ~~ (=) Move qmake and cmake utils to *modular.extras*
   ~~ (-) Get rid of the temporarily saved stuff
   ~ (x) ModuleManager
   ~ (_) MappingManager

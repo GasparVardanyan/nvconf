@@ -15,4 +15,12 @@ return {
 		file_types = { "markdown", "Avante" },
 	},
 	ft = { "markdown", "Avante" },
+	-- config = function ()
+		-- local cmp = require('cmp')
+		-- cmp.setup({
+		-- 	sources = cmp.config.sources({
+		-- 		{ name = 'render-markdown' },
+		-- 	}),
+		-- })
+	-- end,
 }

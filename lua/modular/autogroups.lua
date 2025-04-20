@@ -17,6 +17,8 @@ return {
 	LspDetachSagaMappings = "Modular_LspDetachSagaMappings",
 	LspAttachAutocmds = "Modular_LspAttachAutocmds",
 	LspDetachAutocmds = "Modular_LspDetachAutocmds",
+	LspNativeCompletionAttachAutocmds = "Modular_LspNativeCompletionAttachAutocmds",
+	LspNativeCompletionDetachAutocmds = "Modular_LspNativeCompletionDetachAutocmds",
 	-- LspAttachHighlight = "Modular_LspAttachHighlight",
 	-- LspDetachHighlight = "Modular_LspDetachHighlight",
 

@@ -20,3 +20,10 @@ vim.opt.rtp:prepend(lazypath)
 -- This is also a good place to setup other settings (vim.opt)
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+
+vim.api.nvim_create_autocmd ("User", {
+	pattern = "LazyDone",
+	callback = function ()
+		vim.keymap.set ("n", "<leader>L", vim.cmd.Lazy, { desc = "Lazy" })
+	end,
+})
