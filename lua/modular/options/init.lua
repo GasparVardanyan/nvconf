@@ -1,6 +1,9 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.g.have_nerd_font = true
+require ("modular.options.diagnostics")
+
 vim.opt.background = "dark"
 
 vim.opt.breakindent = true
@@ -26,7 +29,6 @@ vim.opt.exrc = true
 vim.opt.ignorecase = false
 vim.opt.smartcase = false
 
-vim.g.have_nerd_font = true
 vim.opt.completeopt = "menuone,noinsert,popup,fuzzy"
 vim.o.winborder = "rounded"
 

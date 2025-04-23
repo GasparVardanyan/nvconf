@@ -16,6 +16,8 @@
   ~~ (=) Make module dependencies so one module can wait other to be loaded
   ~~ (x) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
+  ~~ ( ) Review ModuleManager and use vim api whenever possible
+		  (/vim.list_contains/) for example
   ~ ( ) *Modules*
   ~~ (x) Separate base logic
   ~~ (x) HlsModule
@@ -78,6 +80,7 @@
   ~ (_) Dashboard
   ~~ (_) Conflicts with indent-blankline.nvim
   ~ (x) Module leaders /whichkey?/
+  ~~ ( ) Define leaders in Modules, not in whichkey's autocmd
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
   ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
   ~ (x) Restructure
