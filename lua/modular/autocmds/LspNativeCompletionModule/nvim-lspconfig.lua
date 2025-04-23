@@ -1,9 +1,9 @@
 local groups = require ("modular.autogroups")
 local utils = require ("modular.utils")
 
-vim.api.nvim_create_autocmd("LspAttach", {
+vim.api.nvim_create_autocmd ("LspAttach", {
 	group = vim.api.nvim_create_augroup (groups.LspNativeCompletionAttachAutocmds, { clear = true }),
-	callback = function(event)
+	callback = function (event)
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
 		if client then
@@ -14,9 +14,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("LspDetach", {
+vim.api.nvim_create_autocmd ("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspNativeCompletionDetachAutocmds, { clear = true }),
-	callback = function(event)
+	callback = function (event)
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
 		if client and client:supports_method ('textDocument/completion') then

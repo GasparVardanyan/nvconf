@@ -1,18 +1,18 @@
 local Module = require ("modular.Module")
 local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 
-local LspExtrasModule = Module:new ({
-	name = "LspExtras",
+local MiscModule = Module:new ({
+	name = "Misc",
 	plugins = {
-		require ("modular.extras.specs.LspExtras.nvim-cmp"),
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({
-			plugins = { "nvim-cmp" },
+			plugins = "mason.nvim",
 			action = function ()
+					require ("modular.mappings.Misc.mason_nvim")
 			end
 		}),
 	}
 })
 
-return LspExtrasModule
+return MiscModule

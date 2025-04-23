@@ -1,6 +1,7 @@
 return {
 	ui_module = require ("modular.modules.UIModule"),
 	basic_module = require ("modular.modules.BasicModule"),
+	misc_module = require ("modular.modules.MiscModule"),
 	git_module = require ("modular.modules.GitModule"),
 	nvim_module = require ("modular.modules.NvimModule"),
 	org_module = require ("modular.modules.OrgModule"),
@@ -10,6 +11,7 @@ return {
 	md_module = require ("modular.modules.MdModule"),
 	lsp_module = require ("modular.modules.LspModule"),
 	lsp_native_completion_module = require ("modular.modules.LspNativeCompletionModule"),
+	-- lsp_nvim_cmp_completion_module = require ("modular.extras.modules.LspNvimCmpCompletionModule"),
 	lean_module = require ("modular.extras.modules.LeanModule"),
 	clang_module = require ("modular.extras.modules.ClangModule"),
 	gdb_module = require ("modular.extras.modules.GdbModule"),
@@ -17,7 +19,6 @@ return {
 	ai_module = require ("modular.modules.AiModule"),
 	test_module = require ("modular.modules.TestModule"),
 	rest_module = require ("modular.modules.RestModule"),
-	-- lspextras_module = require ("modular.extras.modules.LspExtrasModule"),
 	lint_module = require ("modular.modules.LintModule")
 	-- lspsaga_module = require ("modular.extras.modules.LspSagaModule"),
 	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),

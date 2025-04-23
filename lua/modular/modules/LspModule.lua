@@ -6,12 +6,13 @@ local LspModule = Module:new ({
 	plugins = {
 		require ("modular.specs.misc.mason_nvim"),
 		require ("modular.specs.Lsp.nvim-lspconfig"),
+		require ("modular.specs.Lsp.fidget_nvim"),
 		-- require ("modular.specs.Lsp.LuaSnip"),
 		-- require ("modular.specs.Lsp.nvim-cmp"),
 		require ("modular.specs.Lsp.nvim-autopairs"),
 		require ("modular.specs.Lsp.indent-blankline_nvim"),
 		require ("modular.specs.Lsp.outline_nvim"),
-		require ("modular.specs.Lsp.vim-illuminate"), -- TODO: move to LspExtrasModule and add a module for the native way
+		require ("modular.specs.Lsp.vim-illuminate"), -- TODO: move to extras and add a module for the native way
 		require ("modular.specs.Lsp.trouble_nvim"),
 		require ("modular.specs.Lsp.goto-preview"),
 		require ("modular.specs.Lsp.dropbar_nvim"),
