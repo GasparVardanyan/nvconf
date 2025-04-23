@@ -7,10 +7,9 @@ require ("modular.extras")
 
 local ModuleManager = require ("modular.ModuleManager")
 
----@diagnostic disable-next-line: unused-local
-local mm = ModuleManager:new ({
+ModularManager = ModuleManager:new ({
 	modules = require ("modular.modules"),
-	load_tracker = true
+	load_tracker = false
 })
 
 -- vim.api.nvim_create_autocmd ("User", {
