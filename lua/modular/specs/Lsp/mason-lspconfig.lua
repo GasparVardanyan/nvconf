@@ -7,9 +7,7 @@ return {
 	config = function ()
 		local capabilities = vim.lsp.protocol.make_client_capabilities ()
 
-		local servers = require ("modular.mason.lspservers")
-		local ensure_installed = require ("modular.mason")
-		require ("mason-tool-installer").setup { ensure_installed = ensure_installed }
+		local servers = require ("modular.config.lspservers")
 
 		require ("mason-lspconfig").setup {
 			ensure_installed = {},

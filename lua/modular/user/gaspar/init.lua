@@ -2,10 +2,10 @@ require ("modular.user.gaspar.autocmds.hls_commands")
 require ("modular.user.gaspar.autocmds.gcrypt")
 require ("modular.user.gaspar.autocmds.xdefaults_highlight")
 
-local MasonLspServers = require ("modular.mason.lspservers")
-MasonLspServers ["clangd"] = {}
+local LspServers = require ("modular.config.lspservers")
+LspServers ["clangd"] = {}
 
-local MasonTools = require ("modular.mason.tools")
+local MasonTools = require ("modular.config.masontools")
 vim.list_extend (MasonTools, {
 	"codelldb", "cpplint", "clang-format"
 })

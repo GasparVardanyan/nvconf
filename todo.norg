@@ -29,6 +29,7 @@
   ~~~ (x) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
+  ~~~ (-) add blink.cmp support
   ~~~ ( ) buffer formatting mappings
   ~~ (x) BasicModule
   ~~~ (_) https://github.com/ThePrimeagen/harpoon
