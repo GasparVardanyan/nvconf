@@ -1,7 +1,7 @@
 local groups = require ("modular.user.gaspar.autogroups")
 
 vim.api.nvim_create_autocmd ("FileType", {
-	group = vim.api.nvim_create_augroup (groups.ExtraHlsCommands, { clear = true }),
+	group = vim.api.nvim_create_augroup (groups.UserGasparHlsCommands, { clear = true }),
 	pattern = { "hlsplaylist" },
 	callback = function (args)
 		local bufnr = args.buf

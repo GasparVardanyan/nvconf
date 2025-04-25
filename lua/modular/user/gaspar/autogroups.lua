@@ -1,4 +1,4 @@
 return {
-	ExtraHlsCommands = "Modular_ExtraHlsCommands",
-	ExtraXdefaultsFiles = "Modular_ExtraXdefaultsFiles",
+	UserGasparHlsCommands = "Modular_UserGasparHlsCommands",
+	UserGasparXdefaultsFiles = "Modular_UserGasparXdefaultsFiles",
 }
