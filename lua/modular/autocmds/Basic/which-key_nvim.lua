@@ -34,6 +34,7 @@ wk.add({
 	{ "<leader>lp", group = "preview" },
 	{ "<leader>lw", group = "workspace" },
 	{ "<leader>lx", group = "trouble" },
+	{ "<leader>w", group = "workspace" },
 
 	-- Test:
 	{ "<leader>t", group = "neotest" },

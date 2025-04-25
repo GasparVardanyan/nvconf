@@ -4,6 +4,8 @@ local utils = require ("modular.utils")
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 
+local leaders = {"gr", "<leader>l", "<leader>"}
+
 -- Some keymaps are created unconditionally when Nvim starts:
 -- - "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|
 -- - "gra" is mapped in Normal and Visual mode to |vim.lsp.buf.code_action()|
@@ -31,12 +33,10 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 		map ("n", "grd", vim.lsp.buf.definition, { buffer = event.buf, desc = "definition" })
 		map ("n", "grt", vim.lsp.buf.type_definition, { buffer = event.buf, desc = "type definition" })
 		map ("n", "grs", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf, desc = "switch source header" })
-		map ("n", "grwa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf, desc = "add folder" })
-		map ("n", "grwl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { buffer = event.buf, desc = "list folders" })
-		map ("n", "grwr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf, desc = "remove folder" })
-		map ("n", "<leader>lwa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf, desc = "add folder" })
-		map ("n", "<leader>lwl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { buffer = event.buf, desc = "list folders" })
-		map ("n", "<leader>lwr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf, desc = "remove folder" })
+
+		utils.map_multi_leader ("n", leaders, "wa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf, desc = "add folder" })
+		utils.map_multi_leader ("n", leaders, "wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { buffer = event.buf, desc = "list folders" })
+		utils.map_multi_leader ("n", leaders, "wr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf, desc = "remove folder" })
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
@@ -44,6 +44,7 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 		-- 	vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
 		-- end
 
+		-- TODO: REVIEW
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
 			map ("n", "grh", function()
 				vim.lsp.inlay_hint.enable (not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
@@ -71,12 +72,10 @@ vim.api.nvim_create_autocmd("LspDetach", {
 		unmap ("n", "grd", { buffer = event.buf })
 		unmap ("n", "grt", { buffer = event.buf })
 		unmap ("n", "grs", { buffer = event.buf })
-		unmap ("n", "grwa", { buffer = event.buf })
-		unmap ("n", "grwl", { buffer = event.buf })
-		unmap ("n", "grwr", { buffer = event.buf })
-		unmap ("n", "<leader>lwa", { buffer = event.buf })
-		unmap ("n", "<leader>lwl", { buffer = event.buf })
-		unmap ("n", "<leader>lwr", { buffer = event.buf })
+
+		utils.map_multi_leader ("n", leaders, "wa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
+		utils.map_multi_leader ("n", leaders, "wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { buffer = event.buf })
+		utils.map_multi_leader ("n", leaders, "wr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 

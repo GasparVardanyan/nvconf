@@ -13,6 +13,8 @@ return {
 	LspDetachTelescopeMappings = "Modular_LspDetachTelescopeMappings",
 	LspAttachGotoPreviewMappings = "Modular_LspAttachGotoPreviewMappings",
 	LspDetachGotoPreviewMappings = "Modular_LspDetachGotoPreviewMappings",
+	LspAttachOutlineMappings = "Modular_LspAttachOutlineMappings",
+	LspDetachOutlineMappings = "Modular_LspDetachOutlineMappings",
 	LspAttachSagaMappings = "Modular_LspAttachSagaMappings",
 	LspDetachSagaMappings = "Modular_LspDetachSagaMappings",
 	LspAttachAutocmds = "Modular_LspAttachAutocmds",

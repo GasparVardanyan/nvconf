@@ -21,7 +21,21 @@ local function client_supports_method  (client, method, bufnr)
 	end
 end
 
+local map_multi_leader = function (mode, leaders, mapping, action, opts)
+	for li = 1, #leaders do
+		vim.keymap.set (mode, leaders [li] .. mapping, action, opts or {})
+	end
+end
+
+local unmap_multi_leader = function (mode, leaders, mapping, opts)
+	for li = 1, #leaders do
+		vim.keymap.del (mode, leaders [li] .. mapping, opts or {})
+	end
+end
+
 utils.dump = dump
 utils.client_supports_method = client_supports_method
+utils.map_multi_leader = map_multi_leader
+utils.unmap_multi_leader = unmap_multi_leader
 
 return utils
