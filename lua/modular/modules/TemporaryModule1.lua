@@ -67,7 +67,7 @@ local TemporaryModule1 = Module:new ({
 			end,
 		},
 
-		require ("modular.specs.misc.mason_nvim"),
+		require ("modular.specs.Misc.mason_nvim"),
 		-- require ("modular.specs.Lsp.nvim-lspconfig"),
 		-- require ("modular.specs.Lsp.LuaSnip"),
 		-- require ("modular.specs.Lsp.nvim-cmp"),

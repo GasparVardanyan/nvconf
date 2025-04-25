@@ -4,7 +4,7 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local LspModule = Module:new ({
 	name = "Lsp",
 	plugins = {
-		require ("modular.specs.misc.mason_nvim"),
+		require ("modular.specs.Misc.mason_nvim"),
 		require ("modular.specs.Lsp.nvim-lspconfig"),
 		require ("modular.specs.Lsp.mason-lspconfig"),
 		require ("modular.specs.Lsp.mason-tool-installer"),

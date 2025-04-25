@@ -4,6 +4,7 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local MiscModule = Module:new ({
 	name = "Misc",
 	plugins = {
+		require ("modular.specs.Misc.vim-table-mode")
 	},
 	post_plugin_load_actions = {
 		PostPluginLoadAction:new ({

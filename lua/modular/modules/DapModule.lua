@@ -4,7 +4,7 @@ local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
 local DapModule = Module:new ({
 	name = "Dap",
 	plugins = {
-		require ("modular.specs.misc.mason_nvim"),
+		require ("modular.specs.Misc.mason_nvim"),
 		require ("modular.specs.Dap.nvim-dap"),
 		require ("modular.specs.Dap.mason-nvim-dap"),
 		require ("modular.specs.Dap.nvim-dap-ui"),

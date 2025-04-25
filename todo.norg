@@ -61,6 +61,7 @@
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~~ (x) https://github.com/jbyuki/one-small-step-for-vimkind
   ~~ (x) OrgModule
+  ~~~ (-) integrate vim-table-mode
   ~~ (-) FormatModoule
   ~~~ (-) https://github.com/stevearc/conform.nvim
   ~~ ( ) GdbModule
