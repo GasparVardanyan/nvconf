@@ -6,13 +6,6 @@ local LeanModule = Module:new ({
 	plugins = {
 		require ("modular.extras.specs.Lean.lean_nvim"),
 	},
-	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
-			plugins = "lean.nvim",
-			action = function ()
-			end
-		})
-	}
 })
 
 return LeanModule

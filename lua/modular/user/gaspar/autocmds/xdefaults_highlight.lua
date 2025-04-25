@@ -1,4 +1,4 @@
-local groups = require ("modular.extras.autogroups")
+local groups = require ("modular.user.gaspar.autogroups")
 
 vim.api.nvim_create_autocmd ({"BufNewFile", "BufReadPost"}, {
 	group = vim.api.nvim_create_augroup (groups.ExtraXdefaultsFiles, { clear = true }),
