@@ -25,8 +25,8 @@
   ~~~ (x) clean up lsp mappings' mess
   ~~~ (x) LspExtraMappingsModule
   ~~~ (x) Move LspSaga to extras
-  ~~~ (-) Move to native 0.11 autocompletion
-  ~~~ (-) refactor nvim-lspconfig spec
+  ~~~ (x) Move to native 0.11 autocompletion
+  ~~~ (x) refactor nvim-lspconfig spec
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
   ~~~ ( ) buffer formatting mappings

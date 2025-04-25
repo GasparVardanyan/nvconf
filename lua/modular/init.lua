@@ -5,12 +5,19 @@ require ("modular.mappings.generic")
 
 require ("modular.extras")
 
+-- local MasonLspServers = require ("modular.mason.lspservers")
+-- MasonLspServers ["clangd"] = {}
+--
+-- local MasonTools = require ("modular.mason.tools")
+-- vim.list_extend (MasonTools, {
+-- 	"codelldb", "cpplint", "clang-format"
+-- })
+
 local ModuleManager = require ("modular.ModuleManager")
 
----@diagnostic disable-next-line: unused-local
-local mm = ModuleManager:new ({
+ModularManager = ModuleManager:new ({
 	modules = require ("modular.modules"),
-	load_tracker = true
+	load_tracker = false
 })
 
 -- vim.api.nvim_create_autocmd ("User", {

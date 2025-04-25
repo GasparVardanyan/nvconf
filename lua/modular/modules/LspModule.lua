@@ -6,6 +6,8 @@ local LspModule = Module:new ({
 	plugins = {
 		require ("modular.specs.misc.mason_nvim"),
 		require ("modular.specs.Lsp.nvim-lspconfig"),
+		require ("modular.specs.Lsp.mason-lspconfig"),
+		require ("modular.specs.Lsp.mason-tool-installer"),
 		require ("modular.specs.Lsp.fidget_nvim"),
 		-- require ("modular.specs.Lsp.LuaSnip"),
 		-- require ("modular.specs.Lsp.nvim-cmp"),
