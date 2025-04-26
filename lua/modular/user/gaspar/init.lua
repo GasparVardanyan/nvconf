@@ -10,4 +10,13 @@ vim.list_extend (MasonTools, {
 	"codelldb", "cpplint", "clang-format"
 })
 
+local AvanteOpts = require ("modular.config.avateopts")
+AvanteOpts.provider = "gemini"
+AvanteOpts.aihubmix = {
+	model = "DeepSeek-V3",
+}
+AvanteOpts.gemini = {
+	model = "gemini-2.5-flash-preview-04-17",
+}
+
 require ("modular")

@@ -2,27 +2,21 @@ return {
 	"yetone/avante.nvim",
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
-	opts = {
-		provider = "gemini",
-		-- provider = "aihubmix",
-		aihubmix = {
-			model = "DeepSeek-V3",
+	opts = function ()
+		return vim.tbl_deep_extend ("force", {
+			-- system_prompt = function()
+			-- 	local hub = require("mcphub").get_hub_instance()
+			-- 	return hub:get_active_servers_prompt()
+			-- end,
+			-- -- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
+			-- custom_tools = function()
+			-- 	return {
+			-- 		require("mcphub.extensions.avante").mcp_tool(),
+			-- 	}
+			-- end,
 		},
-		-- gemini = {
-		-- 	model = "gemini-2.5-flash-preview-04-17",
-		-- },
-		hints = { enabled = false },
-		-- system_prompt = function()
-		-- 	local hub = require("mcphub").get_hub_instance()
-		-- 	return hub:get_active_servers_prompt()
-		-- end,
-		-- -- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
-		-- custom_tools = function()
-		-- 	return {
-		-- 		require("mcphub.extensions.avante").mcp_tool(),
-		-- 	}
-		-- end,
-	},
+		require ("modular.config.avateopts"))
+	end,
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
 

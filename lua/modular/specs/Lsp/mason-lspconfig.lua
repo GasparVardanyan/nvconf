@@ -17,7 +17,7 @@ return {
 					local server = servers [server_name] or {}
 					server.capabilities = vim.tbl_deep_extend (
 						"force",
-						{},
+						{}, -- TODO: understand why this empty table is here
 						capabilities,
 						server.capabilities or {}
 					)

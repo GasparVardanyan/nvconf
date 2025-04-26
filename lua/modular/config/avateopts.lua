@@ -1,0 +1,3 @@
+return {
+	hints = { enabled = false },
+}
