@@ -9,8 +9,6 @@ local LspModule = Module:new ({
 		require ("modular.specs.Lsp.mason-lspconfig"),
 		require ("modular.specs.Lsp.mason-tool-installer"),
 		require ("modular.specs.Lsp.fidget_nvim"),
-		-- require ("modular.specs.Lsp.LuaSnip"),
-		-- require ("modular.specs.Lsp.nvim-cmp"),
 		require ("modular.specs.Lsp.nvim-autopairs"),
 		require ("modular.specs.Lsp.indent-blankline_nvim"),
 		require ("modular.specs.Lsp.outline_nvim"),

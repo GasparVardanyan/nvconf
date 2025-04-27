@@ -33,7 +33,7 @@
   ~~~ ( ) buffer formatting mappings
   ~~ (x) BasicModule
   ~~~ (_) https://github.com/ThePrimeagen/harpoon
-  ~~~ (-) Move all telescope related mappings to *BasicModula*
+  ~~~ (_) Move all telescope related mappings to *BasicModula*
   ~~~ (x) oil.nvim mappings
   ~~ (x) CompilerModule
   ~~~ (x) cmake-tools.nvim
@@ -64,7 +64,7 @@
   ~~~ (-) integrate vim-table-mode
   ~~ (-) FormatModoule
   ~~~ (-) https://github.com/stevearc/conform.nvim
-  ~~ ( ) GdbModule
+  ~~ (x) GdbModule
   ~~ (=) Move qmake and cmake utils to *modular.extras*
   ~~ (-) Get rid of the temporarily saved stuff
   ~ (x) ModuleManager
@@ -84,14 +84,14 @@
   ~ (x) Module leaders /whichkey?/
   ~~ ( ) Define leaders in Modules, not in whichkey's autocmd
   ~ ( ) Workspace Manager /https://github.com/natecraddock/workspaces.nvim/
-  ~ ( ) Persistence /https://github.com/folke/persistence.nvim/
+  ~ (?) Persistence /https://github.com/folke/persistence.nvim/
   ~ (x) Restructure
   ~~ (x) Move included Modules outside the *ModuleManager*
   ~~ (x) New directory structure to have multiple module groups
   ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
   ~ (-) Global *EditorConfig* setup
   ~ ( ) PostPluginLoadAction
-  ~~ ( ) Rename to ModuleAction, and add divide plugins list to *pre* and *post*
+  ~~ ( ) Rename to ModuleAction, and divide plugins list to *pre* and *post*
   ~~ ( ) Handle empty plugin lists
   ~ ( ) Check these interesting resourcecs:
   ~~ (x) https://github.com/rmagatti/goto-preview

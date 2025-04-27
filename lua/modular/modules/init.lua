@@ -11,7 +11,7 @@ return {
 	md_module = require ("modular.modules.MdModule"),
 	lsp_module = require ("modular.modules.LspModule"),
 	lsp_native_completion_module = require ("modular.modules.LspNativeCompletionModule"),
-	-- lsp_nvim_cmp_completion_module = require ("modular.extras.modules.LspNvimCmpCompletionModule"),
+	-- lsp_nvim_cmp_completion_module = require ("modular.extras.modules._LspNvimCmpCompletionModule"),
 	lean_module = require ("modular.extras.modules.LeanModule"),
 	clang_module = require ("modular.extras.modules.ClangModule"),
 	gdb_module = require ("modular.extras.modules.GdbModule"),
