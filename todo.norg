@@ -61,7 +61,7 @@
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~~ (x) https://github.com/jbyuki/one-small-step-for-vimkind
   ~~ (x) OrgModule
-  ~~~ (-) integrate vim-table-mode
+  ~~~ (-) integrate vim-table-mode (\<localleader\>t)
   ~~ (-) FormatModoule
   ~~~ (-) https://github.com/stevearc/conform.nvim
   ~~ (x) GdbModule
@@ -108,9 +108,9 @@
   ~~ (-) https://github.com/hat0uma/csvview.nvim
   ~~ ( ) https://github.com/wsdjeg/rooter.nvim
   ~~ ( ) https://github.com/tsakirist/telescope-lazy.nvim
-  ~~ ( ) https://github.com/t-troebst/perfanno.nvim
+  ~~ (-) https://github.com/t-troebst/perfanno.nvim
   ~~ ( ) https://github.com/smzm/hydrovim
-  ~~ ( ) https://github.com/sakhnik/nvim-gdb
+  ~~ (x) https://github.com/sakhnik/nvim-gdb
   ~~ ( ) https://github.com/rockerBOO/awesome-neovim
   ~~ ( ) https://github.com/rafcamlet/nvim-luapad
   ~~ ( ) https://github.com/pwntester/octo.nvim
