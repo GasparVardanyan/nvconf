@@ -1,0 +1,12 @@
+local Module = require ("modular.Module")
+
+local CustomModule = Module:new ({
+	name = "Custom",
+	plugins = {
+		require ("modular.user.gaspar.specs.Custom.iron_nvim"),
+		require ("modular.user.gaspar.specs.Custom.perfanno_nvim"),
+		-- require ("modular.user.gaspar.specs.Custom.lualine_nvim"),
+	},
+})
+
+return CustomModule

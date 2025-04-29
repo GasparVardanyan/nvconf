@@ -7,9 +7,9 @@ local leaders = {"gr", "<leader>l", "<leader>"}
 local map = utils.map_multi_leader
 local unmap = utils.unmap_multi_leader
 
-vim.api.nvim_create_autocmd('LspAttach', {
+vim.api.nvim_create_autocmd ("LspAttach", {
 	group = vim.api.nvim_create_augroup (groups.LspAttachTelescopeMappings, { clear = true }),
-	callback = function(args)
+	callback = function (args)
 		map ("n", leaders, "fI", telescope_builtin.lsp_incoming_calls, { buffer = args.buf, desc = "incoming calls" })
 		map ("n", leaders, "fO", telescope_builtin.lsp_outgoing_calls, { buffer = args.buf, desc = "outgoing calls" })
 		map ("n", leaders, "fS", telescope_builtin.lsp_dynamic_workspace_symbols, { buffer = args.buf, desc = "workspace symbols" })
@@ -21,9 +21,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
 	end,
 })
 
-vim.api.nvim_create_autocmd('LspDetach', {
+vim.api.nvim_create_autocmd ("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachTelescopeMappings, { clear = true }),
-	callback = function(args)
+	callback = function (args)
 		unmap ("n", leaders, "fI", { buffer = args.buf })
 		unmap ("n", leaders, "fO", { buffer = args.buf })
 		unmap ("n", leaders, "fS", { buffer = args.buf })

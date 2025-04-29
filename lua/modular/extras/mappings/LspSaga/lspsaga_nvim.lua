@@ -3,7 +3,7 @@ local groups = require ("modular.autogroups")
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 
-vim.api.nvim_create_autocmd ('LspAttach', {
+vim.api.nvim_create_autocmd ("LspAttach", {
 	group = vim.api.nvim_create_augroup (groups.LspAttachSagaMappings, { clear = true }),
 	callback = function(event)
 		map ("n", "<leader>Lo", "<cmd>Lspsaga outline<cr>", { buffer = event.buf, desc = "outline" })

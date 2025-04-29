@@ -1,22 +1,22 @@
 return { -- Autocompletion
-	'hrsh7th/nvim-cmp',
-	event = 'InsertEnter',
+	"hrsh7th/nvim-cmp",
+	event = "InsertEnter",
 	dependencies = {
 		-- Snippet Engine & its associated nvim-cmp source
-		'L3MON4D3/LuaSnip',
-		'saadparwaiz1/cmp_luasnip',
+		"L3MON4D3/LuaSnip",
+		"saadparwaiz1/cmp_luasnip",
 
 		-- Adds other completion capabilities.
 		--  nvim-cmp does not ship with all sources by default. They are split
 		--  into multiple repos for maintenance purposes.
-		'hrsh7th/cmp-nvim-lsp',
-		'hrsh7th/cmp-path',
-		'hrsh7th/cmp-nvim-lsp-signature-help',
+		"hrsh7th/cmp-nvim-lsp",
+		"hrsh7th/cmp-path",
+		"hrsh7th/cmp-nvim-lsp-signature-help",
 	},
 	config = function()
 		-- See `:help cmp`
-		local cmp = require 'cmp'
-		local luasnip = require 'luasnip'
+		local cmp = require "cmp"
+		local luasnip = require "luasnip"
 		luasnip.config.setup {}
 
 		cmp.setup {
@@ -25,7 +25,7 @@ return { -- Autocompletion
 					luasnip.lsp_expand(args.body)
 				end,
 			},
-			completion = { completeopt = 'menu,menuone,noinsert' },
+			completion = { completeopt = "menu,menuone,noinsert" },
 
 			-- For an understanding of why these mappings were
 			-- chosen, you will need to read `:help ins-completion`
@@ -33,30 +33,30 @@ return { -- Autocompletion
 			-- No, but seriously. Please read `:help ins-completion`, it is really good!
 			mapping = cmp.mapping.preset.insert {
 				-- Select the [n]ext item
-				['<C-n>'] = cmp.mapping.select_next_item(),
+				["<C-n>"] = cmp.mapping.select_next_item(),
 				-- Select the [p]revious item
-				['<C-p>'] = cmp.mapping.select_prev_item(),
+				["<C-p>"] = cmp.mapping.select_prev_item(),
 
 				-- Scroll the documentation window [b]ack / [f]orward
-				['<C-b>'] = cmp.mapping.scroll_docs(-4),
-				['<C-f>'] = cmp.mapping.scroll_docs(4),
+				["<C-b>"] = cmp.mapping.scroll_docs(-4),
+				["<C-f>"] = cmp.mapping.scroll_docs(4),
 
 				-- Accept ([y]es) the completion.
 				--  This will auto-import if your LSP supports it.
 				--  This will expand snippets if the LSP sent a snippet.
-				['<CR>'] = cmp.mapping.confirm { select = true },
-				['<C-e>'] = cmp.mapping.abort(),
+				["<CR>"] = cmp.mapping.confirm { select = true },
+				["<C-e>"] = cmp.mapping.abort(),
 
 				-- If you prefer more traditional completion keymaps,
 				-- you can uncomment the following lines
-				--['<CR>'] = cmp.mapping.confirm { select = true },
-				--['<Tab>'] = cmp.mapping.select_next_item(),
-				--['<S-Tab>'] = cmp.mapping.select_prev_item(),
+				--["<CR>"] = cmp.mapping.confirm { select = true },
+				--["<Tab>"] = cmp.mapping.select_next_item(),
+				--["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
 				-- Manually trigger a completion from nvim-cmp.
 				--  Generally you don't need this, because nvim-cmp will display
 				--  completions whenever it has completion options available.
-				['<C-Space>'] = cmp.mapping.complete {},
+				["<C-Space>"] = cmp.mapping.complete {},
 
 				-- Think of <c-l> as moving to the right of your snippet expansion.
 				--  So if you have a snippet that's like:
@@ -67,16 +67,16 @@ return { -- Autocompletion
 				-- <c-l> will move you to the right of each of the expansion locations.
 				-- <c-h> is similar, except moving you backwards.
 
-				-- ['<C-l>'] = cmp.mapping(function()
+				-- ["<C-l>"] = cmp.mapping(function()
 				-- 	if luasnip.expand_or_locally_jumpable() then
 				-- 		luasnip.expand_or_jump()
 				-- 	end
-				-- end, { 'i', 's' }),
-				-- ['<C-h>'] = cmp.mapping(function()
+				-- end, { "i", "s" }),
+				-- ["<C-h>"] = cmp.mapping(function()
 				-- 	if luasnip.locally_jumpable(-1) then
 				-- 		luasnip.jump(-1)
 				-- 	end
-				-- end, { 'i', 's' }),
+				-- end, { "i", "s" }),
 
 				-- https://github.com/NvChad/NvChad/blob/6f25b2739684389ca69ea8229386c098c566c408/lua/nvchad/configs/cmp.lua#L27
 				["<C-i>"] = cmp.mapping(function(fallback)
@@ -106,17 +106,17 @@ return { -- Autocompletion
 			},
 			sources = {
 				{
-					name = 'lazydev',
+					name = "lazydev",
 					-- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
 					group_index = 0,
 				},
-				{ name = 'vim-dadbod-completion' },
-				{ name = 'nvim_lsp' },
-				{ name = 'nvim_lsp_signature_help' },
-				{ name = 'luasnip' },
-				{ name = 'path' },
-				{ name = 'nvim_lua' },
-				{ name = 'buffer' },
+				{ name = "vim-dadbod-completion" },
+				{ name = "nvim_lsp" },
+				{ name = "nvim_lsp_signature_help" },
+				{ name = "luasnip" },
+				{ name = "path" },
+				{ name = "nvim_lua" },
+				{ name = "buffer" },
 			},
 			window = {
 				completion = cmp.config.window.bordered(),
