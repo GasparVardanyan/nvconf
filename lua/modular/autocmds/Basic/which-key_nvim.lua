@@ -9,6 +9,9 @@ wk.add({
 
 	-- Compiler:
 	{ "<leader>c", group = "compiler" },
+	{ "<leader>co", group = "cmake open" },
+	{ "<leader>cc", group = "cmake close" },
+	{ "<leader>cs", group = "cmake stop" },
 
 	-- Dap:
 	{ "<leader>d", group = "dap" },

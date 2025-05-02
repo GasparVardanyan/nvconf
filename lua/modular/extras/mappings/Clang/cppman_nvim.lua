@@ -9,8 +9,4 @@ end, {
 	desc = "cppman <cWORD>"
 })
 
-map ("n", "<leader>Cc", function()
-	cppman.input()
-end, {
-	desc = "cppman"
-})
+map ("n", "<leader>Cc", cppman.input, { desc = "cppman" })
