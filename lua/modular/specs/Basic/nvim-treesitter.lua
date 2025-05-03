@@ -4,7 +4,7 @@ return { -- TODO: check nvchad/lazyvim setup
 	-- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 	build = ":TSUpdate",
 	opts = {
-		ensure_installed = { "lua", "luadoc", "printf", "vim", "vimdoc", "norg", "bash", "cpp", "c" },
+		ensure_installed = require ("modular.config.treesitters"),
 		highlight = {
 			enable = true,
 			use_languagetree = true,

@@ -16,12 +16,12 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 			focus_on_open = true,
 			dismiss_on_move = false
 		}
-		map ("n", leaders, "pd", function () require("goto-preview").goto_preview_definition (opts) end, { buffer = event.buf, desc = "definition" })
-		map ("n", leaders, "pt", function () require("goto-preview").goto_preview_type_definition (opts) end, { buffer = event.buf, desc = "type definition" })
-		map ("n", leaders, "pi", function () require("goto-preview").goto_preview_implementation (opts) end, { buffer = event.buf, desc = "implementation" })
-		map ("n", leaders, "pD", function () require("goto-preview").goto_preview_declaration (opts) end, { buffer = event.buf, desc = "declaration" })
-		map ("n", leaders, "P", function () require("goto-preview").close_all_win () end, { buffer = event.buf, desc = "lsp close preview windows" })
-		map ("n", leaders, "pr", function () require("goto-preview").goto_preview_references (opts) end, { buffer = event.buf, desc = "references" })
+		map ("n", leaders, "pd", function () require ("goto-preview").goto_preview_definition (opts) end, { buffer = event.buf, desc = "definition" })
+		map ("n", leaders, "pt", function () require ("goto-preview").goto_preview_type_definition (opts) end, { buffer = event.buf, desc = "type definition" })
+		map ("n", leaders, "pi", function () require ("goto-preview").goto_preview_implementation (opts) end, { buffer = event.buf, desc = "implementation" })
+		map ("n", leaders, "pD", function () require ("goto-preview").goto_preview_declaration (opts) end, { buffer = event.buf, desc = "declaration" })
+		map ("n", leaders, "P", function () require ("goto-preview").close_all_win () end, { buffer = event.buf, desc = "lsp close preview windows" })
+		map ("n", leaders, "pr", function () require ("goto-preview").goto_preview_references (opts) end, { buffer = event.buf, desc = "references" })
 	end,
 })
 
