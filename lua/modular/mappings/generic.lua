@@ -23,7 +23,6 @@ map ("n", "<leader>vc", vim.cmd.tabclose, { desc = "tabclose" })
 map ("n", "<leader>vd", vim.cmd.bdelete, { desc = "bdelete" })
 map ("n", "<leader>vm", function () vim.cmd.tabnew "%"; vim.cmd.norm "zz" end, { desc = "tabnew %" }) -- TODO: proper encoding without binary symbols
 map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
-map ("n", "<leader>vo", vim.cmd.only, { desc = "only" })
 map ("n", "<leader>vw", vim.cmd.WipeWindowlessBufs, { desc = "wipe windowless bufs" })
 
 -- TODO: use this instead of <cmd> in mappings:
@@ -36,45 +35,6 @@ map ("n", "<leader>n", function () vim.cmd.setlocal {'nu!', 'rnu!'} end, { desc 
 
 map ("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
 map ("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "close terminal" })
-
--- TODO: conform these leaders:
---
--- <leader>v - native vim
--- <leader>V - native vim
---
--- <leader><space> - Basic - todo
--- <leader>s - Basic - grug-far
--- <leader>S - Basic - grug-far
--- <leader>f - Basic,Lsp - telescope
--- <leader>F - Basic - telescope
--- <leader>t - Basic - toggleterm
--- <leader>u - Basic - undotree
---
--- <leader>c - Compiler
--- <leader>C - Compiler
---
--- <leader>d - Dap - dap
--- <leader>df - Dap - dap telescope
---
--- <leader>D - Db - dadbod
---
--- <leader>g - Git
---
--- <leader>f - Basic,Lsp - telescope
--- <leader>l - Lsp
--- <leader>lf - Lsp - telescope
--- <leader>lx - Lsp - trouble
--- <leader>L - Lsp - LspSaga
--- gr - Lsp - native
--- <leader>lo - Lsp - outline
---
--- <leader>N - Org - neorg
---
--- TODO: keep for the future
---
--- <leader>a - Ai - avante
--- <leader>l - Lint
--- <leader>T - Test
 
 vim.cmd [[
 	noremap <F1> :mksession! .vim.session
