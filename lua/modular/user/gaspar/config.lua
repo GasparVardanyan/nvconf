@@ -1,18 +1,26 @@
 local hostname = vim.fn.hostname ()
 
-if "work" == hostname then
+if 1 == hostname:find ("work")
+then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
 	LspServers ["neocmake"] = {}
+	LspServers ["erlang-ls"] = {}
 
 	local MasonTools = require ("modular.config.masontools")
 	vim.list_extend (MasonTools, {
-		"codelldb", "cpplint", "clang-format"
+		"codelldb",
+		"cpplint",
+		"clang-format",
+		-- "erlang-debugger"
 	})
 
 	local TreeSitters = require ("modular.config.treesitters")
 	vim.list_extend (TreeSitters, {
-		"cpp"
+		"cpp",
+		"javascript",
+		"python",
+		"erlang"
 	})
 
 	local AvanteOpts = require ("modular.config.avanteopts")

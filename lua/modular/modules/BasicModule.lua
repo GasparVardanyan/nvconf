@@ -19,7 +19,7 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.ts-comments_nvim"),
 		require ("modular.specs.Basic.undotree"),
 		require ("modular.specs.Misc.nvim-window-picker"),
-		require ("modular.specs.Misc.image_nvim"),
+		-- require ("modular.specs.Misc.image_nvim"),
 		require ("modular.specs.Basic.which-key_nvim"),
 	},
 	post_plugin_load_actions = {

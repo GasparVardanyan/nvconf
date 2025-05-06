@@ -6,7 +6,7 @@ local OrgModule = Module:new ({
 	plugins = {
 		require ("modular.specs.Org.neorg"),
 		require ("modular.specs.Org.orgmode"),
-		require ("modular.specs.Misc.image_nvim"),
+		-- require ("modular.specs.Misc.image_nvim"),
 		require ("modular.specs.Misc.headlines_nvim"),
 	},
 	post_plugin_load_actions = {
