@@ -5,13 +5,16 @@ then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
 	LspServers ["neocmake"] = {}
-	LspServers ["erlang-ls"] = {}
+	LspServers ["pylsp"] = {}
+	LspServers ["ts_ls"] = {}
+	-- LspServers ["erlang-ls"] = {}
 
 	local MasonTools = require ("modular.config.masontools")
 	vim.list_extend (MasonTools, {
 		"codelldb",
 		"cpplint",
 		"clang-format",
+		"debugpy",
 		-- "erlang-debugger"
 	})
 
@@ -20,7 +23,7 @@ then
 		"cpp",
 		"javascript",
 		"python",
-		"erlang"
+		-- "erlang"
 	})
 
 	local AvanteOpts = require ("modular.config.avanteopts")

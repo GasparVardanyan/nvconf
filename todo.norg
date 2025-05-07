@@ -27,6 +27,7 @@
   ~~~ (x) Move LspSaga to extras
   ~~~ (x) Move to native 0.11 autocompletion
   ~~~ (x) refactor nvim-lspconfig spec
+  ~~~ (!) fix lsp attach/detach autocmds where the buffer have multiple lsps
   ~~~ (-) refactor nvim-cmp spec
   ~~~ (-) refactor LuaSnip spec
   ~~~ (-) add blink.cmp support
