@@ -5,7 +5,20 @@ then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
 	LspServers ["neocmake"] = {}
-	LspServers ["pylsp"] = {}
+	LspServers ["pylsp"] = {
+		settings = {
+			pylsp = {
+				plugins = {
+					jedi_completion = {
+						include_params = true,
+					},
+					pycodestyle = {
+						enabled = false,
+					},
+				}
+			}
+		}
+	}
 	LspServers ["ts_ls"] = {}
 	-- LspServers ["erlang-ls"] = {}
 
@@ -25,13 +38,13 @@ then
 		"python",
 		-- "erlang"
 	})
-
-	local AvanteOpts = require ("modular.config.avanteopts")
-	AvanteOpts.provider = "gemini"
-	-- AvanteOpts.aihubmix = {
-	-- 	model = "DeepSeek-V3",
-	-- }
-	AvanteOpts.gemini = {
-		model = "gemini-2.5-flash-preview-04-17",
-	}
 end
+
+local AvanteOpts = require ("modular.config.avanteopts")
+AvanteOpts.provider = "gemini"
+-- AvanteOpts.aihubmix = {
+-- 	model = "DeepSeek-V3",
+-- }
+AvanteOpts.gemini = {
+	model = "gemini-2.5-flash-preview-04-17",
+}
