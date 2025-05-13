@@ -5,7 +5,7 @@ local LspNativeCompletionModuleModule = Module:new ({
 	name = "LspNativeCompletionModule",
 	plugins = {
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()

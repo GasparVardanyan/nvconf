@@ -19,7 +19,7 @@ local LspModule = Module:new ({
 		-- require ("modular.specs.Lsp.nvim-treesitter-textobjects"),
 		-- require ("modular.specs.Lsp.lspsaga_nvim"), -- NOTE: this thing replaces dropbar, idk ho to disable it ((
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()

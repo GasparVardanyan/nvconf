@@ -10,7 +10,7 @@ local GitModule = Module:new ({
 		require ("modular.specs.Git.neogit"),
 		require ("modular.specs.Git.vim-fugitive"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "diffview.nvim",
 			action = function ()

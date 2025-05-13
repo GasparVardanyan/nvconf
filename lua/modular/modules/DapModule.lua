@@ -10,7 +10,7 @@ local DapModule = Module:new ({
 		require ("modular.specs.Dap.nvim-dap-ui"),
 		require ("modular.specs.Dap.telescope-dap_nvim"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "nvim-dap",
 			action = function ()

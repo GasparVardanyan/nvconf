@@ -8,7 +8,7 @@ local DbModule = Module:new ({
 		require ("modular.specs.Db.vim-dadbod-completion"),
 		require ("modular.specs.Db.vim-dadbod-ui"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "vim-dadbod-ui",
 			action = function ()

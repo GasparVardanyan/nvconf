@@ -6,7 +6,7 @@ local GithubModule = Module:new ({
 	plugins = {
 		-- https://github.com/pwntester/octo.nvim
 	},
-	post_plugin_load_actions = {
+	actions = {
 	}
 })
 

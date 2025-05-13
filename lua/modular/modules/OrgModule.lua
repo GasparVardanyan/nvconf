@@ -9,7 +9,7 @@ local OrgModule = Module:new ({
 		-- require ("modular.specs.Misc.image_nvim"),
 		require ("modular.specs.Misc.headlines_nvim"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "neorg",
 			action = function ()

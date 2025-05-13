@@ -6,7 +6,7 @@ local LspSagaModule = Module:new ({
 	plugins = {
 		require ("modular.extras.specs.LspSaga.lspsaga_nvim"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "lspsaga.nvim",
 			action = function ()

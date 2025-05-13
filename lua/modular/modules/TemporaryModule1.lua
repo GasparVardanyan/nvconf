@@ -144,7 +144,7 @@ local TemporaryModule1 = Module:new ({
 		},
 		{ 'j-hui/fidget.nvim', opts = {} },
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()

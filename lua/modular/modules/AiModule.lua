@@ -9,7 +9,7 @@ local AiModule = Module:new ({
 		-- require ("modular.specs.Ai.mcphub_nvim"),
 		-- require ("modular.specs.Ai.VectorCode"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 	}
 })
 

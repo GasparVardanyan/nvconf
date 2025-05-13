@@ -8,7 +8,7 @@ local CompilerModule = Module:new ({
 		require ("modular.specs.Compiler.compiler_nvim"),
 		require ("modular.specs.Misc.overseer_nvim"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "compiler.nvim",
 			action = function ()

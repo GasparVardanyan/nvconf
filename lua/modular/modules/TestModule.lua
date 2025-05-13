@@ -6,7 +6,7 @@ local TestModule = Module:new ({
 	plugins = {
 		require ("modular.specs.Test.neotest")
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "neotest",
 			action = function ()

@@ -7,7 +7,7 @@ local ClangModule = Module:new ({
 		require ("modular.extras.specs.Clang.cppman_nvim"),
 		require ("modular.extras.specs.Clang.clangd_extensions_nvim"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "cppman.nvim",
 			action = function ()

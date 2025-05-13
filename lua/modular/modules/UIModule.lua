@@ -14,7 +14,7 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.kanagawa_nvim"),
 		require ("modular.specs.UI.kanagawa-paper_nvim"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		-- ModuleAction:new ({
 		-- 	plugins = "NeoSolarized.nvim",
 		-- 	action = function ()

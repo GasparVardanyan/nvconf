@@ -6,7 +6,7 @@ local MiscModule = Module:new ({
 	plugins = {
 		require ("modular.specs.Misc.vim-table-mode")
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "mason.nvim",
 			action = function ()

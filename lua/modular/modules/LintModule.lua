@@ -6,7 +6,7 @@ local LintModule = Module:new ({
 	plugins = {
 		require ("modular.specs.Lint.nvim-lint")
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "nvim-lint",
 			action = function ()

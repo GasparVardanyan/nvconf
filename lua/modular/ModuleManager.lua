@@ -7,7 +7,7 @@ ModuleManager.__index = ModuleManager
 function ModuleManager:new (opts)
 	local obj = setmetatable ({}, ModuleManager)
 
-	obj.post_plugin_load_actions = {}
+	obj.actions = {}
 	obj.__loaded_plugins = {}
 
 	obj.modules = opts.modules or {}
@@ -23,10 +23,10 @@ function ModuleManager:new (opts)
 		vim.list_extend (all_plugins, module.plugins)
 		-- FIXME: CHECK FOR ModuleAction.EventType.Pre
 
-		-- vim.list_extend (obj.post_plugin_load_actions, module.post_plugin_load_actions)
-		for _, action in ipairs (module.post_plugin_load_actions) do
+		-- vim.list_extend (obj.actions, module.actions)
+		for _, action in ipairs (module.actions) do
 			if ModuleAction.EventType.Post == action.event then
-				table.insert (obj.post_plugin_load_actions, action)
+				table.insert (obj.actions, action)
 			end
 		end
 
@@ -59,17 +59,17 @@ function ModuleManager:mark_plugin_loaded (plugin)
 	if false == self.__loaded_plugins [plugin] then
 		self.__loaded_plugins [plugin] = true
 
-		for i = #self.post_plugin_load_actions, 1, -1 do
+		for i = #self.actions, 1, -1 do
 			local loaded = true
-			for _, pname in ipairs (self.post_plugin_load_actions [i].plugins) do
+			for _, pname in ipairs (self.actions [i].plugins) do
 				if not self.__loaded_plugins [pname] then
 					loaded = false
 					break
 				end
 			end
 			if true == loaded then
-				self.post_plugin_load_actions [i].action ()
-				table.remove (self.post_plugin_load_actions, i)
+				self.actions [i].action ()
+				table.remove (self.actions, i)
 			end
 		end
 	else

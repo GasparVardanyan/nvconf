@@ -6,7 +6,7 @@ local LspNvimCmpCompletionModule = Module:new ({
 	plugins = {
 		require ("modular.extras.specs.LspNvimCmpCompletionModule.nvim-cmp"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = { "nvim-cmp" },
 			action = function ()

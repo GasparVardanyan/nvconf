@@ -7,7 +7,7 @@ local MenuModule = Module:new ({
 		require ("modular.extras.specs.Menu.menu"),
 		require ("modular.extras.specs.Menu.volt"),
 	},
-	post_plugin_load_actions = {
+	actions = {
 		ModuleAction:new ({
 			plugins = "menu",
 			action = function ()
