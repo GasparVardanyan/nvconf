@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local DbModule = Module:new ({
 	name = "Db",
@@ -9,7 +9,7 @@ local DbModule = Module:new ({
 		require ("modular.specs.Db.vim-dadbod-ui"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "vim-dadbod-ui",
 			action = function ()
 				require ("modular.mappings.Db.vim-dadbod-ui")

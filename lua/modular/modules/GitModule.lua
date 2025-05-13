@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local GitModule = Module:new ({
 	name = "Git",
@@ -11,19 +11,19 @@ local GitModule = Module:new ({
 		require ("modular.specs.Git.vim-fugitive"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "diffview.nvim",
 			action = function ()
 				require ("modular.mappings.Git.diffview_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "gitsigns.nvim",
 			action = function ()
 				require ("modular.mappings.Git.gitsigns_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "lazygit.nvim",
 			action = function ()
 				require ("modular.mappings.Git.lazygit_nvim")

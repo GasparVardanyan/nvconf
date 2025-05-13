@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local LspSagaModule = Module:new ({
 	name = "LspSaga",
@@ -7,13 +7,13 @@ local LspSagaModule = Module:new ({
 		require ("modular.extras.specs.LspSaga.lspsaga_nvim"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "lspsaga.nvim",
 			action = function ()
 				require ("modular.extras.mappings.LspSaga.lspsaga_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "lspsaga.nvim", "which-key.nvim" },
 			action = function ()
 				require ("modular.extras.autocmds.LspSaga.lspsaga_nvim-whichkey")

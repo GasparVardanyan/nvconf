@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local AiModule = Module:new ({
 	name = "Ai",

@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local ClangModule = Module:new ({
 	name = "Clang",
@@ -8,19 +8,19 @@ local ClangModule = Module:new ({
 		require ("modular.extras.specs.Clang.clangd_extensions_nvim"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "cppman.nvim",
 			action = function ()
 				require ("modular.extras.mappings.Clang.cppman_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "clangd_extensions.nvim",
 			action = function ()
 				require ("modular.extras.mappings.Clang.clangd_extensions_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "cppman.nvim", "clangd_extensions.nvim", "which-key.nvim" }, -- TODO: make this plugin independent
 			action = function ()
 				local wk = require ("which-key")

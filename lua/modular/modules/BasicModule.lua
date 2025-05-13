@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local BasicModule = Module:new ({
 	name = "Basic",
@@ -23,67 +23,67 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.which-key_nvim"),
 	},
 	post_plugin_load_actions = {
-		-- PostPluginLoadAction:new ({
+		-- ModuleAction:new ({
 		-- 	plugins = "cd-project.nvim",
 		-- 	action = function ()
 		-- 		require ("modular.autocmds.Basic.cd-project_nvim_VimEnter")
 		-- 	end
 		-- }),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "cd-project.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.cd-project_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "grug-far.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.grug-far_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "neo-tree.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.neo-tree_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "neo-tree.nvim", "vim-illuminate" },
 			action = function ()
 				require ("modular.autocmds.Basic.neo-tree_noilluminate")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "oil.nvim" },
 			action = function ()
 				require ("modular.mappings.Basic.oil_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "telescope.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.telescope_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "telescope.nvim", "todo-comments.nvim" },
 			action = function ()
 				require ("modular.mappings.Basic.todo-comments_nvim-telescope_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "toggleterm.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.toggleterm_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "undotree",
 			action = function ()
 				require ("modular.mappings.Basic.undotree")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "which-key.nvim",
 			action = function ()
 				require ("modular.autocmds.Basic.which-key_nvim")

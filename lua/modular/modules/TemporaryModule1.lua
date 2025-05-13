@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 -- TODO: refactor these specs and move to the appropriate location
 local TemporaryModule1 = Module:new ({
@@ -145,43 +145,43 @@ local TemporaryModule1 = Module:new ({
 		{ 'j-hui/fidget.nvim', opts = {} },
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
 				require ("modular.mappings.Lsp.nvim-lspconfig")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "nvim-lspconfig", "telescope.nvim" },
 			action = function ()
 				require ("modular.mappings.Lsp.nvim-lspconfig_telescope_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "outline.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.outline_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "trouble.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.trouble_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "goto-preview",
 			action = function ()
 				require ("modular.mappings.Lsp.goto-preview")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "lspsaga.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.lspsaga_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "dropbar.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.dropbar_nvim")

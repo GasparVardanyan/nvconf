@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local OrgModule = Module:new ({
 	name = "Org",
@@ -10,14 +10,14 @@ local OrgModule = Module:new ({
 		require ("modular.specs.Misc.headlines_nvim"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "neorg",
 			action = function ()
 				require ("modular.autocmds.Org.neorg")
 				require ("modular.mappings.Org.neorg")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "neorg", "vim-illuminate" },
 			action = function ()
 				require ("modular.autocmds.Org.neorg_noilluminate")

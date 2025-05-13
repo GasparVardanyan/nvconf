@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local LintModule = Module:new ({
 	name = "Lint",
@@ -7,7 +7,7 @@ local LintModule = Module:new ({
 		require ("modular.specs.Lint.nvim-lint")
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "nvim-lint",
 			action = function ()
 				require ("modular.autocmds.Lint.nvim-lint")

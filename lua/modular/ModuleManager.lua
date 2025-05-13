@@ -1,4 +1,5 @@
 local ModuleLoadTracker = require ("modular.ModuleLoadTracker")
+local ModuleAction = require ("modular.ModuleAction")
 
 local ModuleManager = {}
 ModuleManager.__index = ModuleManager
@@ -20,7 +21,16 @@ function ModuleManager:new (opts)
 	-- TODO: handle the same plugin appearance in multiple modules
 	for _, module in pairs (obj.modules) do
 		vim.list_extend (all_plugins, module.plugins)
-		vim.list_extend (obj.post_plugin_load_actions, module.post_plugin_load_actions)
+		-- FIXME: CHECK FOR ModuleAction.EventType.Pre
+
+		-- vim.list_extend (obj.post_plugin_load_actions, module.post_plugin_load_actions)
+		for _, action in ipairs (module.post_plugin_load_actions) do
+			if ModuleAction.EventType.Post == action.event then
+				table.insert (obj.post_plugin_load_actions, action)
+			end
+		end
+
+
 
 		for _, spec in ipairs (module.plugins) do
 			spec.priority = spec.priority or module.priority

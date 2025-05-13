@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local DapModule = Module:new ({
 	name = "Dap",
@@ -11,13 +11,13 @@ local DapModule = Module:new ({
 		require ("modular.specs.Dap.telescope-dap_nvim"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "nvim-dap",
 			action = function ()
 				require ("modular.mappings.Dap.nvim-dap")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = { "telescope-dap.nvim", "telescope.nvim" },
 			action = function ()
 				require ("modular.mappings.Dap.telescope-dap_telescope_nvim")

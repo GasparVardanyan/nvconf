@@ -1,12 +1,12 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local LspNativeCompletionModuleModule = Module:new ({
 	name = "LspNativeCompletionModule",
 	plugins = {
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
 				require ("modular.autocmds.LspNativeCompletionModule.nvim-lspconfig")

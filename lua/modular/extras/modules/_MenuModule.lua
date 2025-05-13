@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local MenuModule = Module:new ({
 	name = "Menu",
@@ -8,7 +8,7 @@ local MenuModule = Module:new ({
 		require ("modular.extras.specs.Menu.volt"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "menu",
 			action = function ()
 				-- Keyboard users

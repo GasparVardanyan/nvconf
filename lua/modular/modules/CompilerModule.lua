@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local CompilerModule = Module:new ({
 	name = "Compiler",
@@ -9,13 +9,13 @@ local CompilerModule = Module:new ({
 		require ("modular.specs.Misc.overseer_nvim"),
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "compiler.nvim",
 			action = function ()
 				require ("modular.mappings.Compiler.compiler_nvim")
 			end
 		}),
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "cmake-tools.nvim",
 			action = function ()
 				require ("modular.mappings.Compiler.cmake-tools_nvim")

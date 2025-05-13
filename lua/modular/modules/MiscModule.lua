@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local PostPluginLoadAction = require ("modular.PostPluginLoadAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local MiscModule = Module:new ({
 	name = "Misc",
@@ -7,7 +7,7 @@ local MiscModule = Module:new ({
 		require ("modular.specs.Misc.vim-table-mode")
 	},
 	post_plugin_load_actions = {
-		PostPluginLoadAction:new ({
+		ModuleAction:new ({
 			plugins = "mason.nvim",
 			action = function ()
 					require ("modular.mappings.Misc.mason_nvim")

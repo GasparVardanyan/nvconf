@@ -91,7 +91,7 @@
   ~~ (x) New directory structure to have multiple module groups
   ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
   ~ (-) Global *EditorConfig* setup
-  ~ ( ) PostPluginLoadAction
+  ~ ( ) ModuleAction
   ~~ ( ) Rename to ModuleAction, and divide plugins list to *pre* and *post*
   ~~ ( ) Handle empty plugin lists
   ~ ( ) Check these interesting resourcecs:
