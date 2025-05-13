@@ -4,6 +4,7 @@ if 1 == hostname:find ("work")
 then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
+	-- LspServers ["erlang-ls"] = {}
 	LspServers ["neocmake"] = {}
 	LspServers ["pylsp"] = {
 		settings = {
@@ -20,13 +21,12 @@ then
 		}
 	}
 	LspServers ["ts_ls"] = {}
-	-- LspServers ["erlang-ls"] = {}
 
 	local MasonTools = require ("modular.config.masontools")
 	vim.list_extend (MasonTools, {
+		"clang-format",
 		"codelldb",
 		"cpplint",
-		"clang-format",
 		"debugpy",
 		-- "erlang-debugger"
 	})
@@ -34,9 +34,10 @@ then
 	local TreeSitters = require ("modular.config.treesitters")
 	vim.list_extend (TreeSitters, {
 		"cpp",
-		"javascript",
-		"python",
 		-- "erlang"
+		"javascript",
+		"json",
+		"python",
 	})
 end
 

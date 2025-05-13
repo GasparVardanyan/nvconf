@@ -25,7 +25,7 @@ return {
 			handlers = {
 				function(server_name)
 					print ("this thing now works, review !!")
-					-- vim.cmd ('qa')
+					vim.cmd ('qa')
 
 					local server = servers [server_name] or {}
 					server.capabilities = vim.tbl_deep_extend (
