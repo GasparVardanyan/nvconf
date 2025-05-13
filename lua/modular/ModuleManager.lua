@@ -16,17 +16,18 @@ function ModuleManager:new (opts)
 		obj.module_load_tracker = ModuleLoadTracker:new (obj)
 	end
 
-	local all_plugins = {}
+	local plugins = {}
+	local pre_actions = {}
 
 	-- TODO: handle the same plugin appearance in multiple modules
 	for _, module in pairs (obj.modules) do
-		vim.list_extend (all_plugins, module.plugins)
-		-- FIXME: CHECK FOR ModuleAction.EventType.Pre
+		vim.list_extend (plugins, module.plugins)
 
-		-- vim.list_extend (obj.actions, module.actions)
 		for _, action in ipairs (module.actions) do
 			if ModuleAction.EventType.Post == action.event then
 				table.insert (obj.actions, action)
+			elseif ModuleAction.EventType.Pre == action.event then
+				table.insert (pre_actions, action)
 			end
 		end
 
@@ -39,6 +40,24 @@ function ModuleManager:new (opts)
 		end
 	end
 
+	local plugin_names = vim.tbl_keys (obj.__loaded_plugins)
+
+	for i = #pre_actions, 1, -1 do
+		local dependenciesSatisfied = true
+
+		for _, pname in ipairs (pre_actions [i].plugins) do
+			if not vim.list_contains (plugin_names, pname) then
+				dependenciesSatisfied = false
+				break
+			end
+		end
+
+		if true == dependenciesSatisfied then
+			pre_actions [i].action ()
+			table.remove (pre_actions, i)
+		end
+	end
+
 	obj.lazy_load_handler = vim.api.nvim_create_autocmd ("User", {
 		pattern = "LazyLoad",
 		callback = function (data)
@@ -46,7 +65,7 @@ function ModuleManager:new (opts)
 		end,
 	})
 
-	require("lazy").setup(all_plugins)
+	require("lazy").setup(plugins)
 
 	return obj
 end

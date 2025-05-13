@@ -91,9 +91,10 @@
   ~~ (x) New directory structure to have multiple module groups
   ~~ (_) Add *kickstart-modular* as a separate *Module*\/*Modules*
   ~ (-) Global *EditorConfig* setup
-  ~ ( ) ModuleAction
-  ~~ ( ) Rename to ModuleAction, and divide plugins list to *pre* and *post*
-  ~~ ( ) Handle empty plugin lists
+  ~ (x) PostPluginLoadAction
+  ~~ (_) Rename to ModuleAction, and divide plugins list to *pre* and *post*
+  ~~ (x) Handle empty plugin lists
+  ~~ (x) Handle pre actions
   ~ ( ) Check these interesting resourcecs:
   ~~ (x) https://github.com/rmagatti/goto-preview
   ~~ (x) https://github.com/otavioschwanck/arrow.nvim
