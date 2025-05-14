@@ -5,21 +5,22 @@ then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
 	-- LspServers ["erlang-ls"] = {}
+	LspServers ["jedi_language_server"] = {}
 	LspServers ["neocmake"] = {}
-	LspServers ["pylsp"] = {
-		settings = {
-			pylsp = {
-				plugins = {
-					jedi_completion = {
-						include_params = true,
-					},
-					pycodestyle = {
-						enabled = false,
-					},
-				}
-			}
-		}
-	}
+	-- LspServers ["pylsp"] = {
+	-- 	settings = {
+	-- 		pylsp = {
+	-- 			plugins = {
+	-- 				jedi_completion = {
+	-- 					include_params = true,
+	-- 				},
+	-- 				pycodestyle = {
+	-- 					enabled = false,
+	-- 				},
+	-- 			}
+	-- 		}
+	-- 	}
+	-- }
 	LspServers ["ts_ls"] = {}
 
 	local MasonTools = require ("modular.config.masontools")

@@ -2,12 +2,12 @@ local map = vim.keymap.set
 
 map ("n", "<Esc>", vim.cmd.noh, { desc = "general clear highlights" })
 
-map ("i", "<c-h>", "<Left>", { desc = "move left" })
-map ("i", "<c-j>", "<Down>", { desc = "move down" })
-map ("i", "<c-k>", "<Up>", { desc = "move up" })
-map ("i", "<c-l>", "<Right>", { desc = "move right" })
-map ("i", "<c-s-l>", "<Del>", { desc = "delete" })
-map ("i", "<c-s-h>", "<BS>", { desc = "backspace" })
+map ("i", "<c-s-h>", "<Left>", { desc = "move left" })
+map ("i", "<c-s-j>", "<Down>", { desc = "move down" })
+map ("i", "<c-s-k>", "<Up>", { desc = "move up" })
+map ("i", "<c-s-l>", "<Right>", { desc = "move right" })
+map ("i", "<c-l>", "<Del>", { desc = "delete" })
+map ("i", "<c-h>", "<BS>", { desc = "backspace" })
 
 map ("n", "<c-h>", "<c-w>h", { desc = "switch window left" })
 map ("n", "<c-j>", "<c-w>j", { desc = "switch window down" })
