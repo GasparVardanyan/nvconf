@@ -15,20 +15,20 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.kanagawa-paper_nvim"),
 	},
 	actions = {
-		-- ModuleAction:new ({
-		-- 	plugins = "NeoSolarized.nvim",
-		-- 	action = function ()
-		-- 		vim.opt.background = "dark"
-		-- 		vim.cmd.colorscheme "NeoSolarized"
-		-- 	end
-		-- }),
 		ModuleAction:new ({
-			plugins = "solarized-osaka.nvim",
+			plugins = "NeoSolarized.nvim",
 			action = function ()
 				vim.opt.background = "dark"
-				vim.cmd.colorscheme "solarized-osaka"
+				vim.cmd.colorscheme "NeoSolarized"
 			end
 		}),
+		-- ModuleAction:new ({
+		-- 	plugins = "solarized-osaka.nvim",
+		-- 	action = function ()
+		-- 		vim.opt.background = "dark"
+		-- 		vim.cmd.colorscheme "solarized-osaka"
+		-- 	end
+		-- }),
 		-- ModuleAction:new ({
 		-- 	plugins = "kanagawa.nvim",
 		-- 	action = function ()

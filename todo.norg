@@ -57,6 +57,8 @@
   ~~ (x) TestModule
   ~~~ (x) https://github.com/nvim-neotest/neotest
   ~~~ (x) https://github.com/alfaix/neotest-gtest
+  ~~ (-) ProfilerModule
+  ~~~ (-) https://github.com/t-troebst/perfanno.nvim
   ~~ (-) GitModule
   ~~~ (-) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
