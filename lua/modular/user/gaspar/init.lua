@@ -13,13 +13,7 @@ require ("modular.user.gaspar.autocmds.xdefaults_highlight")
 
 local ModuleManager = require ("modular.ModuleManager")
 
-local modules = vim.tbl_extend (
-	"error",
-	require ("modular.modules"),
-	require ("modular.user.gaspar.modules")
-)
-
 ModularManager = ModuleManager:new ({
-	modules = modules,
+	modules = require ("modular.user.gaspar.modules"),
 	load_tracker = false
 })
