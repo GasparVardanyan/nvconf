@@ -4,7 +4,7 @@ local ModuleAction = require ("modular.ModuleAction")
 local LspNvimCmpCompletionModule = Module:new ({
 	name = "LspExtras",
 	plugins = {
-		require ("modular.extras.specs.LspNvimCmpCompletionModule.nvim-cmp"),
+		require ("modular.specs.LspNvimCmpCompletionModule.nvim-cmp"),
 	},
 	actions = {
 		ModuleAction:new ({

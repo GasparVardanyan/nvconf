@@ -17,7 +17,7 @@
   ~~ (x) Module specific autocommands and mappings
   ~~ (x) Separate plugin specs from modules
   ~~ ( ) Review ModuleManager and use vim api whenever possible
-		  (/vim.list_contains/) for example
+		  (/vim.list_contains/ for example)
   ~ ( ) *Modules*
   ~~ (x) Separate base logic
   ~~ (x) HlsModule

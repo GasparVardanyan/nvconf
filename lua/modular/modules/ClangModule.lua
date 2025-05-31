@@ -4,20 +4,20 @@ local ModuleAction = require ("modular.ModuleAction")
 local ClangModule = Module:new ({
 	name = "Clang",
 	plugins = {
-		require ("modular.extras.specs.Clang.cppman_nvim"),
-		require ("modular.extras.specs.Clang.clangd_extensions_nvim"),
+		require ("modular.specs.Clang.cppman_nvim"),
+		require ("modular.specs.Clang.clangd_extensions_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({
 			plugins = "cppman.nvim",
 			action = function ()
-				require ("modular.extras.mappings.Clang.cppman_nvim")
+				require ("modular.mappings.Clang.cppman_nvim")
 			end
 		}),
 		ModuleAction:new ({
 			plugins = "clangd_extensions.nvim",
 			action = function ()
-				require ("modular.extras.mappings.Clang.clangd_extensions_nvim")
+				require ("modular.mappings.Clang.clangd_extensions_nvim")
 			end
 		}),
 		ModuleAction:new ({

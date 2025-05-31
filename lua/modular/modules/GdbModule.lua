@@ -4,7 +4,7 @@ local ModuleAction = require ("modular.ModuleAction")
 local GdbModule = Module:new ({
 	name = "Gdb",
 	plugins = {
-		require ("modular.extras.specs.Gdb.nvim-gdb"),
+		require ("modular.specs.Gdb.nvim-gdb"),
 	},
 	actions = {
 		ModuleAction:new ({

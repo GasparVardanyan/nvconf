@@ -5,8 +5,6 @@ require ("modular.lazy")
 require ("modular.autocmds.generic")
 require ("modular.mappings.generic")
 
-require ("modular.extras")
-
 require ("modular.user.gaspar.autocmds.hls_commands")
 require ("modular.user.gaspar.autocmds.gcrypt")
 require ("modular.user.gaspar.autocmds.xdefaults_highlight")
