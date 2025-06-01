@@ -27,6 +27,7 @@ return {
 	misc_module = require ("modular.modules.MiscModule"),
 	nvim_module = require ("modular.modules.NvimModule"),
 	org_module = require ("modular.modules.OrgModule"),
+	profiler_module = require ("modular.modules.ProfilerModule"),
 	rest_module = require ("modular.modules.RestModule"),
 	test_module = require ("modular.modules.TestModule"),
 	ui_module = require ("modular.modules.UIModule"),

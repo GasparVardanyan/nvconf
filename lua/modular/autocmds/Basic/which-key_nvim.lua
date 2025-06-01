@@ -3,7 +3,7 @@ wk.add({
 	-- Basic:
 	{ "<leader>f", group = "telescope" },
 	{ "<leader>fu", group = "undo" },
-	{ "<leader>p", group = "project" },
+	{ "<leader>P", group = "project" },
 	{ "<leader>s", group = "grug" },
 	{ "<leader>u", group = "undotree" },
 
@@ -50,6 +50,9 @@ wk.add({
 
 	-- Generic:
 	{ "<leader>v", group = "vim" },
+
+	-- Profiler:
+	{ "<leader>p", group = "profiler" },
 
 	-- { "<leader>f", group = "file" }, -- group
 	-- { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find File", mode = "n" },
