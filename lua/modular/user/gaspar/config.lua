@@ -39,6 +39,7 @@ then
 		"javascript",
 		"json",
 		"python",
+		"cuda",
 	})
 
 	local AvanteOpts = require ("modular.config.avanteopts")

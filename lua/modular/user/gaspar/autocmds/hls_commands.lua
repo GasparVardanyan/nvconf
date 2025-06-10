@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 			function()
 				vim.cmd [[
 				norm O#EXTINF:,j0f=lvg_"*yk
-				read !mediainfo --Output='General;\%Track\%' -- "$(xsel -op)".*
+				read !mediainfo --Output='General;\%Track\%' -- ./"$(xsel -op)".*
 				norm kgJjj
 				]]
 			end, { nargs = 0 }
@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 			function ()
 				vim.cmd [[
 					norm O#EXTINF:,j0f=lvg_"*yk
-					read !mediainfo --Output='General;\%Track\%' -- "$(xsel -op)".opus
+					read !mediainfo --Output='General;\%Track\%' -- ./"$(xsel -op)".opus
 					norm kgJjj
 				]]
 			end, { nargs = 0 }
@@ -30,7 +30,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 			function ()
 				vim.cmd [[
 					norm O#EXTINF:,j0f=lvg_"*yk
-					read !mediainfo --Output='General;\%Track\%' -- "$(xsel -op)".m4a
+					read !mediainfo --Output='General;\%Track\%' -- ./"$(xsel -op)".m4a
 					norm kgJjj
 				]]
 			end, { nargs = 0 }
@@ -40,7 +40,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 			function ()
 				vim.cmd [[
 					norm O#EXTINF:,j0f=lvg_"*yk
-					read !mediainfo --Output='General;\%Movie\%' -- "$(xsel -op)".mkv
+					read !mediainfo --Output='General;\%Movie\%' -- ./"$(xsel -op)".mkv
 					norm kgJjj
 				]]
 			end, { nargs = 0 }
@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 			function ()
 				vim.cmd [[
 					norm O#EXTINF:,j0f=lvg_"*yk
-					read !mediainfo --Output='General;\%Movie\%' -- "$(xsel -op)".mp4
+					read !mediainfo --Output='General;\%Movie\%' -- ./"$(xsel -op)".mp4
 					norm kgJjj
 				]]
 			end, { nargs = 0 }
