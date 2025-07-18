@@ -1,4 +1,10 @@
 return {
 	"hedyhli/outline.nvim",
-	config = true,
+	config = function ()
+		require ("outline").setup ({
+			outline_window = {
+				position = "left",
+			}
+		})
+	end,
 }

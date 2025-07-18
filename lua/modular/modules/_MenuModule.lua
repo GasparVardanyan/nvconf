@@ -4,6 +4,7 @@ local ModuleAction = require ("modular.ModuleAction")
 local MenuModule = Module:new ({
 	name = "Menu",
 	plugins = {
+		require ("modular.specs.Menu.minty"),
 		require ("modular.specs.Menu.menu"),
 		require ("modular.specs.Menu.volt"),
 	},

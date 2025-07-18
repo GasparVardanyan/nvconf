@@ -4,13 +4,15 @@ local hostname = vim.fn.hostname ()
 
 if 1 == hostname:find ("work")
 then
-	modular_modules = require ("modular.modules")
+	modular_modules = vim.tbl_deep_extend ("error", require ("modular.modules"), {
+		menu_module = require ("modular.modules._MenuModule"),
+	})
 else
 	modular_modules = {
 		-- ai_module = require ("modular.modules.AiModule"),
 		basic_module = require ("modular.modules.BasicModule"),
-		-- clang_module = require ("modular.modules.ClangModule"),
-		-- compiler_module = require ("modular.modules.CompilerModule"),
+		clang_module = require ("modular.modules.ClangModule"),
+		compiler_module = require ("modular.modules.CompilerModule"),
 		-- dap_module = require ("modular.modules.DapModule"),
 		-- db_module = require ("modular.modules.DbModule"),
 		-- gdb_module = require ("modular.modules.GdbModule"),
@@ -33,7 +35,7 @@ local gaspar_modules = {
 	custom_module = require ("modular.user.gaspar.modules.CustomModule")
 }
 
-local modules = vim.tbl_extend (
+local modules = vim.tbl_deep_extend (
 	"error",
 	modular_modules,
 	gaspar_modules

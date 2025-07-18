@@ -44,10 +44,9 @@ then
 
 	local AvanteOpts = require ("modular.config.avanteopts")
 	AvanteOpts.provider = "gemini"
-	-- AvanteOpts.aihubmix = {
-	-- 	model = "DeepSeek-V3",
-	-- }
-	AvanteOpts.gemini = {
-		model = "gemini-2.5-flash-preview-04-17",
+	AvanteOpts.providers = {
+		gemini = {
+			model = "gemini-2.5-flash-preview-04-17",
+		}
 	}
 end
