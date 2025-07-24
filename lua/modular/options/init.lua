@@ -11,7 +11,9 @@ vim.opt.inccommand = 'split'
 vim.opt.confirm = true
 -- vim.opt.updatetime = 250
 
-vim.opt.foldmethod = "manual"
+-- vim.opt.foldmethod = "manual"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.colorcolumn = "81"
 vim.opt.number = true
 vim.opt.relativenumber = true
