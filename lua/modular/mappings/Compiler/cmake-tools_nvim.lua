@@ -27,7 +27,15 @@ map ("n", "<leader>cse", function ()
 	vim.cmd.CMakeCloseExecutor ()
 end, { desc = "executor stop and close" })
 
-map ("n", "<leader>cg", vim.cmd.CMakeGenerate, { desc = "cmake generate" })
+map ("n", "<leader>cg", function ()
+	vim.cmd.CMakeGenerate ()
+	vim.cmd [[
+		" if filereadable("out/compile_commands.json")
+		" 	call system ("sleep 2; sed -i 's/-mno-direct-extern-access//g' 'out/compile_commands.json'")
+		" endif
+	]]
+end, { desc = "cmake generate" })
+
 map ("n", "<leader>cb", vim.cmd.CMakeBuild, { desc = "cmake build" })
 map ("n", "<leader>cr", vim.cmd.CMakeRun, { desc = "cmake run" })
 map ("n", "<leader>cd", vim.cmd.CMakeDebug, { desc = "cmake debug" })
