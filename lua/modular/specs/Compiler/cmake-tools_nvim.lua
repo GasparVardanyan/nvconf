@@ -9,13 +9,13 @@ return {
 			vim.list_extend (cmake_build_options, { "-j" .. (nproc - 1) })
 		end
 
-		if vim.fn.filereadable ("/usr/bin/clang") and vim.fn.filereadable ("/usr/bin/clang++")
+		if 1 == vim.fn.filereadable ("/usr/bin/clang") and 1 == vim.fn.filereadable ("/usr/bin/clang++")
 		then
 			vim.fn.setenv ("CC", "/usr/bin/clang")
 			vim.fn.setenv ("CXX", "/usr/bin/clang++")
 		end
 
-		if vim.fn.filereadable ("/usr/bin/ccache")
+		if 1 == vim.fn.filereadable ("/usr/bin/ccache")
 		then
 			vim.fn.setenv ("CMAKE_C_COMPILER_LAUNCHER", "ccache")
 			vim.fn.setenv ("CMAKE_CXX_COMPILER_LAUNCHER", "ccache")
