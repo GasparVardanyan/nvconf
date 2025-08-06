@@ -11,9 +11,9 @@ vim.opt.inccommand = 'split'
 vim.opt.confirm = true
 -- vim.opt.updatetime = 250
 
--- vim.opt.foldmethod = "manual"
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldmethod = "manual"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.colorcolumn = "81"
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -32,7 +32,7 @@ vim.opt.ignorecase = false
 vim.opt.smartcase = false
 
 vim.opt.completeopt = "menuone,noinsert,popup,fuzzy"
-vim.o.winborder = "rounded"
+vim.opt.winborder = "rounded"
 
 -- vim.opt.showtabline = 0
 

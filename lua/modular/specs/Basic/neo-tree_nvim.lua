@@ -9,9 +9,12 @@ return {
 		"s1n7ax/nvim-window-picker",
 	},
 	lazy = false, -- neo-tree will lazily load itself
-	---@module "neo-tree"
-	---@type neotree.Config?
-	opts = {
-		-- fill any relevant options here
-	},
+
+	config = function ()
+		require("neo-tree").setup({
+			filesystem = {
+				hijack_netrw_behavior = "disabled",
+			}
+		})
+	end
 }
