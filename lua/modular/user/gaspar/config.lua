@@ -46,7 +46,7 @@ then
 	AvanteOpts.provider = "gemini"
 	AvanteOpts.providers = {
 		gemini = {
-			model = "gemini-2.5-flash-preview-04-17",
+			model = "gemini-2.5-pro",
 		}
 	}
 end

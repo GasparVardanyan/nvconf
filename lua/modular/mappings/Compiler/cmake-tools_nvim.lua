@@ -1,8 +1,17 @@
 local map = vim.keymap.set
 
-map ("n", "<leader>cor", vim.cmd.CMakeOpenRunner, { desc = "runner" })
-map ("n", "<leader>coe", vim.cmd.CMakeOpenExecutor, { desc = "executor" })
-map ("n", "<leader>coc", vim.cmd.CMakeOpenCache, { desc = "cache" })
+map ("n", "<leader>cor", function ()
+	vim.cmd.CMakeCloseRunner ()
+	vim.cmd.CMakeOpenRunner ()
+end, { desc = "runner" })
+map ("n", "<leader>coe", function ()
+	vim.cmd.CMakeCloseExecutor ()
+	vim.cmd.CMakeOpenExecutor ()
+end, { desc = "executor" })
+map ("n", "<leader>coc", function ()
+	vim.cmd.CMakeCloseCache ()
+	vim.cmd.CMakeOpenCache ()
+end, { desc = "cache" })
 
 map ("n", "<leader>ccR", vim.cmd.CMakeCloseRunner, { desc = "runner" })
 map ("n", "<leader>ccE", vim.cmd.CMakeCloseExecutor, { desc = "executor" })
