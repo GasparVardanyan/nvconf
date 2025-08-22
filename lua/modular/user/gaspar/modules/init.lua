@@ -32,7 +32,8 @@ else
 end
 
 local gaspar_modules = {
-	custom_module = require ("modular.user.gaspar.modules.CustomModule")
+	custom_module = require ("modular.user.gaspar.modules.CustomModule"),
+	autocomplete_module = require ("modular.user.gaspar.modules.AutoCompleteModule"),
 }
 
 local modules = vim.tbl_deep_extend (
