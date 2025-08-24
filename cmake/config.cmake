@@ -1,4 +1,9 @@
+set (CMAKE_CXX_STANDARD 20)
+set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set (CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set (CMAKE_CXX_EXTENSIONS OFF)
+
+add_compile_options (-pedantic-errors -Werror=pedantic)
 
 get_filename_component (PROJECT_PATH "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 

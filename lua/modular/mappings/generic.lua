@@ -33,8 +33,8 @@ map ("n", "<leader>vw", vim.cmd.WipeWindowlessBufs, { desc = "wipe windowless bu
 -- map ("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>", { desc = "toggle line numbers" })
 map ("n", "<leader>n", function () vim.cmd.setlocal {'nu!', 'rnu!'} end, { desc = "toggle line numbers" })
 
-map ("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
-map ("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "close terminal" })
+-- map ("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
+-- map ("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "close terminal" })
 
 vim.cmd [[
 	noremap <F1> :mksession! .vim.session
