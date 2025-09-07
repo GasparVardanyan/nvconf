@@ -13,6 +13,7 @@ return {
 			choice_format = "both", -- optional, you can switch to "name" or "path"
 			projects_picker = "vim-ui", -- optional, you can switch to `telescope`
 			auto_register_project = false, -- optional, toggle on/off the auto add project behaviour
+			remember_project_position = false,
 			-- do whatever you like by hooks
 			hooks = {
 				-- Run before cd to project, add a bookmark here, then can use `CdProjectBack` to switch back
@@ -45,6 +46,16 @@ return {
 								source .exrc
 							endif
 						]]
+						-- NOTE: not complete logic
+						-- local bufinfos = vim.fn.getbufinfo({buflisted = 1})
+						-- vim.tbl_map(function (bufinfo)
+						-- 	if bufinfo.changed == 0 and (bufinfo.name == '' or vim.bo [bufinfo.bufnr].buftype == "nofile" or (vim.bo [bufinfo.bufnr].filetype == "" and bufinfo.listed == 1)) then
+						-- 		vim.print ("RM " .. vim.api.nvim_buf_get_name(bufinfo.bufnr))
+						-- 		print (vim.bo [bufinfo.bufnr].filetype)
+						-- 		print (vim.bo [bufinfo.bufnr].buftype)
+						-- 		vim.api.nvim_buf_delete(bufinfo.bufnr, {force = false, unload = false})
+						-- 	end
+						-- end, bufinfos)
 					end,
 				},
 			}
