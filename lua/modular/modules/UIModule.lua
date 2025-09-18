@@ -29,13 +29,13 @@ local UIModule = Module:new ({
 		-- 		vim.cmd.colorscheme "solarized-osaka"
 		-- 	end
 		-- }),
-		ModuleAction:new ({
-			plugins = "kanagawa.nvim",
-			action = function ()
-				vim.opt.background = "dark"
-				vim.cmd.colorscheme "kanagawa-wave"
-			end
-		}),
+		-- ModuleAction:new ({
+		-- 	plugins = "kanagawa.nvim",
+		-- 	action = function ()
+		-- 		vim.opt.background = "dark"
+		-- 		vim.cmd.colorscheme "kanagawa-wave"
+		-- 	end
+		-- }),
 	}
 })
 
