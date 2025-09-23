@@ -16,7 +16,8 @@ return {
 				capabilities,
 				server.capabilities or {}
 			)
-			require ("lspconfig") [server_name].setup (server)
+			-- require ("lspconfig") [server_name].setup (server)
+			vim.lsp.config (server_name, server)
 		end
 
 		require ("mason-lspconfig").setup {
@@ -34,7 +35,8 @@ return {
 						capabilities,
 						server.capabilities or {}
 					)
-					require ("lspconfig") [server_name].setup (server)
+					-- require ("lspconfig") [server_name].setup (server)
+					vim.lsp.config (server_name, server)
 				end,
 			},
 		}

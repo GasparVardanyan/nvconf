@@ -1,5 +1,5 @@
 return {
-	"GasparVardanyan/cppman.nvim",
+	"madskjeldgaard/cppman.nvim",
 	dependencies = {
 		"MunifTanjim/nui.nvim"
 	},
