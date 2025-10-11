@@ -25,7 +25,7 @@ return {
 							if filereadable(".vim.session")
 								mksession! .vim.session
 							endif
-							%bd
+							%bd!
 						]]
 					end,
 				},
@@ -38,6 +38,8 @@ return {
 								CMakeSelectCwd .
 								CMakeStopExecutor
 								CMakeSelectBuildDir out
+								call system('ln -s out/compile_commands.json .')
+								LspRestart
 							endif
 							if filereadable(".vim.session")
 								source .vim.session

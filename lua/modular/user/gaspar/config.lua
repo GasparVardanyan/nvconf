@@ -5,7 +5,7 @@ then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
 	-- LspServers ["erlang-ls"] = {}
-	LspServers ["jedi_language_server"] = {}
+	LspServers ["basedpyright"] = {}
 	LspServers ["neocmake"] = {}
 	-- LspServers ["pylsp"] = {
 	-- 	settings = {
@@ -49,4 +49,12 @@ then
 			model = "gemini-2.5-pro",
 		}
 	}
+elseif 1 == hostname:find ("website")
+then
+	local TreeSitters = require ("modular.config.treesitters")
+	vim.list_extend (TreeSitters, {
+		"html",
+		"css",
+		"javascript",
+	})
 end
