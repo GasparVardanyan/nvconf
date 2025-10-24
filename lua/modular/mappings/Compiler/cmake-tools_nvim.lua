@@ -18,6 +18,10 @@ map ("n", "<leader>ccE", vim.cmd.CMakeCloseExecutor, { desc = "executor" })
 map ("n", "<leader>csR", vim.cmd.CMakeStopRunner, { desc = "runner" })
 map ("n", "<leader>csE", vim.cmd.CMakeStopExecutor, { desc = "executor" })
 
+map ("n", "<leader>cB", vim.cmd.CMakeSelectBuildTarget, { desc = "select build target" })
+map ("n", "<leader>cL", vim.cmd.CMakeSelectLaunchTarget, { desc = "select launch target" })
+map ("n", "<leader>cT", vim.cmd.CMakeSelectBuildType, { desc = "select build type" })
+
 map ("n", "<leader>ccr", function ()
 	vim.cmd.CMakeStopRunner ()
 	vim.cmd.CMakeCloseRunner ()
