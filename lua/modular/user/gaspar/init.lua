@@ -8,6 +8,7 @@ require ("modular.mappings.generic")
 require ("modular.user.gaspar.autocmds.hls_commands")
 require ("modular.user.gaspar.autocmds.gcrypt")
 require ("modular.user.gaspar.autocmds.xdefaults_highlight")
+require ("modular.user.gaspar.autocmds.transparency")
 
 local ModuleManager = require ("modular.ModuleManager")
 
@@ -18,6 +19,7 @@ vim.api.nvim_create_autocmd ("User", {
 		then
 			vim.opt.background = "dark"
 			vim.cmd.colorscheme "solarized-osaka"
+			-- vim.cmd ':TT'
 		end
 	end,
 })
