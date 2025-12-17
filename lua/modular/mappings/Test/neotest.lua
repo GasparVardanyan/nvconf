@@ -8,4 +8,5 @@ map ("n", "<leader>tp", function () vim.cmd.Neotest "jump prev" end, { desc = "j
 map ("n", "<leader>to", function () vim.cmd.Neotest "output" end, { desc = "output" })
 map ("n", "<leader>tP", function () vim.cmd.Neotest "output-panel" end, { desc = "output panel" })
 map ("n", "<leader>tr", function () vim.cmd.Neotest "run" end, { desc = "run" })
+map ("n", "<leader>td", function () require("neotest").run.run({strategy = "dap"}) end, { desc = "run" })
 map ("n", "<leader>ts", function () vim.cmd.Neotest "summary" end, { desc = "summary" })

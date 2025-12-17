@@ -2,17 +2,18 @@ local modular_modules = {}
 
 local hostname = vim.fn.hostname ()
 
-if 1 == hostname:find ("work")
+if 1 == hostname:find ("devenv")
 then
-	modular_modules = vim.tbl_deep_extend ("error", require ("modular.modules"), {
-		menu_module = require ("modular.modules._MenuModule"),
-	})
+	-- modular_modules = vim.tbl_deep_extend ("error", require ("modular.modules"), {
+	-- 	menu_module = require ("modular.modules._MenuModule"),
+	-- })
+	modular_modules = require ("modular.modules")
 else
 	modular_modules = {
 		-- ai_module = require ("modular.modules.AiModule"),
 		basic_module = require ("modular.modules.BasicModule"),
-		clang_module = require ("modular.modules.ClangModule"),
-		compiler_module = require ("modular.modules.CompilerModule"),
+		-- clang_module = require ("modular.modules.ClangModule"),
+		-- compiler_module = require ("modular.modules.CompilerModule"),
 		-- dap_module = require ("modular.modules.DapModule"),
 		-- db_module = require ("modular.modules.DbModule"),
 		-- gdb_module = require ("modular.modules.GdbModule"),
