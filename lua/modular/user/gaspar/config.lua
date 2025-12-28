@@ -28,12 +28,11 @@ then
 		"clang-format",
 		"codelldb",
 		"cpplint",
-		"debugpy",
-		-- "erlang-debugger"
 	})
 
 	local TreeSitters = require ("modular.config.treesitters")
 	vim.list_extend (TreeSitters, {
+		"cmake",
 		"cpp",
 		-- "erlang"
 		"javascript",

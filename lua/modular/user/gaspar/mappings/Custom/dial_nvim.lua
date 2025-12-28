@@ -1,0 +1,28 @@
+local map = vim.keymap.set
+
+-- FIXME: as expected... this messes up the default behaviour
+
+map ("n", "<leader>D<C-a>", function()
+	require("dial.map").manipulate("increment", "normal")
+end)
+map ("n", "<leader>D<C-x>", function()
+	require("dial.map").manipulate("decrement", "normal")
+end)
+map ("n", "<leader>Dg<C-a>", function()
+	require("dial.map").manipulate("increment", "gnormal")
+end)
+map ("n", "<leader>Dg<C-x>", function()
+	require("dial.map").manipulate("decrement", "gnormal")
+end)
+map ("x", "<leader>D<C-a>", function()
+	require("dial.map").manipulate("increment", "visual")
+end)
+map ("x", "<leader>D<C-x>", function()
+	require("dial.map").manipulate("decrement", "visual")
+end)
+map ("x", "<leader>Dg<C-a>", function()
+	require("dial.map").manipulate("increment", "gvisual")
+end)
+map ("x", "<leader>Dg<C-x>", function()
+	require("dial.map").manipulate("decrement", "gvisual")
+end)

@@ -90,14 +90,14 @@ vim.api.nvim_create_autocmd ("FileType", {
 	pattern = "qf",
 	callback = function ()
 		-- TODO: FileType isn't the right place for this !!
-		do return end
+		-- do return end
 
-		vim.api.nvim_set_option_value ("modifiable", true, {})
+		-- vim.api.nvim_set_option_value ("modifiable", true, {})
 		vim.cmd[[
 			%g#^\v/usr/share/nvim/runtime/doc/[^|]+\|\d+\|# norm 0d2f|
 		]]
-		vim.api.nvim_set_option_value ("modifiable", false, {})
-		vim.api.nvim_set_option_value ("number", false, {})
+		vim.api.nvim_set_option_value ("number", true, {})
 		vim.api.nvim_set_option_value ("relativenumber", false, {})
+		vim.api.nvim_set_option_value ("wrap", true, {})
 	end,
 })

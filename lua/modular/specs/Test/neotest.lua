@@ -28,7 +28,7 @@ return {
 					debug_adapter = "codelldb",
 				}),
 				-- require ("neotest-python")
-				require("neotest-ctest").setup({})
+				-- require("neotest-ctest").setup({})
 			}
 		})
 	end,
