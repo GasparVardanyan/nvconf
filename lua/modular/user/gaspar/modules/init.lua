@@ -1,4 +1,5 @@
 local modular_modules = {}
+local gaspar_modules = {}
 
 local hostname = vim.fn.hostname ()
 
@@ -8,6 +9,13 @@ then
 	-- 	menu_module = require ("modular.modules._MenuModule"),
 	-- })
 	modular_modules = require ("modular.modules")
+	gaspar_modules = vim.tbl_deep_extend (
+		"error",
+		gaspar_modules,
+		{
+			dev_module = require ("modular.user.gaspar.modules.DevModule")
+		}
+	)
 else
 	modular_modules = {
 		-- ai_module = require ("modular.modules.AiModule"),
@@ -32,10 +40,14 @@ else
 	}
 end
 
-local gaspar_modules = {
-	custom_module = require ("modular.user.gaspar.modules.CustomModule"),
-	autocomplete_module = require ("modular.user.gaspar.modules.AutoCompleteModule"),
-}
+gaspar_modules = vim.tbl_deep_extend (
+	"error",
+	gaspar_modules,
+	{
+		custom_module = require ("modular.user.gaspar.modules.CustomModule"),
+		autocomplete_module = require ("modular.user.gaspar.modules.AutoCompleteModule"),
+	}
+)
 
 local modules = vim.tbl_deep_extend (
 	"error",

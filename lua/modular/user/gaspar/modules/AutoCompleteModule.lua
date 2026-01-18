@@ -14,7 +14,10 @@ local AutoCompleteModule = Module:new ({
 					FUZZY        =  "fuzzy-complete"       ,
 					SUFFIX       =  "suffix-complete"      ,
 					SURROUND     =  "surround-complete"    ,
+					NONE         =  "__NONE__"             ,
 				}
+
+				local current_action = ACMPL.NONE
 
 				local function complete (action)
 					local win = vim.api.nvim_get_current_win ()
@@ -35,24 +38,61 @@ local AutoCompleteModule = Module:new ({
 						lines
 					)
 
-					local targetlen = completions [1]:len ()
+					if 0 ~= #completions
+					then
+						local targetlen = completions [1]:len ()
 
-					local matches = { completions [1] }
-					for i = 2, #completions, 4 do
-						table.insert (matches, completions [i])
+						local matches = { completions [1] }
+						for i = 2, #completions, 4 do
+							table.insert (matches, completions [i])
+						end
+
+						vim.fn.complete (vim.fn.col (".") - targetlen, matches)
+					else
+						current_action = ACMPL.NONE
 					end
-
-					vim.fn.complete (vim.fn.col (".") - targetlen, matches)
 				end
 
-				vim.keymap.set ("i", "<M-C-/>", function () complete (ACMPL.WORD) end)
-				vim.keymap.set ("i", "<M-C-.>", function () complete (ACMPL.FUZZY_WORD) end)
-				vim.keymap.set ("i", "<M-C-,>", function () complete (ACMPL.FUZZY) end)
-				vim.keymap.set ("i", "<M-C-'>", function () complete (ACMPL.SUFFIX) end)
-				vim.keymap.set ("i", "<M-C-;>", function () complete (ACMPL.SURROUND) end)
-				vim.keymap.set ("i", "<M-C-]>", function () complete (ACMPL.WWORD) end)
-				vim.keymap.set ("i", "<M-Esc>", function () complete (ACMPL.FUZZY_WWORD) end)
-				-- TODO: implement an undo mapping
+				vim.api.nvim_create_autocmd ("CompleteDone", {
+					callback = function ()
+						current_action = ACMPL.NONE
+					end
+				})
+
+				local function pum_or_complete (action)
+					if ACMPL.NONE == current_action
+					then
+						vim.schedule (function ()
+							current_action = action
+							complete (action)
+						end)
+						return ""
+					else
+						if action == current_action
+						then
+							return "<C-n>"
+						else
+							vim.api.nvim_feedkeys(
+								vim.api.nvim_replace_termcodes("<C-e>", true, false, true),
+								"n",
+								false
+							)
+							vim.schedule (function ()
+								current_action = action
+								complete (action)
+							end)
+							return ""
+						end
+					end
+				end
+
+				vim.keymap.set ("i",   "<M-C-/>",   function () return pum_or_complete (ACMPL.WORD) end,          { expr = true })
+				vim.keymap.set ("i",   "<M-C-.>",   function () return pum_or_complete (ACMPL.FUZZY_WORD) end,    { expr = true })
+				vim.keymap.set ("i",   "<M-C-,>",   function () return pum_or_complete (ACMPL.FUZZY) end,         { expr = true })
+				vim.keymap.set ("i",   "<M-C-'>",   function () return pum_or_complete (ACMPL.SUFFIX) end,        { expr = true })
+				vim.keymap.set ("i",   "<M-C-;>",   function () return pum_or_complete (ACMPL.SURROUND) end,      { expr = true })
+				vim.keymap.set ("i",   "<M-C-]>",   function () return pum_or_complete (ACMPL.WWORD) end,         { expr = true })
+				vim.keymap.set ("i",   "<M-Esc>",   function () return pum_or_complete (ACMPL.FUZZY_WWORD) end,   { expr = true })
 			end
 		})
 	}

@@ -1,11 +1,11 @@
 local hostname = vim.fn.hostname ()
 
-if 1 == hostname:find ("work")
+if 1 == hostname:find ("devenv")
 then
 	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {}
 	-- LspServers ["erlang-ls"] = {}
-	LspServers ["basedpyright"] = {}
+	-- LspServers ["basedpyright"] = {}
 	LspServers ["neocmake"] = {}
 	-- LspServers ["pylsp"] = {
 	-- 	settings = {
@@ -35,10 +35,10 @@ then
 		"cmake",
 		"cpp",
 		-- "erlang"
-		"javascript",
+		-- "javascript",
 		"json",
-		"python",
-		"cuda",
+		-- "python",
+		-- "cuda",
 	})
 
 	local AvanteOpts = require ("modular.config.avanteopts")
