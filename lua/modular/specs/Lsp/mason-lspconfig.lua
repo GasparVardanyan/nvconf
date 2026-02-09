@@ -14,6 +14,11 @@ return {
 			require("lsp-file-operations").default_capabilities ()
 		)
 
+		capabilities.textDocument.foldingRange = {
+			dynamicRegistration = false,
+			lineFoldingOnly = true
+		}
+
 		local servers = require ("modular.config.lspservers")
 
 		for server_name, server in pairs (servers) do

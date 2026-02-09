@@ -12,6 +12,10 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.neo-tree_nvim"),
 		require ("modular.specs.Basic.nvim-treesitter"),
 		require ("modular.specs.Basic.nvim-treesitter-context"),
+		require ("modular.specs.Basic.treesj"),
+		require ("modular.specs.Basic.nvim-fundo"),
+		require ("modular.specs.Basic.nvim-bqf"),
+		require ("modular.specs.Basic.nvim-ufo"),
 		require ("modular.specs.Basic.oil_nvim"),
 		require ("modular.specs.Basic.tagbar"),
 		require ("modular.specs.Basic.telescope_nvim"),
@@ -54,6 +58,12 @@ local BasicModule = Module:new ({
 			action = function ()
 				require ("modular.mappings.Basic.nvim-treesitter-context")
 				require ("treesitter-context").enable ()
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "nvim-ufo",
+			action = function ()
+				require ("modular.mappings.Basic.nvim-ufo")
 			end
 		}),
 		ModuleAction:new ({
