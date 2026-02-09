@@ -16,6 +16,7 @@ local LspModule = Module:new ({
 		require ("modular.specs.Lsp.trouble_nvim"),
 		require ("modular.specs.Lsp.goto-preview"),
 		require ("modular.specs.Lsp.dropbar_nvim"),
+		require ("modular.specs.Lsp.nvim-lsp-file-operations")
 		-- require ("modular.specs.Lsp.nvim-treesitter-textobjects"),
 		-- require ("modular.specs.Lsp.lspsaga_nvim"),
 	},
@@ -31,6 +32,13 @@ local LspModule = Module:new ({
 			plugins = { "nvim-lspconfig", "telescope.nvim" },
 			action = function ()
 				require ("modular.mappings.Lsp.nvim-lspconfig_telescope_nvim")
+			end
+		}),
+		-- NOTE: load fzf-lua mappings after telescope ones to override
+		ModuleAction:new ({
+			plugins = { "nvim-lspconfig", "fzf-lua" },
+			action = function ()
+				require ("modular.mappings.Lsp.nvim-lspconfig_fzf_lua")
 			end
 		}),
 		ModuleAction:new ({

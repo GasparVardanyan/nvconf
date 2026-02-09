@@ -78,17 +78,36 @@ function ModuleManager:mark_plugin_loaded (plugin)
 	if false == self.__loaded_plugins [plugin] then
 		self.__loaded_plugins [plugin] = true
 
-		for i = #self.actions, 1, -1 do
+		-- for i = #self.actions, 1, -1 do
+		-- 	local loaded = true
+		-- 	for _, pname in ipairs (self.actions [i].plugins) do
+		-- 		if not self.__loaded_plugins [pname] then
+		-- 			loaded = false
+		-- 			break
+		-- 		end
+		-- 	end
+		-- 	if true == loaded then
+		-- 		self.actions [i].action ()
+		-- 		table.remove (self.actions, i)
+		-- 	end
+		-- end
+
+		local i = 1
+		while i <= #self.actions do
 			local loaded = true
+
 			for _, pname in ipairs (self.actions [i].plugins) do
 				if not self.__loaded_plugins [pname] then
 					loaded = false
 					break
 				end
 			end
+
 			if true == loaded then
 				self.actions [i].action ()
 				table.remove (self.actions, i)
+			else
+				i = i + 1
 			end
 		end
 	else

@@ -22,7 +22,14 @@ local DapModule = Module:new ({
 			action = function ()
 				require ("modular.mappings.Dap.telescope-dap_telescope_nvim")
 			end
-		})
+		}),
+		-- NOTE: load fzf-lua mappings after telescope ones to override
+		ModuleAction:new ({
+			plugins = "nvim-dap", "fzf-lua",
+			action = function ()
+				require ("modular.mappings.Dap.nvim-dap_fzf-lua")
+			end
+		}),
 	}
 })
 

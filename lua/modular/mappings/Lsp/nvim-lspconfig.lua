@@ -40,9 +40,9 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
-		-- if client and client:supports_method ('textDocument/completion') then
-		-- 	vim.lsp.completion.enable(true, client.id, event.buf, { autotrigger = true })
-		-- end
+		if client and utils.client_supports_method (client,vim.lsp.protocol.Methods.textDocument_completion, event.buf) then
+			vim.lsp.completion.enable (true, client.id, event.buf, { autotrigger = true })
+		end
 
 		-- TODO: REVIEW
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then

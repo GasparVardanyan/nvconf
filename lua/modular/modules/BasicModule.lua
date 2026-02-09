@@ -14,6 +14,7 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.oil_nvim"),
 		require ("modular.specs.Basic.tagbar"),
 		require ("modular.specs.Basic.telescope_nvim"),
+		require ("modular.specs.Basic.fzf_lua"),
 		require ("modular.specs.Basic.todo-comments_nvim"),
 		require ("modular.specs.Basic.toggleterm_nvim"),
 		require ("modular.specs.Basic.ts-comments_nvim"),
@@ -63,6 +64,13 @@ local BasicModule = Module:new ({
 			plugins = "telescope.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.telescope_nvim")
+			end
+		}),
+		-- NOTE: load fzf-lua mappings after telescope ones to override
+		ModuleAction:new ({
+			plugins = "fzf-lua",
+			action = function ()
+				require ("modular.mappings.Basic.fzf_lua")
 			end
 		}),
 		ModuleAction:new ({
