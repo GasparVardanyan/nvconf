@@ -38,7 +38,7 @@ local LspModule = Module:new ({
 		ModuleAction:new ({
 			plugins = { "nvim-lspconfig", "fzf-lua" },
 			action = function ()
-				require ("modular.mappings.Lsp.nvim-lspconfig_fzf_lua")
+				require ("modular.mappings.Lsp.nvim-lspconfig_fzf-lua")
 			end
 		}),
 		ModuleAction:new ({

@@ -1,7 +1,7 @@
 return {
-	"kevinhwang91/nvim-bqf",
+	"nvim-treesitter/nvim-treesitter-context",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 	},
-	filetype = "qf",
+	config = true,
 }

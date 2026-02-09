@@ -19,6 +19,7 @@ vim.api.nvim_create_autocmd ("User", {
 		then
 			vim.opt.background = "dark"
 			vim.cmd.colorscheme "solarized-osaka"
+			-- vim.cmd.colorscheme "neosolarized"
 			-- vim.cmd ':TT'
 		end
 	end,

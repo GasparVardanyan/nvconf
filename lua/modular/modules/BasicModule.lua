@@ -9,12 +9,13 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.Comment_nvim"),
 		-- require ("modular.specs.Basic.dashboard-nvim"),
 		require ("modular.specs.Basic.grug-far_nvim"),
-		-- require ("modular.specs.Basic.neo-tree_nvim"),
+		require ("modular.specs.Basic.neo-tree_nvim"),
 		require ("modular.specs.Basic.nvim-treesitter"),
+		require ("modular.specs.Basic.nvim-treesitter-context"),
 		require ("modular.specs.Basic.oil_nvim"),
 		require ("modular.specs.Basic.tagbar"),
 		require ("modular.specs.Basic.telescope_nvim"),
-		require ("modular.specs.Basic.fzf_lua"),
+		require ("modular.specs.Basic.fzf-lua"),
 		require ("modular.specs.Basic.todo-comments_nvim"),
 		require ("modular.specs.Basic.toggleterm_nvim"),
 		require ("modular.specs.Basic.ts-comments_nvim"),
@@ -49,6 +50,13 @@ local BasicModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			plugins = "nvim-treesitter-context",
+			action = function ()
+				require ("modular.mappings.Basic.nvim-treesitter-context")
+				require ("treesitter-context").enable ()
+			end
+		}),
+		ModuleAction:new ({
 			plugins = { "neo-tree.nvim", "vim-illuminate" },
 			action = function ()
 				require ("modular.autocmds.Basic.neo-tree_noilluminate")
@@ -70,7 +78,7 @@ local BasicModule = Module:new ({
 		ModuleAction:new ({
 			plugins = "fzf-lua",
 			action = function ()
-				require ("modular.mappings.Basic.fzf_lua")
+				require ("modular.mappings.Basic.fzf-lua")
 			end
 		}),
 		ModuleAction:new ({

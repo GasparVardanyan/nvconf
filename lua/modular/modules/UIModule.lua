@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
-local ModuleAction = require ("modular.ModuleAction")
+-- local ModuleAction = require ("modular.ModuleAction")
 
 local UIModule = Module:new ({
 	name = "UI",
@@ -9,8 +9,8 @@ local UIModule = Module:new ({
 		-- require ("modular.specs.UI.NeoSolarized"),
 		-- require ("modular.specs.UI.selenized_nvim"),
 		require ("modular.specs.UI.solarized-osaka_nvim"),
-		-- require ("modular.specs.UI.solarized_nvim1"),
-		require ("modular.specs.UI.solarized_nvim2"),
+		require ("modular.specs.UI.solarized_nvim1"),
+		-- require ("modular.specs.UI.solarized_nvim2"),
 		require ("modular.specs.UI.neosolarized_nvim"),
 		require ("modular.specs.UI.kanagawa_nvim"),
 		require ("modular.specs.UI.kanagawa-paper_nvim"),

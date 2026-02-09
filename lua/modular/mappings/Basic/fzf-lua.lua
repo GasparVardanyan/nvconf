@@ -1,7 +1,7 @@
 local map = vim.keymap.set
 local FzfLua = require ("fzf-lua")
 
-map ("n", "<leader>F", FzfLua.resume, { desc = "telescope resume" })
+map ("n", "<leader>F", FzfLua.resume, { desc = "FzfLua resume" })
 -- map ("n", "<leader>f", builtin.planets)
 map ("n", "<leader>f/", FzfLua.search_history, { desc = "search history" })
 map ("n", "<leader>f:", FzfLua.command_history, { desc = "command history" })
@@ -23,7 +23,7 @@ map ("n", "<leader>fj", FzfLua.jumps, { desc = "jumplist" })
 map ("n", "<leader>fm", FzfLua.marks, { desc = "marks" })
 map ("n", "<leader>fo", function () FzfLua.oldfiles { cwd = vim.fn.getcwd () } end, { desc = "oldfiles" })
 map ("n", "<leader>fq", FzfLua.quickfix, { desc = "quickfix" })
-map ("n", "<leader>ft", function () require ("telescope-tabs").list_tabs () end, { desc = "tabs" })
+-- map ("n", "<leader>ft", function () require ("telescope-tabs").list_tabs () end, { desc = "tabs" })
 -- map ("n", "<leader>fus", function () telescope.extensions.undo.undo({ saved_only = true }) end, { desc = "saved" })
 -- map ("n", "<leader>fuu", telescope.extensions.undo.undo, { desc = "undo" })
 -- map ("n", "<leader>fv", FzfLua.vim_options, { desc = "vim options" })

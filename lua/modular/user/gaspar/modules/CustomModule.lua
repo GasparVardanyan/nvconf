@@ -10,7 +10,6 @@ local CustomModule = Module:new ({
 		require ("modular.user.gaspar.specs.Custom.treesj"),
 		require ("modular.user.gaspar.specs.Custom.nvim-fundo"),
 		require ("modular.user.gaspar.specs.Custom.nvim-bqf"),
-		require ("modular.user.gaspar.specs.Custom.fzf"),
 		require ("modular.user.gaspar.specs.Custom.dooku-nvim"),
 		require ("modular.user.gaspar.specs.Custom.nvim-ufo"),
 		require ("modular.user.gaspar.specs.Custom.videre_nvim"),
