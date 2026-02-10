@@ -13,7 +13,7 @@ local LspModule = Module:new ({
 		require ("modular.specs.Lsp.indent-blankline_nvim"),
 		require ("modular.specs.Lsp.outline_nvim"),
 		require ("modular.specs.Lsp.vim-illuminate"), -- TODO: move to extras and add a module for the native way
-		require ("modular.specs.Lsp.trouble_nvim"),
+		-- require ("modular.specs.Lsp.trouble_nvim"),
 		require ("modular.specs.Lsp.goto-preview"),
 		require ("modular.specs.Lsp.dropbar_nvim"),
 		require ("modular.specs.Lsp.nvim-lsp-file-operations")

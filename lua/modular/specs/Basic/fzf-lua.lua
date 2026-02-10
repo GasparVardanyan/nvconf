@@ -11,7 +11,7 @@ return {
 	---@module "fzf-lua"
 	---@type fzf-lua.Config|{}
 	---@diagnostic disable: missing-fields
-	opts = {{"fzf-native", "telescope"}}
+	opts = {{"telescope"}}
 	---@diagnostic enable: missing-fields
 
 	-- NOTE:

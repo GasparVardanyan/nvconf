@@ -8,13 +8,11 @@ local map = utils.map_multi_leader
 local unmap = utils.unmap_multi_leader
 
 vim.api.nvim_create_autocmd ("LspAttach", {
-	group = vim.api.nvim_create_augroup (groups.LspAttachTelescopeMappings, { clear = true }),
+	group = vim.api.nvim_create_augroup (groups.LspAttachFzfLuaMappings, { clear = true }),
 	callback = function (args)
 		map ("n", leaders, "fI", FzfLua.lsp_incoming_calls, { buffer = args.buf, desc = "incoming calls" })
 		map ("n", leaders, "fO", FzfLua.lsp_outgoing_calls, { buffer = args.buf, desc = "outgoing calls" })
-		-- map ("n", leaders, "fS", FzfLua.lsp_dynamic_workspace_symbols, { buffer = args.buf, desc = "workspace symbols" })
 		map ("n", leaders, "fS", FzfLua.lsp_workspace_symbols, { buffer = args.buf, desc = "workspace symbols" })
-		-- map ("n", leaders, "fT", FzfLua.lsp_type_definitions, {buffer = args.buf, desc = "type definitions" })
 		map ("n", leaders, "fT", FzfLua.lsp_typedefs, {buffer = args.buf, desc = "type definitions" })
 		map ("n", leaders, "fd", FzfLua.lsp_definitions, { buffer = args.buf, desc = "definitions" })
 		map ("n", leaders, "fi", FzfLua.lsp_implementations, { buffer = args.buf, desc = "implementations" })
@@ -24,7 +22,7 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 })
 
 vim.api.nvim_create_autocmd ("LspDetach", {
-	group = vim.api.nvim_create_augroup (groups.LspDetachTelescopeMappings, { clear = true }),
+	group = vim.api.nvim_create_augroup (groups.LspDetachFzfLuaMappings, { clear = true }),
 	callback = function (args)
 		unmap ("n", leaders, "fI", { buffer = args.buf })
 		unmap ("n", leaders, "fO", { buffer = args.buf })

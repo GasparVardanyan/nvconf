@@ -4,16 +4,7 @@ local utils = require ("modular.utils")
 local map = vim.keymap.set
 local unmap = vim.keymap.del
 
-local leaders = {"gr", "<leader>l", "<leader>"}
-
--- Some keymaps are created unconditionally when Nvim starts:
--- - "grn" is mapped in Normal mode to |vim.lsp.buf.rename()|
--- - "gra" is mapped in Normal and Visual mode to |vim.lsp.buf.code_action()|
--- - "grr" is mapped in Normal mode to |vim.lsp.buf.references()|
--- - "gri" is mapped in Normal mode to |vim.lsp.buf.implementation()|
--- - "gO" is mapped in Normal mode to |vim.lsp.buf.document_symbol()|
--- - CTRL-S is mapped in Insert mode to |vim.lsp.buf.signature_help()|
-
+local leaders = {"gr", "<leader>l"}
 
 vim.api.nvim_create_autocmd ("LspAttach", {
 	group = vim.api.nvim_create_augroup (groups.LspAttachMappings, { clear = true }),
@@ -23,16 +14,16 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 			map ("n", "gra", vim.lsp.buf.code_action, { buffer = event.buf, desc = "code action" })
 			map ("n", "grr", vim.lsp.buf.references, { buffer = event.buf, desc = "references" })
 			map ("n", "gri", vim.lsp.buf.implementation, { buffer = event.buf, desc = "implementation" })
+			map ("n", "grt", vim.lsp.buf.type_definition, { buffer = event.buf, desc = "type definition" })
 			map ("n", "gO", vim.lsp.buf.document_symbol, { buffer = event.buf, desc = "document symbol" })
 			map ("i", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf, desc = "signature help" })
 		end
 
-		map ("n", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf, desc = "signature help" })
-
 		map ("n", "grD", vim.lsp.buf.declaration, { buffer = event.buf, desc = "declaration" })
 		map ("n", "grd", vim.lsp.buf.definition, { buffer = event.buf, desc = "definition" })
-		map ("n", "grt", vim.lsp.buf.type_definition, { buffer = event.buf, desc = "type definition" })
 		map ("n", "grs", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf, desc = "switch source header" })
+
+		map ("n", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf, desc = "signature help" })
 
 		utils.map_multi_leader ("n", leaders, "wa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf, desc = "add folder" })
 		utils.map_multi_leader ("n", leaders, "wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { buffer = event.buf, desc = "list folders" })
@@ -73,9 +64,9 @@ vim.api.nvim_create_autocmd("LspDetach", {
 		unmap ("n", "grt", { buffer = event.buf })
 		unmap ("n", "grs", { buffer = event.buf })
 
-		utils.map_multi_leader ("n", leaders, "wa", vim.lsp.buf.add_workspace_folder, { buffer = event.buf })
-		utils.map_multi_leader ("n", leaders, "wl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { buffer = event.buf })
-		utils.map_multi_leader ("n", leaders, "wr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf })
+		utils.unmap_multi_leader ("n", leaders, "wa", { buffer = event.buf })
+		utils.unmap_multi_leader ("n", leaders, "wl", { buffer = event.buf })
+		utils.unmap_multi_leader ("n", leaders, "wr", { buffer = event.buf })
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
