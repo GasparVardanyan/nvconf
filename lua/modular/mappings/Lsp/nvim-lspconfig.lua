@@ -50,28 +50,28 @@ vim.api.nvim_create_autocmd("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachMappings, { clear = true }),
 	callback = function(event)
 		if 0 == vim.fn.has "nvim-0.11" then
-			unmap ("n", "grn", { buffer = event.buf })
-			unmap ("n", "gra", { buffer = event.buf })
-			unmap ("n", "grr", { buffer = event.buf })
-			unmap ("n", "gri", { buffer = event.buf })
-			unmap ("i", "<c-s>", { buffer = event.buf })
+			pcall (unmap, "n", "grn", { buffer = event.buf })
+			pcall (unmap, "n", "gra", { buffer = event.buf })
+			pcall (unmap, "n", "grr", { buffer = event.buf })
+			pcall (unmap, "n", "gri", { buffer = event.buf })
+			pcall (unmap, "i", "<c-s>", { buffer = event.buf })
 		end
 
-		unmap ("n", "<c-s>", { buffer = event.buf })
+		pcall (unmap, "n", "<c-s>", { buffer = event.buf })
 
-		unmap ("n", "grD", { buffer = event.buf })
-		unmap ("n", "grd", { buffer = event.buf })
-		unmap ("n", "grt", { buffer = event.buf })
-		unmap ("n", "grs", { buffer = event.buf })
+		pcall (unmap, "n", "grD", { buffer = event.buf })
+		pcall (unmap, "n", "grd", { buffer = event.buf })
+		pcall (unmap, "n", "grt", { buffer = event.buf })
+		pcall (unmap, "n", "grs", { buffer = event.buf })
 
-		utils.unmap_multi_leader ("n", leaders, "wa", { buffer = event.buf })
-		utils.unmap_multi_leader ("n", leaders, "wl", { buffer = event.buf })
-		utils.unmap_multi_leader ("n", leaders, "wr", { buffer = event.buf })
+		pcall (utils.unmap_multi_leader, "n", leaders, "wa", { buffer = event.buf })
+		pcall (utils.unmap_multi_leader, "n", leaders, "wl", { buffer = event.buf })
+		pcall (utils.unmap_multi_leader, "n", leaders, "wr", { buffer = event.buf })
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
 
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
-			unmap ("n", "grh", { buffer = event.buf })
+			pcall (unmap, "n", "grh", { buffer = event.buf })
 		end
 	end,
 })

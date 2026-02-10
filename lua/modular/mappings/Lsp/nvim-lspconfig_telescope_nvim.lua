@@ -24,13 +24,13 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 vim.api.nvim_create_autocmd ("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachTelescopeMappings, { clear = true }),
 	callback = function (args)
-		unmap ("n", leaders, "fI", { buffer = args.buf })
-		unmap ("n", leaders, "fO", { buffer = args.buf })
-		unmap ("n", leaders, "fS", { buffer = args.buf })
-		unmap ("n", leaders, "fT", { buffer = args.buf })
-		unmap ("n", leaders, "fd", { buffer = args.buf })
-		unmap ("n", leaders, "fi", { buffer = args.buf })
-		unmap ("n", leaders, "fr", { buffer = args.buf })
-		unmap ("n", leaders, "fs", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fI", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fO", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fS", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fT", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fd", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fi", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fr", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "fs", { buffer = args.buf })
 	end,
 })

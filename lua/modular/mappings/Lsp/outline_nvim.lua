@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 vim.api.nvim_create_autocmd("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachOutlineMappings, { clear = true }),
 	callback = function(args)
-		unmap ("n", leaders, "ot", { buffer = args.buf })
-		unmap ("n", leaders, "of", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "ot", { buffer = args.buf })
+		pcall (unmap, "n", leaders, "of", { buffer = args.buf })
 	end,
 })

@@ -28,11 +28,11 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 vim.api.nvim_create_autocmd("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachGotoPreviewMappings, { clear = true }),
 	callback = function(event)
-		unmap ("n", leaders, "pd", { buffer = event.buf })
-		unmap ("n", leaders, "pt", { buffer = event.buf })
-		unmap ("n", leaders, "pi", { buffer = event.buf })
-		unmap ("n", leaders, "pD", { buffer = event.buf })
-		unmap ("n", leaders, "P", { buffer = event.buf })
-		unmap ("n", leaders, "pr", { buffer = event.buf })
+		pcall (unmap, "n", leaders, "pd", { buffer = event.buf })
+		pcall (unmap, "n", leaders, "pt", { buffer = event.buf })
+		pcall (unmap, "n", leaders, "pi", { buffer = event.buf })
+		pcall (unmap, "n", leaders, "pD", { buffer = event.buf })
+		pcall (unmap, "n", leaders, "P", { buffer = event.buf })
+		pcall (unmap, "n", leaders, "pr", { buffer = event.buf })
 	end,
 })
