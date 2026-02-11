@@ -10,6 +10,7 @@ local BasicModule = Module:new ({
 		-- require ("modular.specs.Basic.dashboard-nvim"),
 		require ("modular.specs.Basic.grug-far_nvim"),
 		require ("modular.specs.Basic.neo-tree_nvim"),
+		require ("modular.specs.Basic.nvim-treesitter-textobjects"),
 		require ("modular.specs.Basic.nvim-treesitter"),
 		require ("modular.specs.Basic.nvim-treesitter-context"),
 		require ("modular.specs.Basic.treesj"),
