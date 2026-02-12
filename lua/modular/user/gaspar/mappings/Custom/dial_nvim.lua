@@ -1,7 +1,5 @@
 local map = vim.keymap.set
 
--- FIXME: as expected... this messes up the default behaviour
-
 map ("n", "<leader>D<C-a>", function()
 	require("dial.map").manipulate("increment", "normal")
 end)

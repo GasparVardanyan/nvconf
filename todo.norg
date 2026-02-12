@@ -18,19 +18,19 @@
   ~~ (x) Separate plugin specs from modules
   ~~ ( ) Review ModuleManager and use vim api whenever possible
 		  (/vim.list_contains/ for example)
-  ~ ( ) *Modules*
+  ~ (-) *Modules*
   ~~ (x) Separate base logic
   ~~ (x) HlsModule
-  ~~ (!) LspModule
+  ~~ (-) LspModule
   ~~~ (x) clean up lsp mappings' mess
   ~~~ (x) LspExtraMappingsModule
   ~~~ (x) Move LspSaga to extras
   ~~~ (x) Move to native 0.11 autocompletion
   ~~~ (x) refactor nvim-lspconfig spec
-  ~~~ (!) fix lsp attach/detach autocmds where the buffer have multiple lsps
-  ~~~ (-) refactor nvim-cmp spec
-  ~~~ (-) refactor LuaSnip spec
-  ~~~ (-) add blink.cmp support
+  ~~~ (x) fix lsp attach/detach autocmds where the buffer have multiple lsps
+  ~~~ (_) refactor nvim-cmp spec
+  ~~~ (_) refactor LuaSnip spec
+  ~~~ (_) add blink.cmp support
   ~~~ ( ) buffer formatting mappings
   ~~ (x) BasicModule
   ~~~ (_) https://github.com/ThePrimeagen/harpoon
@@ -44,7 +44,7 @@
   ~~ (+) UIModule
   ~~~ (_) https://github.com/NvChad/base46
   ~~ (x) DbModule
-  ~~ (-) MdModule
+  ~~ (x) MdModule
   ~~ (x) ClangModule
   ~~~ (x) https://sr.ht/~p00f/clangd_extensions.nvim
   ~~~ (x) https://github.com/madskjeldgaard/cppman.nvim
@@ -57,10 +57,10 @@
   ~~ (x) TestModule
   ~~~ (x) https://github.com/nvim-neotest/neotest
   ~~~ (x) https://github.com/alfaix/neotest-gtest
-  ~~ (-) ProfilerModule
-  ~~~ (-) https://github.com/t-troebst/perfanno.nvim
-  ~~ (-) GitModule
-  ~~~ (-) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
+  ~~ (x) ProfilerModule
+  ~~~ (x) https://github.com/t-troebst/perfanno.nvim
+  ~~ (_) GitModule
+  ~~~ (_) Git worktrees https://github.com/ThePrimeagen/git-worktree.nvim
   ~~ (x) NvimModule (/lazydev.nvim/, /nvim-nio/)
   ~~~ (x) https://github.com/jbyuki/one-small-step-for-vimkind
   ~~ (x) OrgModule
@@ -80,7 +80,7 @@
   ~ *ModuleManager*
   ~~ ( ) Handle duplicate specs
   ~~ (x) Handle loaded plugin registration here not in *Module*, so modules can
-		 depend on plugins from other modules /make a function which registers/
+		 depend on plugins from other modules, /make a function which registers/
 		 /and loads the spec/
   ~ (_) Dashboard
   ~~ (_) Conflicts with indent-blankline.nvim

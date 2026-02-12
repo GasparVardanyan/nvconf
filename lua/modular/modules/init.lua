@@ -17,6 +17,7 @@ return {
 	compiler_module = require ("modular.modules.CompilerModule"),
 	dap_module = require ("modular.modules.DapModule"),
 	db_module = require ("modular.modules.DbModule"),
+	formatter_module = require ("modular.modules.FormatterModule"),
 	gdb_module = require ("modular.modules.GdbModule"),
 	git_module = require ("modular.modules.GitModule"),
 	lean_module = require ("modular.modules.LeanModule"),

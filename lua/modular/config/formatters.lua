@@ -1,0 +1,3 @@
+return {
+	cpp = "clang-format"
+}
