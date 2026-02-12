@@ -16,6 +16,7 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.kanagawa_nvim"),
 		require ("modular.specs.UI.kanagawa-paper_nvim"),
 		require ("modular.specs.UI.base16-nvim"),
+		require ("modular.specs.UI.base46"),
 	},
 	actions = {
 		-- ModuleAction:new ({
