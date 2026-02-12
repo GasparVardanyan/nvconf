@@ -1,5 +1,5 @@
 local Module = require ("modular.Module")
--- local ModuleAction = require ("modular.ModuleAction")
+local ModuleAction = require ("modular.ModuleAction")
 
 local UIModule = Module:new ({
 	name = "UI",
@@ -19,6 +19,27 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.base46"),
 	},
 	actions = {
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "base46",
+			action = function ()
+				vim.api.nvim_create_autocmd ("User", {
+					pattern = "NvThemeReload",
+					callback = function ()
+						vim.api.nvim_set_hl (0, 'LspSignatureActiveParameter', { underline=true })
+					end,
+				})
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "base46",
+			action = function ()
+				vim.api.nvim_create_user_command ("Base46Theme", function (input)
+					require ("nvconfig").base46.theme = input.args
+					require ("base46").load_all_highlights ()
+				end, { nargs = 1, desc = "Switch base46 theme" })
+			end
+		}),
 		-- ModuleAction:new ({
 		-- 	plugins = "NeoSolarized.nvim",
 		-- 	action = function ()
