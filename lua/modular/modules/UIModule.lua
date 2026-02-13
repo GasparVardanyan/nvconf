@@ -19,18 +19,18 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.base46"),
 	},
 	actions = {
-		ModuleAction:new ({
-			event = ModuleAction.EventType.Pre,
-			plugins = "base46",
-			action = function ()
-				vim.api.nvim_create_autocmd ("User", {
-					pattern = "NvThemeReload",
-					callback = function ()
-						vim.api.nvim_set_hl (0, 'LspSignatureActiveParameter', { underline=true })
-					end,
-				})
-			end
-		}),
+		-- ModuleAction:new ({
+		-- 	event = ModuleAction.EventType.Pre,
+		-- 	plugins = "base46",
+		-- 	action = function ()
+		-- 		vim.api.nvim_create_autocmd ("User", {
+		-- 			pattern = "NvThemeReload",
+		-- 			callback = function ()
+		-- 				vim.api.nvim_set_hl (0, 'LspSignatureActiveParameter', { underline=true })
+		-- 			end,
+		-- 		})
+		-- 	end
+		-- }),
 		ModuleAction:new ({
 			plugins = "base46",
 			action = function ()
