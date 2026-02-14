@@ -18,6 +18,7 @@ return {
 			["ii"] = { query = "@parameter.inner", desc = "inside argument" },
 			["ac"] = { query = "@class.outer", desc = "around class" },
 			["ic"] = { query = "@class.inner", desc = "inside class" },
+
 			["ao"] = { query = "@loop.outer", desc = "around loop" },
 			["io"] = { query = "@loop.inner", desc = "inside loop" },
 			["a?"] = { query = "@conditional.outer", desc = "around conditional" },
@@ -60,11 +61,13 @@ return {
 			[">K"] = { query = "@block.outer", desc = "Swap next block" },
 			[">F"] = { query = "@function.outer", desc = "Swap next function" },
 			[">I"] = { query = "@parameter.inner", desc = "Swap next argument" },
+			[">C"] = { query = "@class.outer", desc = "Swap next class" },
 		},
 		swap_previous = {
 			["<K"] = { query = "@block.outer", desc = "Swap previous block" },
 			["<F"] = { query = "@function.outer", desc = "Swap previous function" },
 			["<I"] = { query = "@parameter.inner", desc = "Swap previous argument" },
+			["<C"] = { query = "@class.outer", desc = "Swap previous class" },
 		},
 	},
 }
