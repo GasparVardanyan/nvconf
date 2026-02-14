@@ -113,10 +113,10 @@ return {
 	swap = {
 		enable = true,
 		swap_next = {
-			[">K"] = { query = "@block.outer", desc = "next" },
-			[">F"] = { query = "@function.outer", desc = "next" },
-			[">I"] = { query = "@parameter.inner", desc = "next" },
-			[">C"] = { query = "@class.outer", desc = "next" },
+			[">K"] = { query = "@block.outer", desc = "block" },
+			[">F"] = { query = "@function.outer", desc = "function" },
+			[">I"] = { query = "@parameter.inner", desc = "argument" },
+			[">C"] = { query = "@class.outer", desc = "class" },
 
 			[">1"] = { query = "@block.outer", desc = "block" },
 			[">2"] = { query = "@conditional.outer", desc = "conditional" },
@@ -127,10 +127,10 @@ return {
 			[">7"] = { query = "@comment.outer", desc = "comment" },
 		},
 		swap_previous = {
-			["<K"] = { query = "@block.outer", desc = "previous" },
-			["<F"] = { query = "@function.outer", desc = "previous" },
-			["<I"] = { query = "@parameter.inner", desc = "previous" },
-			["<C"] = { query = "@class.outer", desc = "previous" },
+			["<K"] = { query = "@block.outer", desc = "block" },
+			["<F"] = { query = "@function.outer", desc = "function" },
+			["<I"] = { query = "@parameter.inner", desc = "argument" },
+			["<C"] = { query = "@class.outer", desc = "class" },
 
 			["<1"] = { query = "@block.outer", desc = "block" },
 			["<2"] = { query = "@conditional.outer", desc = "conditional" },
