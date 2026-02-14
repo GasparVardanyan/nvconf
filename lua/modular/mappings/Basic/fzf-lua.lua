@@ -12,7 +12,7 @@ map ("n", "<leader>fDw", FzfLua.diagnostics_workspace, { desc = "workspace diagn
 -- map ("n", "<leader>fG", function () telescope.extensions.ast_grep.ast_grep () end, { desc = "grep ast" })
 -- map ("n", "<leader>fQ", FzfLua.quickfixhistory, { desc = "quickfixhistory" })
 map ("n", "<leader>fQ", FzfLua.quickfix_stack, { desc = "quickfixhistory" })
-map ("n", "<leader>fQ", FzfLua.registers, { desc = "registers" })
+map ("n", "<leader>fR", FzfLua.registers, { desc = "registers" })
 -- map ("n", "<leader>fa", function () FzfLua.find_files { follow=true, no_ignore=true, hidden=true} end, { desc = "all files" })
 map ("n", "<leader>fb", FzfLua.buffers, { desc = "buffers" })
 map ("n", "<leader>fc", FzfLua.colorschemes, { desc = "colorschemes" })

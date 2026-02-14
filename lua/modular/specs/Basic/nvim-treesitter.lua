@@ -1,11 +1,10 @@
-return { -- TODO: check nvchad/lazyvim setup
+return {
 	"nvim-treesitter/nvim-treesitter",
 	branch = "master",
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter-textobjects",
 	},
 	event = { "BufReadPost", "BufNewFile" },
-	-- cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup ({
