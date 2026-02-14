@@ -18,13 +18,14 @@ vim.api.nvim_create_autocmd ("User", {
 		if data.data == "UI"
 		then
 			-- sometimes the theme doesn't get loaded, this seems to help:
-			require ("nvconfig").base46.theme = require ("chadrc").base46.theme
-			require ("base46").load_all_highlights ()
-			do return end
+			-- require ("nvconfig").base46.theme = require ("chadrc").base46.theme
+			-- require ("base46").load_all_highlights ()
+			-- do return end
 			vim.opt.background = "dark"
 			-- vim.cmd.colorscheme "solarized-osaka"
-			vim.cmd.colorscheme "base16-solarized-dark"
+			-- vim.cmd.colorscheme "base16-solarized-dark"
 			-- vim.cmd.colorscheme "neosolarized"
+			vim.cmd.colorscheme "NV_solarized_dark"
 			-- vim.cmd ':TT'
 		end
 	end,
