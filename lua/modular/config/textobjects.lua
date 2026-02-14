@@ -19,8 +19,8 @@ return {
 			["ac"] = { query = "@class.outer", desc = "around class" },
 			["ic"] = { query = "@class.inner", desc = "inside class" },
 
-			["ao"] = { query = "@loop.outer", desc = "around loop" },
-			["io"] = { query = "@loop.inner", desc = "inside loop" },
+			["al"] = { query = "@loop.outer", desc = "around loop" },
+			["il"] = { query = "@loop.inner", desc = "inside loop" },
 			["a?"] = { query = "@conditional.outer", desc = "around conditional" },
 			["i?"] = { query = "@conditional.inner", desc = "inside conditional" },
 			["a/"] = { query = "@comment.outer", desc = "inside comment" },

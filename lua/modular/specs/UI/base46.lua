@@ -27,6 +27,7 @@ return {
 					local f = io.open (proxy_file, "w")
 					if f then
 						f:write (string.format ([[
+							vim.cmd "highlight clear"
 							require ("nvconfig").base46.theme = "%s"
 							require ("base46").load_all_highlights ()
 						]], theme))
