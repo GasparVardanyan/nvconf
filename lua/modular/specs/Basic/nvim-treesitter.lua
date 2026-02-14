@@ -15,6 +15,7 @@ return { -- TODO: check nvchad/lazyvim setup
 			use_languagetree = true,
 		},
 		indent = { enable = true },
+		textobjects = require ("modular.config.textobjects")
 	})
 	end,
 }
