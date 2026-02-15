@@ -34,10 +34,11 @@ local UIModule = Module:new ({
 		ModuleAction:new ({
 			plugins = "base46",
 			action = function ()
-				vim.api.nvim_create_user_command ("Base46Theme", function (input)
-					require ("nvconfig").base46.theme = input.args
-					require ("base46").load_all_highlights ()
-				end, { nargs = 1, desc = "Switch base46 theme" })
+				-- vim.api.nvim_create_user_command ("Base46Theme", function (input)
+				-- 	require ("nvconfig").base46.theme = input.args
+				-- 	require ("base46").load_all_highlights ()
+				-- end, { nargs = 1, desc = "Switch base46 theme" })
+				require ("modular.mappings.UI.base46")
 			end
 		}),
 		-- ModuleAction:new ({
