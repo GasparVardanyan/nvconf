@@ -20,6 +20,7 @@ return {
 	formatter_module = require ("modular.modules.FormatterModule"),
 	gdb_module = require ("modular.modules.GdbModule"),
 	git_module = require ("modular.modules.GitModule"),
+	iron_module = require ("modular.modules.IronModule"),
 	lean_module = require ("modular.modules.LeanModule"),
 	lint_module = require ("modular.modules.LintModule"),
 	lsp_module = require ("modular.modules.LspModule"),

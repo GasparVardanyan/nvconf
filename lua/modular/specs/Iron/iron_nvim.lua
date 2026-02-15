@@ -55,7 +55,7 @@ return {
 			},
 			-- Iron doesn't set keymaps by default anymore.
 			-- You can set them here or manually add keymaps to the functions in iron.core
-			keymaps = require ("modular.user.gaspar.specmappings.Custom.iron_nvim"),
+			keymaps = require ("modular.specmappings.Iron.iron_nvim"),
 			-- If the highlight is on, you can change how it looks
 			-- For the available options, check nvim_set_hl
 			highlight = {

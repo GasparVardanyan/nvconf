@@ -13,12 +13,12 @@ return {
 		require("telescope").setup ({
 			extensions = {
 				["ui-select"] = {
-					require("telescope.themes").get_dropdown {
-						-- even more opts
-					}
+					require("telescope.themes").get_dropdown {}
 				},
 				["tabs"] = {},
-				["undo"] = {},
+				["undo"] = {
+					mappings = require ("modular.specmappings.Basic.telescope-undo_nvim")
+				},
 				["ast_grep"] = {
 					command = {
 						"ast-grep",

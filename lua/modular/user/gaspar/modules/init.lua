@@ -13,7 +13,7 @@ then
 		"error",
 		gaspar_modules,
 		{
-			dev_module = require ("modular.user.gaspar.modules.DevModule")
+			dev_module = require ("modular.user.gaspar.modules.DevModule"),
 		}
 	)
 else
