@@ -37,6 +37,25 @@
 -- @scopename.inner      0         0       0
 -- @statement.outer      0         0       0
 
+-- native (NVIM v0.11.6):
+-- [<Space> [A [B [CTRL-L [CTRL-Q [CTRL-T [D [L [Q [T [a [b [d [l [q [t ]<Space> ]A ]B ]CTRL-L ]CTRL-Q ]CTRL-T ]D ]L ]Q ]T ]a ]b ]d ]l ]q ]t a" a' a( a) a< a> aB aW a[ a] a` ab ap as at aw a{ a} i" i' i( i) i< i> iB iW i[ i] i` ib ip is it iw i{ i} >> <<
+-- used native keys:
+-- " ' () < <Space> > A B CTRL-L CTRL-Q CTRL-T D L Q T W [ ] ` a b d l p q s t w { }
+-- used native letters:
+-- A B CTRL-L CTRL-Q CTRL-T D L Q T W a b d l p q s t w
+-- used native letters case insensitive:
+-- CTRL-L CTRL-Q CTRL-T A B D L P Q S T W
+-- used native symbols:
+-- " ' () < <Space> > [ ] ` { }
+-- free choices:
+-- K - block
+-- ? - conditional
+-- : - loop
+-- F - function
+-- C - class
+-- R - parameter
+-- / - comment
+
 return {
 	enable = true,
 	select = {

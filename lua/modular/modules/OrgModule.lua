@@ -7,7 +7,7 @@ local OrgModule = Module:new ({
 		require ("modular.specs.Org.neorg"),
 		require ("modular.specs.Org.orgmode"),
 		-- require ("modular.specs.Misc.image_nvim"),
-		require ("modular.specs.Misc.headlines_nvim"),
+		-- require ("modular.specs.Misc.headlines_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({

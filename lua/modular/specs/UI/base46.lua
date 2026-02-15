@@ -41,12 +41,12 @@ return {
 	end,
 	init = function ()
 		vim.g.base46_cache = vim.fn.stdpath ("cache") .. "/base46"
-		vim.api.nvim_create_autocmd ("User", {
-			pattern = "NvThemeReload",
-			callback = function ()
-				vim.api.nvim_set_hl (0, 'LspSignatureActiveParameter', { underline=true })
-			end,
-		})
+		-- vim.api.nvim_create_autocmd ("User", {
+		-- 	pattern = "NvThemeReload",
+		-- 	callback = function ()
+		-- 		vim.api.nvim_set_hl (0, 'LspSignatureActiveParameter', { underline=true })
+		-- 	end,
+		-- })
 	end,
 	config = function (_, opts)
 		local nvconfig = require ("nvconfig")

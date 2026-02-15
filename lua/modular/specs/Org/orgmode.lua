@@ -2,7 +2,7 @@ return {
 	"nvim-orgmode/orgmode",
 	dependencies = {
 		"nvim-orgmode/org-bullets.nvim",
-		"lukas-reineke/headlines.nvim",
+		-- "lukas-reineke/headlines.nvim",
 		"nvim-treesitter/nvim-treesitter",
 	},
 	event = "VeryLazy",
