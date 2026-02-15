@@ -4,43 +4,51 @@
 
 -- NOTE: always after editing make sure these don't overlap with the native mappings
 
--- obj                   select    move    swap
--- @block.inner          1         0       0
--- @block.outer          1         1       1
--- @conditional.inner    2         0       0
--- @conditional.outer    2         2       2
--- @loop.inner           3         0       0
--- @loop.outer           3         3       3
--- @function.inner       4         0       0
--- @function.outer       4         4       4
--- @class.inner          5         0       0
--- @class.outer          5         5       5
--- @parameter.inner      6         6       6
--- @parameter.outer      6         0       0
--- @comment.inner        7         0       0
--- @comment.outer        7         7       7
--- @assignment.inner     0         0       0
--- @assignment.lhs       0         0       0
--- @assignment.outer     0         0       0
--- @assignment.rhs       0         0       0
--- @attribute.inner      0         0       0
--- @attribute.outer      0         0       0
--- @call.inner           0         0       0
--- @call.outer           0         0       0
--- @frame.inner          0         0       0
--- @frame.outer          0         0       0
--- @number.inner         0         0       0
--- @regex.inner          0         0       0
--- @regex.outer          0         0       0
--- @return.inner         0         0       0
--- @return.outer         0         0       0
--- @scopename.inner      0         0       0
--- @statement.outer      0         0       0
+-- support:
+-- @assignment.inner
+-- @assignment.lhs
+-- @assignment.outer
+-- @assignment.rhs
+-- @attribute.inner			CPP-	LUA-	VIM-
+-- @attribute.outer			CPP-	LUA-	VIM-
+-- @block.inner				CPP-
+-- @block.outer
+-- @call.inner								VIM-
+-- @call.outer
+-- @class.inner						LUA-	VIM-
+-- @class.outer						LUA-	VIM-
+-- @comment.inner			CPP-			VIM-
+-- @comment.outer
+-- @conditional.inner
+-- @conditional.outer
+-- @frame.inner				CPP-	LUA-	VIM-
+-- @frame.outer				CPP-	LUA-	VIM-
+-- @function.inner
+-- @function.outer
+-- @loop.inner
+-- @loop.outer
+-- @number.inner
+-- @parameter.inner
+-- @parameter.outer
+-- @regex.inner				CPP-	LUA-
+-- @regex.outer				CPP-	LUA-
+-- @return.inner
+-- @return.outer
+-- @scopename.inner			CPP-	LUA-	VIM-
+-- @statement.outer
+
 
 -- native (NVIM v0.11.6):
--- << >> [# [' [( [* [/ [<Space> [A [B [CTRL-L [CTRL-Q [CTRL-T [D [L [M [Q [T [[ [] [a [b [d [l [m [q [t [{ ]# ]' ]) ]* ]/ ]<Space> ]A ]B ]CTRL-L ]CTRL-Q ]CTRL-T ]D ]L ]M ]Q ]T ][ ]] ]` ]a ]b ]d ]l ]m ]q ]t ]} a" a' a( a) a< a> aB aW a[ a] a` ab ap as at aw a{ a} i" i' i( i) i< i> iB iW i[ i] i` ib ip is it iw i{ i}
+-- << >> [# [' [( [* [/ [<Space> [A [B [CTRL-L [CTRL-Q [CTRL-T [D [L [M [Q [T [[
+-- [] [a [b [d [l [m [q [s [t [{ ]# ]' ]) ]* ]/ ]<Space> ]A ]B ]CTRL-L ]CTRL-Q
+-- ]CTRL-T ]D ]L ]M ]Q ]T ][ ]] ]` ]a ]b ]d ]l ]m ]q ]s ]t ]} a" a' a( a) a< a>
+-- aB aW a[ a] a` ab ap as at aw a{ a} i" i' i( i) i< i> iB iW i[ i] i` ib ip is
+-- it iw i{ i}
+--
 -- used native keys:
--- " # ' () * / < <Space> > A B CTRL-L CTRL-Q CTRL-T D L M Q T W [ ] ` a b d l m p q s t w { }
+-- " # ' () * / < <Space> > A B CTRL-L CTRL-Q CTRL-T D L M Q T W [ ] ` a b d l m
+-- p q s t w { }
+
 -- used native letters:
 -- A B CTRL-L CTRL-Q CTRL-T D L M Q T W a b d l m p q s t w
 -- used native letters case insensitive:
@@ -49,12 +57,17 @@
 -- " # ' () * / < <Space> > [ ] ` { }
 -- free choices:
 -- f F - [f]unction
--- c C - [c]lass
--- n N - co[n]ditional
+-- c C - [c]lass 			-- no lua, vim
 -- o O - l[o]op
--- k K - bloc[k]
+-- k K - bloc[k]			-- cpp no inner
+-- i I - cond[i]tional
+-- e E - stat[e]ment 		-- no inner
 -- r R - pa[r]ameter
--- e E - comm[e]nt
+-- g G - assi[g]nment (ign)
+-- n N - assig[n]ment (ign)
+-- u U - return
+-- 1 ! - call				-- vim no inner
+-- 2 @ - comment			-- cpp, vim no inner
 
 return {
 	enable = true,
@@ -62,127 +75,129 @@ return {
 		enable = true,
 		lookahead = true,
 		keymaps = {
-			-- ["ak"] = { query = "@block.outer", desc = "block" },
-			-- ["ik"] = { query = "@block.inner", desc = "block" },
-			-- ["af"] = { query = "@function.outer", desc = "function " },
-			-- ["if"] = { query = "@function.inner", desc = "function " },
-			-- ["ai"] = { query = "@parameter.outer", desc = "argument" },
-			-- ["ii"] = { query = "@parameter.inner", desc = "argument" },
-			-- ["ac"] = { query = "@class.outer", desc = "class" },
-			-- ["ic"] = { query = "@class.inner", desc = "class" },
-			--
-			-- ["al"] = { query = "@loop.outer", desc = "loop" },
-			-- ["il"] = { query = "@loop.inner", desc = "loop" },
-			-- ["a?"] = { query = "@conditional.outer", desc = "conditional" },
-			-- ["i?"] = { query = "@conditional.inner", desc = "conditional" },
-			-- ["a/"] = { query = "@comment.outer", desc = "comment" },
-			-- ["i/"] = { query = "@comment.outer", desc = "comment" },
+			["if"] = { query = "@function.inner", desc = "function" },
+			["ic"] = { query = "@class.inner", desc = "class" },
+			["io"] = { query = "@loop.inner", desc = "loop" },
+			["ik"] = { query = "@block.inner", desc = "block" },
+			["ii"] = { query = "@conditional.inner", desc = "conditional" },
+			["ie"] = { query = "@statement.outer", desc = "statement" },
+			["ir"] = { query = "@parameter.inner", desc = "parameter" },
+			["ig"] = { query = "@assignment.inner", desc = "assignment" },
+			["iu"] = { query = "@return.inner", desc = "return" },
+			["i1"] = { query = "@call.inner", desc = "call" },
+			["i2"] = { query = "@comment.inner", desc = "comment" },
 
-			["a1"] = { query = "@block.outer", desc = "block" },
-			["i1"] = { query = "@block.inner", desc = "block" },
-			["a2"] = { query = "@conditional.outer", desc = "conditional" },
-			["i2"] = { query = "@conditional.inner", desc = "conditional" },
-			["a3"] = { query = "@loop.outer", desc = "loop" },
-			["i3"] = { query = "@loop.inner", desc = "loop" },
-			["a4"] = { query = "@function.outer", desc = "function " },
-			["i4"] = { query = "@function.inner", desc = "function " },
-			["a5"] = { query = "@class.outer", desc = "class" },
-			["i5"] = { query = "@class.inner", desc = "class" },
-			["a6"] = { query = "@parameter.outer", desc = "argument" },
-			["i6"] = { query = "@parameter.inner", desc = "argument" },
-			["a7"] = { query = "@comment.outer", desc = "comment" },
-			["i7"] = { query = "@comment.inner", desc = "comment" },
+			["af"] = { query = "@function.outer", desc = "function" },
+			["ac"] = { query = "@class.outer", desc = "class" },
+			["ao"] = { query = "@loop.outer", desc = "loop" },
+			["ak"] = { query = "@block.outer", desc = "block" },
+			["ai"] = { query = "@conditional.outer", desc = "conditional" },
+			["ae"] = { query = "@statement.outer", desc = "statement" },
+			["ar"] = { query = "@parameter.outer", desc = "parameter" },
+			["ag"] = { query = "@assignment.outer", desc = "assignment" },
+			["au"] = { query = "@return.outer", desc = "return" },
+			["a1"] = { query = "@call.outer", desc = "call" },
+			["a2"] = { query = "@comment.outer", desc = "comment" },
+
+			["in"] = { query = "@assignment.lhs", desc = "assignment lhs" },
+			["iN"] = { query = "@assignment.rhs", desc = "assignment rhs" },
 		},
 	},
 	move = {
 		enable = true,
 		set_jumps = true,
 		goto_next_start = {
-			-- ["]k"] = { query = "@block.outer", desc = "block" },
-			-- ["]f"] = { query = "@function.outer", desc = "function" },
-			-- ["]i"] = { query = "@parameter.inner", desc = "argument" },
-			-- ["]c"] = { query = "@class.outer", desc = "class" },
+			["]f"] = { query = "@function.outer", desc = "function" },
+			["]c"] = { query = "@class.outer", desc = "class" },
+			["]o"] = { query = "@loop.outer", desc = "loop" },
+			["]k"] = { query = "@block.outer", desc = "block" },
+			["]i"] = { query = "@conditional.outer", desc = "conditional" },
+			["]e"] = { query = "@statement.outer", desc = "statement" },
+			["]r"] = { query = "@parameter.outer", desc = "parameter" },
+			["]g"] = { query = "@assignment.outer", desc = "assignment" },
+			["]u"] = { query = "@return.outer", desc = "return" },
+			["]1"] = { query = "@call.outer", desc = "call" },
+			["]2"] = { query = "@comment.outer", desc = "comment" },
 
-			["]1"] = { query = "@block.outer", desc = "block" },
-			["]2"] = { query = "@conditional.outer", desc = "conditional" },
-			["]3"] = { query = "@loop.outer", desc = "loop" },
-			["]4"] = { query = "@function.outer", desc = "function " },
-			["]5"] = { query = "@class.outer", desc = "class" },
-			["]6"] = { query = "@parameter.inner", desc = "argument" },
-			["]7"] = { query = "@comment.outer", desc = "comment" },
+			["]n"] = { query = "@assignment.lhs", desc = "assignment lhs" },
+			["]N"] = { query = "@assignment.rhs", desc = "assignment rhs" },
 		},
 		goto_next_end = {
-			-- ["]K"] = { query = "@block.outer", desc = "block" },
-			-- ["]F"] = { query = "@function.outer", desc = "function" },
-			-- ["]I"] = { query = "@parameter.inner", desc = "argument" },
-			-- ["]C"] = { query = "@class.outer", desc = "class" },
-
-			["]!"] = { query = "@block.outer", desc = "block" },
-			["]@"] = { query = "@conditional.outer", desc = "conditional" },
-			["]#"] = { query = "@loop.outer", desc = "loop" },
-			["]$"] = { query = "@function.outer", desc = "function " },
-			["]%"] = { query = "@class.outer", desc = "class" },
-			["]^"] = { query = "@parameter.inner", desc = "argument" },
-			["]&"] = { query = "@comment.outer", desc = "comment" },
+			["]F"] = { query = "@function.outer", desc = "function" },
+			["]C"] = { query = "@class.outer", desc = "class" },
+			["]O"] = { query = "@loop.outer", desc = "loop" },
+			["]K"] = { query = "@block.outer", desc = "block" },
+			["]I"] = { query = "@conditional.outer", desc = "conditional" },
+			["]E"] = { query = "@statement.outer", desc = "statement" },
+			["]R"] = { query = "@parameter.outer", desc = "parameter" },
+			["]G"] = { query = "@assignment.outer", desc = "assignment" },
+			["]U"] = { query = "@return.outer", desc = "return" },
+			["]!"] = { query = "@call.outer", desc = "call" },
+			["]@"] = { query = "@comment.outer", desc = "comment" },
 		},
 		goto_previous_start = {
-			-- ["[k"] = { query = "@block.outer", desc = "block" },
-			-- ["[f"] = { query = "@function.outer", desc = "function" },
-			-- ["[i"] = { query = "@parameter.inner", desc = "argument" },
-			-- ["[c"] = { query = "@class.outer", desc = "class" },
+			["[f"] = { query = "@function.outer", desc = "function" },
+			["[c"] = { query = "@class.outer", desc = "class" },
+			["[o"] = { query = "@loop.outer", desc = "loop" },
+			["[k"] = { query = "@block.outer", desc = "block" },
+			["[i"] = { query = "@conditional.outer", desc = "conditional" },
+			["[e"] = { query = "@statement.outer", desc = "statement" },
+			["[r"] = { query = "@parameter.outer", desc = "parameter" },
+			["[g"] = { query = "@assignment.outer", desc = "assignment" },
+			["[u"] = { query = "@return.outer", desc = "return" },
+			["[1"] = { query = "@call.outer", desc = "call" },
+			["[2"] = { query = "@comment.outer", desc = "comment" },
 
-			["[1"] = { query = "@block.outer", desc = "block" },
-			["[2"] = { query = "@conditional.outer", desc = "conditional" },
-			["[3"] = { query = "@loop.outer", desc = "loop" },
-			["[4"] = { query = "@function.outer", desc = "function " },
-			["[5"] = { query = "@class.outer", desc = "class" },
-			["[6"] = { query = "@parameter.inner", desc = "argument" },
-			["[7"] = { query = "@comment.outer", desc = "comment" },
+			["[n"] = { query = "@assignment.lhs", desc = "assignment lhs" },
+			["[N"] = { query = "@assignment.rhs", desc = "assignment rhs" },
 		},
 		goto_previous_end = {
-			-- ["[K"] = { query = "@block.outer", desc = "block" },
-			-- ["[F"] = { query = "@function.outer", desc = "function" },
-			-- ["[I"] = { query = "@parameter.inner", desc = "argument" },
-			-- ["[C"] = { query = "@class.outer", desc = "class" },
-
-			["[!"] = { query = "@block.outer", desc = "block" },
-			["[@"] = { query = "@conditional.outer", desc = "conditional" },
-			["[#"] = { query = "@loop.outer", desc = "loop" },
-			["[$"] = { query = "@function.outer", desc = "function " },
-			["[%"] = { query = "@class.outer", desc = "class" },
-			["[^"] = { query = "@parameter.inner", desc = "argument" },
-			["[&"] = { query = "@comment.outer", desc = "comment" },
+			["[F"] = { query = "@function.outer", desc = "function" },
+			["[C"] = { query = "@class.outer", desc = "class" },
+			["[O"] = { query = "@loop.outer", desc = "loop" },
+			["[K"] = { query = "@block.outer", desc = "block" },
+			["[I"] = { query = "@conditional.outer", desc = "conditional" },
+			["[E"] = { query = "@statement.outer", desc = "statement" },
+			["[R"] = { query = "@parameter.outer", desc = "parameter" },
+			["[G"] = { query = "@assignment.outer", desc = "assignment" },
+			["[U"] = { query = "@return.outer", desc = "return" },
+			["[!"] = { query = "@call.outer", desc = "call" },
+			["[@"] = { query = "@comment.outer", desc = "comment" },
 		},
 	},
-	swap = {
+	swap = { -- FIXME: a lot of mappings here don't work, a lot of mappings overlap with native ones:
 		enable = true,
 		swap_next = {
-			-- [">K"] = { query = "@block.outer", desc = "block" },
-			-- [">F"] = { query = "@function.outer", desc = "function" },
-			-- [">I"] = { query = "@parameter.inner", desc = "argument" },
-			-- [">C"] = { query = "@class.outer", desc = "class" },
+			[">f"] = { query = "@function.outer", desc = "function" },
+			[">c"] = { query = "@class.outer", desc = "class" },
+			[">o"] = { query = "@loop.outer", desc = "loop" },
+			[">k"] = { query = "@block.outer", desc = "block" },
+			[">i"] = { query = "@conditional.outer", desc = "conditional" },
+			[">e"] = { query = "@statement.outer", desc = "statement" },
+			[">r"] = { query = "@parameter.inner", desc = "parameter" },
+			[">g"] = { query = "@assignment.outer", desc = "assignment" },
+			[">u"] = { query = "@return.outer", desc = "return" },
+			[">1"] = { query = "@call.outer", desc = "call" },
+			[">2"] = { query = "@comment.outer", desc = "comment" },
 
-			[">1"] = { query = "@block.outer", desc = "block" },
-			[">2"] = { query = "@conditional.outer", desc = "conditional" },
-			[">3"] = { query = "@loop.outer", desc = "loop" },
-			[">4"] = { query = "@function.outer", desc = "function " },
-			[">5"] = { query = "@class.outer", desc = "class" },
-			[">6"] = { query = "@parameter.inner", desc = "argument" },
-			[">7"] = { query = "@comment.outer", desc = "comment" },
+			[">n"] = { query = "@assignment.lhs", desc = "assignment lhs" },
+			[">N"] = { query = "@assignment.rhs", desc = "assignment rhs" },
 		},
 		swap_previous = {
-			-- ["<K"] = { query = "@block.outer", desc = "block" },
-			-- ["<F"] = { query = "@function.outer", desc = "function" },
-			-- ["<I"] = { query = "@parameter.inner", desc = "argument" },
-			-- ["<C"] = { query = "@class.outer", desc = "class" },
+			["<f"] = { query = "@function.outer", desc = "function" },
+			["<c"] = { query = "@class.outer", desc = "class" },
+			["<o"] = { query = "@loop.outer", desc = "loop" },
+			["<k"] = { query = "@block.outer", desc = "block" },
+			["<i"] = { query = "@conditional.outer", desc = "conditional" },
+			["<e"] = { query = "@statement.outer", desc = "statement" },
+			["<r"] = { query = "@parameter.inner", desc = "parameter" },
+			["<g"] = { query = "@assignment.outer", desc = "assignment" },
+			["<u"] = { query = "@return.outer", desc = "return" },
+			["<1"] = { query = "@call.outer", desc = "call" },
+			["<2"] = { query = "@comment.outer", desc = "comment" },
 
-			["<1"] = { query = "@block.outer", desc = "block" },
-			["<2"] = { query = "@conditional.outer", desc = "conditional" },
-			["<3"] = { query = "@loop.outer", desc = "loop" },
-			["<4"] = { query = "@function.outer", desc = "function " },
-			["<5"] = { query = "@class.outer", desc = "class" },
-			["<6"] = { query = "@parameter.inner", desc = "argument" },
-			["<7"] = { query = "@comment.outer", desc = "comment" },
+			["<n"] = { query = "@assignment.lhs", desc = "assignment lhs" },
+			["<N"] = { query = "@assignment.rhs", desc = "assignment rhs" },
 		},
 	},
 }
