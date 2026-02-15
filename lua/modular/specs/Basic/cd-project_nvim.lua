@@ -35,10 +35,10 @@ return {
 					callback = function(_)
 						vim.cmd [[
 							if filereadable("CMakeLists.txt")
-								CMakeSelectCwd .
+								execute 'CMakeSelectCwd ' . fnameescape (getcwd ())
 								CMakeStopExecutor
-								CMakeSelectBuildDir out
-								call system('ln -s out/compile_commands.json .')
+								execute 'CMakeSelectBuildDir ' . fnameescape (getcwd ()) . '/out'
+								call system ('ln -s out/compile_commands.json .')
 								LspRestart
 							endif
 							if filereadable(".vim.session")
