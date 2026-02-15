@@ -62,6 +62,13 @@ local BasicModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			plugins = "treesj",
+			action = function ()
+				require ("modular.mappings.Basic.treesj")
+				require ("treesitter-context").enable ()
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "nvim-ufo",
 			action = function ()
 				require ("modular.mappings.Basic.nvim-ufo")

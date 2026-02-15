@@ -6,6 +6,7 @@ wk.add({
 	{ "<leader>P", group = "project" },
 	{ "<leader>s", group = "grug" },
 	{ "<leader>u", group = "undotree" },
+	{ "<leader>m", group = "misc" },
 
 	-- Compiler:
 	{ "<leader>c", group = "compiler" },

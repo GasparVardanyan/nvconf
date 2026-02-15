@@ -14,7 +14,7 @@ return {
 			use_languagetree = true,
 		},
 		indent = { enable = true },
-		textobjects = require ("modular.config.textobjects")
+		textobjects = require ("modular.config.textobjects").V2
 	})
 	end,
 }
