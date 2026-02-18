@@ -65,7 +65,7 @@ function ModuleManager:new (opts)
 		end,
 	})
 
-	require ("lazy").setup (plugins)
+	require ("lazy").setup (plugins, require ("modular.config.lazy"))
 
 	return obj
 end

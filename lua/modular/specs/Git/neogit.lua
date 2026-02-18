@@ -6,11 +6,11 @@ return {
 
 		-- Only one of these is needed.
 		-- "nvim-telescope/telescope.nvim", -- optional
-		-- "ibhagwan/fzf-lua",              -- optional
+		"ibhagwan/fzf-lua",              -- optional
 		-- "echasnovski/mini.pick",         -- optional
 	},
 	config = function ()
-		local neogit = require("neogit")
+		local neogit = require ("neogit")
 
 		neogit.setup {
 			integrations = {

@@ -42,10 +42,16 @@ then
 	})
 
 	local AvanteOpts = require ("modular.config.avanteopts")
-	AvanteOpts.provider = "gemini"
+	AvanteOpts.provider = "openrouter_deepseek"
 	AvanteOpts.providers = {
-		gemini = {
-			model = "gemini-2.5-pro",
+		openrouter_deepseek = {
+			__inherited_from = "openai",
+			endpoint = "https://openrouter.ai/api/v1",
+			model = "openrouter/free",
+			api_key_name = "OPENROUTER_API_KEY",
+			-- extra_request_body = {
+			-- 	max_tokens = 16384,
+			-- },
 		}
 	}
 elseif 1 == hostname:find ("website")
