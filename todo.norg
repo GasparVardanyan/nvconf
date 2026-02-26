@@ -68,6 +68,8 @@
   ~~ (-) FormatModoule
   ~~~ (-) https://github.com/stevearc/conform.nvim
   ~~ (x) GdbModule
+  ~~ ( ) CoverageModule
+  ~~~ ( ) https://github.com/andythigpen/nvim-coverage/issues
   ~~ (=) Move qmake and cmake utils to *modular.extras*
   ~~ (-) Get rid of the temporarily saved stuff
   ~ (x) ModuleManager

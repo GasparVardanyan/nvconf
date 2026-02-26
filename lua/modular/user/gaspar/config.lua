@@ -1,9 +1,19 @@
 local hostname = vim.fn.hostname ()
 
+local LazyOpts = require ("modular.config.lazy")
+LazyOpts.dev = {
+	path = "/desktop/nvim_plugins/"
+}
+
 if 1 == hostname:find ("devenv")
 then
 	local LspServers = require ("modular.config.lspservers")
-	LspServers ["clangd"] = {}
+	LspServers ["clangd"] = {
+		cmd = {
+			"clangd",
+			"--header-insertion=iwyu"
+		}
+	}
 	-- LspServers ["erlang-ls"] = {}
 	-- LspServers ["basedpyright"] = {}
 	LspServers ["neocmake"] = {}
@@ -21,7 +31,7 @@ then
 	-- 		}
 	-- 	}
 	-- }
-	LspServers ["ts_ls"] = {}
+	-- LspServers ["ts_ls"] = {}
 
 	local MasonTools = require ("modular.config.masontools")
 	vim.list_extend (MasonTools, {

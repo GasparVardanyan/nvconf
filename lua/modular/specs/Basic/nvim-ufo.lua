@@ -34,6 +34,11 @@ return {
 			table.insert(newVirtText, {suffix, 'MoreMsg'})
 			return newVirtText
 		end,
+		preview = {
+			mappings = {
+				switch = "K",
+			},
+		},
 	},
 	config = true
 }

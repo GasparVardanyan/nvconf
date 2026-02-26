@@ -77,7 +77,6 @@ local UIModule = Module:new ({
 -- https://github.com/lifepillar/vim-solarized8
 -- https://github.com/loganswartz/selenized.nvim
 -- https://github.com/romainl/flattened
--- https://github.com/shaunsingh/solarized.nvim
 -- https://github.com/svrana/neosolarized.nvim
 
 return UIModule
