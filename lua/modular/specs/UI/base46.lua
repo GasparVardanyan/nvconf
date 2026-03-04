@@ -2,6 +2,20 @@ local base46_path = vim.fn.stdpath ("data") .. "/lazy/base46/lua/base46/themes"
 local proxy_dir = vim.fn.stdpath ("state") .. "/base46_proxy"
 local colors_dir = proxy_dir .. "/colors"
 
+-- FIXME: use the actual path of the dev module
+local integrations_path = vim.fn.stdpath ("data") .. "/lazy/base46/lua/base46/integrations"
+
+function get_integrations ()
+	local integrations = {}
+	table.insert (integrations, "gitsigns")
+	table.insert (integrations, "neotest")
+	for name in vim.fs.dir (integrations_path) do
+		name = name:gsub ('%.lua$', '')
+		table.insert (integrations, name)
+	end
+	return integrations
+end
+
 local function generate ()
 	if vim.fn.isdirectory (proxy_dir) == 1 then
 		vim.fn.delete (proxy_dir, "rf")
@@ -51,6 +65,9 @@ return {
 		-- 	end,
 		-- })
 	end,
+	opts = {
+		integrations = get_integrations (),
+	},
 	config = function (_, opts)
 		-- generate ()
 		local nvconfig = require ("nvconfig")

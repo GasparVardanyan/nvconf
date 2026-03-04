@@ -6,6 +6,7 @@ local CompilerModule = Module:new ({
 	plugins = {
 		require ("modular.specs.Compiler.cmake-tools_nvim"),
 		require ("modular.specs.Compiler.compiler_nvim"),
+		require ("modular.specs.Compiler.neovim-tasks"),
 		require ("modular.specs.Misc.overseer_nvim"),
 	},
 	actions = {

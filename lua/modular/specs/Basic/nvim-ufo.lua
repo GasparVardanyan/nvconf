@@ -35,9 +35,7 @@ return {
 			return newVirtText
 		end,
 		preview = {
-			mappings = {
-				switch = "K",
-			},
+			mappings = require ("modular.specmappings.Basic.nvim-ufo").preview,
 		},
 	},
 	config = true

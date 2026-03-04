@@ -39,7 +39,7 @@ vim.opt.smartcase = false
 vim.opt.completeopt = "menuone,noinsert,popup,fuzzy"
 vim.opt.winborder = "rounded"
 
--- vim.opt.showtabline = 0
+vim.opt.showtabline = 0
 
 -- vim.opt.conceallevel = 2
 

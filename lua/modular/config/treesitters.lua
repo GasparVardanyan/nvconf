@@ -1,1 +1,17 @@
-return { "bash", "c", "lua", "luadoc", "norg", "printf", "vim", "vimdoc" }
+return {
+	"bash",
+	"c",
+	"diff",
+	"git_config",
+	"git_rebase",
+	"gitcommit",
+	"gitignore",
+	"lua",
+	"luadoc",
+	"markdown",
+	"norg",
+	"perl",
+	"printf",
+	"vim",
+	"vimdoc",
+}

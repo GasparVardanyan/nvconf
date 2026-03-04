@@ -18,10 +18,20 @@ map ("n", "<c-s-j>", "<c-w>J", { desc = "move window down" })
 map ("n", "<c-s-k>", "<c-w>K", { desc = "move window up" })
 map ("n", "<c-s-l>", "<c-w>L", { desc = "move window right" })
 
+map ("n", "<c-\\><c-\\>", vim.cmd.terminal, { desc = "terminal" })
+
 map ("n", "<leader>V", "`[v`]", { desc = "vim `[v`]" })
 map ("n", "<leader>vc", vim.cmd.tabclose, { desc = "tabclose" })
 map ("n", "<leader>vd", vim.cmd.bdelete, { desc = "bdelete" })
 map ("n", "<leader>vm", function () vim.cmd.tabnew "%"; vim.cmd.norm "zz" end, { desc = "tabnew %" }) -- TODO: proper encoding without binary symbols
+map ("n", "<leader>vt", function ()
+	if 0 == vim.o.showtabline
+	then
+		vim.o.showtabline = 1
+	else
+		vim.o.showtabline = 0
+	end
+end, { desc = "toggle tabline" })
 map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
 map ("n", "<leader>vw", vim.cmd.WipeWindowlessBufs, { desc = "wipe windowless bufs" })
 

@@ -1,22 +1,27 @@
 local hostname = vim.fn.hostname ()
 
 local LazyOpts = require ("modular.config.lazy")
+local TreeSitters = require ("modular.config.treesitters")
+local LspServers = require ("modular.config.lspservers")
+local MasonTools = require ("modular.config.masontools")
+local AvanteOpts = require ("modular.config.avanteopts")
+
 LazyOpts.dev = {
 	path = "/desktop/nvim_plugins/"
 }
 
 if 1 == hostname:find ("devenv")
 then
-	local LspServers = require ("modular.config.lspservers")
 	LspServers ["clangd"] = {
 		cmd = {
 			"clangd",
-			"--header-insertion=iwyu"
-		}
+			"--header-insertion=iwyu",
+		},
 	}
 	-- LspServers ["erlang-ls"] = {}
 	-- LspServers ["basedpyright"] = {}
 	LspServers ["neocmake"] = {}
+	LspServers ["perlnavigator"] = {}
 	-- LspServers ["pylsp"] = {
 	-- 	settings = {
 	-- 		pylsp = {
@@ -33,25 +38,23 @@ then
 	-- }
 	-- LspServers ["ts_ls"] = {}
 
-	local MasonTools = require ("modular.config.masontools")
 	vim.list_extend (MasonTools, {
 		"clang-format",
 		"codelldb",
 		"cpplint",
 	})
 
-	local TreeSitters = require ("modular.config.treesitters")
 	vim.list_extend (TreeSitters, {
 		"cmake",
 		"cpp",
-		-- "erlang"
+		-- "cuda",
+		-- "erlang",
+		"http",
 		-- "javascript",
 		"json",
 		-- "python",
-		-- "cuda",
 	})
 
-	local AvanteOpts = require ("modular.config.avanteopts")
 	AvanteOpts.provider = "openrouter_deepseek"
 	AvanteOpts.providers = {
 		openrouter_deepseek = {
@@ -66,7 +69,6 @@ then
 	}
 elseif 1 == hostname:find ("website")
 then
-	local TreeSitters = require ("modular.config.treesitters")
 	vim.list_extend (TreeSitters, {
 		"html",
 		"css",

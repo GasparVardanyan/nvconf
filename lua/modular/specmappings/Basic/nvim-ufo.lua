@@ -1,0 +1,5 @@
+return {
+	preview = {
+		switch = "K",
+	},
+}
