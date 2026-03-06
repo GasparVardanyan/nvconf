@@ -5,6 +5,7 @@ local TreeSitters = require ("modular.config.treesitters")
 local LspServers = require ("modular.config.lspservers")
 local MasonTools = require ("modular.config.masontools")
 local AvanteOpts = require ("modular.config.avanteopts")
+local LintersByFt = require ("modular.config.linters_by_ft")
 
 LazyOpts.dev = {
 	path = "/desktop/nvim_plugins/"
@@ -42,6 +43,7 @@ then
 		"clang-format",
 		"codelldb",
 		"cpplint",
+		"perl-debug-adapter",
 	})
 
 	vim.list_extend (TreeSitters, {
@@ -66,6 +68,16 @@ then
 			-- 	max_tokens = 16384,
 			-- },
 		}
+	}
+
+	LintersByFt ["c"] = {
+		"clangtidy",
+		"cppcheck",
+	}
+
+	LintersByFt ["cpp"] = {
+		"clangtidy",
+		"cppcheck",
 	}
 elseif 1 == hostname:find ("website")
 then

@@ -34,4 +34,5 @@ return {
 	rest_module = require ("modular.modules.RestModule"),
 	test_module = require ("modular.modules.TestModule"),
 	ui_module = require ("modular.modules.UIModule"),
+	github_module = require ("modular.modules.GithubModule"),
 }
