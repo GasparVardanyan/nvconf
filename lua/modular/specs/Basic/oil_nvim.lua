@@ -9,6 +9,7 @@ return {
 			-- "size",
 			-- "mtime",
 		},
+		keymaps = require ("modular.specmappings.Basic.oil_nvim"),
 		watch_for_changes = true,
 	},
 	-- Optional dependencies
