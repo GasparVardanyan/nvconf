@@ -11,7 +11,13 @@ return {
 	---@module "fzf-lua"
 	---@type fzf-lua.Config|{}
 	---@diagnostic disable: missing-fields
-	opts = {{"telescope"}}
+	opts = {
+		"telescope",
+		ui_select = true,
+		winopts = {
+			fullscreen = true,
+		},
+	}
 	---@diagnostic enable: missing-fields
 
 	-- NOTE:

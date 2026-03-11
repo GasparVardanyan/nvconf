@@ -4,7 +4,7 @@ local Module = require ("modular.Module")
 local MdModule = Module:new ({
 	name = "Md",
 	plugins = {
-		require ("modular.specs.Md.render-markdown_nvim")
+		require ("modular.specs.Md.render-markdown_nvim"),
 	}
 })
 
