@@ -74,17 +74,6 @@ vim.api.nvim_create_user_command('WipeWindowlessBufs', function () -- TODO: unde
 	end, bufinfos)
 end, { desc = 'Wipeout all buffers not shown in a window'})
 
-vim.api.nvim_create_autocmd ("VimLeavePre", {
-	group = vim.api.nvim_create_augroup (groups.NvimVimLeavePreSessionSave, { clear = true }),
-	callback = function ()
-		vim.cmd [[
-			if filereadable(".vim.session")
-				silent mksession! .vim.session
-			endif
-		]]
-	end,
-})
-
 vim.api.nvim_create_autocmd ("FileType", {
 	group = vim.api.nvim_create_augroup (groups.NvimFormatHelpContents, { clear = true }),
 	pattern = "qf",
@@ -100,4 +89,37 @@ vim.api.nvim_create_autocmd ("FileType", {
 		vim.api.nvim_set_option_value ("relativenumber", false, {})
 		vim.api.nvim_set_option_value ("wrap", true, {})
 	end,
+})
+
+function save_state ()
+	vim.cmd [[
+		if filereadable(".vim.session")
+			mksession! .vim.session
+		endif
+		%bd!
+	]]
+end
+
+function restore_state ()
+	vim.cmd [[
+		if filereadable(".vim.session")
+			silent source .vim.session
+			doautoall BufRead
+		endif
+	]]
+end
+
+vim.api.nvim_create_autocmd ("ExitPre", {
+	group = vim.api.nvim_create_augroup (groups.NvimExitPre, { clear = true }),
+	callback = save_state,
+})
+
+vim.api.nvim_create_autocmd ("DirChangedPre", {
+	group = vim.api.nvim_create_augroup (groups.NvimDirChangedPre, { clear = true }),
+	callback = save_state,
+})
+
+vim.api.nvim_create_autocmd ("DirChanged", {
+	group = vim.api.nvim_create_augroup (groups.NvimDirChanged, { clear = true }),
+	callback = restore_state
 })

@@ -20,44 +20,12 @@ return {
 				{
 					trigger_point = "BEFORE_CD",
 					callback = function(_)
-						-- require("bookmarks").api.mark({name = "before cd project"})
-						vim.cmd [[
-							if filereadable(".vim.session")
-								mksession! .vim.session
-							endif
-							%bd!
-						]]
 					end,
 				},
 				-- Run after cd to project, find and open a file in the target project by smart-open
 				{
 					trigger_point = "AFTER_CD",
 					callback = function(_)
-						vim.cmd [[
-							if filereadable("CMakeLists.txt")
-								execute 'CMakeSelectCwd ' . fnameescape (getcwd ())
-								CMakeStopExecutor
-								execute 'CMakeSelectBuildDir ' . fnameescape (getcwd ()) . '/out'
-								call system ('ln -s out/compile_commands.json .')
-								LspRestart
-							endif
-							if filereadable(".vim.session")
-								source .vim.session
-							endif
-							if filereadable(".exrc")
-								source .exrc
-							endif
-						]]
-						-- NOTE: not complete logic
-						-- local bufinfos = vim.fn.getbufinfo({buflisted = 1})
-						-- vim.tbl_map(function (bufinfo)
-						-- 	if bufinfo.changed == 0 and (bufinfo.name == '' or vim.bo [bufinfo.bufnr].buftype == "nofile" or (vim.bo [bufinfo.bufnr].filetype == "" and bufinfo.listed == 1)) then
-						-- 		vim.print ("RM " .. vim.api.nvim_buf_get_name(bufinfo.bufnr))
-						-- 		print (vim.bo [bufinfo.bufnr].filetype)
-						-- 		print (vim.bo [bufinfo.bufnr].buftype)
-						-- 		vim.api.nvim_buf_delete(bufinfo.bufnr, {force = false, unload = false})
-						-- 	end
-						-- end, bufinfos)
 					end,
 				},
 			}

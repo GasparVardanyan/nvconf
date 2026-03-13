@@ -6,6 +6,9 @@ return {
 	NvimVimLeavePreSessionSave = "Modular_NvimVimLeavePreSessionSave",
 	NvimFormatHelpContents = "Modular_NvimFormatHelpContents",
 	-- NvimUserCommands = "Modular_NvimUserCommands",
+	NvimDirChangedPre = "Modular_NvimDirChangedPre",
+	NvimDirChanged = "Modular_NvimDirChanged",
+	NvimExitPre = "Modular_NvimExitPre",
 
 	LspAttachMappings = "Modular_LspAttachMappings",
 	LspDetachMappings = "Modular_LspDetachMappings",
