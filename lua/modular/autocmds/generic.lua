@@ -91,7 +91,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 	end,
 })
 
-function save_state ()
+local function save_session ()
 	vim.cmd [[
 		if filereadable(".vim.session")
 			mksession! .vim.session
@@ -100,26 +100,36 @@ function save_state ()
 	]]
 end
 
-function restore_state ()
+local function restore_session ()
 	vim.cmd [[
+		if filereadable("CMakeLists.txt")
+			execute 'CMakeSelectCwd ' . fnameescape (getcwd ())
+			CMakeStopExecutor
+			execute 'CMakeSelectBuildDir ' . fnameescape (getcwd ()) . '/out'
+			call system ('ln -s out/compile_commands.json .')
+			LspRestart
+		endif
 		if filereadable(".vim.session")
 			silent source .vim.session
 			doautoall BufRead
+		endif
+		if filereadable(".exrc")
+			source .exrc
 		endif
 	]]
 end
 
 vim.api.nvim_create_autocmd ("ExitPre", {
 	group = vim.api.nvim_create_augroup (groups.NvimExitPre, { clear = true }),
-	callback = save_state,
+	callback = save_session,
 })
 
 vim.api.nvim_create_autocmd ("DirChangedPre", {
 	group = vim.api.nvim_create_augroup (groups.NvimDirChangedPre, { clear = true }),
-	callback = save_state,
+	callback = save_session,
 })
 
 vim.api.nvim_create_autocmd ("DirChanged", {
 	group = vim.api.nvim_create_augroup (groups.NvimDirChanged, { clear = true }),
-	callback = restore_state
+	callback = restore_session
 })

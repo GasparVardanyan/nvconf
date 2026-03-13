@@ -5,7 +5,7 @@ local colors_dir = proxy_dir .. "/colors"
 -- FIXME: use the actual path of the dev module
 local integrations_path = vim.fn.stdpath ("data") .. "/lazy/base46/lua/base46/integrations"
 
-function get_integrations ()
+local function get_integrations ()
 	local integrations = {}
 	table.insert (integrations, "gitsigns")
 	table.insert (integrations, "neotest")
