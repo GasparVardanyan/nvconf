@@ -16,7 +16,8 @@ local LspModule = Module:new ({
 		require ("modular.specs.Lsp.trouble_nvim"),
 		require ("modular.specs.Lsp.goto-preview"),
 		require ("modular.specs.Lsp.dropbar_nvim"),
-		require ("modular.specs.Lsp.nvim-lsp-file-operations")
+		require ("modular.specs.Lsp.nvim-lsp-file-operations"),
+		-- require ("modular.specs.Lsp.blink_cmp"),
 		-- require ("modular.specs.Lsp.lspsaga_nvim"),
 	},
 	actions = {

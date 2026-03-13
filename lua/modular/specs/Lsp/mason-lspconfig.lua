@@ -4,6 +4,7 @@ return {
 		"neovim/nvim-lspconfig",
 		"williamboman/mason.nvim",
 		"antosha417/nvim-lsp-file-operations",
+		-- "saghen/blink.cmp",
 	},
 	config = function ()
 		local capabilities = vim.tbl_deep_extend (
@@ -18,6 +19,8 @@ return {
 			dynamicRegistration = false,
 			lineFoldingOnly = true
 		}
+
+		-- capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
 
 		local servers = require ("modular.config.lspservers")
 

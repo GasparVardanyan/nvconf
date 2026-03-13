@@ -28,6 +28,7 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Misc.nvim-window-picker"),
 		-- require ("modular.specs.Misc.image_nvim"),
 		require ("modular.specs.Basic.which-key_nvim"),
+		-- require ("modular.specs.Basic.edgy_nvim"),
 	},
 	actions = {
 		-- ModuleAction:new ({
@@ -122,7 +123,18 @@ local BasicModule = Module:new ({
 			action = function ()
 				require ("modular.autocmds.Basic.which-key_nvim")
 			end
-		})
+		}),
+		ModuleAction:new ({
+			plugins = "edgy.nvim",
+			event = ModuleAction.EventType.Pre,
+			action = function ()
+				-- views can only be fully collapsed with the global statusline
+				vim.opt.laststatus = 3
+				-- Default splitting will cause your main splits to jump when opening an edgebar.
+				-- To prevent this, set `splitkeep` to either `screen` or `topline`.
+				vim.opt.splitkeep = "screen"
+			end
+		}),
 	}
 })
 
