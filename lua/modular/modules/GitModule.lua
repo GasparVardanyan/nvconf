@@ -28,7 +28,19 @@ local GitModule = Module:new ({
 			action = function ()
 				require ("modular.mappings.Git.lazygit_nvim")
 			end
-		})
+		}),
+		ModuleAction:new ({
+			plugins = { "fzf-lua" },
+			action = function ()
+				require ("modular.mappings.Git.fzf-lua")
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "telescope.nvim",
+			action = function ()
+				require ("modular.mappings.Git.telescope_nvim")
+			end
+		}),
 	}
 })
 

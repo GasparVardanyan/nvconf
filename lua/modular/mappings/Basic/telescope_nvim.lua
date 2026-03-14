@@ -8,7 +8,6 @@ map ("n", "<leader>f/", telescope_builtin.search_history, { desc = "search histo
 map ("n", "<leader>f:", telescope_builtin.command_history, { desc = "command history" })
 map ("n", "<leader>fA", telescope_builtin.treesitter, { desc = "treesitter" })
 map ("n", "<leader>fD", telescope_builtin.diagnostics, { desc = "diagnostics" })
-map ("n", "<leader>fG", telescope_builtin.git_status, { desc = "git status" })
 map ("n", "<leader>fQ", telescope_builtin.quickfixhistory, { desc = "quickfixhistory" })
 map ("n", "<leader>fR", telescope_builtin.registers, { desc = "registers" })
 map ("n", "<leader>fa", function () telescope_builtin.find_files { follow=true, no_ignore=true, hidden=true} end, { desc = "all files" })
