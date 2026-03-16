@@ -38,4 +38,6 @@ utils.client_supports_method = client_supports_method
 utils.map_multi_leader = map_multi_leader
 utils.unmap_multi_leader = unmap_multi_leader
 
+utils.nproc = tonumber (vim.fn.system ({"nproc"}))
+
 return utils

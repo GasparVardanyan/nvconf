@@ -16,7 +16,10 @@ then
 	LspServers ["clangd"] = {
 		cmd = {
 			"clangd",
+			"--background-index",
+			"--j=" .. (require ("modular.utils").nproc - 1),
 			"--header-insertion=iwyu",
+			"--clang-tidy",
 		},
 	}
 	-- LspServers ["erlang-ls"] = {}
@@ -71,12 +74,12 @@ then
 	}
 
 	LintersByFt ["c"] = {
-		"clangtidy",
+		-- "clangtidy",
 		"cppcheck",
 	}
 
 	LintersByFt ["cpp"] = {
-		"clangtidy",
+		-- "clangtidy",
 		"cppcheck",
 	}
 elseif 1 == hostname:find ("website")
