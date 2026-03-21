@@ -49,6 +49,8 @@ end
 
 return {
 	"NvChad/base46",
+	-- "GasparVardanyan/base46",
+	-- branch = "gaspar",
 	dependencies = {
 		"NvChad/ui"
 	},

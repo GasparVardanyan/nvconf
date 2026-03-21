@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd ("BufReadPost", {
 vim.api.nvim_create_autocmd ("BufWritePre", {
 	group = vim.api.nvim_create_augroup (groups.NvimBufWritePreFormatting, { clear = true }),
 	callback = function ()
-		-- replace all 4 space indentations to tabs
+		-- replace all 4 space indentations with tabs
 		vim.cmd [[%s/\v(^\t*( {4})*)@<= {4}/\t/ge]]
 		-- clear whitespaces at the ends of lines
 		vim.cmd [[%s/\v\s+$//e]]
@@ -113,7 +113,9 @@ local function restore_session ()
 			silent source .vim.session
 			doautoall BufRead
 		endif
-		if filereadable(".exrc")
+		if filereadable(".nvim.lua")
+			source .nvim.lua
+		elseif filereadable(".exrc")
 			source .exrc
 		endif
 	]]

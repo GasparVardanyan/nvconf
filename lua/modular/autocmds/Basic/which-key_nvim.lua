@@ -1,7 +1,8 @@
 local wk = require("which-key")
 wk.add({
 	-- Basic:
-	{ "<leader>f", group = "telescope" },
+	{ "<leader>e", group = "neotree" },
+	{ "<leader>f", group = "fuzzy" },
 	{ "<leader>fu", group = "undo" },
 	{ "<leader>P", group = "project" },
 	{ "<leader>s", group = "grug" },
@@ -17,7 +18,7 @@ wk.add({
 	-- Dap:
 	{ "<leader>d", group = "dap" },
 	{ "<leader>ds", group = "step" },
-	{ "<leader>df", group = "telescope" },
+	{ "<leader>df", group = "fuzzy" },
 
 	-- Db:
 	{ "<leader>D", group = "dadbod" },
@@ -27,13 +28,13 @@ wk.add({
 
 	-- Lsp:
 	{ "gr", group = "lsp" },
-	{ "grf", group = "telescope" },
+	{ "grf", group = "fuzzy" },
 	{ "gro", group = "outline" },
 	{ "grp", group = "preview" },
 	{ "grw", group = "workspace" },
 	{ "grx", group = "trouble" },
 	{ "<leader>l", group = "lsp" },
-	{ "<leader>lf", group = "telescope" },
+	{ "<leader>lf", group = "fuzzy" },
 	{ "<leader>lo", group = "outline" },
 	{ "<leader>lp", group = "preview" },
 	{ "<leader>lw", group = "workspace" },

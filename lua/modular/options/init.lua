@@ -6,6 +6,8 @@ require ("modular.options.diagnostics")
 
 vim.opt.background = "dark"
 
+vim.opt.sessionoptions = "buffers,curdir,folds,help,tabpages,winsize"
+
 vim.opt.breakindent = true
 vim.opt.inccommand = 'split'
 vim.opt.confirm = true
