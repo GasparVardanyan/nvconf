@@ -13,6 +13,9 @@ return {
 	---@diagnostic disable: missing-fields
 	opts = {
 		"telescope",
+		files = {
+			fd_opts = [[--color=never --hidden --type f --type l --exclude .git --no-ignore-vcs]],
+		},
 		ui_select = true,
 		winopts = {
 			fullscreen = true,
