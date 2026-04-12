@@ -15,20 +15,20 @@ return {
 			auto_register_project = false, -- optional, toggle on/off the auto add project behaviour
 			remember_project_position = false,
 			-- do whatever you like by hooks
-			hooks = {
-				-- Run before cd to project, add a bookmark here, then can use `CdProjectBack` to switch back
-				{
-					trigger_point = "BEFORE_CD",
-					callback = function(_)
-					end,
-				},
-				-- Run after cd to project, find and open a file in the target project by smart-open
-				{
-					trigger_point = "AFTER_CD",
-					callback = function(_)
-					end,
-				},
-			}
+			-- hooks = {
+			-- 	-- Run before cd to project, add a bookmark here, then can use `CdProjectBack` to switch back
+			-- 	{
+			-- 		trigger_point = "BEFORE_CD",
+			-- 		callback = function(_)
+			-- 		end,
+			-- 	},
+			-- 	-- Run after cd to project, find and open a file in the target project by smart-open
+			-- 	{
+			-- 		trigger_point = "AFTER_CD",
+			-- 		callback = function(_)
+			-- 		end,
+			-- 	},
+			-- }
 		})
 	end,
 	config=true

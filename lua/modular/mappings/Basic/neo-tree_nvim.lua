@@ -6,3 +6,4 @@ local map = vim.keymap.set
 map ("n", "<leader>ef", "<cmd>Neotree toggle .<cr>", { desc = "files" })
 map ("n", "<leader>eb", "<cmd>Neotree toggle buffers<cr>", { desc = "buffers" })
 map ("n", "<leader>eg", "<cmd>Neotree toggle git_status<cr>", { desc = "git status" })
+map ("n", "<leader>eq", "<cmd>Neotree close<cr>", { desc = "close" })

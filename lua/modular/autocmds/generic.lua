@@ -112,6 +112,7 @@ local function restore_session ()
 		if filereadable(".vim.session")
 			silent source .vim.session
 			doautoall BufRead
+			" bufdo UfoAttach
 		endif
 		if filereadable(".nvim.lua")
 			source .nvim.lua

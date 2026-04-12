@@ -1,5 +1,6 @@
 local hostname = vim.fn.hostname ()
 
+-- local LazyOpts = require ("modular.config.ui2")
 local LazyOpts = require ("modular.config.lazy")
 local TreeSitters = require ("modular.config.treesitters")
 local LspServers = require ("modular.config.lspservers")

@@ -9,6 +9,7 @@ local GitModule = Module:new ({
 		require ("modular.specs.Git.lazygit_nvim"),
 		require ("modular.specs.Git.neogit"),
 		require ("modular.specs.Git.vim-fugitive"),
+		require ("modular.specs.Git.codediff_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({

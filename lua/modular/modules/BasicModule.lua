@@ -25,6 +25,7 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.toggleterm_nvim"),
 		require ("modular.specs.Basic.ts-comments_nvim"),
 		require ("modular.specs.Basic.undotree"),
+		require ("modular.specs.Basic.diffs_nvim"),
 		require ("modular.specs.Misc.nvim-window-picker"),
 		-- require ("modular.specs.Misc.image_nvim"),
 		require ("modular.specs.Basic.which-key_nvim"),
@@ -66,7 +67,6 @@ local BasicModule = Module:new ({
 			plugins = "treesj",
 			action = function ()
 				require ("modular.mappings.Basic.treesj")
-				require ("treesitter-context").enable ()
 			end
 		}),
 		ModuleAction:new ({
