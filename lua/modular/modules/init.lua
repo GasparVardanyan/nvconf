@@ -13,7 +13,7 @@ return {
 	-- temporary_module = require ("modular.modules.TemporaryModule1"),
 	ai_module = require ("modular.modules.AiModule"),
 	basic_module = require ("modular.modules.BasicModule"),
-	clang_module = require ("modular.modules.CPPModule"),
+	clang_module = require ("modular.modules.ClangModule"),
 	compiler_module = require ("modular.modules.CompilerModule"),
 	dap_module = require ("modular.modules.DapModule"),
 	db_module = require ("modular.modules.DbModule"),

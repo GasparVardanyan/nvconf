@@ -1,8 +1,8 @@
 local Module = require ("modular.Module")
 local ModuleAction = require ("modular.ModuleAction")
 
-local CPPModule = Module:new ({
-	name = "CPP",
+local ClangModule = Module:new ({
+	name = "Clang",
 	plugins = {
 		require ("modular.specs.Clang.cppman_nvim"),
 		require ("modular.specs.Clang.clangd_extensions_nvim"),
@@ -39,4 +39,4 @@ local CPPModule = Module:new ({
 	}
 })
 
-return CPPModule
+return ClangModule

@@ -1,5 +1,5 @@
 return {
-	"rossjaywill/insights.nvim",
+	"GasparVardanyan/insights.nvim",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-telescope/telescope.nvim",
