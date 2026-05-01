@@ -28,6 +28,9 @@ then
 	-- LspServers ["basedpyright"] = {}
 	LspServers ["neocmake"] = {}
 	LspServers ["perlnavigator"] = {}
+	LspServers ["jdtls"] = {}
+	LspServers ["java-language-server"] = {}
+	LspServers ["vscode-spring-boot-tools"] = {}
 	-- LspServers ["pylsp"] = {
 	-- 	settings = {
 	-- 		pylsp = {
@@ -49,6 +52,10 @@ then
 		"codelldb",
 		"cpplint",
 		"perl-debug-adapter",
+		"java-debug-adapter",
+		"java-test",
+		"vscode-java-decompiler",
+		"vscode-java-dependency",
 	})
 
 	vim.list_extend (TreeSitters, {

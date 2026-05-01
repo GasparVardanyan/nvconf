@@ -5,7 +5,7 @@ return {
 		-- "lukas-reineke/headlines.nvim",
 		"nvim-lua/plenary.nvim",
 		"nvim-neorg/neorg-telescope",
-		-- "nvim-neorg/tree-sitter-norg",
+		"nvim-neorg/tree-sitter-norg",
 		"nvim-orgmode/org-bullets.nvim",
 	},
 	version = "*", -- Pin Neorg to the latest stable release

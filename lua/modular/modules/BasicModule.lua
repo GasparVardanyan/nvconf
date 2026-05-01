@@ -30,6 +30,7 @@ local BasicModule = Module:new ({
 		-- require ("modular.specs.Misc.image_nvim"),
 		require ("modular.specs.Basic.which-key_nvim"),
 		-- require ("modular.specs.Basic.edgy_nvim"),
+		require ("modular.specs.Basic.neogen"),
 	},
 	actions = {
 		-- ModuleAction:new ({
