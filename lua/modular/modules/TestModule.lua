@@ -8,6 +8,14 @@ local TestModule = Module:new ({
 	},
 	actions = {
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "neotest",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>t",  "neotest")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "neotest",
 			action = function ()
 				require ("modular.mappings.Test.neotest")

@@ -22,16 +22,45 @@ local LspModule = Module:new ({
 	},
 	actions = {
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "nvim-lspconfig",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("grw",  "workspace")
+				reg_mapping_group ("<leader>l",  "lsp")
+				reg_mapping_group ("<leader>lw",  "workspace")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "nvim-lspconfig",
 			action = function ()
 				require ("modular.mappings.Lsp.nvim-lspconfig")
-				require ("modular.autocmds.Lsp.nvim-lspconfig")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = { "nvim-lspconfig", "telescope.nvim" },
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("grf",  "fuzzy")
+				reg_mapping_group ("<leader>lf",  "fuzzy")
+				reg_mapping_group ("<leader>f",  "fuzzy")
 			end
 		}),
 		ModuleAction:new ({
 			plugins = { "nvim-lspconfig", "telescope.nvim" },
 			action = function ()
 				require ("modular.mappings.Lsp.nvim-lspconfig_telescope_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = { "nvim-lspconfig", "fzf-lua" },
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("grf",  "fuzzy")
+				reg_mapping_group ("<leader>lf",  "fuzzy")
+				reg_mapping_group ("<leader>f",  "fuzzy")
 			end
 		}),
 		-- NOTE: load fzf-lua mappings after telescope ones to override
@@ -42,15 +71,43 @@ local LspModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "outline.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("gro",  "outline")
+				reg_mapping_group ("<leader>lo",  "outline")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "outline.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.outline_nvim")
 			end
 		}),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "trouble.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("grx",  "trouble")
+				reg_mapping_group ("<leader>lx",  "trouble")
+				reg_mapping_group ("<leader>x",  "trouble")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "trouble.nvim",
 			action = function ()
 				require ("modular.mappings.Lsp.trouble_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "goto-preview",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("grp",  "preview")
+				reg_mapping_group ("<leader>lp",  "preview")
 			end
 		}),
 		ModuleAction:new ({

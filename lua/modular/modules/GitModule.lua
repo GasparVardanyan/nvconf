@@ -13,9 +13,25 @@ local GitModule = Module:new ({
 	},
 	actions = {
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "diffview.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>g",  "git")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "diffview.nvim",
 			action = function ()
 				require ("modular.mappings.Git.diffview_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "gitsigns.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>g",  "git")
 			end
 		}),
 		ModuleAction:new ({
@@ -25,15 +41,39 @@ local GitModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "lazygit.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>g",  "git")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "lazygit.nvim",
 			action = function ()
 				require ("modular.mappings.Git.lazygit_nvim")
 			end
 		}),
 		ModuleAction:new ({
-			plugins = { "fzf-lua" },
+			event = ModuleAction.EventType.Pre,
+			plugins = "fzf-lua",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>g",  "git")
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "fzf-lua",
 			action = function ()
 				require ("modular.mappings.Git.fzf-lua")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "telescope.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>g",  "git")
 			end
 		}),
 		ModuleAction:new ({

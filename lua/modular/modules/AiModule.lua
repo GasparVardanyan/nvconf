@@ -10,6 +10,14 @@ local AiModule = Module:new ({
 		-- require ("modular.specs.Ai.VectorCode"),
 	},
 	actions = {
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "avante.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>a",  "avante")
+			end
+		}),
 	}
 })
 

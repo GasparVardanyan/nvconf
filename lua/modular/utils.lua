@@ -33,10 +33,24 @@ local unmap_multi_leader = function (mode, leaders, mapping, opts)
 	end
 end
 
+local WhichKey = require ("modular.config.whichkey")
+
+function reg_mapping_group (key, name)
+	if WhichKey [key] == nil
+	then
+		WhichKey [key] = name
+	elseif WhichKey [key] ~= name
+	then
+		vim.notify ('trying to rename ' .. key .. ' from ' .. WhichKey [key] .. ' to ' .. name, vim.log.levels.ERROR)
+	end
+end
+
+
 -- utils.dump = dump
 utils.client_supports_method = client_supports_method
 utils.map_multi_leader = map_multi_leader
 utils.unmap_multi_leader = unmap_multi_leader
+utils.reg_mapping_group = reg_mapping_group
 
 utils.nproc = tonumber (vim.fn.system ({"nproc"}))
 

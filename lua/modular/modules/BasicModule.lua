@@ -40,15 +40,39 @@ local BasicModule = Module:new ({
 		-- 	end
 		-- }),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "cd-project.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>P",  "project")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "cd-project.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.cd-project_nvim")
 			end
 		}),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "grug-far.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>s", "grug")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "grug-far.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.grug-far_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "neo-tree.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>e", "neotree")
 			end
 		}),
 		ModuleAction:new ({
@@ -89,9 +113,28 @@ local BasicModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "telescope.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+
+				reg_mapping_group ("<leader>f", "fuzzy")
+				reg_mapping_group ("<leader>fu", "undo")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "telescope.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.telescope_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "fzf-lua",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+
+				reg_mapping_group ("<leader>f", "fuzzy")
 			end
 		}),
 		-- NOTE: load fzf-lua mappings after telescope ones to override
@@ -111,6 +154,14 @@ local BasicModule = Module:new ({
 			plugins = "toggleterm.nvim",
 			action = function ()
 				require ("modular.mappings.Basic.toggleterm_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "undotree",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>u", "undotree")
 			end
 		}),
 		ModuleAction:new ({
