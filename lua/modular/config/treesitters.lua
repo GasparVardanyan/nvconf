@@ -6,6 +6,7 @@ return {
 	"git_rebase",
 	"gitcommit",
 	"gitignore",
+	"json",
 	"lua",
 	"luadoc",
 	"markdown",

@@ -7,7 +7,7 @@ local TreeSitters = require ("modular.config.treesitters")
 local LspServers = require ("modular.config.lspservers")
 local MasonTools = require ("modular.config.masontools")
 local AvanteOpts = require ("modular.config.avanteopts")
-local LintersByFt = require ("modular.config.linters_by_ft")
+-- local LintersByFt = require ("modular.config.linters_by_ft")
 
 LazyOpts.dev = {
 	path = "/desktop/nvim_plugins/"
@@ -15,22 +15,10 @@ LazyOpts.dev = {
 
 if 1 == hostname:find ("devenv")
 then
-	LspServers ["clangd"] = {
-		cmd = {
-			"clangd",
-			"--background-index",
-			"--j=" .. (require ("modular.utils").nproc - 1),
-			"--header-insertion=iwyu",
-			"--clang-tidy",
-		},
-	}
 	-- LspServers ["erlang-ls"] = {}
 	-- LspServers ["basedpyright"] = {}
-	LspServers ["neocmake"] = {}
 	LspServers ["perlnavigator"] = {}
-	LspServers ["jdtls"] = {}
-	LspServers ["java-language-server"] = {}
-	LspServers ["vscode-spring-boot-tools"] = {}
+	-- LspServers ["java-language-server"] = {}
 	-- LspServers ["pylsp"] = {
 	-- 	settings = {
 	-- 		pylsp = {
@@ -47,27 +35,7 @@ then
 	-- }
 	-- LspServers ["ts_ls"] = {}
 
-	vim.list_extend (MasonTools, {
-		"clang-format",
-		"codelldb",
-		"cpplint",
-		"perl-debug-adapter",
-		"java-debug-adapter",
-		"java-test",
-		"vscode-java-decompiler",
-		"vscode-java-dependency",
-	})
-
-	vim.list_extend (TreeSitters, {
-		"cmake",
-		"cpp",
-		-- "cuda",
-		-- "erlang",
-		"http",
-		-- "javascript",
-		"json",
-		-- "python",
-	})
+	vim.list_extend (MasonTools, { "perl-debug-adapter" })
 
 	AvanteOpts.provider = "openrouter_deepseek"
 	AvanteOpts.providers = {
@@ -80,16 +48,6 @@ then
 			-- 	max_tokens = 16384,
 			-- },
 		}
-	}
-
-	LintersByFt ["c"] = {
-		-- "clangtidy",
-		"cppcheck",
-	}
-
-	LintersByFt ["cpp"] = {
-		-- "clangtidy",
-		"cppcheck",
 	}
 elseif 1 == hostname:find ("website")
 then

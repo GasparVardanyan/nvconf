@@ -11,6 +11,16 @@ local CompilerModule = Module:new ({
 	},
 	actions = {
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			action = function ()
+				local TreeSitters = require ("modular.config.treesitters")
+				local LspServers = require ("modular.config.lspservers")
+
+				vim.list_extend (TreeSitters, { "cmake" })
+				LspServers ["neocmake"] = {}
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "compiler.nvim",
 			action = function ()
 				require ("modular.mappings.Compiler.compiler_nvim")
