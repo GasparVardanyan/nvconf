@@ -5,10 +5,8 @@ local ModuleAction = require ("modular.ModuleAction")
 local JavaModule = Module:new ({
 	name = "Java",
 	plugins = {
-		{
-			"nvim-java/nvim-java",
-			config = true,
-		},
+		require ("modular.specs.Java.nvim-java"),
+		require ("modular.specs.Java.gradle_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({
@@ -35,12 +33,31 @@ local JavaModule = Module:new ({
 			action = function ()
 				local reg_mapping_group = require ("modular.utils").reg_mapping_group
 				reg_mapping_group ("<leader>j",  "java")
+				reg_mapping_group ("<leader>je",  "extract")
+				reg_mapping_group ("<leader>jl",  "logs")
+				reg_mapping_group ("<leader>jt",  "tests")
+				reg_mapping_group ("<leader>jtd",  "debug")
+				reg_mapping_group ("<leader>jtr",  "run")
 			end
 		}),
 		ModuleAction:new ({
 			plugins = "nvim-java",
 			action = function ()
 				require ("modular.mappings.Java.nvim-java")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "gradle.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>jg",  "gradle")
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "gradle.nvim",
+			action = function ()
+				require ("modular.mappings.Java.gradle_nvim")
 			end
 		}),
 	}
