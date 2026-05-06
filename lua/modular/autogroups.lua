@@ -10,6 +10,7 @@ return {
 	NvimDirChanged = "Modular_NvimDirChanged",
 	NvimExitPre = "Modular_NvimExitPre",
 	NvimPlugins = "Modular_NvimPlugins",
+	NvimTreesitter = "Modular_NvimTreesitter",
 
 	LspAttachMappings = "Modular_LspAttachMappings",
 	LspDetachMappings = "Modular_LspDetachMappings",
@@ -25,8 +26,6 @@ return {
 	LspDetachSagaMappings = "Modular_LspDetachSagaMappings",
 	LspAttachAutocmds = "Modular_LspAttachAutocmds",
 	LspDetachAutocmds = "Modular_LspDetachAutocmds",
-	LspNativeCompletionAttachAutocmds = "Modular_LspNativeCompletionAttachAutocmds",
-	LspNativeCompletionDetachAutocmds = "Modular_LspNativeCompletionDetachAutocmds",
 	-- LspAttachHighlight = "Modular_LspAttachHighlight",
 	-- LspDetachHighlight = "Modular_LspDetachHighlight",
 

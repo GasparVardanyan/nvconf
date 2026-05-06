@@ -40,6 +40,8 @@ then
 
 	vim.list_extend (MasonTools, { "perl-debug-adapter" })
 
+	vim.list_extend (TreeSitters, { "perl", })
+
 	AvanteOpts.provider = "openrouter_deepseek"
 	AvanteOpts.providers = {
 		openrouter_deepseek = {
@@ -58,5 +60,14 @@ then
 		"html",
 		"css",
 		"javascript",
+	})
+elseif 1 == hostname:find ("website")
+then
+	vim.list_extend (TreeSitters, { "latex", })
+else
+	vim.list_extend (TreeSitters, {
+		"udev",
+		"xresources",
+		"zsh",
 	})
 end

@@ -16,7 +16,10 @@ local JavaModule = Module:new ({
 				local LspServers = require ("modular.config.lspservers")
 				local MasonTools = require ("modular.config.masontools")
 
-				vim.list_extend (TreeSitters, { "java" })
+				vim.list_extend (TreeSitters, {
+					"java",
+					"javadoc",
+				})
 				LspServers ["jdtls"] = {} -- NOTE: nvim-java handles this
 				LspServers ["vscode-spring-boot-tools"] = {} -- NOTE: nvim-java handles this
 				vim.list_extend (MasonTools, {

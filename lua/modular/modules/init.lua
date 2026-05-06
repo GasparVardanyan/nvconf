@@ -1,7 +1,6 @@
 return {
 	-- ====================
 	-- lint_module = require ("modular.modules.LintModule")
-	-- lsp_native_completion_module = require ("modular.modules.LspNativeCompletionModule"),
 	-- lsp_nvim_cmp_completion_module = require ("modular.modules._LspNvimCmpCompletionModule"),
 	-- lspsaga_module = require ("modular.modules.LspSagaModule"),
 	-- menu_module = require ("modular.modules.MenuModule"),
@@ -26,13 +25,12 @@ return {
 	lean_module = require ("modular.modules.LeanModule"),
 	lint_module = require ("modular.modules.LintModule"),
 	lsp_module = require ("modular.modules.LspModule"),
-	lspnativecompletion_module = require ("modular.modules.LspNativeCompletionModule"),
 	md_module = require ("modular.modules.MdModule"),
 	misc_module = require ("modular.modules.MiscModule"),
 	nvim_module = require ("modular.modules.NvimModule"),
 	org_module = require ("modular.modules.OrgModule"),
 	profiler_module = require ("modular.modules.ProfilerModule"),
-	rest_module = require ("modular.modules.RestModule"),
+	-- rest_module = require ("modular.modules.RestModule"),
 	test_module = require ("modular.modules.TestModule"),
 	ui_module = require ("modular.modules.UIModule"),
 	github_module = require ("modular.modules.GithubModule"),

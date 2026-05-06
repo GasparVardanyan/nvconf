@@ -6,7 +6,9 @@ return {
 		"nvim-lua/plenary.nvim",
 		"nvim-neorg/neorg-telescope",
 		"nvim-neorg/tree-sitter-norg",
+		"nvim-neorg/tree-sitter-norg-meta",
 		"nvim-orgmode/org-bullets.nvim",
+		"romus204/tree-sitter-manager.nvim",
 	},
 	version = "*", -- Pin Neorg to the latest stable release
 

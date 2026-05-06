@@ -21,7 +21,6 @@ else
 		basic_module = require ("modular.modules.BasicModule"),
 		git_module = require ("modular.modules.GitModule"),
 		lsp_module = require ("modular.modules.LspModule"),
-		lspnativecompletion_module = require ("modular.modules.LspNativeCompletionModule"),
 		md_module = require ("modular.modules.MdModule"),
 		misc_module = require ("modular.modules.MiscModule"),
 		nvim_module = require ("modular.modules.NvimModule"),

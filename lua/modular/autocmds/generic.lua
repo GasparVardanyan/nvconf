@@ -13,6 +13,13 @@ then
 	})
 end
 
+-- vim.api.nvim_create_autocmd ("FileType", {
+-- 	group = vim.api.nvim_create_augroup (groups.NvimTreesitter, { clear = true }),
+-- 	callback = function (event)
+-- 		pcall (vim.treesitter.start, event.buf)
+-- 	end
+-- })
+
 vim.api.nvim_create_augroup (
 	groups.NvimCursorLineHighlight,
 	{ clear = true }
