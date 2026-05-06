@@ -6,7 +6,7 @@ return {
 		"Andeshog/neotest-gtest",
 		-- "nvim-neotest/neotest-python",
 		"antoinemadec/FixCursorHold.nvim",
-		"nvim-treesitter/nvim-treesitter",
+		-- "nvim-treesitter/nvim-treesitter",
 		"orjangj/neotest-ctest",
 	},
 	config = function ()

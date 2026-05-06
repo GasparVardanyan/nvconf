@@ -11,6 +11,14 @@ local DbModule = Module:new ({
 	actions = {
 		ModuleAction:new ({
 			event = ModuleAction.EventType.Pre,
+			action = function ()
+				local TreeSitters = require ("modular.config.treesitters")
+
+				vim.list_extend (TreeSitters, { "sql", })
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
 			plugins = "vim-dadbod-ui",
 			action = function ()
 				local reg_mapping_group = require ("modular.utils").reg_mapping_group

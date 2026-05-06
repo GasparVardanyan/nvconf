@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"mfussenegger/nvim-dap",
 		"nvim-neotest/nvim-nio",
-		"nvim-treesitter/nvim-treesitter",
+		-- "nvim-treesitter/nvim-treesitter",
 		"theHamsta/nvim-dap-virtual-text",
 	},
 	config = function()
