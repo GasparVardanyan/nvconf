@@ -56,9 +56,9 @@ local function generate ()
 end
 
 return {
-	"NvChad/base46",
-	-- "GasparVardanyan/base46",
-	-- branch = "gaspar",
+	-- "NvChad/base46",
+	"GasparVardanyan/base46",
+	branch = "gaspar",
 	dependencies = {
 		"NvChad/ui"
 	},

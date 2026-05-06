@@ -9,6 +9,7 @@ return {
 	NvimDirChangedPre = "Modular_NvimDirChangedPre",
 	NvimDirChanged = "Modular_NvimDirChanged",
 	NvimExitPre = "Modular_NvimExitPre",
+	NvimPlugins = "Modular_NvimPlugins",
 
 	LspAttachMappings = "Modular_LspAttachMappings",
 	LspDetachMappings = "Modular_LspDetachMappings",

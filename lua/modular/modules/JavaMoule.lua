@@ -17,14 +17,22 @@ local JavaModule = Module:new ({
 				local MasonTools = require ("modular.config.masontools")
 
 				vim.list_extend (TreeSitters, { "java" })
-				LspServers ["jdtls"] = {}
-				LspServers ["vscode-spring-boot-tools"] = {}
+				LspServers ["jdtls"] = {} -- NOTE: nvim-java handles this
+				LspServers ["vscode-spring-boot-tools"] = {} -- NOTE: nvim-java handles this
 				vim.list_extend (MasonTools, {
-					"java-debug-adapter",
-					"java-test",
+					"java-debug-adapter", -- NOTE: nvim-java handles this
+					"java-test", -- NOTE: nvim-java handles this
 					"vscode-java-decompiler",
 					"vscode-java-dependency",
 				})
+
+				-- sample nvim-java log:
+				-- Installing package jdtls version 1.54.0
+				-- Installing package java-test version 0.43.2
+				-- Installing package java-debug version 0.58.3
+				-- Installing package spring-boot-tools version 1.55.1
+				-- Installing package lombok version 1.18.42
+				-- Installing package openjdk version 25
 			end
 		}),
 		ModuleAction:new ({

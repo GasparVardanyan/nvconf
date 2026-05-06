@@ -1,5 +1,18 @@
 local groups = require ("modular.autogroups")
 
+if 1 == vim.fn.has ('nvim-0.12')
+then
+	vim.api.nvim_create_autocmd ( "VimEnter", {
+		group = vim.api.nvim_create_augroup (groups.NvimPlugins, { clear = true }),
+		callback = function ()
+			vim.cmd [[
+				packadd nvim.difftool
+				packadd nvim.undotree
+			]]
+		end
+	})
+end
+
 vim.api.nvim_create_augroup (
 	groups.NvimCursorLineHighlight,
 	{ clear = true }
@@ -96,18 +109,18 @@ local function save_session ()
 		if filereadable(".vim.session")
 			mksession! .vim.session
 		endif
-		%bd!
 	]]
 end
 
 local function restore_session ()
 	vim.cmd [[
+		%bd!
 		if filereadable("CMakeLists.txt")
 			execute 'CMakeSelectCwd ' . fnameescape (getcwd ())
 			CMakeStopExecutor
 			execute 'CMakeSelectBuildDir ' . fnameescape (getcwd ()) . '/out'
 			call system ('ln -s out/compile_commands.json .')
-			LspRestart
+			" LspRestart
 		endif
 		if filereadable(".vim.session")
 			silent source .vim.session
@@ -120,6 +133,10 @@ local function restore_session ()
 			source .exrc
 		endif
 	]]
+	if 0 == vim.fn.has ('nvim-0.12')
+	then
+		vim.cmd.LspRestart ()
+	end
 end
 
 vim.api.nvim_create_autocmd ("ExitPre", {

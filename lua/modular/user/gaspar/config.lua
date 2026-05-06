@@ -1,6 +1,9 @@
 local hostname = vim.fn.hostname ()
 
--- require ("modular.config.ui2")
+if 1 == vim.fn.has ('nvim-0.12')
+then
+	require ("modular.config.ui2")
+end
 
 local LazyOpts = require ("modular.config.lazy")
 local TreeSitters = require ("modular.config.treesitters")
