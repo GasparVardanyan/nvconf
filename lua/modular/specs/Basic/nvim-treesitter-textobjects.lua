@@ -26,21 +26,21 @@ return {
 
 
 
-		local V2 = require("modular.config.textobjects").V2
+		local textobjects = require("modular.config.textobjects").V2
 
 		-- 1. Setup behavioral options
 		require("nvim-treesitter-textobjects").setup({
 			select = {
-				enable = V2.select.enable,
-				lookahead = V2.select.lookahead,
+				enable = textobjects.select.enable,
+				lookahead = textobjects.select.lookahead,
 				include_surrounding_whitespace = false,
 			},
 			move = {
-				enable = V2.move.enable,
-				set_jumps = V2.move.set_jumps,
+				enable = textobjects.move.enable,
+				set_jumps = textobjects.move.set_jumps,
 			},
 			swap = {
-				enable = V2.swap.enable,
+				enable = textobjects.swap.enable,
 			},
 		})
 
@@ -54,8 +54,8 @@ return {
 		end
 
 		-- 2. Select Mappings (Modes: Visual 'x', Operator-pending 'o')
-		if V2.select and V2.select.enable and V2.select.keymaps then
-			for key, opts in pairs(V2.select.keymaps) do
+		if textobjects.select and textobjects.select.enable and textobjects.select.keymaps then
+			for key, opts in pairs(textobjects.select.keymaps) do
 				vim.keymap.set({ "x", "o" }, parse_key(key), function()
 					select.select_textobject(opts.query, "textobjects")
 				end, { desc = opts.desc })
@@ -63,7 +63,7 @@ return {
 		end
 
 		-- 3. Move Mappings
-		if V2.move and V2.move.enable then
+		if textobjects.move and textobjects.move.enable then
 			local move_maps = {
 				goto_next_start = move.goto_next_start,
 				goto_next_end = move.goto_next_end,
@@ -72,7 +72,7 @@ return {
 			}
 
 			for map_type, func in pairs(move_maps) do
-				local target_table = V2.move[map_type]
+				local target_table = textobjects.move[map_type]
 				-- Explicitly check for table type to satisfy LSP type-narrowing
 				if type(target_table) == "table" then
 					for key, opts in pairs(target_table) do
@@ -85,14 +85,14 @@ return {
 		end
 
 		-- 4. Swap Mappings
-		if V2.swap and V2.swap.enable then
+		if textobjects.swap and textobjects.swap.enable then
 			local swap_maps = {
 				swap_next = swap.swap_next,
 				swap_previous = swap.swap_previous,
 			}
 
 			for map_type, func in pairs(swap_maps) do
-				local target_table = V2.swap[map_type]
+				local target_table = textobjects.swap[map_type]
 				-- Explicitly check for table type to satisfy LSP type-narrowing
 				if type(target_table) == "table" then
 					for key, opts in pairs(target_table) do
