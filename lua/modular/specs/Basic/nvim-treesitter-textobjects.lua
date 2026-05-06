@@ -28,21 +28,8 @@ return {
 
 		local textobjects = require("modular.config.textobjects").V2
 
-		-- 1. Setup behavioral options
-		require("nvim-treesitter-textobjects").setup({
-			select = {
-				enable = textobjects.select.enable,
-				lookahead = textobjects.select.lookahead,
-				include_surrounding_whitespace = false,
-			},
-			move = {
-				enable = textobjects.move.enable,
-				set_jumps = textobjects.move.set_jumps,
-			},
-			swap = {
-				enable = textobjects.swap.enable,
-			},
-		})
+		-- 1. Setup behavioral options (keymaps don't take effect here)
+		require("nvim-treesitter-textobjects").setup (textobjects)
 
 		local select = require("nvim-treesitter-textobjects.select")
 		local move = require("nvim-treesitter-textobjects.move")
