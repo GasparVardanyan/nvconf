@@ -12,6 +12,9 @@ local ClangModule = Module:new ({
 		ModuleAction:new ({
 			event = ModuleAction.EventType.Pre,
 			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>C",  "clang")
+
 				local TreeSitters = require ("modular.config.treesitters")
 				local LspServers = require ("modular.config.lspservers")
 				local MasonTools = require ("modular.config.masontools")
@@ -62,15 +65,6 @@ local ClangModule = Module:new ({
 			plugins = "insights.nvim",
 			action = function ()
 				require ("modular.mappings.Clang.insights_nvim")
-			end
-		}),
-		ModuleAction:new ({
-			plugins = { "cppman.nvim", "clangd_extensions.nvim", "which-key.nvim" }, -- TODO: make this plugin independent
-			action = function ()
-				local wk = require ("which-key")
-				wk.add({
-					{ "<leader>C", group = "Clang" },
-				})
 			end
 		}),
 	}
