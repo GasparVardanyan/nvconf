@@ -8,15 +8,17 @@ local LspSagaModule = Module:new ({
 	},
 	actions = {
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
 			plugins = "lspsaga.nvim",
 			action = function ()
-				require ("modular.mappings.LspSaga.lspsaga_nvim")
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>ls",  "saga")
 			end
 		}),
 		ModuleAction:new ({
-			plugins = { "lspsaga.nvim", "which-key.nvim" },
+			plugins = "lspsaga.nvim",
 			action = function ()
-				require ("modular.autocmds.LspSaga.lspsaga_nvim-whichkey")
+				require ("modular.mappings.LspSaga.lspsaga_nvim")
 			end
 		}),
 	}

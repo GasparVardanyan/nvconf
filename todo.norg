@@ -99,7 +99,7 @@
   ~~ (_) Rename to ModuleAction, and divide plugins list to *pre* and *post*
   ~~ (x) Handle empty plugin lists
   ~~ (x) Handle pre actions
-  ~ ( ) Check these interesting resourcecs:
+  ~ (-) Check these interesting resourcecs:
   ~~ (x) https://github.com/rmagatti/goto-preview
   ~~ (x) https://github.com/otavioschwanck/arrow.nvim
   ~~ (x) https://github.com/calind/selenized.nvim
@@ -112,16 +112,16 @@
   ~~ (-) https://github.com/stevearc/conform.nvim
   ~~ (-) https://github.com/lewis6991/hover.nvim
   ~~ (-) https://github.com/hat0uma/csvview.nvim
+  ~~ (x) https://github.com/t-troebst/perfanno.nvim
+  ~~ (x) https://github.com/sakhnik/nvim-gdb
+  ~~ (x) https://github.com/pwntester/octo.nvim
+  ~~ (x) https://github.com/nvim-java/nvim-java
   ~~ ( ) https://github.com/wsdjeg/rooter.nvim
   ~~ ( ) https://github.com/tsakirist/telescope-lazy.nvim
-  ~~ (-) https://github.com/t-troebst/perfanno.nvim
   ~~ ( ) https://github.com/smzm/hydrovim
-  ~~ (x) https://github.com/sakhnik/nvim-gdb
   ~~ ( ) https://github.com/rockerBOO/awesome-neovim
   ~~ ( ) https://github.com/rafcamlet/nvim-luapad
-  ~~ ( ) https://github.com/pwntester/octo.nvim
   ~~ ( ) https://github.com/pocco81/auto-save.nvim
-  ~~ ( ) https://github.com/nvim-java/nvim-java
   ~~ ( ) https://github.com/neolooong/whichpy.nvim
   ~~ ( ) https://github.com/michaelb/sniprun
   ~~ ( ) https://github.com/isak102/telescope-git-file-history.nvim
