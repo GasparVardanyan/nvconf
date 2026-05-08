@@ -8,8 +8,8 @@ then
 
 	if 0 ~= nproc
 	then
-		iwyu_current = "w | !iwyu-tool -p . -j " .. nproc .. " % | iwyu-fix-includes"
-		iwyu_root = "w | !iwyu-tool -p . -j " .. nproc .. " | iwyu-fix-includes"
+		iwyu_current = "w | !iwyu-tool -p . -j " .. (nproc - 1) .. " % | iwyu-fix-includes"
+		iwyu_root = "w | !iwyu-tool -p . -j " .. (nproc - 1) .. " | iwyu-fix-includes"
 	else
 		iwyu_current = "w | !iwyu-tool -p . % | iwyu-fix-includes"
 		iwyu_root = "w | !iwyu-tool -p . | iwyu-fix-includes"

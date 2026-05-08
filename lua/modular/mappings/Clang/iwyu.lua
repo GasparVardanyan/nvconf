@@ -4,7 +4,7 @@ local map = vim.keymap.set
 if 1 == vim.fn.executable ("iwyu-tool") and 1 == vim.fn.executable ("iwyu-fix-includes")
 then
 	local reg_mapping_group = require ("modular.utils").reg_mapping_group
-	reg_mapping_group ("grw",  "workspace")
+	reg_mapping_group ("<leader>Ch",  "headers")
 
 	vim.api.nvim_create_autocmd ("FileType", {
 		group = vim.api.nvim_create_augroup (groups.ClangIWYUMappings, { clear = true }),
