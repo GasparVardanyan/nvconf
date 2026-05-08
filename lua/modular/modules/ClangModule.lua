@@ -15,6 +15,9 @@ local ClangModule = Module:new ({
 				local reg_mapping_group = require ("modular.utils").reg_mapping_group
 				reg_mapping_group ("<leader>C",  "clang")
 
+				require ("modular.autocmds.Clang.iwyu")
+				require ("modular.mappings.Clang.iwyu")
+
 				local TreeSitters = require ("modular.config.treesitters")
 				local LspServers = require ("modular.config.lspservers")
 				local MasonTools = require ("modular.config.masontools")

@@ -29,6 +29,9 @@ return {
 	-- LspAttachHighlight = "Modular_LspAttachHighlight",
 	-- LspDetachHighlight = "Modular_LspDetachHighlight",
 
+	ClangIWYU = "Modular_ClangIWYU",
+	ClangIWYUMappings = "Modular_ClangIWYUMappings",
+
 	NeoTreeNoIlluminate = "Modular_NeoTreeNoIlluminate",
 
 	NeorgOptions = "Modular_NeorgOptions",

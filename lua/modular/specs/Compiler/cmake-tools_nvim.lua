@@ -1,7 +1,7 @@
 return {
 	"Civitasv/cmake-tools.nvim",
 	config = function ()
-		local nproc = tonumber (vim.fn.system ({"nproc"}))
+		local nproc = require ("modular.utils").nproc
 		local cmake_build_options = {}
 		local cmake_generate_options = {}
 
@@ -10,19 +10,19 @@ return {
 			vim.list_extend (cmake_build_options, { "-j" .. (nproc - 1) })
 		end
 
-		if 1 == vim.fn.filereadable ("/usr/bin/clang") and 1 == vim.fn.filereadable ("/usr/bin/clang++")
+		if 1 == vim.fn.executable ("clang") and 1 == vim.fn.executable ("clang++")
 		then
 			vim.fn.setenv ("CC", "/usr/bin/clang")
 			vim.fn.setenv ("CXX", "/usr/bin/clang++")
 		end
 
-		if 1 == vim.fn.filereadable ("/usr/bin/ccache")
+		if 1 == vim.fn.executable ("ccache")
 		then
 			vim.fn.setenv ("CMAKE_C_COMPILER_LAUNCHER", "ccache")
 			vim.fn.setenv ("CMAKE_CXX_COMPILER_LAUNCHER", "ccache")
 		end
 
-		if 1 == vim.fn.filereadable ("/usr/bin/ninja")
+		if 1 == vim.fn.executable ("ninja")
 		then
 			vim.list_extend (cmake_generate_options, { "-G Ninja" })
 		end
