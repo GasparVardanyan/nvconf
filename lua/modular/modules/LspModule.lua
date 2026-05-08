@@ -90,9 +90,9 @@ local LspModule = Module:new ({
 			plugins = "trouble.nvim",
 			action = function ()
 				local reg_mapping_group = require ("modular.utils").reg_mapping_group
-				reg_mapping_group ("grx",  "trouble")
-				reg_mapping_group ("<leader>lx",  "trouble")
-				reg_mapping_group ("<leader>x",  "trouble")
+				reg_mapping_group ("grX",  "trouble")
+				reg_mapping_group ("<leader>lX",  "trouble")
+				reg_mapping_group ("<leader>X",  "trouble")
 			end
 		}),
 		ModuleAction:new ({

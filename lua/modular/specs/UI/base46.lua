@@ -65,7 +65,7 @@ return {
 	lazy = false,
 	priority = 1000,
 	build = generate,
-	dev = true,
+	-- dev = true,
 	init = function ()
 		vim.g.base46_cache = vim.fn.stdpath ("cache") .. "/base46"
 		-- vim.api.nvim_create_autocmd ("User", {

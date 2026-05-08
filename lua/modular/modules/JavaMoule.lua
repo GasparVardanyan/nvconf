@@ -1,4 +1,3 @@
-
 local Module = require ("modular.Module")
 local ModuleAction = require ("modular.ModuleAction")
 

@@ -126,7 +126,7 @@ local function restore_session ()
 			execute 'CMakeSelectCwd ' . fnameescape (getcwd ())
 			CMakeStopExecutor
 			execute 'CMakeSelectBuildDir ' . fnameescape (getcwd ()) . '/out'
-			call system ('ln -s out/compile_commands.json .')
+			" call system ('ln -s out/compile_commands.json .')
 			" LspRestart
 		endif
 		if filereadable(".vim.session")
@@ -140,10 +140,6 @@ local function restore_session ()
 			source .exrc
 		endif
 	]]
-	if 0 == vim.fn.has ('nvim-0.12')
-	then
-		vim.cmd.LspRestart ()
-	end
 end
 
 vim.api.nvim_create_autocmd ("ExitPre", {
