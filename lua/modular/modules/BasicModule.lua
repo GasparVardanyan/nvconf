@@ -32,6 +32,7 @@ local BasicModule = Module:new ({
 		require ("modular.specs.Basic.which-key_nvim"),
 		-- require ("modular.specs.Basic.edgy_nvim"),
 		require ("modular.specs.Basic.neogen"),
+		require ("modular.specs.Basic.nvim-colorizer_lua"),
 	},
 	actions = {
 		-- ModuleAction:new ({

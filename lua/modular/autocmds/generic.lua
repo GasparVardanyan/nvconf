@@ -103,7 +103,7 @@ vim.api.nvim_create_autocmd ("FileType", {
 
 		-- vim.api.nvim_set_option_value ("modifiable", true, {})
 		vim.cmd[[
-			%g#^\v/usr/share/nvim/runtime/doc/[^|]+\|\d+\|# norm 0d2f|
+			silent %g#^\v/usr/share/nvim/runtime/doc/[^|]+\|\d+\|# norm 0d2f|
 		]]
 		vim.api.nvim_set_option_value ("number", true, {})
 		vim.api.nvim_set_option_value ("relativenumber", false, {})

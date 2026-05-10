@@ -1,3 +1,4 @@
 return {
-	cpp = "clang-format"
+	formatters_by_ft = {},
+	formatters = {},
 }

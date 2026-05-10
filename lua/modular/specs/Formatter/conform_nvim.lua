@@ -1,7 +1,5 @@
 return {
 	"stevearc/conform.nvim",
-	opts = {
-		formatters_by_ft = require ("modular.config.formatters"),
-	},
+	opts = require ("modular.config.formatters"),
 	config = true
 }

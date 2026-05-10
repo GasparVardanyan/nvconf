@@ -22,6 +22,7 @@ local ClangModule = Module:new ({
 				local LspServers = require ("modular.config.lspservers")
 				local MasonTools = require ("modular.config.masontools")
 				local LintersByFt = require ("modular.config.linters_by_ft")
+				local Formatters = require ("modular.config.formatters")
 
 				vim.list_extend (TreeSitters, { "c", "cpp" })
 
@@ -49,6 +50,14 @@ local ClangModule = Module:new ({
 				LintersByFt ["cpp"] = {
 					-- "clangtidy",
 					"cppcheck",
+				}
+
+				Formatters.formatters_by_ft ["c"] = {
+					"clang-format",
+				}
+
+				Formatters.formatters_by_ft ["cpp"] = {
+					"clang-format",
 				}
 			end
 		}),
