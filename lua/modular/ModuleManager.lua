@@ -45,6 +45,7 @@ function ModuleManager:new (opts)
 	for i = #pre_actions, 1, -1 do
 		local dependenciesSatisfied = true
 
+		-- TODO: check in dependencies too
 		for _, pname in ipairs (pre_actions [i].plugins) do
 			if not vim.list_contains (plugin_names, pname) then
 				dependenciesSatisfied = false

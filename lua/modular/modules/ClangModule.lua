@@ -7,6 +7,7 @@ local ClangModule = Module:new ({
 		require ("modular.specs.Clang.cppman_nvim"),
 		require ("modular.specs.Clang.clangd_extensions_nvim"),
 		require ("modular.specs.Clang.insights_nvim"),
+		require ("modular.specs.Clang.compiler-explorer_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({
@@ -26,11 +27,19 @@ local ClangModule = Module:new ({
 
 				vim.list_extend (TreeSitters, { "c", "cpp" })
 
+				local nproc = require ("modular.utils").nproc
+				local jnproc = ''
+
+				if 0 ~= nproc
+				then
+					jnproc =  "--j=" .. (nproc - 1)
+				end
+
 				LspServers ["clangd"] = {
 					cmd = {
 						"clangd",
 						"--background-index",
-						"--j=" .. (require ("modular.utils").nproc - 1),
+						jnproc,
 						"--header-insertion=iwyu",
 						"--clang-tidy",
 					},
@@ -77,6 +86,23 @@ local ClangModule = Module:new ({
 			plugins = "insights.nvim",
 			action = function ()
 				require ("modular.mappings.Clang.insights_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "compiler-explorer.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>Ce",  "compiler explorer")
+
+				local TreeSitters = require ("modular.config.treesitters")
+				vim.list_extend (TreeSitters, { "asm" })
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "compiler-explorer.nvim",
+			action = function ()
+				require ("modular.mappings.Clang.compiler-explorer_nvim")
 			end
 		}),
 	}

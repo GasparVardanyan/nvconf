@@ -31,6 +31,7 @@ return {
 
 	ClangIWYU = "Modular_ClangIWYU",
 	ClangIWYUMappings = "Modular_ClangIWYUMappings",
+	ClangCELocalMappings = "Modular_ClangCELocalMappings",
 
 	NeoTreeNoIlluminate = "Modular_NeoTreeNoIlluminate",
 

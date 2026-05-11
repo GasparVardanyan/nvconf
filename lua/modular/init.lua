@@ -3,7 +3,7 @@ require ("modular.lazy")
 require ("modular.autocmds.generic")
 require ("modular.mappings.generic")
 
-require ("modular")
+-- require ("modular")
 
 -- local LspServers = require ("modular.config.lspservers")
 -- LspServers ["clangd"] = {}
