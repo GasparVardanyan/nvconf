@@ -1,14 +1,9 @@
 return {
 	-- ====================
 	-- lint_module = require ("modular.modules.LintModule")
-	-- lsp_nvim_cmp_completion_module = require ("modular.modules._LspNvimCmpCompletionModule"),
 	-- lspsaga_module = require ("modular.modules.LspSagaModule"),
 	-- menu_module = require ("modular.modules.MenuModule"),
-	-- temporary_module1 = require ("modular.modules.TemporaryModule1"),
 	-- _menu_module = require ("modular.modules._MenuModule"),
-	-- _github_module = require ("modular.modules._GithubModule"),
-	-- _lspnvimcmpcompletion_module = require ("modular.modules._LspNvimCmpCompletionModule"),
-	-- temporary_module = require ("modular.modules.TemporaryModule1"),
 	ai_module = require ("modular.modules.AiModule"),
 	basic_module = require ("modular.modules.BasicModule"),
 	clang_module = require ("modular.modules.ClangModule"),
