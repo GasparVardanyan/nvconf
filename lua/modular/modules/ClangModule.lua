@@ -8,6 +8,7 @@ local ClangModule = Module:new ({
 		require ("modular.specs.Clang.clangd_extensions_nvim"),
 		require ("modular.specs.Clang.insights_nvim"),
 		require ("modular.specs.Clang.compiler-explorer_nvim"),
+		require ("modular.specs.Clang.classlayout_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({
@@ -103,6 +104,13 @@ local ClangModule = Module:new ({
 			plugins = "compiler-explorer.nvim",
 			action = function ()
 				require ("modular.mappings.Clang.compiler-explorer_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "classlayout.nvim",
+			action = function ()
+				require ("modular.mappings.Clang.classlayout_nvim")
 			end
 		}),
 	}
