@@ -9,19 +9,9 @@ local leaders = {"gr", "<leader>l"}
 vim.api.nvim_create_autocmd ("LspAttach", {
 	group = vim.api.nvim_create_augroup (groups.LspAttachMappings, { clear = true }),
 	callback = function(event)
-		if 0 == vim.fn.has "nvim-0.11" then
-			map ("n", "grn", vim.lsp.buf.rename, { buffer = event.buf, desc = "rename" })
-			map ("n", "gra", vim.lsp.buf.code_action, { buffer = event.buf, desc = "code action" })
-			map ("n", "grr", vim.lsp.buf.references, { buffer = event.buf, desc = "references" })
-			map ("n", "gri", vim.lsp.buf.implementation, { buffer = event.buf, desc = "implementation" })
-			map ("n", "grt", vim.lsp.buf.type_definition, { buffer = event.buf, desc = "type definition" })
-			map ("n", "gO", vim.lsp.buf.document_symbol, { buffer = event.buf, desc = "document symbol" })
-			map ("i", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf, desc = "signature help" })
-		end
-
 		map ("n", "grD", vim.lsp.buf.declaration, { buffer = event.buf, desc = "declaration" })
 		map ("n", "grd", vim.lsp.buf.definition, { buffer = event.buf, desc = "definition" })
-		map ("n", "grs", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf, desc = "switch source header" })
+		map ("n", "grs", vim.cmd.ClangdSwitchSourceHeader, { buffer = event.buf, desc = "switch source header" }) -- TODO: CLANG
 
 		map ("n", "<c-s>", vim.lsp.buf.signature_help, { buffer = event.buf, desc = "signature help" })
 
@@ -30,10 +20,6 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 		utils.map_multi_leader ("n", leaders, "wr", vim.lsp.buf.remove_workspace_folder, { buffer = event.buf, desc = "remove folder" })
 
 		local client = vim.lsp.get_client_by_id (event.data.client_id)
-
-		if client and utils.client_supports_method (client,vim.lsp.protocol.Methods.textDocument_completion, event.buf) then
-			vim.lsp.completion.enable (true, client.id, event.buf, { autotrigger = true })
-		end
 
 		-- TODO: REVIEW
 		if client and utils.client_supports_method (client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
@@ -46,23 +32,14 @@ vim.api.nvim_create_autocmd ("LspAttach", {
 	end,
 })
 
-vim.api.nvim_create_autocmd("LspDetach", {
+vim.api.nvim_create_autocmd ("LspDetach", {
 	group = vim.api.nvim_create_augroup (groups.LspDetachMappings, { clear = true }),
 	callback = function(event)
-		if 0 == vim.fn.has "nvim-0.11" then
-			pcall (unmap, "n", "grn", { buffer = event.buf })
-			pcall (unmap, "n", "gra", { buffer = event.buf })
-			pcall (unmap, "n", "grr", { buffer = event.buf })
-			pcall (unmap, "n", "gri", { buffer = event.buf })
-			pcall (unmap, "i", "<c-s>", { buffer = event.buf })
-		end
-
-		pcall (unmap, "n", "<c-s>", { buffer = event.buf })
-
 		pcall (unmap, "n", "grD", { buffer = event.buf })
 		pcall (unmap, "n", "grd", { buffer = event.buf })
-		pcall (unmap, "n", "grt", { buffer = event.buf })
 		pcall (unmap, "n", "grs", { buffer = event.buf })
+
+		pcall (unmap, "n", "<c-s>", { buffer = event.buf })
 
 		pcall (utils.unmap_multi_leader, "n", leaders, "wa", { buffer = event.buf })
 		pcall (utils.unmap_multi_leader, "n", leaders, "wl", { buffer = event.buf })

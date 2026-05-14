@@ -9,6 +9,7 @@ local ClangModule = Module:new ({
 		require ("modular.specs.Clang.insights_nvim"),
 		require ("modular.specs.Clang.compiler-explorer_nvim"),
 		require ("modular.specs.Clang.classlayout_nvim"),
+		-- require ("modular.specs.Clang.nvim-treesitter-cpp-tools"),
 	},
 	actions = {
 		ModuleAction:new ({
