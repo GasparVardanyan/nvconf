@@ -30,11 +30,13 @@ local function generate ()
 		if theme then
 			local proxy_file = colors_dir .. "/NV_" .. theme .. ".lua"
 
-			local light = ''
+			local background = ''
 
 			if theme:match("[-_]light$") ~= nil
 			then
-				light = 'vim.opt.background = light\n'
+				background = 'vim.opt.background = light'
+			else
+				background = 'vim.opt.background = dark'
 			end
 
 			if vim.fn.filereadable (proxy_file) == 0 then
@@ -42,7 +44,7 @@ local function generate ()
 				if f then
 					f:write (
 						'vim.cmd "highlight clear"\n' ..
-						light ..
+						background .. '\n' ..
 						string.format (
 							'require ("nvconfig").base46.theme = "%s"\n', theme
 						) ..
