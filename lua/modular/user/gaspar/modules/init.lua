@@ -18,6 +18,7 @@ then
 	)
 else
 	modular_modules = {
+		autocomplete_module = require ("modular.modules.AutoCompleteModule"),
 		basic_module = require ("modular.modules.BasicModule"),
 		git_module = require ("modular.modules.GitModule"),
 		lsp_module = require ("modular.modules.LspModule"),
@@ -25,6 +26,7 @@ else
 		misc_module = require ("modular.modules.MiscModule"),
 		nvim_module = require ("modular.modules.NvimModule"),
 		org_module = require ("modular.modules.OrgModule"),
+		session_module = require ("modular.modules.SessionModule"),
 		ui_module = require ("modular.modules.UIModule"),
 	}
 end
@@ -34,7 +36,6 @@ gaspar_modules = vim.tbl_deep_extend (
 	gaspar_modules,
 	{
 		custom_module = require ("modular.user.gaspar.modules.CustomModule"),
-		autocomplete_module = require ("modular.user.gaspar.modules.AutoCompleteModule"),
 	}
 )
 

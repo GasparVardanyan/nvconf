@@ -34,6 +34,7 @@ map ("n", "<leader>vt", function ()
 end, { desc = "toggle tabline" })
 map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
 map ("n", "<leader>vw", vim.cmd.WipeWindowlessBufs, { desc = "wipe windowless bufs" })
+map ("n", "<leader>vg", vim.cmd.GTabs, { desc = "gaspar tabs" })
 
 -- TODO: use this instead of <cmd> in mappings:
 		-- vim.cmd('echo "foo"')

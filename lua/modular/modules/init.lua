@@ -3,8 +3,9 @@ return {
 	-- lint_module = require ("modular.modules.LintModule")
 	-- lspsaga_module = require ("modular.modules.LspSagaModule"),
 	-- menu_module = require ("modular.modules.MenuModule"),
-	-- _menu_module = require ("modular.modules._MenuModule"),
+	_menu_module = require ("modular.modules._MenuModule"),
 	ai_module = require ("modular.modules.AiModule"),
+	autocomplete_module = require ("modular.modules.AutoCompleteModule"),
 	basic_module = require ("modular.modules.BasicModule"),
 	clang_module = require ("modular.modules.ClangModule"),
 	compiler_module = require ("modular.modules.CompilerModule"),
@@ -14,6 +15,7 @@ return {
 	formatter_module = require ("modular.modules.FormatterModule"),
 	gdb_module = require ("modular.modules.GdbModule"),
 	git_module = require ("modular.modules.GitModule"),
+	github_module = require ("modular.modules.GithubModule"),
 	iron_module = require ("modular.modules.IronModule"),
 	java_module = require ("modular.modules.JavaMoule"),
 	lean_module = require ("modular.modules.LeanModule"),
@@ -28,7 +30,7 @@ return {
 	profiler_module = require ("modular.modules.ProfilerModule"),
 	qt_module = require ("modular.modules.QtModule"),
 	-- rest_module = require ("modular.modules.RestModule"),
+	session_module = require ("modular.modules.SessionModule"),
 	test_module = require ("modular.modules.TestModule"),
 	ui_module = require ("modular.modules.UIModule"),
-	github_module = require ("modular.modules.GithubModule"),
 }

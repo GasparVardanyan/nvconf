@@ -7,8 +7,6 @@ local integrations_path = vim.fn.stdpath ("data") .. "/lazy/base46/lua/base46/in
 
 local function get_integrations ()
 	local integrations = {}
-	table.insert (integrations, "gitsigns")
-	table.insert (integrations, "neotest")
 	for name in vim.fs.dir (integrations_path) do
 		name = name:gsub ('%.lua$', '')
 		table.insert (integrations, name)
