@@ -1,3 +1,4 @@
 return {
-	"lifepillar/vim-solarized8",
+	"https://codeberg.org/lifepillar/vim-solarized8",
+	branch = "neovim",
 }
