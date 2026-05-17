@@ -24,7 +24,7 @@ return {
 	lspsaga_module = require ("modular.modules.LspSagaModule"),
 	md_module = require ("modular.modules.MdModule"),
 	misc_module = require ("modular.modules.MiscModule"),
-	-- nonels_module = require ("modular.modules.NoneLSModule"),
+	nonels_module = require ("modular.modules.NoneLSModule"),
 	nvim_module = require ("modular.modules.NvimModule"),
 	org_module = require ("modular.modules.OrgModule"),
 	profiler_module = require ("modular.modules.ProfilerModule"),

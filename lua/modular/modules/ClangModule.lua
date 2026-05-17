@@ -117,20 +117,24 @@ local ClangModule = Module:new ({
 					cppcheck_jnproc =  "-j " .. (nproc - 1)
 				end
 
-				local clazy = require 'lint.linters.clazy'
+				local clazy = require ("lint.linters.clazy")
+				local clang_tidy = require ("lint.linters.clangtidy")
+				local cppcheck = require ("lint.linters.cppcheck")
+
 				vim.list_extend (clazy.args, {
 					clang_standard,
 					"-checks=level0,level1,level2,assert-with-side-effects,compare-member-check,container-inside-loop,detaching-member,heap-allocated-small-trivial-type,ifndef-define-typo,isempty-vs-count,jni-signatures,qbytearray-conversion-to-c-style,qhash-with-char-pointer-key,qproperty-type-mismatch,qrequiredresult-candidates,qstring-ref,qstring-varargs,qt-keyword-emit,qt-keywords,qvariant-template-instantiation,raw-environment-function,reserve-candidates,sanitize-inline-keyword,signal-with-return-value,thread-with-slots,tr-non-literal,unexpected-flag-enumerator-value,unneeded-cast,unused-result-check,use-arrow-operator-instead-of-data,use-chrono-in-qtimer,used-qunused-variable"
 				})
-				local clang_tidy = require ("lint.linters.clangtidy")
+
 				vim.list_extend (clang_tidy.args, {
 					clang_standard,
-					"--checks='clang-diagnostic-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,performance-*,portability-*,readability-*,-fuchsia-*,-google-*,-llvm-*,-readability-magic-numbers'"
+					"--checks=clang-diagnostic-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,performance-*,portability-*,readability-*,-fuchsia-*,-google-*,-llvm-*,-readability-magic-numbers"
 				})
-				local cppcheck = require ("lint.linters.cppcheck")
+
 				vim.list_extend (cppcheck.args, {
 					cppcheck_standard,
-					cppcheck_jnproc
+					cppcheck_jnproc,
+					"--check-level=exhaustive"
 				})
 			end
 		}),
