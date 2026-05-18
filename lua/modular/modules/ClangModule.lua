@@ -168,15 +168,17 @@ local ClangModule = Module:new ({
 
 						.. ",-altera-unroll-loops"
 						.. ",-darwin-*"
+						.. ",-fuchsia-overloaded-operator"
 						.. ",-linuxkernel-*"
+						.. ",-llvm-else-after-return"
 						.. ",-llvmlibc-*"
 						.. ",-objc-*"
+						.. ",-readability-else-after-return"
 						.. ",-readability-function-cognitive-complexity"
 						.. ",-readability-identifier-length"
-						.. ",-readability-else-after-return"
 						.. ",-readability-redundant-access-specifiers"
-						.. ",-readability-simplify-boolean-expr"
 						.. ",-readability-redundant-inline-specifier"
+						.. ",-readability-simplify-boolean-expr"
 				})
 
 				vim.list_extend (cppcheck.args, {

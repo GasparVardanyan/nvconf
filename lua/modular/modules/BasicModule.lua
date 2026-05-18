@@ -33,6 +33,10 @@ local BasicModule = Module:new ({
 		-- require ("modular.specs.Basic.nvim-treesitter"),
 		-- require ("modular.specs.Misc.image_nvim"),
 		-- require ("modular.specs.Basic.edgy_nvim"),
+		{
+			"LunarVim/bigfile.nvim",
+			config = true,
+		},
 	},
 	actions = {
 		-- ModuleAction:new ({
