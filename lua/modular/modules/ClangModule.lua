@@ -89,11 +89,13 @@ local ClangModule = Module:new ({
 		ModuleAction:new ({
 			plugins = "nvim-lint",
 			action = function ()
+				local clang_config = require ("modular.config.clang")
+
 				local clang_standard = function ()
 					if vim.bo.filetype == "cpp" then
-						return "--extra-arg=-std=c++20"
+						return "--extra-arg=-std=" .. clang_config.stdcpp
 					elseif vim.bo.filetype == "c" then
-						return "--extra-arg=-std=c18"
+						return "--extra-arg=-std=" .. clang_config.stdc
 					else
 						return ""
 					end
@@ -101,9 +103,9 @@ local ClangModule = Module:new ({
 
 				local cppcheck_standard = function ()
 					if vim.bo.filetype == "cpp" then
-						return "--std=c++20"
+						return "--std=" .. clang_config.stdcpp
 					elseif vim.bo.filetype == "c" then
-						return "--std=c18"
+						return "--std=" .. clang_config.stdc
 					else
 						return ""
 					end
@@ -155,7 +157,7 @@ local ClangModule = Module:new ({
 						.. ",unused-result-check"
 						.. ",use-arrow-operator-instead-of-data"
 						.. ",use-chrono-in-qtimer"
-						.. ",used-qunused-variable"
+						.. ",used-qunused-variable",
 				})
 
 				vim.list_extend (clang_tidy.args, {
@@ -166,27 +168,31 @@ local ClangModule = Module:new ({
 						-- misc, modernize, mpi, objc, openmp, performance,
 						-- portability, readability, zircon
 
-						.. ",-altera-unroll-loops"
-						.. ",-cppcoreguidelines-avoid-magic-numbers"
 						.. ",-darwin-*"
-						.. ",-fuchsia-overloaded-operator"
 						.. ",-linuxkernel-*"
-						.. ",-llvm-else-after-return"
 						.. ",-llvmlibc-*"
 						.. ",-objc-*"
+
+						.. ",-altera-unroll-loops"
+						.. ",-cppcoreguidelines-avoid-magic-numbers"
+						.. ",-fuchsia-overloaded-operator"
+						.. ",-llvm-else-after-return"
+						.. ",-modernize-use-trailing-return-type"
 						.. ",-readability-else-after-return"
 						.. ",-readability-function-cognitive-complexity"
 						.. ",-readability-identifier-length"
 						.. ",-readability-magic-numbers"
 						.. ",-readability-redundant-access-specifiers"
 						.. ",-readability-redundant-inline-specifier"
-						.. ",-readability-simplify-boolean-expr"
+						.. ",-readability-simplify-boolean-expr",
 				})
 
 				vim.list_extend (cppcheck.args, {
 					cppcheck_standard,
 					cppcheck_jnproc,
-					"--check-level=exhaustive"
+					"--enable=all",
+					"--check-level=exhaustive",
+					"--suppress=missingIncludeSystem",
 				})
 			end
 		}),
