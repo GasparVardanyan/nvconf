@@ -123,12 +123,60 @@ local ClangModule = Module:new ({
 
 				vim.list_extend (clazy.args, {
 					clang_standard,
-					"-checks=level0,level1,level2,assert-with-side-effects,compare-member-check,container-inside-loop,detaching-member,heap-allocated-small-trivial-type,ifndef-define-typo,isempty-vs-count,jni-signatures,qbytearray-conversion-to-c-style,qhash-with-char-pointer-key,qproperty-type-mismatch,qrequiredresult-candidates,qstring-ref,qstring-varargs,qt-keyword-emit,qt-keywords,qvariant-template-instantiation,raw-environment-function,reserve-candidates,sanitize-inline-keyword,signal-with-return-value,thread-with-slots,tr-non-literal,unexpected-flag-enumerator-value,unneeded-cast,unused-result-check,use-arrow-operator-instead-of-data,use-chrono-in-qtimer,used-qunused-variable"
+					"-checks=" -- why * doesn't work here?
+						.. "level0"
+						.. ",level1"
+						.. ",level2"
+						.. ",assert-with-side-effects"
+						.. ",compare-member-check"
+						.. ",container-inside-loop"
+						.. ",detaching-member"
+						.. ",heap-allocated-small-trivial-type"
+						.. ",ifndef-define-typo"
+						.. ",isempty-vs-count"
+						.. ",jni-signatures"
+						.. ",qbytearray-conversion-to-c-style"
+						.. ",qhash-with-char-pointer-key"
+						.. ",qproperty-type-mismatch"
+						.. ",qrequiredresult-candidates"
+						.. ",qstring-ref"
+						.. ",qstring-varargs"
+						.. ",qt-keyword-emit"
+						.. ",qt-keywords"
+						.. ",qvariant-template-instantiation"
+						.. ",raw-environment-function"
+						.. ",reserve-candidates"
+						.. ",sanitize-inline-keyword"
+						.. ",signal-with-return-value"
+						.. ",thread-with-slots"
+						.. ",tr-non-literal"
+						.. ",unexpected-flag-enumerator-value"
+						.. ",unneeded-cast"
+						.. ",unused-result-check"
+						.. ",use-arrow-operator-instead-of-data"
+						.. ",use-chrono-in-qtimer"
+						.. ",used-qunused-variable"
 				})
 
 				vim.list_extend (clang_tidy.args, {
 					clang_standard,
-					"--checks=clang-diagnostic-*,bugprone-*,clang-analyzer-*,cppcoreguidelines-*,modernize-*,performance-*,portability-*,readability-*,-fuchsia-*,-google-*,-llvm-*,-readability-magic-numbers"
+					"--checks=*" -- abseil, altera, android, boost, bugprone,
+						-- cert, clang, concurrency, cppcoreguidelines, darwin,
+						-- fuchsia, google, hicpp, linuxkernel, llvm, llvmlibc,
+						-- misc, modernize, mpi, objc, openmp, performance,
+						-- portability, readability, zircon
+
+						.. ",-altera-unroll-loops"
+						.. ",-darwin-*"
+						.. ",-linuxkernel-*"
+						.. ",-llvmlibc-*"
+						.. ",-objc-*"
+						.. ",-readability-function-cognitive-complexity"
+						.. ",-readability-identifier-length"
+						.. ",-readability-else-after-return"
+						.. ",-readability-redundant-access-specifiers"
+						.. ",-readability-simplify-boolean-expr"
+						.. ",-readability-redundant-inline-specifier"
 				})
 
 				vim.list_extend (cppcheck.args, {
