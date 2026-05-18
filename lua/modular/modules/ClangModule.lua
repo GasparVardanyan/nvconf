@@ -60,7 +60,7 @@ local ClangModule = Module:new ({
 				vim.list_extend (MasonTools, {
 					"clang-format",
 					"codelldb",
-					"cpplint",
+					-- "cpplint",
 				})
 
 				LintersByFt ["c"] = {
@@ -167,6 +167,7 @@ local ClangModule = Module:new ({
 						-- portability, readability, zircon
 
 						.. ",-altera-unroll-loops"
+						.. ",-cppcoreguidelines-avoid-magic-numbers"
 						.. ",-darwin-*"
 						.. ",-fuchsia-overloaded-operator"
 						.. ",-linuxkernel-*"
@@ -176,6 +177,7 @@ local ClangModule = Module:new ({
 						.. ",-readability-else-after-return"
 						.. ",-readability-function-cognitive-complexity"
 						.. ",-readability-identifier-length"
+						.. ",-readability-magic-numbers"
 						.. ",-readability-redundant-access-specifiers"
 						.. ",-readability-redundant-inline-specifier"
 						.. ",-readability-simplify-boolean-expr"
