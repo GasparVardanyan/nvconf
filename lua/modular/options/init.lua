@@ -3,6 +3,7 @@ vim.g.loaded_netrwPlugin = 1
 
 vim.g.have_nerd_font = true
 require ("modular.options.diagnostics")
+require ("modular.options.complete_popup_border")
 
 -- vim.o.autocomplete = true
 

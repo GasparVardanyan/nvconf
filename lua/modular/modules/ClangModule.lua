@@ -200,14 +200,13 @@ local ClangModule = Module:new ({
 						.. ",-cppcoreguidelines-owning-memory"
 						.. ",-cppcoreguidelines-rvalue-reference-param-not-moved"
 						.. ",-modernize-use-nodiscard"
-
 				})
 
 				vim.list_extend (cppcheck.args, {
 					cppcheck_standard,
 					cppcheck_jnproc,
-					"--enable=all",
 					"--check-level=exhaustive",
+					"--enable=all",
 					"--suppress=missingIncludeSystem",
 				})
 			end
