@@ -178,12 +178,13 @@ local ClangModule = Module:new ({
 						.. ",-cppcoreguidelines-avoid-do-while"
 						.. ",-cppcoreguidelines-avoid-magic-numbers"
 						.. ",-cppcoreguidelines-non-private-member-variables-in-classes"
+						.. ",-fuchsia-default-arguments-calls"
 						.. ",-fuchsia-default-arguments-declarations"
 						.. ",-fuchsia-overloaded-operator"
 						.. ",-fuchsia-trailing-return"
-						.. ",-google-explicit-constructor,"
+						.. ",-google-explicit-constructor"
 						.. ",-hicpp-explicit-conversions"
-						.. ",-llvm-else-after-return,"
+						.. ",-llvm-else-after-return"
 						.. ",-llvm-header-guard"
 						.. ",-misc-non-private-member-variables-in-classes"
 						.. ",-misc-use-anonymous-namespace"
@@ -197,9 +198,9 @@ local ClangModule = Module:new ({
 						.. ",-readability-redundant-inline-specifier"
 						.. ",-readability-simplify-boolean-expr"
 
-						.. ",-cppcoreguidelines-owning-memory"
-						.. ",-cppcoreguidelines-rvalue-reference-param-not-moved"
-						.. ",-modernize-use-nodiscard"
+						-- .. ",-cppcoreguidelines-owning-memory"
+						-- .. ",-cppcoreguidelines-rvalue-reference-param-not-moved"
+						-- .. ",-modernize-use-nodiscard"
 				})
 
 				vim.list_extend (cppcheck.args, {
