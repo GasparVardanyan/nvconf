@@ -141,6 +141,7 @@ local BasicModule = Module:new ({
 				local reg_mapping_group = require ("modular.utils").reg_mapping_group
 
 				reg_mapping_group ("<leader>f", "fuzzy")
+				reg_mapping_group ("<leader>fD", "diagnostics")
 			end
 		}),
 		-- NOTE: load fzf-lua mappings after telescope ones to override

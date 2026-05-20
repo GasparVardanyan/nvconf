@@ -1,3 +1,5 @@
+-- https://github.com/neovim/neovim/issues/38248#issuecomment-4038192073
+
 -- Add a rounded border to all LSP floating windows (hover, signature help)
 local orig_open_floating_preview = vim.lsp.util.open_floating_preview
 ---@diagnostic disable-next-line: duplicate-set-field
