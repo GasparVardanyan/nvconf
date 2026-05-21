@@ -63,27 +63,45 @@ local ClangModule = Module:new ({
 					-- "cpplint",
 				})
 
-				LintersByFt ["c"] = {
+				if nil == LintersByFt ["c"]
+				then
+					LintersByFt ["c"] = {}
+				end
+
+				vim.list_extend (LintersByFt ["c"], {
 					"clangtidy",
 					"cppcheck",
-					"clazy",
 					-- "cpplint",
-				}
+				})
 
-				LintersByFt ["cpp"] = {
+				if nil == LintersByFt ["cpp"]
+				then
+					LintersByFt ["cpp"] = {}
+				end
+
+				vim.list_extend (LintersByFt ["cpp"], {
 					"clangtidy",
 					"cppcheck",
-					"clazy",
 					-- "cpplint",
-				}
+				})
 
-				Formatters.formatters_by_ft ["c"] = {
-					"clang-format",
-				}
+				if nil == Formatters.formatters_by_ft ["c"]
+				then
+					Formatters.formatters_by_ft ["c"]  = {}
+				end
 
-				Formatters.formatters_by_ft ["cpp"] = {
+				vim.list_extend (Formatters.formatters_by_ft ["c"], {
 					"clang-format",
-				}
+				})
+
+				if nil == Formatters.formatters_by_ft ["cpp"]
+				then
+					Formatters.formatters_by_ft ["cpp"]  = {}
+				end
+
+				vim.list_extend (Formatters.formatters_by_ft ["cpp"], {
+					"clang-format",
+				})
 			end
 		}),
 		ModuleAction:new ({
@@ -119,46 +137,8 @@ local ClangModule = Module:new ({
 					cppcheck_jnproc =  "-j " .. (nproc - 1)
 				end
 
-				local clazy = require ("lint.linters.clazy")
 				local clang_tidy = require ("lint.linters.clangtidy")
 				local cppcheck = require ("lint.linters.cppcheck")
-
-				vim.list_extend (clazy.args, {
-					clang_standard,
-					"-checks=" -- why * doesn't work here?
-						.. "level0"
-						.. ",level1"
-						.. ",level2"
-						.. ",assert-with-side-effects"
-						.. ",compare-member-check"
-						.. ",container-inside-loop"
-						.. ",detaching-member"
-						.. ",heap-allocated-small-trivial-type"
-						.. ",ifndef-define-typo"
-						.. ",isempty-vs-count"
-						.. ",jni-signatures"
-						.. ",qbytearray-conversion-to-c-style"
-						.. ",qhash-with-char-pointer-key"
-						.. ",qproperty-type-mismatch"
-						.. ",qrequiredresult-candidates"
-						.. ",qstring-ref"
-						.. ",qstring-varargs"
-						.. ",qt-keyword-emit"
-						.. ",qt-keywords"
-						.. ",qvariant-template-instantiation"
-						.. ",raw-environment-function"
-						.. ",reserve-candidates"
-						.. ",sanitize-inline-keyword"
-						.. ",signal-with-return-value"
-						.. ",thread-with-slots"
-						.. ",tr-non-literal"
-						.. ",unexpected-flag-enumerator-value"
-						.. ",unneeded-cast"
-						.. ",unused-result-check"
-						.. ",use-arrow-operator-instead-of-data"
-						.. ",use-chrono-in-qtimer"
-						.. ",used-qunused-variable",
-				})
 
 				vim.list_extend (clang_tidy.args, {
 					clang_standard,
