@@ -116,6 +116,7 @@
   ~~ (x) https://github.com/sakhnik/nvim-gdb
   ~~ (x) https://github.com/pwntester/octo.nvim
   ~~ (x) https://github.com/nvim-java/nvim-java
+  ~~ ( ) https://github.com/rachartier/tiny-code-action.nvim
   ~~ ( ) https://github.com/wsdjeg/rooter.nvim
   ~~ ( ) https://github.com/tsakirist/telescope-lazy.nvim
   ~~ ( ) https://github.com/smzm/hydrovim

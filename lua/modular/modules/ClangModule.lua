@@ -140,6 +140,7 @@ local ClangModule = Module:new ({
 				local clang_tidy = require ("lint.linters.clangtidy")
 				local cppcheck = require ("lint.linters.cppcheck")
 
+				-- https://clang.llvm.org/extra/clang-tidy/
 				vim.list_extend (clang_tidy.args, {
 					clang_standard,
 					"--checks=*" -- abseil, altera, android, boost, bugprone,

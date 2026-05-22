@@ -1,9 +1,5 @@
 return {
-	-- ====================
-	-- lint_module = require ("modular.modules.LintModule")
-	-- lspsaga_module = require ("modular.modules.LspSagaModule"),
-	-- menu_module = require ("modular.modules.MenuModule"),
-	_menu_module = require ("modular.modules._MenuModule"),
+	menu_module = require ("modular.modules._MenuModule"),
 	ai_module = require ("modular.modules.AiModule"),
 	autocomplete_module = require ("modular.modules.AutoCompleteModule"),
 	basic_module = require ("modular.modules.BasicModule"),
@@ -28,8 +24,8 @@ return {
 	nvim_module = require ("modular.modules.NvimModule"),
 	org_module = require ("modular.modules.OrgModule"),
 	profiler_module = require ("modular.modules.ProfilerModule"),
-	-- qt_module = require ("modular.modules.QtModule"),
-	-- rest_module = require ("modular.modules.RestModule"),
+	qt_module = require ("modular.modules.QtModule"),
+	rest_module = require ("modular.modules.RestModule"),
 	session_module = require ("modular.modules.SessionModule"),
 	test_module = require ("modular.modules.TestModule"),
 	ui_module = require ("modular.modules.UIModule"),
