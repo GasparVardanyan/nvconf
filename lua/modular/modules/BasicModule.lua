@@ -37,6 +37,11 @@ local BasicModule = Module:new ({
 			"LunarVim/bigfile.nvim",
 			config = true,
 		},
+		{
+			'stevearc/dressing.nvim',
+			opts = {},
+			config = true,
+		},
 	},
 	actions = {
 		-- ModuleAction:new ({
