@@ -8,7 +8,7 @@ then
 
 	vim.api.nvim_create_autocmd ("FileType", {
 		group = vim.api.nvim_create_augroup (groups.ClangIWYUMappings, { clear = true }),
-		pattern = { "cpp" },
+		pattern = { "c", "cpp" },
 		callback = function (args)
 			local bufnr = args.buf
 			map ("n", "<leader>Chc", vim.cmd.ClangIWYUCurrent, { buffer = bufnr, desc = "iwyu current file" })

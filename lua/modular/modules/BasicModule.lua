@@ -162,6 +162,12 @@ local BasicModule = Module:new ({
 				require ("modular.mappings.Basic.todo-comments_nvim-telescope_nvim")
 			end
 		}),
+		-- ModuleAction:new ({ -- telescope integration is better
+		-- 	plugins = { "fzf-lua", "todo-comments.nvim" },
+		-- 	action = function ()
+		-- 		require ("modular.mappings.Basic.todo-comments_nvim-fzf-lua")
+		-- 	end
+		-- }),
 		ModuleAction:new ({
 			plugins = "toggleterm.nvim",
 			action = function ()

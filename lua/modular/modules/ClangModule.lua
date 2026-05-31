@@ -154,6 +154,7 @@ local ClangModule = Module:new ({
 						.. ",-llvmlibc-*"
 						.. ",-objc-*"
 
+						.. ",-altera-struct-pack-align"
 						.. ",-altera-unroll-loops"
 						.. ",-bugprone-easily-swappable-parameters"
 						.. ",-fuchsia-default-arguments-calls"

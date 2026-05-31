@@ -17,7 +17,7 @@ then
 
 	vim.api.nvim_create_autocmd ("FileType", {
 		group = vim.api.nvim_create_augroup (groups.ClangIWYU, { clear = true }),
-		pattern = { "cpp" },
+		pattern = { "c", "cpp" },
 		callback = function (args)
 			local bufnr = args.buf
 				vim.api.nvim_buf_create_user_command (bufnr, "ClangIWYUCurrent",
