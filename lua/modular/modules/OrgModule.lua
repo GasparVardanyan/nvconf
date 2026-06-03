@@ -47,6 +47,7 @@ local OrgModule = Module:new ({
 			plugins = "neorg",
 			action = function ()
 				require ("modular.autocmds.Org.neorg")
+				require ("modular.mappings.Org.neorg")
 			end
 		}),
 		ModuleAction:new ({

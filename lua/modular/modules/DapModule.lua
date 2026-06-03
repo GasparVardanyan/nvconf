@@ -8,6 +8,7 @@ local DapModule = Module:new ({
 		require ("modular.specs.Dap.nvim-dap"),
 		require ("modular.specs.Dap.mason-nvim-dap"),
 		require ("modular.specs.Dap.nvim-dap-ui"),
+		require ("modular.specs.Dap.nvim-dap-image"),
 		require ("modular.specs.Dap.telescope-dap_nvim"),
 	},
 	actions = {
@@ -21,9 +22,23 @@ local DapModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "nvim-dap-image",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>di",  "image")
+			end
+		}),
+		ModuleAction:new ({
 			plugins = "nvim-dap",
 			action = function ()
 				require ("modular.mappings.Dap.nvim-dap")
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "nvim-dap-image",
+			action = function ()
+				require ("modular.mappings.Dap.nvim-dap-image")
 			end
 		}),
 		ModuleAction:new ({

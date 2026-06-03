@@ -13,6 +13,14 @@ return {
 	---@type render.md.UserConfig
 	opts = {
 		file_types = { "markdown", "Avante" },
+		heading = {
+			border = true,
+			border_virtual = true,
+			border_prefix = true,
+		},
+		latex = {
+			enabled = false,
+		},
 	},
 	ft = { "markdown", "Avante" },
 	-- config = function ()

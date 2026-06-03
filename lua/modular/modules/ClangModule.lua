@@ -169,6 +169,7 @@ local ClangModule = Module:new ({
 						.. ",-misc-non-private-member-variables-in-classes"
 						.. ",-misc-use-anonymous-namespace"
 						.. ",-modernize-use-trailing-return-type"
+						.. ",-readability-convert-member-functions-to-static"
 						.. ",-readability-else-after-return"
 						.. ",-readability-function-cognitive-complexity"
 						.. ",-readability-identifier-length"
