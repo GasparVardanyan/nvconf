@@ -7,25 +7,25 @@ local UIModule = Module:new ({
 	plugins = {
 		require ("modular.specs.UI.base46"),
 
-		-- -- require ("modular.specs.UI.base16-nvim"),
-		-- require ("modular.specs.UI.tinted-nvim"),
-		-- require ("modular.specs.UI.starry_nvim"),
-		--
-		-- -- require ("modular.specs.UI.NeoSolarized"),
-		-- require ("modular.specs.UI.NeoSolarized_nvim"),
-		-- require ("modular.specs.UI.neosolarized_nvim"),
-		-- require ("modular.specs.UI.solarized-osaka_nvim"),
-		-- require ("modular.specs.UI.solarized_nvim1"),
-		-- -- require ("modular.specs.UI.solarized_nvim2"),
-		-- require ("modular.specs.UI.vim-solarized8"),
-		-- -- require ("modular.specs.UI.selenized_nvim"),
-		--
-		-- require ("modular.specs.UI.kanagawa-paper_nvim"),
-		-- require ("modular.specs.UI.kanagawa_nvim"),
-		--
-		-- require ("modular.specs.UI.dracula_nvim1"),
-		-- -- require ("modular.specs.UI.dracula_nvim2"),
-		-- require ("modular.specs.UI.gruvbox_nvim"),
+		-- require ("modular.specs.UI.base16-nvim"),
+		require ("modular.specs.UI.tinted-nvim"),
+		require ("modular.specs.UI.starry_nvim"),
+
+		-- require ("modular.specs.UI.NeoSolarized"),
+		require ("modular.specs.UI.NeoSolarized_nvim"),
+		require ("modular.specs.UI.neosolarized_nvim"),
+		require ("modular.specs.UI.solarized-osaka_nvim"),
+		require ("modular.specs.UI.solarized_nvim1"),
+		-- require ("modular.specs.UI.solarized_nvim2"),
+		require ("modular.specs.UI.vim-solarized8"),
+		-- require ("modular.specs.UI.selenized_nvim"),
+
+		require ("modular.specs.UI.kanagawa-paper_nvim"),
+		require ("modular.specs.UI.kanagawa_nvim"),
+
+		require ("modular.specs.UI.dracula_nvim1"),
+		-- require ("modular.specs.UI.dracula_nvim2"),
+		require ("modular.specs.UI.gruvbox_nvim"),
 	},
 	actions = {
 		-- ModuleAction:new ({
@@ -40,6 +40,16 @@ local UIModule = Module:new ({
 		-- 		})
 		-- 	end
 		-- }),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			action = function ()
+				vim.api.nvim_create_autocmd ("ColorSchemePre", {
+					callback = function ()
+						vim.cmd "highlight clear"
+					end,
+				})
+			end
+		}),
 		ModuleAction:new ({
 			plugins = "base46",
 			action = function ()
