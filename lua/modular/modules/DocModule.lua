@@ -12,6 +12,15 @@ local DocModule = Module:new ({
 			event = ModuleAction.EventType.Pre,
 			action = function ()
 				vim.g.zv_disable_mapping = 1
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>z",  "zeal")
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "zeavim.vim",
+			event = ModuleAction.EventType.Pre,
+			action = function ()
+				require ("modular.mappings.Doc.zeavim_vim")
 			end
 		}),
 	},

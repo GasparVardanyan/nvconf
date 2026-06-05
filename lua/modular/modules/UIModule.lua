@@ -9,7 +9,7 @@ local UIModule = Module:new ({
 
 		-- require ("modular.specs.UI.base16-nvim"),
 		require ("modular.specs.UI.tinted-nvim"),
-		require ("modular.specs.UI.starry_nvim"),
+		-- require ("modular.specs.UI.starry_nvim"),
 
 		-- require ("modular.specs.UI.NeoSolarized"),
 		require ("modular.specs.UI.NeoSolarized_nvim"),
@@ -26,6 +26,7 @@ local UIModule = Module:new ({
 		require ("modular.specs.UI.dracula_nvim1"),
 		-- require ("modular.specs.UI.dracula_nvim2"),
 		require ("modular.specs.UI.gruvbox_nvim"),
+		require ("modular.specs.UI.tokyonight_nvim"),
 	},
 	actions = {
 		-- ModuleAction:new ({
