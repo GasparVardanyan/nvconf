@@ -31,7 +31,7 @@ then
 		-- nonels_module = require ("modular.modules.NoneLSModule"),
 		-- nvim_module = require ("modular.modules.NvimModule"),
 		org_module = require ("modular.modules.OrgModule"),
-		-- profiler_module = require ("modular.modules.ProfilerModule"),
+		profiler_module = require ("modular.modules.ProfilerModule"),
 		-- qt_module = require ("modular.modules.QtModule"),
 		-- rest_module = require ("modular.modules.RestModule"),
 		session_module = require ("modular.modules.SessionModule"),
