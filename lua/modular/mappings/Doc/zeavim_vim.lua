@@ -24,13 +24,13 @@ local function zeal_search_input (docset)
 end
 
 map ("n", "<leader>zc", function ()
-	zeal_search ("c", vim.fn.expand ("<cWORD>"))
+	zeal_search ("c", vim.fn.expand ("<cword>"))
 end, { desc = "C" })
 map ("n", "<leader>zp", function ()
-	zeal_search ("cpp", vim.fn.expand ("<cWORD>"))
+	zeal_search ("cpp", vim.fn.expand ("<cword>"))
 end, { desc = "C++" })
 map ("n", "<leader>zq", function ()
-	zeal_search ("qt6", vim.fn.expand ("<cWORD>"))
+	zeal_search ("qt6", vim.fn.expand ("<cword>"))
 end, { desc = "Qt6" })
 
 map ("n", "<leader>zC", function ()

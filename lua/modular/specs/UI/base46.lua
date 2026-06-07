@@ -26,7 +26,7 @@ local function generate ()
 	for name in vim.fs.dir (base46_path) do
 		local theme = name:match ("(.+)%.lua$")
 		if theme then
-			local proxy_file = colors_dir .. "/NV_" .. theme .. ".lua"
+			local proxy_file = colors_dir .. "/chad_" .. theme .. ".lua"
 
 			if vim.fn.filereadable (proxy_file) == 0 then
 				local f = io.open (proxy_file, "w")

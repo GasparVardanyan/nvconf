@@ -16,7 +16,7 @@ local ClangModule = Module:new ({
 		-- 	cmd = "CPPMan",
 		-- 	name = "cppfzf",
 		-- 	dependencies = {
-		-- 		"folke/snacks.nvim",
+		-- 		"ibhagwan/fzf-lua",
 		-- 	},
 		-- 	opts = {},
 		-- },

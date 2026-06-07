@@ -4,7 +4,7 @@ local ModuleAction = require ("modular.ModuleAction")
 local OrgModule = Module:new ({
 	name = "Org",
 	plugins = {
-		require ("modular.specs.Org.neorg"),
+		-- require ("modular.specs.Org.neorg"),
 		require ("modular.specs.Org.orgmode"),
 		-- require ("modular.specs.Misc.image_nvim"),
 		-- require ("modular.specs.Misc.headlines_nvim"),
