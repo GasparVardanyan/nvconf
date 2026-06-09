@@ -130,11 +130,11 @@ local ClangModule = Module:new ({
 				end
 
 				local nproc = require ("modular.utils").nproc
-				local cppcheck_jnproc = ''
+				local cppcheck_jnproc = {}
 
 				if 0 ~= nproc
 				then
-					cppcheck_jnproc =  "-j " .. (nproc - 1)
+					cppcheck_jnproc =  { "-j", nproc - 1 }
 				end
 
 				local clang_tidy = require ("lint.linters.clangtidy")
@@ -189,11 +189,17 @@ local ClangModule = Module:new ({
 
 				vim.list_extend (cppcheck.args, {
 					cppcheck_standard,
-					cppcheck_jnproc,
 					"--check-level=exhaustive",
 					"--enable=all",
 					"--suppress=missingIncludeSystem",
 				})
+				vim.list_extend (cppcheck.args, cppcheck_jnproc)
+
+				-- cppcheck.append_fname = false
+				-- vim.list_extend (cppcheck.args, {
+				-- 	"--cppcheck-build-dir=.cppcheck",
+				-- 	"--project=compile_commands.json",
+				-- })
 			end
 		}),
 		ModuleAction:new ({
