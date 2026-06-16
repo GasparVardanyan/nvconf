@@ -24,6 +24,16 @@ map ("n", "<leader>V", "`[v`]", { desc = "vim `[v`]" })
 map ("n", "<leader>vc", vim.cmd.tabclose, { desc = "tabclose" })
 map ("n", "<leader>vd", vim.cmd.bdelete, { desc = "bdelete" })
 map ("n", "<leader>vm", function () vim.cmd.tabnew "%"; vim.cmd.norm "zz" end, { desc = "tabnew %" }) -- TODO: proper encoding without binary symbols
+map ("n", "<leader>vr", function ()
+	vim.diagnostic.reset (nil, 0)
+end, {
+	desc = "reset current buffer diagnostics",
+})
+map ("n", "<leader>vR", function ()
+	vim.diagnostic.reset ()
+end, {
+	desc = "reset all diagnostics",
+})
 map ("n", "<leader>vt", function ()
 	if 0 == vim.o.showtabline
 	then

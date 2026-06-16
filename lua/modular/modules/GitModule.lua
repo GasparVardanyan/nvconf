@@ -4,7 +4,8 @@ local ModuleAction = require ("modular.ModuleAction")
 local GitModule = Module:new ({
 	name = "Git",
 	plugins = {
-		require ("modular.specs.Git.diffview_nvim"),
+		-- require ("modular.specs.Git.diffview_nvim"),
+		require ("modular.specs.Git.diffview-plus_nvim"),
 		require ("modular.specs.Git.gitsigns_nvim"),
 		require ("modular.specs.Git.lazygit_nvim"),
 		require ("modular.specs.Git.neogit"),
@@ -22,6 +23,20 @@ local GitModule = Module:new ({
 		}),
 		ModuleAction:new ({
 			plugins = "diffview.nvim",
+			action = function ()
+				require ("modular.mappings.Git.diffview_nvim")
+			end
+		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "diffview-plus.nvim",
+			action = function ()
+				local reg_mapping_group = require ("modular.utils").reg_mapping_group
+				reg_mapping_group ("<leader>g",  "git")
+			end
+		}),
+		ModuleAction:new ({
+			plugins = "diffview-plus.nvim",
 			action = function ()
 				require ("modular.mappings.Git.diffview_nvim")
 			end

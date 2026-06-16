@@ -28,12 +28,12 @@ local CompilerModule = Module:new ({
 				reg_mapping_group ("<leader>c",  "compiler")
 			end
 		}),
-		ModuleAction:new ({
-			plugins = "compiler.nvim",
-			action = function ()
-				require ("modular.mappings.Compiler.compiler_nvim")
-			end
-		}),
+		-- ModuleAction:new ({
+		-- 	plugins = "compiler.nvim",
+		-- 	action = function ()
+		-- 		require ("modular.mappings.Compiler.compiler_nvim")
+		-- 	end
+		-- }),
 		ModuleAction:new ({
 			event = ModuleAction.EventType.Pre,
 			plugins = "cmake-tools.nvim",
