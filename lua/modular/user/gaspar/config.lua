@@ -42,7 +42,7 @@ then
 
 	vim.list_extend (TreeSitters, { "perl", })
 
-	AvanteOpts.provider = "openrouter_deepseek"
+	AvanteOpts.provider = "ollama"
 	AvanteOpts.providers = {
 		openrouter_deepseek = {
 			__inherited_from = "openai",
@@ -52,7 +52,13 @@ then
 			-- extra_request_body = {
 			-- 	max_tokens = 16384,
 			-- },
-		}
+		},
+		ollama = {
+			model = "mm",
+			is_env_set = function()
+				return require("avante.providers.ollama").check_endpoint_alive()
+			end,
+		},
 	}
 elseif 1 == hostname:find ("website")
 then

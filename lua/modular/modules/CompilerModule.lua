@@ -7,6 +7,7 @@ local CompilerModule = Module:new ({
 		require ("modular.specs.Compiler.cmake-tools_nvim"),
 		require ("modular.specs.Compiler.compiler_nvim"),
 		require ("modular.specs.Compiler.neovim-tasks"),
+		require ("modular.specs.Compiler.sanity_nvim"),
 		require ("modular.specs.Misc.overseer_nvim"),
 	},
 	actions = {
@@ -49,6 +50,7 @@ local CompilerModule = Module:new ({
 			plugins = "cmake-tools.nvim",
 			action = function ()
 				require ("modular.mappings.Compiler.cmake-tools_nvim")
+				require ("modular.autocmds.Compiler.cmake-tools_nvim")
 			end
 		}),
 	}

@@ -46,6 +46,13 @@ map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
 map ("n", "<leader>vw", vim.cmd.WipeWindowlessBufs, { desc = "wipe windowless bufs" })
 map ("n", "<leader>vg", vim.cmd.GTabs, { desc = "gaspar tabs" })
 
+vim.api.nvim_create_autocmd ("User", {
+	pattern = "LazyDone",
+	callback = function ()
+		vim.keymap.set ("n", "<leader>mL", vim.cmd.Lazy, { desc = "Lazy" })
+	end,
+})
+
 -- TODO: use this instead of <cmd> in mappings:
 		-- vim.cmd('echo "foo"')
 		-- vim.cmd { cmd = 'echo', args = { '"foo"' } }

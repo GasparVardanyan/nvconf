@@ -175,6 +175,12 @@ local BasicModule = Module:new ({
 			end
 		}),
 		ModuleAction:new ({
+			plugins = "tree-sitter-manager.nvim",
+			action = function ()
+				require ("modular.mappings.Basic.tree-sitter-manager_nvim")
+			end
+		}),
+		ModuleAction:new ({
 			event = ModuleAction.EventType.Pre,
 			plugins = "undotree",
 			action = function ()
