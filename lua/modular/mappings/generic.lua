@@ -45,6 +45,8 @@ end, { desc = "toggle tabline" })
 map ("n", "<leader>vn", vim.cmd.tabnew, { desc = "tabnew" })
 map ("n", "<leader>vw", vim.cmd.WipeWindowlessBufs, { desc = "wipe windowless bufs" })
 map ("n", "<leader>vg", vim.cmd.GTabs, { desc = "gaspar tabs" })
+map ("n", "<leader>vN", function () vim.cmd.setlocal {'nu!', 'rnu!'} end, { desc = "toggle line numbers" })
+
 
 vim.api.nvim_create_autocmd ("User", {
 	pattern = "LazyDone",
@@ -52,14 +54,6 @@ vim.api.nvim_create_autocmd ("User", {
 		vim.keymap.set ("n", "<leader>mL", vim.cmd.Lazy, { desc = "Lazy" })
 	end,
 })
-
--- TODO: use this instead of <cmd> in mappings:
-		-- vim.cmd('echo "foo"')
-		-- vim.cmd { cmd = 'echo', args = { '"foo"' } }
-		-- vim.cmd.echo({ args = { '"foo"' } })
-		-- vim.cmd.echo('"foo"')
--- map ("n", "<leader>n", "<cmd>setlocal nu! rnu!<cr>", { desc = "toggle line numbers" })
-map ("n", "<leader>n", function () vim.cmd.setlocal {'nu!', 'rnu!'} end, { desc = "toggle line numbers" })
 
 -- map ("t", "<C-x>", "<C-\\><C-N>", { desc = "escape terminal mode" })
 -- map ("t", "<C-q>", "<C-\\><C-N>ZQ", { desc = "close terminal" })

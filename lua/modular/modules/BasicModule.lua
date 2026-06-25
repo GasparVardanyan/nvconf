@@ -38,10 +38,13 @@ local BasicModule = Module:new ({
 			config = true,
 		},
 		{
-			'stevearc/dressing.nvim',
+			"stevearc/dressing.nvim",
 			opts = {},
 			config = true,
 		},
+		-- {
+		-- 	"edisj/msgarea.nvim",
+		-- },
 	},
 	actions = {
 		-- ModuleAction:new ({
@@ -50,6 +53,28 @@ local BasicModule = Module:new ({
 		-- 		require ("modular.autocmds.Basic.cd-project_nvim_VimEnter")
 		-- 	end
 		-- }),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "msgarea.nvim",
+			action = function ()
+				local targets = require("vim._core.ui2").cfg.msg.targets
+				for _, target in ipairs({
+					"typed_cmd",
+					"wmsg",
+					"emsg",
+					"lua_error",
+					"list_cmd",
+					"lua_print",
+					"echoerr",
+					"shell_out",
+					"shell_cmd",
+					"shell_err",
+				}) do
+				---@diagnostic disable-next-line: assign-type-mismatch
+				targets[target] = "msgarea"
+			end
+			end
+		}),
 		ModuleAction:new ({
 			event = ModuleAction.EventType.Pre,
 			plugins = "cd-project.nvim",

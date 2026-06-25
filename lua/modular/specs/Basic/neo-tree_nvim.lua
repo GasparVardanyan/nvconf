@@ -14,10 +14,20 @@ return {
 		require("neo-tree").setup({
 			filesystem = {
 				hijack_netrw_behavior = "disabled",
+				use_libuv_file_watcher = true,
 			},
 			buffers = {
 				show_unloaded = true,
 			},
+			document_symbols = {
+				follow_cursor = true,
+			},
+			sources = {
+				"buffers",
+				"document_symbols",
+				"filesystem",
+				"git_status",
+			}
 		})
 	end
 }
