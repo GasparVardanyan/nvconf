@@ -8,7 +8,7 @@ then
 	-- modular_modules = require ("modular.modules")
 	modular_modules = {
 		menu_module = require ("modular.modules._MenuModule"),
-		-- ai_module = require ("modular.modules.AiModule"),
+		ai_module = require ("modular.modules.AiModule"),
 		autocomplete_module = require ("modular.modules.AutoCompleteModule"),
 		basic_module = require ("modular.modules.BasicModule"),
 		clang_module = require ("modular.modules.ClangModule"),
@@ -19,7 +19,7 @@ then
 		-- formatter_module = require ("modular.modules.FormatterModule"),
 		-- gdb_module = require ("modular.modules.GdbModule"),
 		git_module = require ("modular.modules.GitModule"),
-		-- github_module = require ("modular.modules.GithubModule"),
+		github_module = require ("modular.modules.GithubModule"),
 		-- iron_module = require ("modular.modules.IronModule"),
 		-- java_module = require ("modular.modules.JavaMoule"),
 		-- lean_module = require ("modular.modules.LeanModule"),
@@ -32,7 +32,7 @@ then
 		-- nvim_module = require ("modular.modules.NvimModule"),
 		org_module = require ("modular.modules.OrgModule"),
 		profiler_module = require ("modular.modules.ProfilerModule"),
-		-- qt_module = require ("modular.modules.QtModule"),
+		qt_module = require ("modular.modules.QtModule"),
 		-- rest_module = require ("modular.modules.RestModule"),
 		session_module = require ("modular.modules.SessionModule"),
 		test_module = require ("modular.modules.TestModule"),
