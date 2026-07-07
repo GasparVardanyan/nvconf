@@ -59,6 +59,7 @@ local UIModule = Module:new ({
 				-- 	require ("base46").load_all_highlights ()
 				-- end, { nargs = 1, desc = "Switch base46 theme" })
 				require ("modular.mappings.UI.base46")
+				require ("modular.autocmds.UI.base46")
 			end
 		}),
 		-- ModuleAction:new ({

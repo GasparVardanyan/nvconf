@@ -16,7 +16,7 @@ local function restore_session ()
 			CMakeStopExecutor
 			execute 'CMakeSelectBuildDir ' . fnameescape (getcwd ()) . '/out'
 			" call system ('ln -s out/compile_commands.json .')
-			" LspRestart
+			LspRestart
 		endif
 		if filereadable(".vim.session")
 			silent source .vim.session

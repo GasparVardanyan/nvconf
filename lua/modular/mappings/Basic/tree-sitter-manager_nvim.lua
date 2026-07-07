@@ -1,3 +1,3 @@
 local map = vim.keymap.set
 
-map ("n", "<leader>mT", vim.cmd.TSManager, { desc = "Mason" })
+map ("n", "<leader>mT", vim.cmd.TSManager, { desc = "TreeSitter Manager" })

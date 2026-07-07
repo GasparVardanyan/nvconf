@@ -13,6 +13,6 @@ command FoldAllFunctions call FoldAllFunctions()
 " au BufReadPost *.cpp FoldAllFunctions
 nnoremap <leader>Q :FoldAllFunctions<CR>
 
-au BufWritePre *.h,*.cpp,*.c %s/\v^\s*#\s*include\s*"(opencv2\/[^"]+)"\s*$/# include <\1>/e | %s/\v^\s*#(\w+)/# \1/e
+au BufWritePre *.h,*.cpp,*.c %s/\v^\s*#\s*include\s*"(opencv2\/[^"]+)"\s*$/# include <\1>/e | %s/\v^\s*#(\w+)/# \1/e | %s/\v^\s*#\s*include\s*\<(Q[^>]+)\>/# include <\L\1.h>/e
 
 " vim:ft=vim

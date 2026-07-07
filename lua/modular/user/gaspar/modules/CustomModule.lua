@@ -9,6 +9,11 @@ local CustomModule = Module:new ({
 		require ("modular.user.gaspar.specs.Custom.dooku-nvim"),
 		require ("modular.user.gaspar.specs.Custom.videre_nvim"),
 		require ("modular.user.gaspar.specs.Custom.dial_nvim"),
+		-- {
+		-- 	"NStefan002/screenkey.nvim",
+		-- 	lazy = false,
+		-- 	version = "*", -- or branch = "main", to use the latest commit
+		-- }
 	},
 	actions = {
 		ModuleAction:new ({

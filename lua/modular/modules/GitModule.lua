@@ -4,8 +4,8 @@ local ModuleAction = require ("modular.ModuleAction")
 local GitModule = Module:new ({
 	name = "Git",
 	plugins = {
-		-- require ("modular.specs.Git.diffview_nvim"),
-		require ("modular.specs.Git.diffview-plus_nvim"),
+		require ("modular.specs.Git.diffview_nvim"),
+		-- require ("modular.specs.Git.diffview-plus_nvim"),
 		require ("modular.specs.Git.gitsigns_nvim"),
 		require ("modular.specs.Git.lazygit_nvim"),
 		require ("modular.specs.Git.neogit"),

@@ -42,6 +42,24 @@ local BasicModule = Module:new ({
 			opts = {},
 			config = true,
 		},
+		{
+			"ingur/fzf-oil.nvim",
+			dir = "/desktop/nvim_plugins/fzf-oil.nvim",
+			dev = true,
+			dependencies = {
+				"ibhagwan/fzf-lua",
+				"stevearc/oil.nvim",
+			},
+			config = function ()
+				-- require("oil").setup({
+				-- 	float = require("fzf-oil").float,
+				-- })
+
+				local browser = require ("fzf-oil").setup ()
+
+				vim.keymap.set("n", "<leader>fe", browser.browse, { desc = "Oil" })
+			end
+		},
 		-- {
 		-- 	"edisj/msgarea.nvim",
 		-- },
