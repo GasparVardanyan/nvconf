@@ -16,7 +16,7 @@ return {
 		files = {
 			fd_opts = [[--color=never --hidden --type f --type l --exclude .git --no-ignore-vcs]],
 		},
-		ui_select = true,
+		-- ui_select = {},
 		winopts = {
 			fullscreen = true,
 		},

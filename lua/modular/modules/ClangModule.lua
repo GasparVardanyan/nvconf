@@ -244,6 +244,21 @@ local ClangModule = Module:new ({
 				require ("modular.mappings.Clang.classlayout_nvim")
 			end
 		}),
+		ModuleAction:new ({
+			event = ModuleAction.EventType.Pre,
+			plugins = "none-ls.nvim",
+			action = function ()
+				local NoneLSAdapters = require ("modular.config.nonels_adapters")
+				vim.list_extend (NoneLSAdapters, {
+					function ()
+						return require ("null-ls").builtins.diagnostics.gccdiag
+					end,
+					function ()
+						return require ("modular.actions.Clang.clang_tidy_actions")
+					end
+				})
+			end
+		}),
 	}
 })
 

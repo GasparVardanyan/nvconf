@@ -1,7 +1,7 @@
 return {
 	"nvimtools/none-ls.nvim",
 	config = function ()
-		local adapters = require("modular.config.nonels_adapters")
+		local adapters = require ("modular.config.nonels_adapters")
 
 		local sources = {}
 
