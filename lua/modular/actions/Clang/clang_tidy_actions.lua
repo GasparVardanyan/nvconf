@@ -29,8 +29,8 @@ local function get_actions (params, diag)
 				action = function()
 					local n = node
 
-					while n and n:type() ~= "declaration" do
-						n = n:parent()
+					while n and n:type () ~= "declaration" do
+						n = n:parent ()
 					end
 
 					if not n then
@@ -39,12 +39,13 @@ local function get_actions (params, diag)
 
 					local type_node
 
-					for child in n:iter_children() do
-						local t = child:type()
+					for child in n:iter_children () do
+						local t = child:type ()
 						if
 							t == "primitive_type"
 							or t == "type_identifier"
 							or t == "qualified_identifier"
+							or t == "placeholder_type_specifier"
 						then
 							type_node = child
 							break
@@ -56,17 +57,100 @@ local function get_actions (params, diag)
 						return
 					end
 
-					local row, col = type_node:start()
+					local row, col = type_node:start ()
 
 					vim.api.nvim_buf_set_text(
-						bufnr,
-						row,
-						col,
-						row,
-						col,
+						bufnr, row, col, row, col,
 						{ "const " }
 					)
 				end,
+			})
+		end
+	elseif diag.source == "cppcheck"
+	then
+		if diag.code == "noExplicitConstructor"
+		then
+			table.insert (actions, {
+				title = "Make constructor explicit",
+				action = function ()
+					local n = node
+
+					while n and n:type () ~= "function_declarator" do
+						n = n:parent ()
+					end
+
+					if not n then
+						return
+					end
+
+					local identifier_node
+
+					for child in n:iter_children ()
+					do
+						local t = child:type ()
+						if t == "identifier"
+						then
+							identifier_node = child
+							break
+						end
+					end
+
+					if not identifier_node
+					then
+						return
+					end
+
+
+					local row, col = identifier_node:start ()
+
+					vim.api.nvim_buf_set_text (
+						bufnr, row, col, row, col,
+						{ "explicit " }
+					)
+				end
+			})
+		elseif diag.code == "constVariableReference"
+		then
+			table.insert (actions, {
+				title = "Make variable reference to const",
+				action = function ()
+					local n = node
+
+					while n and n:type () ~= "declaration" do
+						n = n:parent ()
+					end
+
+					if not n then
+						return
+					end
+
+					local type_node
+
+					for child in n:iter_children () do
+						local t = child:type ()
+						if
+							t == "primitive_type"
+							or t == "type_identifier"
+							or t == "qualified_identifier"
+							or t == "placeholder_type_specifier"
+						then
+							type_node = child
+							break
+						end
+					end
+
+					if not type_node
+					then
+						return
+					end
+
+					local row, col = type_node:start ()
+
+					vim.api.nvim_buf_set_text(
+						bufnr, row, col, row, col,
+						{ "const " }
+					)
+				end
 			})
 		end
 	end

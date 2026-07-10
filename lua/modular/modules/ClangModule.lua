@@ -10,6 +10,7 @@ local ClangModule = Module:new ({
 		require ("modular.specs.Clang.compiler-explorer_nvim"),
 		require ("modular.specs.Clang.classlayout_nvim"),
 		require ("modular.specs.Clang.nvim-treesitter-cpp-tools"),
+		require ("modular.specs.Clang.ccls_nvim"),
 		-- {
 		-- 	"simonwinther/cppman.nvim",
 		-- 	version = "*",
@@ -250,12 +251,12 @@ local ClangModule = Module:new ({
 			action = function ()
 				local NoneLSAdapters = require ("modular.config.nonels_adapters")
 				vim.list_extend (NoneLSAdapters, {
-					function ()
-						return require ("null-ls").builtins.diagnostics.gccdiag
-					end,
+					-- function ()
+					-- 	return require ("null-ls").builtins.diagnostics.gccdiag
+					-- end,
 					function ()
 						return require ("modular.actions.Clang.clang_tidy_actions")
-					end
+					end,
 				})
 			end
 		}),
