@@ -144,7 +144,7 @@ local function get_actions (params, diag)
 
 					local row, col = type_node:start ()
 
-					vim.api.nvim_buf_set_text(
+					vim.api.nvim_buf_set_text (
 						bufnr, row, col, row, col,
 						{ "const " }
 					)
@@ -157,21 +157,19 @@ local function get_actions (params, diag)
 end
 
 return {
-	name = "clang_tidy_actions",
-	method = require("null-ls").methods.CODE_ACTION,
+	name = "cpp_actions",
+	method = require ("null-ls").methods.CODE_ACTION,
 	filetypes = { "cpp" },
 	generator = {
 		async = false,
-		fn = function(params)
-			local lnum = params.lsp_params.range.start.line -- 0-based
-
-			local diagnostics = vim.diagnostic.get(params.bufnr, {
-				lnum = lnum,
+		fn = function (params)
+			local diagnostics = vim.diagnostic.get (params.bufnr, {
+				lnum = params.lsp_params.range.start.line,
 			})
 
 			local actions = {}
 
-			for _, diag in ipairs(diagnostics) do
+			for _, diag in ipairs (diagnostics) do
 				vim.list_extend (actions, get_actions (params, diag))
 			end
 

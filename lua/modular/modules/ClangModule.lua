@@ -255,7 +255,7 @@ local ClangModule = Module:new ({
 					-- 	return require ("null-ls").builtins.diagnostics.gccdiag
 					-- end,
 					function ()
-						return require ("modular.actions.Clang.clang_tidy_actions")
+						return require ("modular.actions.Clang.cpp_actions")
 					end,
 				})
 			end
