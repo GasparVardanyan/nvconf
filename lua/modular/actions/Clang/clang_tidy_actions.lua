@@ -127,15 +127,13 @@ local function get_actions (params, diag)
 					local type_node
 
 					for child in n:iter_children () do
-						local t = child:type ()
-						if
-							t == "primitive_type"
-							or t == "type_identifier"
-							or t == "qualified_identifier"
-							or t == "placeholder_type_specifier"
-						then
-							type_node = child
-							break
+						if child:type () == "init_declarator" then
+							for reference_declarator in child:iter_children () do
+								if reference_declarator:type () == "reference_declarator" then
+									type_node = child
+									break
+								end
+							end
 						end
 					end
 
