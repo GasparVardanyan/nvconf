@@ -1,5 +1,7 @@
 return {
 	"GasparVardanyan/nvim-treesitter-cpp-tools",
+	dir = "/desktop/nvim_plugins/nvim-treesitter-cpp-tools",
+	dev = true,
 	-- dependencies = { "nvim-treesitter/nvim-treesitter" },
 	-- dev = true,
 	-- Optional: Configuration
