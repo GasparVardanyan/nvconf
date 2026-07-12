@@ -70,7 +70,7 @@ local ClangModule = Module:new ({
 				end
 
 				vim.list_extend (LintersByFt ["c"], {
-					"clangtidy",
+					-- "clangtidy", -- handled by clangd
 					"cppcheck",
 					-- "cpplint",
 				})
@@ -81,7 +81,7 @@ local ClangModule = Module:new ({
 				end
 
 				vim.list_extend (LintersByFt ["cpp"], {
-					"clangtidy",
+					-- "clangtidy", -- handled by clangd
 					"cppcheck",
 					-- "cpplint",
 				})

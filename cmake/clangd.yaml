@@ -1,0 +1,39 @@
+CompileFlags:
+  Add: [-std=c++20, -pedantic-errors, -Werror=pedantic, -Wall, -Wextra]
+
+Diagnostics:
+  UnusedIncludes: Strict
+  MissingIncludes: Strict
+
+  ClangTidy:
+    Add:
+      - '*'
+    Remove:
+      - darwin-*
+      - linuxkernel-*
+      - llvmlibc-*
+      - objc-*
+
+      - altera-struct-pack-align
+      - altera-unroll-loops
+      - bugprone-easily-swappable-parameters
+      - fuchsia-default-arguments-calls
+      - fuchsia-default-arguments-declarations
+      - fuchsia-overloaded-operator
+      - fuchsia-trailing-return
+      - google-readability-todo
+      - hicpp-explicit-conversions
+      - llvm-else-after-return
+      - llvm-header-guard
+      - misc-non-private-member-variables-in-classes
+      - misc-use-anonymous-namespace
+      - modernize-use-trailing-return-type
+      - readability-convert-member-functions-to-static
+      - readability-else-after-return
+      - readability-function-cognitive-complexity
+      - readability-identifier-length
+      - readability-isolate-declaration
+      - readability-magic-numbers
+      - readability-redundant-access-specifiers
+      - readability-redundant-inline-specifier
+      - readability-simplify-boolean-expr
