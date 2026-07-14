@@ -54,7 +54,7 @@ local ClangModule = Module:new ({
 						"--background-index",
 						jnproc,
 						"--header-insertion=iwyu",
-						-- "--clang-tidy",
+						"--clang-tidy",
 					},
 				}
 
