@@ -57,7 +57,7 @@ return {
 
 			-- Enable per-thread profiling support for multi-threaded applications
 			-- When enabled, you can select which thread(s) to profile when loading perf.data
-			thread_support = false,
+			thread_support = true,
 		})
 	end
 }

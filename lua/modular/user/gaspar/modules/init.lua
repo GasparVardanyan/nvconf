@@ -1,3 +1,5 @@
+local Module = require ("modular.Module")
+
 local modular_modules = {}
 local gaspar_modules = {}
 
@@ -17,10 +19,10 @@ then
 		-- db_module = require ("modular.modules.DbModule"),
 		doc_module = require ("modular.modules.DocModule"),
 		-- formatter_module = require ("modular.modules.FormatterModule"),
-		-- gdb_module = require ("modular.modules.GdbModule"),
+		gdb_module = require ("modular.modules.GdbModule"),
 		git_module = require ("modular.modules.GitModule"),
 		github_module = require ("modular.modules.GithubModule"),
-		-- iron_module = require ("modular.modules.IronModule"),
+		iron_module = require ("modular.modules.IronModule"),
 		-- java_module = require ("modular.modules.JavaMoule"),
 		-- lean_module = require ("modular.modules.LeanModule"),
 		lint_module = require ("modular.modules.LintModule"),
@@ -37,6 +39,14 @@ then
 		session_module = require ("modular.modules.SessionModule"),
 		test_module = require ("modular.modules.TestModule"),
 		ui_module = require ("modular.modules.UIModule"),
+		Module:new ({
+			name = "ActionScript3",
+			plugins = {
+				{
+					"jeroenbourgois/vim-actionscript"
+				}
+			}
+		})
 	}
 	gaspar_modules = vim.tbl_deep_extend (
 		"error",

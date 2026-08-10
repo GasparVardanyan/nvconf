@@ -200,6 +200,29 @@ local ClangModule = Module:new ({
 				-- vim.list_extend (cppcheck.args, {
 				-- 	"--cppcheck-build-dir=.cppcheck",
 				-- 	"--project=compile_commands.json",
+				-- 	function ()
+				-- 		local options = {}
+				-- 		local options_file = ".cppcheck-options"
+				--
+				-- 		if vim.fn.filereadable (options_file) == 1 then
+				-- 			local lines = vim.fn.readfile (options_file)
+				-- 			for _, line in ipairs (lines) do
+				-- 				if line ~= "" then
+				-- 					table.insert (options, line)
+				-- 				end
+				-- 			end
+				-- 		end
+				--
+				-- 		return table.concat (options, ' ')
+				-- 	end,
+				-- })
+
+				-- vim.api.nvim_create_autocmd ({"BufWritePost", "BufReadPost"}, {
+				-- 	group = vim.api.nvim_create_augroup ("CPPCHECK", { clear = true }),
+				-- 	pattern = {"*.cpp", "*.c", "*.h", "*.hpp", "*.inl"},
+				-- 	callback = function ()
+				-- 		require ("lint").try_lint ("cppcheck")
+				-- 	end
 				-- })
 			end
 		}),

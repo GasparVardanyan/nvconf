@@ -4,7 +4,7 @@ return {
 	---@type oil.SetupOpts
 	opts = {
 		columns = {
-			"icon",
+			-- "icon",
 			-- "permissions",
 			-- "size",
 			-- "mtime",

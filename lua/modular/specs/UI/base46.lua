@@ -45,16 +45,18 @@ local function generate ()
 end
 
 return {
-	-- "NvChad/base46",
-	"GasparVardanyan/base46",
-	branch = "gaspar",
+	"NvChad/base46",
+
+	-- "GasparVardanyan/base46",
+	-- branch = "gaspar",
+	-- dev = true,
+
 	dependencies = {
 		"NvChad/ui"
 	},
 	lazy = false,
 	priority = 1000,
 	build = generate,
-	-- dev = true,
 	init = function ()
 		vim.g.base46_cache = vim.fn.stdpath ("cache") .. "/base46"
 		-- vim.api.nvim_create_autocmd ("User", {
