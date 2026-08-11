@@ -33,7 +33,7 @@ then
 			vim.print ("NF")
 		end
 
-		return table.concat (opts)
+		return table.concat (opts, " ")
 	end
 
 	vim.api.nvim_create_autocmd ("FileType", {

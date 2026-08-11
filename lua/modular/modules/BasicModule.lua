@@ -44,8 +44,8 @@ local BasicModule = Module:new ({
 		},
 		{
 			"ingur/fzf-oil.nvim",
-			dir = "/desktop/nvim_plugins/fzf-oil.nvim",
-			dev = true,
+			-- dir = "/desktop/nvim_plugins/fzf-oil.nvim",
+			-- dev = true,
 			dependencies = {
 				"ibhagwan/fzf-lua",
 				"stevearc/oil.nvim",
