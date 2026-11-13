@@ -10,7 +10,7 @@ then
 	-- modular_modules = require ("modular.modules")
 	modular_modules = {
 		menu_module = require ("modular.modules._MenuModule"),
-		ai_module = require ("modular.modules.AiModule"),
+		-- ai_module = require ("modular.modules.AiModule"),
 		autocomplete_module = require ("modular.modules.AutoCompleteModule"),
 		basic_module = require ("modular.modules.BasicModule"),
 		clang_module = require ("modular.modules.ClangModule"),
@@ -30,7 +30,7 @@ then
 		lspsaga_module = require ("modular.modules.LspSagaModule"),
 		md_module = require ("modular.modules.MdModule"),
 		misc_module = require ("modular.modules.MiscModule"),
-		nonels_module = require ("modular.modules.NoneLSModule"),
+		-- nonels_module = require ("modular.modules.NoneLSModule"),
 		-- nvim_module = require ("modular.modules.NvimModule"),
 		org_module = require ("modular.modules.OrgModule"),
 		profiler_module = require ("modular.modules.ProfilerModule"),

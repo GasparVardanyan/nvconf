@@ -5,6 +5,8 @@ return {
 		local cmake_build_options = {}
 		local cmake_generate_options = {}
 
+		vim.fn.setenv ("CMAKE_EXPORT_COMPILE_COMMANDS", "ON")
+
 		if 0 ~= nproc
 		then
 			vim.list_extend (cmake_build_options, { "-j" .. (nproc - 1) })

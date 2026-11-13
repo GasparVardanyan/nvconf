@@ -8,7 +8,7 @@ local DapModule = Module:new ({
 		require ("modular.specs.Dap.nvim-dap"),
 		require ("modular.specs.Dap.mason-nvim-dap"),
 		require ("modular.specs.Dap.nvim-dap-ui"),
-		require ("modular.specs.Dap.nvim-dap-image"),
+		-- require ("modular.specs.Dap.nvim-dap-image"),
 		require ("modular.specs.Dap.telescope-dap_nvim"),
 	},
 	actions = {

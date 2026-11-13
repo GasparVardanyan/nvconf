@@ -76,8 +76,6 @@ return {
 
 		vim.fn.mkdir (vim.g.base46_cache, "p")
 
-		require ("base46").load_all_highlights ()
-
 		vim.opt.rtp:append (proxy_dir)
 	end,
 }

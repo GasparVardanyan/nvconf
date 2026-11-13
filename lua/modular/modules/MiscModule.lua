@@ -5,7 +5,7 @@ local MiscModule = Module:new ({
 	name = "Misc",
 	plugins = {
 		require ("modular.specs.Misc.vim-table-mode"),
-		require ("modular.specs.Misc.image_nvim"),
+		-- require ("modular.specs.Misc.image_nvim"),
 	},
 	actions = {
 		ModuleAction:new ({

@@ -24,13 +24,8 @@ then
 			for _, line in ipairs (lines) do
 				if line ~= "" then
 					table.insert (opts, line)
-					vim.print ("LINE: " .. line)
-				else
-					vim.print ("EL")
 				end
 			end
-		else
-			vim.print ("NF")
 		end
 
 		return table.concat (opts, " ")
